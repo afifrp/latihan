@@ -1,2 +1,2 @@
 # RAFAOLEC
-Pengembangan Software Risk Based Inspectio
+Pengembangan Software Risk Based Inspection

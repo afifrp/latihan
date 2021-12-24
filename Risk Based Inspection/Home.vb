@@ -724,6 +724,8 @@ Public Class Home
 
 
         TabControl1.SelectedTab = TabPage4
+
+        Call liningdf()
     End Sub
 
     Private Sub Button19_Click_1(sender As Object, e As EventArgs) Handles Button19.Click
@@ -864,68 +866,9 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'Lining DF
-    Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
-        If CheckBox5.Checked = True Then
-            CheckBox6.Enabled = False
-        Else
-            CheckBox6.Enabled = True
-        End If
 
-    End Sub
 
-    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
-        If CheckBox6.Checked = True Then
-            CheckBox5.Enabled = False
-        Else
-            CheckBox5.Enabled = True
-        End If
-    End Sub
 
-    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
-        If CheckBox7.Checked = True Then
-            CheckBox8.Enabled = False
-            CheckBox9.Enabled = False
-        Else
-            CheckBox8.Enabled = True
-            CheckBox9.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
-        If CheckBox8.Checked = True Then
-            CheckBox7.Enabled = False
-            CheckBox9.Enabled = False
-        Else
-            CheckBox7.Enabled = True
-            CheckBox9.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
-        If CheckBox9.Checked = True Then
-            CheckBox7.Enabled = False
-            CheckBox8.Enabled = False
-        Else
-            CheckBox7.Enabled = True
-            CheckBox8.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox10_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox10.CheckedChanged
-        If CheckBox10.Checked = True Then
-            CheckBox11.Enabled = False
-        Else
-            CheckBox11.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox11_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox11.CheckedChanged
-        If CheckBox11.Checked = True Then
-            CheckBox10.Enabled = False
-        Else
-            CheckBox10.Enabled = True
-        End If
-    End Sub
 
     'SCC-Caustic Cracking DF
     Private Sub CheckBox12_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox12.CheckedChanged
@@ -2333,4 +2276,743 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
         Call tampildatafluida()
     End Sub
+
+    '------------------------------------------------------------------------
+    'interpolasi
+
+
+    Private Function Inter(ByVal temp As Double, ByVal Up1 As Double, ByVal Up2 As Double, ByVal Lo1 As Double, ByVal Lo2 As Double) As Double
+        Inter = ((temp - Lo1) * (Up2 - Lo2) / (Up1 - Lo1)) + Lo2
+    End Function
+
+    'extrapolation lower
+
+    Private Function Inter3b(ByVal upt As Double, ByVal Lot As Double, ByVal temp As Double, ByVal x As Double, ByVal z As Double) As Double
+        Inter3b = ((temp - upt) * (x - z) / (Lot - upt)) + z
+    End Function
+
+    'extrapolation upper
+    Private Function Inter3c(ByVal upt As Double, ByVal Lot As Double, ByVal temp As Double, ByVal x As Double, ByVal z As Double) As Double
+        Inter3c = ((temp - Lot) * (z - x) / (upt - Lot)) + x
+    End Function
+
+    Private Function Intera(ByVal calhar As Double, ByVal up1a As Double, ByVal up2a As Double, ByVal lo1a As Double, ByVal lo2a As Double) As Double
+        Intera = ((calhar - lo1a) * (up2a - lo2a) / (up1a - lo1a)) + lo2a
+    End Function
+
+    'exatrapolation lower
+
+    Private Function Inter3ba(ByVal upta As Double, ByVal lota As Double, ByVal calhar As Double, ByVal xa As Double, ByVal za As Double) As Double
+        Inter3ba = ((calhar - upta) * (xa - za) / (lota - upta)) + za
+    End Function
+
+    'exatrapolation upper
+    Private Function Inter3ca(ByVal upta As Double, ByVal lota As Double, ByVal calhar As Double, ByVal xa As Double, ByVal za As Double) As Double
+        Inter3ca = ((calhar - lota) * (za - xa) / (upta - lota)) + xa
+    End Function
+
+    Private Function Interb(ByVal moa As Double, ByVal up1b As Double, ByVal up2b As Double, ByVal lo1b As Double, ByVal lo2b As Double) As Double
+        Interb = ((moa - lo1b) * (up2b - lo2b) / (up1b - lo1b)) + lo2b
+    End Function
+
+    'exbtrapolation lower
+
+    Private Function Inter3bb(ByVal uptb As Double, ByVal lotb As Double, ByVal moa As Double, ByVal xb As Double, ByVal zb As Double) As Double
+        Inter3bb = ((moa - uptb) * (xb - zb) / (lotb - uptb)) + zb
+    End Function
+
+    'exbtrapolation upper
+    Private Function Inter3cb(ByVal uptb As Double, ByVal lotb As Double, ByVal moa As Double, ByVal xb As Double, ByVal zb As Double) As Double
+        Inter3cb = ((moa - lotb) * (zb - xb) / (uptb - lotb)) + xb
+    End Function
+
+
+    Private Function Inter5(ByVal up1 As Double, ByVal Lo1 As Double, ByVal temp As Double, ByVal up2 As Double, ByVal lo2 As Double) As Double
+        Inter5 = ((temp - up1) * (lo2 - up2) / (Lo1 - up1)) + up2
+    End Function
+
+    '--------------------------------------------------------------------------------------
+
+
+    'Lining
+    Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox5.SelectedIndexChanged
+        If ComboBox5.Text = "Inorganic Lining Type" Then
+            ComboBox76.Text = ""
+            ComboBox76.Items.Clear()
+            ComboBox76.Items.Add("Strip Lined Alloy (Resistant)")
+            ComboBox76.Items.Add("Castable Refractory")
+            ComboBox76.Items.Add("Castable Refractory Severe Conditions")
+            ComboBox76.Items.Add("Glass Lined")
+            ComboBox76.Items.Add("Acid Brick")
+            ComboBox76.Items.Add("Fiberglass")
+        ElseIf ComboBox5.Text = "Organic Lining Type" Then
+            ComboBox76.Text = ""
+            ComboBox76.Items.Clear()
+            ComboBox76.Items.Add("Low Quality Immersion Grade Coating (Spray Applied, to 40 mils)")
+            ComboBox76.Items.Add("Medium Quality Immersion Grade Coating (Filled, Trowel Applied, to 80 mils)")
+            ComboBox76.Items.Add("High Quality Immersion Grade Coating (Reinforced, Trowel Applied, ≥ 80 mils)")
+        End If
+    End Sub
+
+    Public Sub liningdf()
+        '---dateyear
+        Dim d As Double
+        d = DateDiff(DateInterval.DayOfYear, DateTimePicker3.Value, DateTimePicker1.Value)
+
+        Dim datetotal As Double
+        datetotal = d / 365
+
+        '---basevaluelining
+        Dim basevalue As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            Dim chart2(,) As Double = {{1, 0.3, 0.5, 9, 3, 0.01, 1},
+            {2, 0.5, 1, 40, 4, 0.03, 1},
+            {3, 0.7, 2, 146, 6, 0.05, 1},
+            {4, 1, 4, 428, 7, 0.15, 1},
+            {5, 1, 9, 1017, 9, 1, 1},
+            {6, 2, 16, 1978, 11, 1, 1},
+            {7, 3, 30, 3000, 13, 1, 2},
+            {8, 4, 53, 3000, 16, 1, 3},
+            {9, 6, 89, 3000, 20, 2, 7},
+            {10, 9, 146, 3000, 25, 3, 13},
+            {11, 12, 230, 3000, 30, 4, 26},
+            {12, 16, 351, 3000, 36, 5, 47},
+            {13, 22, 518, 3000, 44, 7, 82},
+            {14, 30, 738, 3000, 53, 9, 139},
+            {15, 40, 1017, 3000, 63, 11, 228},
+            {16, 53, 1358, 3000, 75, 15, 359},
+            {17, 69, 1758, 3000, 89, 19, 548},
+            {18, 89, 2209, 3000, 105, 25, 808},
+            {19, 115, 2697, 3000, 124, 31, 1151},
+            {20, 146, 3000, 3000, 146, 40, 1587},
+            {21, 184, 3000, 3000, 170, 50, 2119},
+            {22, 230, 3000, 3000, 199, 63, 2743},
+            {23, 286, 3000, 3000, 230, 78, 3000},
+            {24, 351, 3000, 3000, 266, 97, 3000},
+            {25, 428, 3000, 3000, 306, 119, 3000}}
+
+            Dim UpNum2(6) As Double
+            Dim LowNum2(6) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+
+            temp = datetotal
+
+            If ComboBox76.Text = "Strip Lined Alloy (Resistant)" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Castable Refractory" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 2
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(2)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(2)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Castable Refractory Severe Conditions" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 3
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(3)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(3)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Glass Lined" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 4
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(4)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(4)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Acid Brick" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(5)
+                                z = UpNum2(5)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(5)
+                                z = UpNum2(5)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 5
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(5)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(5)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Fiberglass" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(6)
+                                z = UpNum2(6)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(6)
+                                z = UpNum2(6)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 6
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(6)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(6)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+        End If
+
+        If Units.ComboBox1.Text = "US" = True Then
+            Dim chart2(,) As Double = {{1, 30, 1, 0.1},
+            {2, 89, 4, 0.13},
+            {3, 230, 16, 0.15},
+            {4, 518, 53, 0.17},
+            {5, 1017, 146, 0.2},
+            {6, 1758, 351, 1},
+            {7, 2697, 738, 4},
+            {8, 3000, 1358, 16},
+            {9, 3000, 2209, 53},
+            {10, 3000, 3000, 146},
+            {11, 3000, 3000, 351},
+            {12, 3000, 3000, 738},
+            {13, 3000, 3000, 1358},
+            {14, 3000, 3000, 2209},
+            {15, 3000, 3000, 3000},
+            {16, 3000, 3000, 3000},
+            {17, 3000, 3000, 3000},
+            {18, 3000, 3000, 3000},
+            {19, 3000, 3000, 3000},
+            {20, 3000, 3000, 3000},
+            {21, 3000, 3000, 3000},
+            {22, 3000, 3000, 3000},
+            {23, 3000, 3000, 3000},
+            {24, 3000, 3000, 3000},
+            {25, 3000, 3000, 3000}}
+
+            Dim UpNum2(6) As Double
+            Dim LowNum2(6) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+
+            temp = datetotal
+
+            If ComboBox76.Text = "Low Quality Immersion Grade Coating (Spray Applied, to 40 mils)" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "Medium Quality Immersion Grade Coating (Filled, Trowel Applied, to 80 mils)" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 2
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(2)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(2)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox76.Text = "High Quality Immersion Grade Coating (Reinforced, Trowel Applied, ≥ 80 mils)" Then
+                If temp < 1 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 2 AndAlso chart2(r + 1, 0) >= 1 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 2
+                                lot = 1
+
+                                basevalue = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 25 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 24 AndAlso chart2(r + 1, 0) >= 25 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 25
+                                lot = 24
+
+                                basevalue = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 3
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(3)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(3)
+
+                            basevalue = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+        End If
+
+        '---adjlining
+        Dim valueadj As Double
+        If ComboBox77.Text = "Poor" Then
+            valueadj = 10
+        ElseIf ComboBox77.Text = "Average" Then
+            valueadj = 2
+        ElseIf ComboBox77.Text = "Good" Then
+            valueadj = 1
+        End If
+
+        '---adjonline
+        Dim adjonline As Double
+        If ComboBox78.Text = "Yes" Then
+            adjonline = 0.1
+        ElseIf ComboBox78.Text = "No" Then
+            adjonline = 1.0
+        End If
+
+        '---basedf
+        Dim dflining As Double
+
+        dflining = basevalue * valueadj * adjonline
+        Label325.Text = dflining
+
+    End Sub
+
+
 End Class

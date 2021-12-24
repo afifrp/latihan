@@ -24,16 +24,16 @@ Partial Class Home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
-        Dim TreeNode61 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
-        Dim TreeNode62 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
-        Dim TreeNode63 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
-        Dim TreeNode64 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
-        Dim TreeNode65 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
-        Dim TreeNode66 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("20/11/2020", New System.Windows.Forms.TreeNode() {TreeNode61, TreeNode62, TreeNode63, TreeNode64, TreeNode65})
-        Dim TreeNode67 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
-        Dim TreeNode68 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
-        Dim TreeNode69 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
-        Dim TreeNode70 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("25/11/2020", New System.Windows.Forms.TreeNode() {TreeNode67, TreeNode68, TreeNode69})
+        Dim TreeNode51 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
+        Dim TreeNode52 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
+        Dim TreeNode53 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
+        Dim TreeNode54 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
+        Dim TreeNode55 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
+        Dim TreeNode56 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("20/11/2020", New System.Windows.Forms.TreeNode() {TreeNode51, TreeNode52, TreeNode53, TreeNode54, TreeNode55})
+        Dim TreeNode57 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
+        Dim TreeNode58 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
+        Dim TreeNode59 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
+        Dim TreeNode60 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("25/11/2020", New System.Windows.Forms.TreeNode() {TreeNode57, TreeNode58, TreeNode59})
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
@@ -792,15 +792,7 @@ Partial Class Home
         Me.df2 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Label47 = New System.Windows.Forms.Label()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
@@ -832,6 +824,32 @@ Partial Class Home
         Me.PanelPOFPRD = New System.Windows.Forms.Panel()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.PanelCOF = New System.Windows.Forms.Panel()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.ComboBox75 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox74 = New System.Windows.Forms.ComboBox()
+        Me.TextBox87 = New System.Windows.Forms.TextBox()
+        Me.TextBox86 = New System.Windows.Forms.TextBox()
+        Me.Panel84 = New System.Windows.Forms.Panel()
+        Me.RadioButton33 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton32 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton31 = New System.Windows.Forms.RadioButton()
+        Me.Panel83 = New System.Windows.Forms.Panel()
+        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
+        Me.Panel82 = New System.Windows.Forms.Panel()
+        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
+        Me.Label311 = New System.Windows.Forms.Label()
+        Me.Label89 = New System.Windows.Forms.Label()
+        Me.Label88 = New System.Windows.Forms.Label()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.PanelCOFPRD = New System.Windows.Forms.Panel()
         Me.PanelCOFHE = New System.Windows.Forms.Panel()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.TextBox79 = New System.Windows.Forms.TextBox()
@@ -859,32 +877,6 @@ Partial Class Home
         Me.Label298 = New System.Windows.Forms.Label()
         Me.Label294 = New System.Windows.Forms.Label()
         Me.Label290 = New System.Windows.Forms.Label()
-        Me.PanelCOF = New System.Windows.Forms.Panel()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.ComboBox75 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox74 = New System.Windows.Forms.ComboBox()
-        Me.TextBox87 = New System.Windows.Forms.TextBox()
-        Me.TextBox86 = New System.Windows.Forms.TextBox()
-        Me.Panel84 = New System.Windows.Forms.Panel()
-        Me.RadioButton33 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton32 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton31 = New System.Windows.Forms.RadioButton()
-        Me.Panel83 = New System.Windows.Forms.Panel()
-        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
-        Me.Panel82 = New System.Windows.Forms.Panel()
-        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
-        Me.Label311 = New System.Windows.Forms.Label()
-        Me.Label89 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.Label86 = New System.Windows.Forms.Label()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.Label84 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.PanelCOFPRD = New System.Windows.Forms.Panel()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel39 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -946,6 +938,11 @@ Partial Class Home
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ComboBox76 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.ComboBox77 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox78 = New System.Windows.Forms.ComboBox()
+        Me.Label325 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel18.SuspendLayout()
@@ -1052,11 +1049,11 @@ Partial Class Home
         Me.Panel85.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel37.SuspendLayout()
-        Me.PanelCOFHE.SuspendLayout()
         Me.PanelCOF.SuspendLayout()
         Me.Panel84.SuspendLayout()
         Me.Panel83.SuspendLayout()
         Me.Panel82.SuspendLayout()
+        Me.PanelCOFHE.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.Panel39.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1151,7 +1148,7 @@ Partial Class Home
         Me.ComboBox64.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox64.FormattingEnabled = True
         Me.ComboBox64.Items.AddRange(New Object() {"test PV", "test HE"})
-        Me.ComboBox64.Location = New System.Drawing.Point(545, 126)
+        Me.ComboBox64.Location = New System.Drawing.Point(536, 126)
         Me.ComboBox64.Name = "ComboBox64"
         Me.ComboBox64.Size = New System.Drawing.Size(165, 21)
         Me.ComboBox64.TabIndex = 5
@@ -1161,7 +1158,7 @@ Partial Class Home
         Me.ComboBox63.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox63.FormattingEnabled = True
         Me.ComboBox63.Items.AddRange(New Object() {"HEXSS", "HEXTS", "HEXTUBE", "COMPC", "COMPR", "KODRUM", "DRUM", "FINFAN", "FILTER", "REACTOR", "COLTOP", "COLMID", "COLBTM", "TANKBOTTOM", "COURSES-1-10", "PIPE-1", "PIPE-2", "PIPE-4", "PIPE-6", "PIPE-8", "PIPE-10", "PIPE-12", "PIPE-16", "PIPEGT16", "PUMP2S", "PUMP1S", "PUMPR", "Pressure Relief Devices", "Heat Exchanger Tube Bundles"})
-        Me.ComboBox63.Location = New System.Drawing.Point(293, 126)
+        Me.ComboBox63.Location = New System.Drawing.Point(284, 126)
         Me.ComboBox63.Name = "ComboBox63"
         Me.ComboBox63.Size = New System.Drawing.Size(165, 21)
         Me.ComboBox63.TabIndex = 4
@@ -1171,7 +1168,7 @@ Partial Class Home
         Me.ComboBox62.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox62.FormattingEnabled = True
         Me.ComboBox62.Items.AddRange(New Object() {"Pressure Vessel", "Compressors", "Heat Exchanger", "AirFin Heat Exchanger Header Boxes", "Pipes & Tubes", "Pumps", "Atmospheric Storage Tank - Shell Courses", "Atmospheric Storage Tank - Bottom Plates", "Pressure Relief Devices", "Heat Exchanger Tube Bundles"})
-        Me.ComboBox62.Location = New System.Drawing.Point(41, 126)
+        Me.ComboBox62.Location = New System.Drawing.Point(32, 126)
         Me.ComboBox62.Name = "ComboBox62"
         Me.ComboBox62.Size = New System.Drawing.Size(165, 21)
         Me.ComboBox62.TabIndex = 3
@@ -1182,7 +1179,7 @@ Partial Class Home
         Me.Label309.AutoSize = True
         Me.Label309.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label309.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label309.Location = New System.Drawing.Point(304, 23)
+        Me.Label309.Location = New System.Drawing.Point(295, 23)
         Me.Label309.Name = "Label309"
         Me.Label309.Size = New System.Drawing.Size(125, 20)
         Me.Label309.TabIndex = 0
@@ -1194,7 +1191,7 @@ Partial Class Home
         Me.Label310.AutoSize = True
         Me.Label310.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label310.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label310.Location = New System.Drawing.Point(53, 92)
+        Me.Label310.Location = New System.Drawing.Point(44, 92)
         Me.Label310.Name = "Label310"
         Me.Label310.Size = New System.Drawing.Size(138, 20)
         Me.Label310.TabIndex = 0
@@ -1206,7 +1203,7 @@ Partial Class Home
         Me.Label308.AutoSize = True
         Me.Label308.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label308.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label308.Location = New System.Drawing.Point(298, 92)
+        Me.Label308.Location = New System.Drawing.Point(289, 92)
         Me.Label308.Name = "Label308"
         Me.Label308.Size = New System.Drawing.Size(154, 20)
         Me.Label308.TabIndex = 0
@@ -1218,7 +1215,7 @@ Partial Class Home
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(546, 92)
+        Me.Label5.Location = New System.Drawing.Point(537, 92)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(163, 20)
         Me.Label5.TabIndex = 0
@@ -1228,7 +1225,7 @@ Partial Class Home
         '
         Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(250, 51)
+        Me.ComboBox2.Location = New System.Drawing.Point(241, 51)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(250, 21)
         Me.ComboBox2.TabIndex = 1
@@ -1329,7 +1326,7 @@ Partial Class Home
         Me.Panelgeneraldata.Controls.Add(Me.Label7)
         Me.Panelgeneraldata.Controls.Add(Me.Label6)
         Me.Panelgeneraldata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panelgeneraldata.Location = New System.Drawing.Point(4, 165)
+        Me.Panelgeneraldata.Location = New System.Drawing.Point(-5, 165)
         Me.Panelgeneraldata.Name = "Panelgeneraldata"
         Me.Panelgeneraldata.Size = New System.Drawing.Size(748, 1266)
         Me.Panelgeneraldata.TabIndex = 1
@@ -2869,7 +2866,7 @@ Partial Class Home
         Me.PanelgeneraldataHE.Controls.Add(Me.TextBox51)
         Me.PanelgeneraldataHE.Controls.Add(Me.Label216)
         Me.PanelgeneraldataHE.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.PanelgeneraldataHE.Location = New System.Drawing.Point(4, 164)
+        Me.PanelgeneraldataHE.Location = New System.Drawing.Point(-5, 164)
         Me.PanelgeneraldataHE.Name = "PanelgeneraldataHE"
         Me.PanelgeneraldataHE.Size = New System.Drawing.Size(749, 1862)
         Me.PanelgeneraldataHE.TabIndex = 2
@@ -4738,7 +4735,7 @@ Partial Class Home
         Me.PanelPOF.Controls.Add(Me.df3)
         Me.PanelPOF.Controls.Add(Me.df2)
         Me.PanelPOF.Controls.Add(Me.df1)
-        Me.PanelPOF.Location = New System.Drawing.Point(1, 3)
+        Me.PanelPOF.Location = New System.Drawing.Point(-8, 3)
         Me.PanelPOF.Name = "PanelPOF"
         Me.PanelPOF.Size = New System.Drawing.Size(748, 5207)
         Me.PanelPOF.TabIndex = 0
@@ -9018,16 +9015,12 @@ Partial Class Home
         '
         'df2
         '
-        Me.df2.Controls.Add(Me.Panel34)
-        Me.df2.Controls.Add(Me.CheckBox11)
-        Me.df2.Controls.Add(Me.CheckBox10)
-        Me.df2.Controls.Add(Me.CheckBox9)
-        Me.df2.Controls.Add(Me.CheckBox8)
-        Me.df2.Controls.Add(Me.CheckBox7)
+        Me.df2.Controls.Add(Me.ComboBox78)
+        Me.df2.Controls.Add(Me.ComboBox77)
         Me.df2.Controls.Add(Me.DateTimePicker3)
+        Me.df2.Controls.Add(Me.ComboBox76)
+        Me.df2.Controls.Add(Me.Panel34)
         Me.df2.Controls.Add(Me.ComboBox5)
-        Me.df2.Controls.Add(Me.CheckBox6)
-        Me.df2.Controls.Add(Me.CheckBox5)
         Me.df2.Controls.Add(Me.Label51)
         Me.df2.Controls.Add(Me.Label50)
         Me.df2.Controls.Add(Me.Label49)
@@ -9059,90 +9052,14 @@ Partial Class Home
         Me.Label47.TabIndex = 0
         Me.Label47.Text = "Lining Damage Factor"
         '
-        'CheckBox11
-        '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(290, 163)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(40, 17)
-        Me.CheckBox11.TabIndex = 9
-        Me.CheckBox11.Text = "No"
-        Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(220, 163)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(44, 17)
-        Me.CheckBox10.TabIndex = 8
-        Me.CheckBox10.Text = "Yes"
-        Me.CheckBox10.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(376, 133)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(52, 17)
-        Me.CheckBox9.TabIndex = 7
-        Me.CheckBox9.Text = "Good"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(290, 133)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox8.TabIndex = 6
-        Me.CheckBox8.Text = "Average"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(220, 133)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(48, 17)
-        Me.CheckBox7.TabIndex = 5
-        Me.CheckBox7.Text = "Poor"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(220, 94)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(137, 20)
-        Me.DateTimePicker3.TabIndex = 4
-        '
         'ComboBox5
         '
         Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(376, 59)
+        Me.ComboBox5.Items.AddRange(New Object() {"Inorganic Lining Type", "Oragnic Lining Type"})
+        Me.ComboBox5.Location = New System.Drawing.Point(219, 58)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(334, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(138, 21)
         Me.ComboBox5.TabIndex = 3
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(290, 61)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(70, 17)
-        Me.CheckBox6.TabIndex = 2
-        Me.CheckBox6.Text = "Inorganic"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(220, 61)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(63, 17)
-        Me.CheckBox5.TabIndex = 1
-        Me.CheckBox5.Text = "Organic"
-        Me.CheckBox5.UseVisualStyleBackColor = True
         '
         'Label51
         '
@@ -9156,7 +9073,7 @@ Partial Class Home
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(13, 133)
+        Me.Label50.Location = New System.Drawing.Point(13, 132)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(158, 13)
         Me.Label50.TabIndex = 0
@@ -9326,7 +9243,7 @@ Partial Class Home
         Me.PanelPOFHE.Controls.Add(Me.RadioButton45)
         Me.PanelPOFHE.Controls.Add(Me.RadioButton44)
         Me.PanelPOFHE.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.PanelPOFHE.Location = New System.Drawing.Point(-2, 2)
+        Me.PanelPOFHE.Location = New System.Drawing.Point(-11, 2)
         Me.PanelPOFHE.Name = "PanelPOFHE"
         Me.PanelPOFHE.Size = New System.Drawing.Size(749, 744)
         Me.PanelPOFHE.TabIndex = 1
@@ -9453,6 +9370,271 @@ Partial Class Home
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(774, 589)
         Me.Panel37.TabIndex = 0
+        '
+        'PanelCOF
+        '
+        Me.PanelCOF.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PanelCOF.Controls.Add(Me.Button18)
+        Me.PanelCOF.Controls.Add(Me.ComboBox75)
+        Me.PanelCOF.Controls.Add(Me.ComboBox74)
+        Me.PanelCOF.Controls.Add(Me.TextBox87)
+        Me.PanelCOF.Controls.Add(Me.TextBox86)
+        Me.PanelCOF.Controls.Add(Me.Panel84)
+        Me.PanelCOF.Controls.Add(Me.Panel83)
+        Me.PanelCOF.Controls.Add(Me.Panel82)
+        Me.PanelCOF.Controls.Add(Me.Label311)
+        Me.PanelCOF.Controls.Add(Me.Label89)
+        Me.PanelCOF.Controls.Add(Me.Label88)
+        Me.PanelCOF.Controls.Add(Me.Label87)
+        Me.PanelCOF.Controls.Add(Me.Label86)
+        Me.PanelCOF.Controls.Add(Me.Label85)
+        Me.PanelCOF.Controls.Add(Me.Label84)
+        Me.PanelCOF.Controls.Add(Me.Label39)
+        Me.PanelCOF.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.PanelCOF.Location = New System.Drawing.Point(6, 4)
+        Me.PanelCOF.Name = "PanelCOF"
+        Me.PanelCOF.Size = New System.Drawing.Size(751, 333)
+        Me.PanelCOF.TabIndex = 0
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button18.Location = New System.Drawing.Point(606, 287)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(102, 25)
+        Me.Button18.TabIndex = 235
+        Me.Button18.Text = "Next"
+        Me.Button18.UseVisualStyleBackColor = False
+        '
+        'ComboBox75
+        '
+        Me.ComboBox75.FormattingEnabled = True
+        Me.ComboBox75.Location = New System.Drawing.Point(277, 236)
+        Me.ComboBox75.Name = "ComboBox75"
+        Me.ComboBox75.Size = New System.Drawing.Size(431, 21)
+        Me.ComboBox75.TabIndex = 13
+        '
+        'ComboBox74
+        '
+        Me.ComboBox74.FormattingEnabled = True
+        Me.ComboBox74.Location = New System.Drawing.Point(277, 206)
+        Me.ComboBox74.Name = "ComboBox74"
+        Me.ComboBox74.Size = New System.Drawing.Size(431, 21)
+        Me.ComboBox74.TabIndex = 12
+        '
+        'TextBox87
+        '
+        Me.TextBox87.Location = New System.Drawing.Point(277, 177)
+        Me.TextBox87.Name = "TextBox87"
+        Me.TextBox87.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox87.TabIndex = 11
+        '
+        'TextBox86
+        '
+        Me.TextBox86.Location = New System.Drawing.Point(277, 149)
+        Me.TextBox86.Name = "TextBox86"
+        Me.TextBox86.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox86.TabIndex = 10
+        '
+        'Panel84
+        '
+        Me.Panel84.Controls.Add(Me.RadioButton33)
+        Me.Panel84.Controls.Add(Me.RadioButton32)
+        Me.Panel84.Controls.Add(Me.RadioButton31)
+        Me.Panel84.Location = New System.Drawing.Point(277, 118)
+        Me.Panel84.Name = "Panel84"
+        Me.Panel84.Size = New System.Drawing.Size(346, 25)
+        Me.Panel84.TabIndex = 6
+        '
+        'RadioButton33
+        '
+        Me.RadioButton33.AutoSize = True
+        Me.RadioButton33.Location = New System.Drawing.Point(182, 4)
+        Me.RadioButton33.Name = "RadioButton33"
+        Me.RadioButton33.Size = New System.Drawing.Size(156, 17)
+        Me.RadioButton33.TabIndex = 2
+        Me.RadioButton33.TabStop = True
+        Me.RadioButton33.Text = "Non-Flammable , Non-Toxic"
+        Me.RadioButton33.UseVisualStyleBackColor = True
+        '
+        'RadioButton32
+        '
+        Me.RadioButton32.AutoSize = True
+        Me.RadioButton32.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton32.Name = "RadioButton32"
+        Me.RadioButton32.Size = New System.Drawing.Size(75, 17)
+        Me.RadioButton32.TabIndex = 1
+        Me.RadioButton32.TabStop = True
+        Me.RadioButton32.Text = "Flammable"
+        Me.RadioButton32.UseVisualStyleBackColor = True
+        '
+        'RadioButton31
+        '
+        Me.RadioButton31.AutoSize = True
+        Me.RadioButton31.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton31.Name = "RadioButton31"
+        Me.RadioButton31.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton31.TabIndex = 0
+        Me.RadioButton31.TabStop = True
+        Me.RadioButton31.Text = "Toxic"
+        Me.RadioButton31.UseVisualStyleBackColor = True
+        '
+        'Panel83
+        '
+        Me.Panel83.Controls.Add(Me.RadioButton30)
+        Me.Panel83.Controls.Add(Me.RadioButton29)
+        Me.Panel83.Location = New System.Drawing.Point(277, 89)
+        Me.Panel83.Name = "Panel83"
+        Me.Panel83.Size = New System.Drawing.Size(142, 25)
+        Me.Panel83.TabIndex = 5
+        '
+        'RadioButton30
+        '
+        Me.RadioButton30.AutoSize = True
+        Me.RadioButton30.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton30.Name = "RadioButton30"
+        Me.RadioButton30.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton30.TabIndex = 1
+        Me.RadioButton30.TabStop = True
+        Me.RadioButton30.Text = "Liquid"
+        Me.RadioButton30.UseVisualStyleBackColor = True
+        '
+        'RadioButton29
+        '
+        Me.RadioButton29.AutoSize = True
+        Me.RadioButton29.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton29.Name = "RadioButton29"
+        Me.RadioButton29.Size = New System.Drawing.Size(44, 17)
+        Me.RadioButton29.TabIndex = 0
+        Me.RadioButton29.TabStop = True
+        Me.RadioButton29.Text = "Gas"
+        Me.RadioButton29.UseVisualStyleBackColor = True
+        '
+        'Panel82
+        '
+        Me.Panel82.Controls.Add(Me.RadioButton28)
+        Me.Panel82.Controls.Add(Me.RadioButton27)
+        Me.Panel82.Controls.Add(Me.RadioButton26)
+        Me.Panel82.Location = New System.Drawing.Point(277, 61)
+        Me.Panel82.Name = "Panel82"
+        Me.Panel82.Size = New System.Drawing.Size(276, 25)
+        Me.Panel82.TabIndex = 4
+        '
+        'RadioButton28
+        '
+        Me.RadioButton28.AutoSize = True
+        Me.RadioButton28.Location = New System.Drawing.Point(181, 4)
+        Me.RadioButton28.Name = "RadioButton28"
+        Me.RadioButton28.Size = New System.Drawing.Size(82, 17)
+        Me.RadioButton28.TabIndex = 7
+        Me.RadioButton28.TabStop = True
+        Me.RadioButton28.Text = "Two=Phase"
+        Me.RadioButton28.UseVisualStyleBackColor = True
+        '
+        'RadioButton27
+        '
+        Me.RadioButton27.AutoSize = True
+        Me.RadioButton27.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton27.Name = "RadioButton27"
+        Me.RadioButton27.Size = New System.Drawing.Size(87, 17)
+        Me.RadioButton27.TabIndex = 6
+        Me.RadioButton27.TabStop = True
+        Me.RadioButton27.Text = "Vapor or Gas"
+        Me.RadioButton27.UseVisualStyleBackColor = True
+        '
+        'RadioButton26
+        '
+        Me.RadioButton26.AutoSize = True
+        Me.RadioButton26.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton26.Name = "RadioButton26"
+        Me.RadioButton26.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton26.TabIndex = 5
+        Me.RadioButton26.TabStop = True
+        Me.RadioButton26.Text = "Liquid"
+        Me.RadioButton26.UseVisualStyleBackColor = True
+        '
+        'Label311
+        '
+        Me.Label311.AutoSize = True
+        Me.Label311.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label311.Location = New System.Drawing.Point(277, 28)
+        Me.Label311.Name = "Label311"
+        Me.Label311.Size = New System.Drawing.Size(197, 18)
+        Me.Label311.TabIndex = 3
+        Me.Label311.Text = "Fill Data to Analysis COF"
+        '
+        'Label89
+        '
+        Me.Label89.AutoSize = True
+        Me.Label89.Location = New System.Drawing.Point(37, 124)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(98, 13)
+        Me.Label89.TabIndex = 2
+        Me.Label89.Text = "Consequence Area"
+        '
+        'Label88
+        '
+        Me.Label88.AutoSize = True
+        Me.Label88.Location = New System.Drawing.Point(37, 243)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(122, 13)
+        Me.Label88.TabIndex = 2
+        Me.Label88.Text = "Type of Isolation System"
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.Location = New System.Drawing.Point(37, 213)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(129, 13)
+        Me.Label87.TabIndex = 1
+        Me.Label87.Text = "Type of Detection System"
+        '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Location = New System.Drawing.Point(37, 182)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(136, 13)
+        Me.Label86.TabIndex = 0
+        Me.Label86.Text = "Inventory Group Fluid Mass"
+        '
+        'Label85
+        '
+        Me.Label85.AutoSize = True
+        Me.Label85.Location = New System.Drawing.Point(37, 153)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(205, 13)
+        Me.Label85.TabIndex = 0
+        Me.Label85.Text = "Fluid Mass in Component being Evaluated"
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Location = New System.Drawing.Point(37, 96)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(215, 13)
+        Me.Label84.TabIndex = 0
+        Me.Label84.Text = "Phase of Fluid at Normal (Storage) Condition"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(37, 68)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(82, 13)
+        Me.Label39.TabIndex = 0
+        Me.Label39.Text = "Store Properties"
+        '
+        'PanelCOFPRD
+        '
+        Me.PanelCOFPRD.Location = New System.Drawing.Point(4, 5)
+        Me.PanelCOFPRD.Name = "PanelCOFPRD"
+        Me.PanelCOFPRD.Size = New System.Drawing.Size(751, 332)
+        Me.PanelCOFPRD.TabIndex = 2
         '
         'PanelCOFHE
         '
@@ -9729,271 +9911,6 @@ Partial Class Home
         Me.Label290.TabIndex = 1
         Me.Label290.Text = "Production Downtime"
         '
-        'PanelCOF
-        '
-        Me.PanelCOF.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PanelCOF.Controls.Add(Me.Button18)
-        Me.PanelCOF.Controls.Add(Me.ComboBox75)
-        Me.PanelCOF.Controls.Add(Me.ComboBox74)
-        Me.PanelCOF.Controls.Add(Me.TextBox87)
-        Me.PanelCOF.Controls.Add(Me.TextBox86)
-        Me.PanelCOF.Controls.Add(Me.Panel84)
-        Me.PanelCOF.Controls.Add(Me.Panel83)
-        Me.PanelCOF.Controls.Add(Me.Panel82)
-        Me.PanelCOF.Controls.Add(Me.Label311)
-        Me.PanelCOF.Controls.Add(Me.Label89)
-        Me.PanelCOF.Controls.Add(Me.Label88)
-        Me.PanelCOF.Controls.Add(Me.Label87)
-        Me.PanelCOF.Controls.Add(Me.Label86)
-        Me.PanelCOF.Controls.Add(Me.Label85)
-        Me.PanelCOF.Controls.Add(Me.Label84)
-        Me.PanelCOF.Controls.Add(Me.Label39)
-        Me.PanelCOF.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.PanelCOF.Location = New System.Drawing.Point(6, 4)
-        Me.PanelCOF.Name = "PanelCOF"
-        Me.PanelCOF.Size = New System.Drawing.Size(751, 333)
-        Me.PanelCOF.TabIndex = 0
-        '
-        'Button18
-        '
-        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button18.FlatAppearance.BorderSize = 0
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button18.Location = New System.Drawing.Point(606, 287)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(102, 25)
-        Me.Button18.TabIndex = 235
-        Me.Button18.Text = "Next"
-        Me.Button18.UseVisualStyleBackColor = False
-        '
-        'ComboBox75
-        '
-        Me.ComboBox75.FormattingEnabled = True
-        Me.ComboBox75.Location = New System.Drawing.Point(277, 236)
-        Me.ComboBox75.Name = "ComboBox75"
-        Me.ComboBox75.Size = New System.Drawing.Size(431, 21)
-        Me.ComboBox75.TabIndex = 13
-        '
-        'ComboBox74
-        '
-        Me.ComboBox74.FormattingEnabled = True
-        Me.ComboBox74.Location = New System.Drawing.Point(277, 206)
-        Me.ComboBox74.Name = "ComboBox74"
-        Me.ComboBox74.Size = New System.Drawing.Size(431, 21)
-        Me.ComboBox74.TabIndex = 12
-        '
-        'TextBox87
-        '
-        Me.TextBox87.Location = New System.Drawing.Point(277, 177)
-        Me.TextBox87.Name = "TextBox87"
-        Me.TextBox87.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox87.TabIndex = 11
-        '
-        'TextBox86
-        '
-        Me.TextBox86.Location = New System.Drawing.Point(277, 149)
-        Me.TextBox86.Name = "TextBox86"
-        Me.TextBox86.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox86.TabIndex = 10
-        '
-        'Panel84
-        '
-        Me.Panel84.Controls.Add(Me.RadioButton33)
-        Me.Panel84.Controls.Add(Me.RadioButton32)
-        Me.Panel84.Controls.Add(Me.RadioButton31)
-        Me.Panel84.Location = New System.Drawing.Point(277, 118)
-        Me.Panel84.Name = "Panel84"
-        Me.Panel84.Size = New System.Drawing.Size(346, 25)
-        Me.Panel84.TabIndex = 6
-        '
-        'RadioButton33
-        '
-        Me.RadioButton33.AutoSize = True
-        Me.RadioButton33.Location = New System.Drawing.Point(182, 4)
-        Me.RadioButton33.Name = "RadioButton33"
-        Me.RadioButton33.Size = New System.Drawing.Size(156, 17)
-        Me.RadioButton33.TabIndex = 2
-        Me.RadioButton33.TabStop = True
-        Me.RadioButton33.Text = "Non-Flammable , Non-Toxic"
-        Me.RadioButton33.UseVisualStyleBackColor = True
-        '
-        'RadioButton32
-        '
-        Me.RadioButton32.AutoSize = True
-        Me.RadioButton32.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton32.Name = "RadioButton32"
-        Me.RadioButton32.Size = New System.Drawing.Size(75, 17)
-        Me.RadioButton32.TabIndex = 1
-        Me.RadioButton32.TabStop = True
-        Me.RadioButton32.Text = "Flammable"
-        Me.RadioButton32.UseVisualStyleBackColor = True
-        '
-        'RadioButton31
-        '
-        Me.RadioButton31.AutoSize = True
-        Me.RadioButton31.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton31.Name = "RadioButton31"
-        Me.RadioButton31.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton31.TabIndex = 0
-        Me.RadioButton31.TabStop = True
-        Me.RadioButton31.Text = "Toxic"
-        Me.RadioButton31.UseVisualStyleBackColor = True
-        '
-        'Panel83
-        '
-        Me.Panel83.Controls.Add(Me.RadioButton30)
-        Me.Panel83.Controls.Add(Me.RadioButton29)
-        Me.Panel83.Location = New System.Drawing.Point(277, 89)
-        Me.Panel83.Name = "Panel83"
-        Me.Panel83.Size = New System.Drawing.Size(142, 25)
-        Me.Panel83.TabIndex = 5
-        '
-        'RadioButton30
-        '
-        Me.RadioButton30.AutoSize = True
-        Me.RadioButton30.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton30.Name = "RadioButton30"
-        Me.RadioButton30.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton30.TabIndex = 1
-        Me.RadioButton30.TabStop = True
-        Me.RadioButton30.Text = "Liquid"
-        Me.RadioButton30.UseVisualStyleBackColor = True
-        '
-        'RadioButton29
-        '
-        Me.RadioButton29.AutoSize = True
-        Me.RadioButton29.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton29.Name = "RadioButton29"
-        Me.RadioButton29.Size = New System.Drawing.Size(44, 17)
-        Me.RadioButton29.TabIndex = 0
-        Me.RadioButton29.TabStop = True
-        Me.RadioButton29.Text = "Gas"
-        Me.RadioButton29.UseVisualStyleBackColor = True
-        '
-        'Panel82
-        '
-        Me.Panel82.Controls.Add(Me.RadioButton28)
-        Me.Panel82.Controls.Add(Me.RadioButton27)
-        Me.Panel82.Controls.Add(Me.RadioButton26)
-        Me.Panel82.Location = New System.Drawing.Point(277, 61)
-        Me.Panel82.Name = "Panel82"
-        Me.Panel82.Size = New System.Drawing.Size(276, 25)
-        Me.Panel82.TabIndex = 4
-        '
-        'RadioButton28
-        '
-        Me.RadioButton28.AutoSize = True
-        Me.RadioButton28.Location = New System.Drawing.Point(181, 4)
-        Me.RadioButton28.Name = "RadioButton28"
-        Me.RadioButton28.Size = New System.Drawing.Size(82, 17)
-        Me.RadioButton28.TabIndex = 7
-        Me.RadioButton28.TabStop = True
-        Me.RadioButton28.Text = "Two=Phase"
-        Me.RadioButton28.UseVisualStyleBackColor = True
-        '
-        'RadioButton27
-        '
-        Me.RadioButton27.AutoSize = True
-        Me.RadioButton27.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton27.Name = "RadioButton27"
-        Me.RadioButton27.Size = New System.Drawing.Size(87, 17)
-        Me.RadioButton27.TabIndex = 6
-        Me.RadioButton27.TabStop = True
-        Me.RadioButton27.Text = "Vapor or Gas"
-        Me.RadioButton27.UseVisualStyleBackColor = True
-        '
-        'RadioButton26
-        '
-        Me.RadioButton26.AutoSize = True
-        Me.RadioButton26.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton26.Name = "RadioButton26"
-        Me.RadioButton26.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton26.TabIndex = 5
-        Me.RadioButton26.TabStop = True
-        Me.RadioButton26.Text = "Liquid"
-        Me.RadioButton26.UseVisualStyleBackColor = True
-        '
-        'Label311
-        '
-        Me.Label311.AutoSize = True
-        Me.Label311.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label311.Location = New System.Drawing.Point(277, 28)
-        Me.Label311.Name = "Label311"
-        Me.Label311.Size = New System.Drawing.Size(197, 18)
-        Me.Label311.TabIndex = 3
-        Me.Label311.Text = "Fill Data to Analysis COF"
-        '
-        'Label89
-        '
-        Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(37, 124)
-        Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(98, 13)
-        Me.Label89.TabIndex = 2
-        Me.Label89.Text = "Consequence Area"
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(37, 243)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(122, 13)
-        Me.Label88.TabIndex = 2
-        Me.Label88.Text = "Type of Isolation System"
-        '
-        'Label87
-        '
-        Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(37, 213)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(129, 13)
-        Me.Label87.TabIndex = 1
-        Me.Label87.Text = "Type of Detection System"
-        '
-        'Label86
-        '
-        Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(37, 182)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(136, 13)
-        Me.Label86.TabIndex = 0
-        Me.Label86.Text = "Inventory Group Fluid Mass"
-        '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(37, 153)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(205, 13)
-        Me.Label85.TabIndex = 0
-        Me.Label85.Text = "Fluid Mass in Component being Evaluated"
-        '
-        'Label84
-        '
-        Me.Label84.AutoSize = True
-        Me.Label84.Location = New System.Drawing.Point(37, 96)
-        Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(215, 13)
-        Me.Label84.TabIndex = 0
-        Me.Label84.Text = "Phase of Fluid at Normal (Storage) Condition"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(37, 68)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(82, 13)
-        Me.Label39.TabIndex = 0
-        Me.Label39.Text = "Store Properties"
-        '
-        'PanelCOFPRD
-        '
-        Me.PanelCOFPRD.Location = New System.Drawing.Point(4, 5)
-        Me.PanelCOFPRD.Name = "PanelCOFPRD"
-        Me.PanelCOFPRD.Size = New System.Drawing.Size(751, 332)
-        Me.PanelCOFPRD.TabIndex = 2
-        '
         'TabPage4
         '
         Me.TabPage4.AutoScroll = True
@@ -10009,6 +9926,7 @@ Partial Class Home
         'Panel39
         '
         Me.Panel39.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel39.Controls.Add(Me.Label325)
         Me.Panel39.Controls.Add(Me.DataGridView1)
         Me.Panel39.Controls.Add(Me.PictureBox1)
         Me.Panel39.Controls.Add(Me.TextBox34)
@@ -10414,27 +10332,27 @@ Partial Class Home
         Me.TreeView1.BackColor = System.Drawing.SystemColors.Control
         Me.TreeView1.Location = New System.Drawing.Point(0, -3)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode61.Name = "Node1"
-        TreeNode61.Text = "F5A-1002"
-        TreeNode62.Name = "Node2"
-        TreeNode62.Text = "F5A-PG200"
-        TreeNode63.Name = "Node3"
-        TreeNode63.Text = "F5A-OL20"
-        TreeNode64.Name = "Node4"
-        TreeNode64.Text = "F5A-LOS00"
-        TreeNode65.Name = "Node5"
-        TreeNode65.Text = "F5A-DY728"
-        TreeNode66.Name = "Node0"
-        TreeNode66.Text = "20/11/2020"
-        TreeNode67.Name = "Node7"
-        TreeNode67.Text = "F1N-100D"
-        TreeNode68.Name = "Node8"
-        TreeNode68.Text = "F1N-899L"
-        TreeNode69.Name = "Node0"
-        TreeNode69.Text = "F1N-200D"
-        TreeNode70.Name = "Node6"
-        TreeNode70.Text = "25/11/2020"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode66, TreeNode70})
+        TreeNode51.Name = "Node1"
+        TreeNode51.Text = "F5A-1002"
+        TreeNode52.Name = "Node2"
+        TreeNode52.Text = "F5A-PG200"
+        TreeNode53.Name = "Node3"
+        TreeNode53.Text = "F5A-OL20"
+        TreeNode54.Name = "Node4"
+        TreeNode54.Text = "F5A-LOS00"
+        TreeNode55.Name = "Node5"
+        TreeNode55.Text = "F5A-DY728"
+        TreeNode56.Name = "Node0"
+        TreeNode56.Text = "20/11/2020"
+        TreeNode57.Name = "Node7"
+        TreeNode57.Text = "F1N-100D"
+        TreeNode58.Name = "Node8"
+        TreeNode58.Text = "F1N-899L"
+        TreeNode59.Name = "Node0"
+        TreeNode59.Text = "F1N-200D"
+        TreeNode60.Name = "Node6"
+        TreeNode60.Text = "25/11/2020"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode56, TreeNode60})
         Me.TreeView1.Size = New System.Drawing.Size(215, 803)
         Me.TreeView1.TabIndex = 1
         '
@@ -10724,6 +10642,48 @@ Partial Class Home
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Rafaolec"
         '
+        'ComboBox76
+        '
+        Me.ComboBox76.FormattingEnabled = True
+        Me.ComboBox76.Location = New System.Drawing.Point(385, 58)
+        Me.ComboBox76.Name = "ComboBox76"
+        Me.ComboBox76.Size = New System.Drawing.Size(312, 21)
+        Me.ComboBox76.TabIndex = 7
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(219, 95)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(137, 20)
+        Me.DateTimePicker3.TabIndex = 8
+        '
+        'ComboBox77
+        '
+        Me.ComboBox77.FormattingEnabled = True
+        Me.ComboBox77.Items.AddRange(New Object() {"Poor", "Average", "Good"})
+        Me.ComboBox77.Location = New System.Drawing.Point(219, 128)
+        Me.ComboBox77.Name = "ComboBox77"
+        Me.ComboBox77.Size = New System.Drawing.Size(137, 21)
+        Me.ComboBox77.TabIndex = 9
+        '
+        'ComboBox78
+        '
+        Me.ComboBox78.FormattingEnabled = True
+        Me.ComboBox78.Items.AddRange(New Object() {"Yes", "No"})
+        Me.ComboBox78.Location = New System.Drawing.Point(219, 161)
+        Me.ComboBox78.Name = "ComboBox78"
+        Me.ComboBox78.Size = New System.Drawing.Size(137, 21)
+        Me.ComboBox78.TabIndex = 10
+        '
+        'Label325
+        '
+        Me.Label325.AutoSize = True
+        Me.Label325.Location = New System.Drawing.Point(65, 184)
+        Me.Label325.Name = "Label325"
+        Me.Label325.Size = New System.Drawing.Size(51, 13)
+        Me.Label325.TabIndex = 7
+        Me.Label325.Text = "Label325"
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -10920,8 +10880,6 @@ Partial Class Home
         Me.Panel85.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.Panel37.ResumeLayout(False)
-        Me.PanelCOFHE.ResumeLayout(False)
-        Me.PanelCOFHE.PerformLayout()
         Me.PanelCOF.ResumeLayout(False)
         Me.PanelCOF.PerformLayout()
         Me.Panel84.ResumeLayout(False)
@@ -10930,6 +10888,8 @@ Partial Class Home
         Me.Panel83.PerformLayout()
         Me.Panel82.ResumeLayout(False)
         Me.Panel82.PerformLayout()
+        Me.PanelCOFHE.ResumeLayout(False)
+        Me.PanelCOFHE.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.Panel39.ResumeLayout(False)
         Me.Panel39.PerformLayout()
@@ -11220,15 +11180,7 @@ Partial Class Home
     Friend WithEvents RadioButton24 As RadioButton
     Friend WithEvents Label90 As Label
     Friend WithEvents Panel40 As Panel
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents ComboBox5 As ComboBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
     Friend WithEvents CheckBox13 As CheckBox
     Friend WithEvents CheckBox12 As CheckBox
     Friend WithEvents CheckBox15 As CheckBox
@@ -11862,4 +11814,9 @@ Partial Class Home
     Friend WithEvents Panelweibull As Panel
     Friend WithEvents Panelreliabilitylibrary As Panel
     Friend WithEvents Panel85 As Panel
+    Friend WithEvents ComboBox78 As ComboBox
+    Friend WithEvents ComboBox77 As ComboBox
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents ComboBox76 As ComboBox
+    Friend WithEvents Label325 As Label
 End Class

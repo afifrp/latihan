@@ -72,6 +72,12 @@ Public Class Home
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If Panel87.Visible = False Then
+            Panel87.Visible = True
+        ElseIf Panel87.Visible = True Then
+            Panel87.Visible = False
+        End If
+
         Panel6.Visible = False
         Panel7.Visible = True
         Panel8.Visible = False
@@ -83,9 +89,13 @@ Public Class Home
         Panel14.Visible = False
 
 
+
+
         PictureBox2.Visible = False
         Button13.Visible = False
         Panel18.Visible = True
+
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -1009,26 +1019,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Else
             CheckBox31.Enabled = True
 
-        End If
-    End Sub
-
-    Private Sub CheckBox33_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox33.Checked = True Then
-            CheckBox34.Enabled = False
-            Panel44.Visible = True
-        Else
-            CheckBox34.Enabled = True
-            Panel44.Visible = False
-        End If
-    End Sub
-
-    Private Sub CheckBox34_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox34.Checked = True Then
-            CheckBox33.Enabled = False
-            ComboBox8.Text = "NONE SUSCEPTIBILITY"
-        Else
-            CheckBox33.Enabled = True
-            ComboBox8.Text = ""
         End If
     End Sub
 

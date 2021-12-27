@@ -172,7 +172,7 @@ Partial Class Units
         '
         Me.ComboBox1.ForeColor = System.Drawing.Color.SteelBlue
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Custom", "SI", "US Customary"})
+        Me.ComboBox1.Items.AddRange(New Object() {"SI", "US Customary"})
         Me.ComboBox1.Location = New System.Drawing.Point(73, 129)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(281, 21)

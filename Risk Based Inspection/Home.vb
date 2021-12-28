@@ -41,6 +41,9 @@ Public Class Home
         PanelPOFPRD.Hide()
         PanelCOF.Hide()
         PanelCOFHE.Hide()
+
+        Panel4.Hide()
+        Button15.Text = ">"
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
@@ -282,7 +285,288 @@ Public Class Home
 
     End Sub
 
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        PictureBox3.Visible = True
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
 
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("KODRUM")
+        ComboBox62.Items.Add("DRUM")
+        ComboBox62.Items.Add("REACTOR")
+        ComboBox62.Items.Add("COLTOP")
+        ComboBox62.Items.Add("COLMID")
+        ComboBox62.Items.Add("COLBTM")
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = True
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("PIPE-1")
+        ComboBox62.Items.Add("PIPE-3")
+        ComboBox62.Items.Add("PIPE-4")
+        ComboBox62.Items.Add("PIPE-6")
+        ComboBox62.Items.Add("PIPE-8")
+        ComboBox62.Items.Add("PIPE-10")
+        ComboBox62.Items.Add("PIPE-13")
+        ComboBox62.Items.Add("PIPE-16")
+        ComboBox62.Items.Add("PIPEGT16")
+    End Sub
+
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = True
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("TANKBOTTOM")
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = True
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("FINFAN")
+        ComboBox62.Items.Add("FILTER")
+    End Sub
+
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = True
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("COMPC")
+        ComboBox62.Items.Add("COMPR")
+    End Sub
+
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = True
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("PUMP3S")
+        ComboBox62.Items.Add("PUMP1S")
+        ComboBox62.Items.Add("PUMPR")
+    End Sub
+
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = True
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("HEXSS")
+        ComboBox62.Items.Add("HEXTS")
+        ComboBox62.Items.Add("HEXTUBE")
+    End Sub
+
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = True
+        PictureBox11.Visible = False
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("Pressure Relief Devices")
+    End Sub
+
+    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = True
+        PictureBox12.Visible = False
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("COURSES-1-10")
+    End Sub
+
+    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+        PictureBox3.Visible = False
+        PictureBox4.Visible = False
+        PictureBox5.Visible = False
+        PictureBox6.Visible = False
+        PictureBox7.Visible = False
+        PictureBox8.Visible = False
+        PictureBox9.Visible = False
+        PictureBox10.Visible = False
+        PictureBox11.Visible = False
+        PictureBox12.Visible = True
+
+        ComboBox62.Items.Clear()
+        ComboBox62.Items.Add("Heat Exchanger Tube Bundles")
+    End Sub
+
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        If PictureBox3.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox7.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox9.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox6.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox4.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox8.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox11.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+        ElseIf PictureBox5.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox10.Visible = True Then
+            Panelgeneraldata.Hide()
+            PanelgeneraldataHE.Hide()
+            PanelgeneraldataPRD.Show()
+            Panelnewanalysis.Hide()
+        ElseIf PictureBox12.Visible = True Then
+            Panelgeneraldata.Show()
+            PanelgeneraldataHE.Show()
+            PanelgeneraldataPRD.Hide()
+            Panelnewanalysis.Hide()
+        End If
+
+        Panel6.Visible = False
+        Panel7.Visible = True
+        Panel8.Visible = True
+        Panel9.Visible = False
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = False
+        Panel14.Visible = False
+        Panel87.Visible = True
+
+
+        TabPage1.Enabled = True
+        TabPage2.Enabled = False
+        TabPage3.Enabled = False
+        TabPage4.Enabled = False
+
+
+        TabPage1.Text = "General Data"
+        TabPage2.Text = ""
+        TabPage3.Text = ""
+        TabPage4.Text = ""
+
+
+        TabControl1.SelectedTab = TabPage1
+
+        df1.Hide()
+        df2.Hide()
+        df3.Hide()
+        df4.Hide()
+        df5.Hide()
+        df6.Hide()
+        df7.Hide()
+        df8.Hide()
+        df9.Hide()
+        df10.Hide()
+        df11.Hide()
+        df12.Hide()
+        df13.Hide()
+        df14.Hide()
+        df15.Hide()
+        df16.Hide()
+        df17.Hide()
+        df18.Hide()
+        df19.Hide()
+        df20.Hide()
+        df21.Hide()
+
+        Call tampildatamaterialcombobox()
+        Call tampildatafluidacombobox()
+    End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Me.Close()
@@ -290,7 +574,6 @@ Public Class Home
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-
 
     End Sub
 
@@ -583,99 +866,6 @@ Public Class Home
 
 
         TabControl1.SelectedTab = TabPage2
-    End Sub
-
-    Private Sub ComboBox64_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox64.SelectedIndexChanged
-        If ComboBox62.Text = "Pressure Vessel" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Compressors" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Heat Exchanger" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "AirFin Heat Exchanger Header Boxes" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Pipes & Tubes" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Pumps" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Atmospheric Storage Tank - Shell Courses" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Atmospheric Storage Tank - Bottom Plates" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Hide()
-        ElseIf ComboBox62.Text = "Pressure Relief Devices" Then
-            Panelgeneraldata.Hide()
-            PanelgeneraldataHE.Hide()
-            PanelgeneraldataPRD.Show()
-        ElseIf ComboBox62.Text = "Heat Exchanger Tube Bundles" Then
-            Panelgeneraldata.Show()
-            PanelgeneraldataHE.Show()
-            PanelgeneraldataPRD.Hide()
-        End If
-    End Sub
-
-    Private Sub ComboBox62_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox62.SelectedIndexChanged
-
-        ComboBox63.Items.Clear()
-
-
-        If ComboBox62.Text = "Pressure Vessel" Then
-            ComboBox63.Items.Add("KODRUM")
-            ComboBox63.Items.Add("DRUM")
-            ComboBox63.Items.Add("REACTOR")
-            ComboBox63.Items.Add("COLTOP")
-            ComboBox63.Items.Add("COLMID")
-            ComboBox63.Items.Add("COLBTM")
-        ElseIf ComboBox62.Text = "Compressors" Then
-            ComboBox63.Items.Add("COMPC")
-            ComboBox63.Items.Add("COMPR")
-        ElseIf ComboBox62.Text = "Heat Exchanger" Then
-            ComboBox63.Items.Add("HEXSS")
-            ComboBox63.Items.Add("HEXTS")
-            ComboBox63.Items.Add("HEXTUBE")
-        ElseIf ComboBox62.Text = "AirFin Heat Exchanger Header Boxes" Then
-            ComboBox63.Items.Add("FINFAN")
-            ComboBox63.Items.Add("FILTER")
-        ElseIf ComboBox62.Text = "Pipes & Tubes" Then
-            ComboBox63.Items.Add("PIPE-1")
-            ComboBox63.Items.Add("PIPE-3")
-            ComboBox63.Items.Add("PIPE-4")
-            ComboBox63.Items.Add("PIPE-6")
-            ComboBox63.Items.Add("PIPE-8")
-            ComboBox63.Items.Add("PIPE-10")
-            ComboBox63.Items.Add("PIPE-13")
-            ComboBox63.Items.Add("PIPE-16")
-            ComboBox63.Items.Add("PIPEGT16")
-        ElseIf ComboBox62.Text = "Pumps" Then
-            ComboBox63.Items.Add("PUMP3S")
-            ComboBox63.Items.Add("PUMP1S")
-            ComboBox63.Items.Add("PUMPR")
-        ElseIf ComboBox62.Text = "Atmospheric Storage Tank - Shell Courses" Then
-            ComboBox63.Items.Add("COURSES-1-10")
-        ElseIf ComboBox62.Text = "Atmospheric Storage Tank - Bottom Plates" Then
-            ComboBox63.Items.Add("TANKBOTTOM")
-        ElseIf ComboBox62.Text = "Pressure Relief Devices" Then
-            ComboBox63.Items.Add("Pressure Relief Devices")
-        ElseIf ComboBox62.Text = "Heat Exchanger Tube Bundles" Then
-            ComboBox63.Items.Add("Heat Exchanger Tube Bundles")
-        End If
-
-
     End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
@@ -1023,196 +1213,9 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'SCC Sulfide Stress Cracking DF
-    Private Sub CheckBox50_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox50.CheckedChanged
-        If CheckBox50.Checked = True Then
-            CheckBox51.Enabled = False
-            CheckBox52.Enabled = False
-            CheckBox53.Enabled = False
-            CheckBox54.Enabled = False
-        Else
-            CheckBox51.Enabled = True
-            CheckBox52.Enabled = True
-            CheckBox53.Enabled = True
-            CheckBox54.Enabled = True
 
-        End If
-    End Sub
 
-    Private Sub CheckBox51_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox51.CheckedChanged
-        If CheckBox51.Checked = True Then
-            CheckBox50.Enabled = False
-            CheckBox52.Enabled = False
-            CheckBox53.Enabled = False
-            CheckBox54.Enabled = False
-        Else
-            CheckBox50.Enabled = True
-            CheckBox52.Enabled = True
-            CheckBox53.Enabled = True
-            CheckBox54.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox52_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox52.CheckedChanged
-        If CheckBox52.Checked = True Then
-            CheckBox51.Enabled = False
-            CheckBox50.Enabled = False
-            CheckBox53.Enabled = False
-            CheckBox54.Enabled = False
-        Else
-            CheckBox51.Enabled = True
-            CheckBox50.Enabled = True
-            CheckBox53.Enabled = True
-            CheckBox54.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox53_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox53.CheckedChanged
-        If CheckBox53.Checked = True Then
-            CheckBox51.Enabled = False
-            CheckBox52.Enabled = False
-            CheckBox50.Enabled = False
-            CheckBox54.Enabled = False
-        Else
-            CheckBox51.Enabled = True
-            CheckBox52.Enabled = True
-            CheckBox50.Enabled = True
-            CheckBox54.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox54_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox54.CheckedChanged
-        If CheckBox54.Checked = True Then
-            CheckBox51.Enabled = False
-            CheckBox52.Enabled = False
-            CheckBox53.Enabled = False
-            CheckBox50.Enabled = False
-        Else
-            CheckBox51.Enabled = True
-            CheckBox52.Enabled = True
-            CheckBox53.Enabled = True
-            CheckBox50.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox55_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox55.CheckedChanged
-        If CheckBox55.Checked = True Then
-            CheckBox56.Enabled = False
-            CheckBox57.Enabled = False
-            CheckBox58.Enabled = False
-
-        Else
-            CheckBox56.Enabled = True
-            CheckBox57.Enabled = True
-            CheckBox58.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox56_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox56.CheckedChanged
-        If CheckBox56.Checked = True Then
-            CheckBox55.Enabled = False
-            CheckBox57.Enabled = False
-            CheckBox58.Enabled = False
-
-        Else
-            CheckBox55.Enabled = True
-            CheckBox57.Enabled = True
-            CheckBox58.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox57_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox57.CheckedChanged
-        If CheckBox57.Checked = True Then
-            CheckBox56.Enabled = False
-            CheckBox55.Enabled = False
-            CheckBox58.Enabled = False
-
-        Else
-            CheckBox56.Enabled = True
-            CheckBox55.Enabled = True
-            CheckBox58.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox58_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox58.CheckedChanged
-        If CheckBox58.Checked = True Then
-            CheckBox56.Enabled = False
-            CheckBox57.Enabled = False
-            CheckBox55.Enabled = False
-
-        Else
-            CheckBox56.Enabled = True
-            CheckBox57.Enabled = True
-            CheckBox55.Enabled = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox59_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox59.CheckedChanged
-        If CheckBox59.Checked = True Then
-            CheckBox60.Enabled = False
-            CheckBox61.Enabled = True
-            CheckBox62.Enabled = True
-            CheckBox63.Enabled = True
-        Else
-            CheckBox60.Enabled = True
-            CheckBox61.Enabled = False
-            CheckBox62.Enabled = False
-            CheckBox63.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CheckBox60_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox60.CheckedChanged
-        If CheckBox60.Checked = True Then
-            CheckBox59.Enabled = False
-            CheckBox61.Enabled = True
-            CheckBox62.Enabled = True
-            CheckBox63.Enabled = True
-        Else
-            CheckBox59.Enabled = True
-            CheckBox61.Enabled = False
-            CheckBox62.Enabled = False
-            CheckBox63.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CheckBox61_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox61.CheckedChanged
-        If CheckBox61.Checked = True Then
-            CheckBox62.Enabled = False
-            CheckBox63.Enabled = False
-        Else
-            CheckBox62.Enabled = True
-            CheckBox63.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox62_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox62.CheckedChanged
-        If CheckBox62.Checked = True Then
-            CheckBox61.Enabled = False
-            CheckBox63.Enabled = False
-        Else
-            CheckBox61.Enabled = True
-            CheckBox63.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox63_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox63.CheckedChanged
-        If CheckBox63.Checked = True Then
-            CheckBox61.Enabled = False
-            CheckBox63.Enabled = False
-        Else
-            CheckBox61.Enabled = True
-            CheckBox63.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox64_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox64.CheckedChanged
+    Private Sub CheckBox64_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox64.Checked = True Then
             CheckBox65.Enabled = False
             ComboBox10.Text = "HIGH SUSCEPTIBILITY"
@@ -1222,7 +1225,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox65_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox65.CheckedChanged
+    Private Sub CheckBox65_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox65.Checked = True Then
             CheckBox64.Enabled = False
 
@@ -1232,37 +1235,9 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'SCC-HIC/SOHIC-H2S DF
-    Private Sub CheckBox66_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox66.CheckedChanged
-        If CheckBox66.Checked = True Then
-            CheckBox67.Enabled = False
-            CheckBox68.Enabled = False
-        Else
-            CheckBox67.Enabled = True
-            CheckBox68.Enabled = True
-        End If
-    End Sub
 
-    Private Sub CheckBox67_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox67.CheckedChanged
-        If CheckBox67.Checked = True Then
-            CheckBox66.Enabled = False
-            CheckBox68.Enabled = False
-        Else
-            CheckBox66.Enabled = True
-            CheckBox68.Enabled = True
-        End If
-    End Sub
 
-    Private Sub CheckBox68_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox68.CheckedChanged
-        If CheckBox68.Checked = True Then
-            CheckBox67.Enabled = False
-            CheckBox66.Enabled = False
-        Else
-            CheckBox67.Enabled = True
-            CheckBox66.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox69_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox69.CheckedChanged
+    Private Sub CheckBox69_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox69.Checked = True Then
             CheckBox70.Enabled = False
             ComboBox11.Text = "HIGH SUSCEPTIBILITY"
@@ -1273,7 +1248,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'Scc Damage Factor – Alkaline Carbonate Stress Corrosion Cracking
-    Private Sub CheckBox77_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox77.CheckedChanged
+    Private Sub CheckBox77_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox77.Checked = True Then
             CheckBox78.Checked = False
             CheckBox79.Checked = False
@@ -1285,7 +1260,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox78_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox78.CheckedChanged
+    Private Sub CheckBox78_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox78.Checked = True Then
             CheckBox77.Checked = False
             CheckBox79.Checked = False
@@ -1297,7 +1272,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox79_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox79.CheckedChanged
+    Private Sub CheckBox79_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox79.Checked = True Then
             CheckBox78.Checked = False
             CheckBox77.Checked = False
@@ -1309,7 +1284,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox80_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox80.CheckedChanged
+    Private Sub CheckBox80_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox80.Checked = True Then
             CheckBox78.Checked = False
             CheckBox79.Checked = False
@@ -1321,7 +1296,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox81_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox81.CheckedChanged
+    Private Sub CheckBox81_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox81.Checked = True Then
             CheckBox82.Checked = False
         Else
@@ -1329,7 +1304,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox82_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox82.CheckedChanged
+    Private Sub CheckBox82_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox82.Checked = True Then
             CheckBox81.Checked = False
         Else
@@ -1337,7 +1312,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox83_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox83.CheckedChanged
+    Private Sub CheckBox83_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox83.Checked = True Then
             CheckBox84.Checked = False
             Label127.Visible = True
@@ -1354,7 +1329,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox84_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox84.CheckedChanged
+    Private Sub CheckBox84_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox84.Checked = True Then
             CheckBox83.Checked = False
         Else
@@ -1471,7 +1446,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'Scc Damage Factor – Chloride Stress Corrosion Cracking
 
-    Private Sub CheckBox98_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox98.CheckedChanged
+    Private Sub CheckBox98_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox98.Checked = True Then
             CheckBox99.Checked = False
             CheckBox100.Checked = False
@@ -1483,7 +1458,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox99_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox99.CheckedChanged
+    Private Sub CheckBox99_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox99.Checked = True Then
             CheckBox98.Checked = False
             CheckBox100.Checked = False
@@ -1495,7 +1470,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox100_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox100.CheckedChanged
+    Private Sub CheckBox100_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox100.Checked = True Then
             CheckBox98.Checked = False
             CheckBox99.Checked = False
@@ -1507,7 +1482,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox101_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox101.CheckedChanged
+    Private Sub CheckBox101_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox101.Checked = True Then
             CheckBox98.Checked = False
             CheckBox100.Checked = False
@@ -1519,7 +1494,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox102_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox102.CheckedChanged
+    Private Sub CheckBox102_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox102.Checked = True Then
             CheckBox103.Checked = False
         Else
@@ -1527,7 +1502,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox103_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox103.CheckedChanged
+    Private Sub CheckBox103_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox103.Checked = True Then
             CheckBox102.Checked = False
         Else
@@ -1535,7 +1510,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox104.CheckedChanged
+    Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox104.Checked = True Then
             CheckBox105.Checked = False
             Label152.Visible = True
@@ -1551,7 +1526,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox105_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox105.CheckedChanged
+    Private Sub CheckBox105_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox105.Checked = True Then
             CheckBox104.Checked = False
         Else
@@ -1559,7 +1534,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox106_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox106.CheckedChanged
+    Private Sub CheckBox106_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox106.Checked = True Then
             CheckBox107.Checked = False
         Else
@@ -1567,7 +1542,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox107_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox107.CheckedChanged
+    Private Sub CheckBox107_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox107.Checked = True Then
             CheckBox106.Checked = False
             ComboBox22.Text = "PLEASE DETERMINE BY FFS"
@@ -1659,21 +1634,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             CheckBox116.Checked = False
             Label163.Visible = True
             Label164.Visible = True
-            CheckBox117.Visible = True
-            CheckBox118.Visible = True
-            CheckBox119.Visible = True
-            CheckBox120.Visible = True
-            CheckBox121.Visible = True
+            ComboBox101.Visible = True
+            ComboBox102.Visible = True
         Else
             CheckBox116.Checked = True
             Label163.Visible = False
             Label164.Visible = False
-            CheckBox117.Visible = False
-            CheckBox118.Visible = False
-            CheckBox119.Visible = False
-            CheckBox120.Visible = False
-            CheckBox121.Visible = False
-
+            ComboBox101.Visible = True
+            ComboBox102.Visible = True
         End If
     End Sub
 
@@ -1687,51 +1655,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub CheckBox117_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox117.CheckedChanged
-        If CheckBox117.Checked = True Then
-            CheckBox118.Checked = False
-        Else
-            CheckBox118.Checked = True
-        End If
-    End Sub
 
-    Private Sub CheckBox118_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox118.CheckedChanged
-        If CheckBox118.Checked = True Then
-            CheckBox117.Checked = False
-        Else
-            CheckBox117.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox119_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox119.CheckedChanged
-        If CheckBox119.Checked = True Then
-            CheckBox120.Checked = False
-            CheckBox121.Checked = False
-        Else
-            CheckBox120.Checked = True
-            CheckBox121.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox120_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox120.CheckedChanged
-        If CheckBox120.Checked = True Then
-            CheckBox119.Checked = False
-            CheckBox121.Checked = False
-        Else
-            CheckBox119.Checked = True
-            CheckBox121.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox121_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox121.CheckedChanged
-        If CheckBox121.Checked = True Then
-            CheckBox120.Checked = False
-            CheckBox119.Checked = False
-        Else
-            CheckBox120.Checked = True
-            CheckBox119.Checked = True
-        End If
-    End Sub
 
     'Scc Damage Factor – Hic/Sohic-Hf
     Private Sub CheckBox123_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox123.CheckedChanged
@@ -2015,158 +1939,158 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    Private Sub ComboBox63_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox63.SelectedIndexChanged
-        If ComboBox63.Text = "COMPC" Then
+    Private Sub ComboBox62_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If ComboBox62.Text = "COMPC" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0
             totalfms.Text = 0.00003
-        ElseIf ComboBox63.Text = "COMPR" Then
+        ElseIf ComboBox62.Text = "COMPR" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "HEXSS" Then
+        ElseIf ComboBox62.Text = "HEXSS" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "HEXTS" Then
+        ElseIf ComboBox62.Text = "HEXTS" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-1" Then
+        ElseIf ComboBox62.Text = "PIPE-1" Then
             small.Text = 0.000028
             medium.Text = 0
             large.Text = 0
             rupture.Text = 0.0000026
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-2" Then
+        ElseIf ComboBox62.Text = "PIPE-2" Then
             small.Text = 0.000028
             medium.Text = 0
             large.Text = 0
             rupture.Text = 0.0000026
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-4" Then
+        ElseIf ComboBox62.Text = "PIPE-4" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0
             rupture.Text = 0.0000026
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-6" Then
+        ElseIf ComboBox62.Text = "PIPE-6" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0
             rupture.Text = 0.0000026
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-8" Then
+        ElseIf ComboBox62.Text = "PIPE-8" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-10" Then
+        ElseIf ComboBox62.Text = "PIPE-10" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-12" Then
+        ElseIf ComboBox62.Text = "PIPE-12" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPE-16" Then
+        ElseIf ComboBox62.Text = "PIPE-16" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PIPEGT16" Then
+        ElseIf ComboBox62.Text = "PIPEGT16" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PUMP2S" Then
+        ElseIf ComboBox62.Text = "PUMP2S" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PUMP1S" Then
+        ElseIf ComboBox62.Text = "PUMP1S" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "PUMPR" Then
+        ElseIf ComboBox62.Text = "PUMPR" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "TANKBOTTOM" Then
+        ElseIf ComboBox62.Text = "TANKBOTTOM" Then
             small.Text = 0.00072
             medium.Text = 0
             large.Text = 0
             rupture.Text = 0.000002
             totalfms.Text = 0.00072
-        ElseIf ComboBox63.Text = "COURSES-1-10" Then
+        ElseIf ComboBox62.Text = "COURSES-1-10" Then
             small.Text = 0.00007
             medium.Text = 0.000025
             large.Text = 0.000005
             rupture.Text = 0.0000001
             totalfms.Text = 0.0001
-        ElseIf ComboBox63.Text = "KODRUM" Then
+        ElseIf ComboBox62.Text = "KODRUM" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "COLBTM" Then
+        ElseIf ComboBox62.Text = "COLBTM" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "FINFAN" Then
+        ElseIf ComboBox62.Text = "FINFAN" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "FILTER" Then
+        ElseIf ComboBox62.Text = "FILTER" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "DRUM" Then
+        ElseIf ComboBox62.Text = "DRUM" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "REACTOR" Then
+        ElseIf ComboBox62.Text = "REACTOR" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "COLTOP" Then
+        ElseIf ComboBox62.Text = "COLTOP" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
             rupture.Text = 0.0000006
             totalfms.Text = 0.0000306
-        ElseIf ComboBox63.Text = "COLMID" Then
+        ElseIf ComboBox62.Text = "COLMID" Then
             small.Text = 0.000008
             medium.Text = 0.00002
             large.Text = 0.000002
@@ -3003,6 +2927,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Label325.Text = dflining
 
     End Sub
+
 
 
 End Class

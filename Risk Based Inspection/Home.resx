@@ -2560,25 +2560,25 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         nJdI1a26Vbfqtutud9y+VN743Xrzjqpbdfu3u/3d3/3/AVdM5JP8Ut5lAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
-        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
-        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARZJREFUSEvt
+        lFEKwjAQRPsh6Cm8tZfwFp5E8McD+OVHGzexM6xhN0lLCxUdGJrOvsl+WOygYRjCWh5XvGUBS/tjUXpZ
+        SdzxXwaBn9OZtAys9jgqiqxXQq7neYa8JrJeycpCCBfw1twTea845bKatrksn4G3Op7Ie0Wd4QxWOwEV
+        kW0pYQ5We8yf4pt8QFdkWmR5cKRnfd+fwHsdKydfKs7Rdy6T3+QIPu/g3bqLPA8NAqtt5QlWYl4CRDvx
+        XnxAlht5fHoiq0ta3gXg87nHR5G3ilGl8lRtc5megdUeR0WR9UrI9TzPkNdEtlaSL/GMeXyK4v/fXfwo
+        9bQil1geHLVeWFLzsiX0A8v0y5pOiyALWMrvDV33Ah926lGgUzeqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
-        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
-        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="Button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
-        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
-        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATpJREFUWEft
+        lFGKwzAMRHOE/ey9es792EOUnqTQK+xPsnLRhIktj9UlKf3og6GKR/IoUDIx8zwvr5DHtUhzJ9ILYNv/
+        yK8Ikf5oeA8+C+yygPX9evk0ey0w/LP1eHoBhEH12aOJ6J0D5TUmLovkLQ0Z38uW2sRlUDlbluUEr/zW
+        cG+E8lIL1M81yisob2Pam37hsp68dYPyCsprTFzWk7dtUF5Bee+3QAEX1nK7IeN72TIaNC7+2OWwBbLw
+        AlwDmcGmve0PLohk3E2PbwIDv65B/bxBmkk4lGsgM6SZhEO5BjKDTQyP5O0rfB71RDMr0kzCoVwDmSHN
+        JBzKNZAZ0kzCoVwDmSHNJBzKNZAZbGJ4JG9f4fOoJ5pZkeYAm73ah+mGUOOb6rO3HbdAlvdf4BXyuJao
+        +Qh5nDFNf7SJyyzJjs7EAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="Button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2593,15 +2593,32 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         RK5CYII=
 </value>
   </data>
-  <data name="Button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATpJREFUWEft
-        lFGKwzAMRHOE/ey9es792EOUnqTQK+xPsnLRhIktj9UlKf3og6GKR/IoUDIx8zwvr5DHtUhzJ9ILYNv/
-        yK8Ikf5oeA8+C+yygPX9evk0ey0w/LP1eHoBhEH12aOJ6J0D5TUmLovkLQ0Z38uW2sRlUDlbluUEr/zW
-        cG+E8lIL1M81yisob2Pam37hsp68dYPyCsprTFzWk7dtUF5Bee+3QAEX1nK7IeN72TIaNC7+2OWwBbLw
-        AlwDmcGmve0PLohk3E2PbwIDv65B/bxBmkk4lGsgM6SZhEO5BjKDTQyP5O0rfB71RDMr0kzCoVwDmSHN
-        JBzKNZAZ0kzCoVwDmSHNJBzKNZAZbGJ4JG9f4fOoJ5pZkeYAm73ah+mGUOOb6rO3HbdAlvdf4BXyuJao
-        +Qh5nDFNf7SJyyzJjs7EAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
+        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
+        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
+        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
+        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
+        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
+        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
+        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
+        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2615,23 +2632,6 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         1ZJsF0O1TTaOoVqS7WKotsnGMVRLsl0M1TbZOIZqSbaLodomG8dQLcl2MVTbZOMYqiXZLoZqm2wcQ7Uk
         28VQbZONY6iWZLsYqm2ycQzVkmwXQ7VNNo6hWpLtYqi2ycYxVEuyXQzVeWQHaKiVZDsNtUDX/QB/H1lU
         dzs8mAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARZJREFUSEvt
-        lFEKwjAQRPsh6Cm8tZfwFp5E8McD+OVHGzexM6xhN0lLCxUdGJrOvsl+WOygYRjCWh5XvGUBS/tjUXpZ
-        SdzxXwaBn9OZtAys9jgqiqxXQq7neYa8JrJeycpCCBfw1twTea845bKatrksn4G3Op7Ie0Wd4QxWOwEV
-        kW0pYQ5We8yf4pt8QFdkWmR5cKRnfd+fwHsdKydfKs7Rdy6T3+QIPu/g3bqLPA8NAqtt5QlWYl4CRDvx
-        XnxAlht5fHoiq0ta3gXg87nHR5G3ilGl8lRtc5megdUeR0WR9UrI9TzPkNdEtlaSL/GMeXyK4v/fXfwo
-        9bQil1geHLVeWFLzsiX0A8v0y5pOiyALWMrvDV33Ah926lGgUzeqAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="Button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAFJJREFUKFOl
-        zUESABEMRNHc/9LUtD9RRJeFt5LuIHZtQ1zRW6wNZInY/8Zsv6cePWdRcEAt19d/rD1c+NAV1LIEGg6o
-        Z8+ciG0uZBZrFX0iRkQHPCUPAD0D6noAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

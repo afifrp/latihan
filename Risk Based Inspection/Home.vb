@@ -44,6 +44,7 @@ Public Class Home
 
         Panel4.Hide()
         Button15.Text = ">"
+        Panelnewanalysis.Show()
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
@@ -1065,879 +1066,441 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 ")
     End Sub
 
-    'Lining DF
+    'Lining DF --------------------------------------------------------------------------------------------------
 
 
 
 
-    'SCC-Caustic Cracking DF
-    Private Sub CheckBox12_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox12.CheckedChanged
-        If CheckBox12.Checked = True Then
-            CheckBox13.Enabled = False
+    'SCC-Caustic Cracking DF ------------------------------------------------------------------------------------
+
+    Private Sub ComboBox6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
+        If ComboBox6.Text = "Yes" Then
             Label91.Visible = True
-            CheckBox14.Visible = True
-            CheckBox15.Visible = True
-            ComboBox6.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox13.Enabled = True
-            Label91.Visible = False
-            CheckBox14.Visible = False
-            CheckBox15.Visible = False
-            ComboBox6.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox13_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox13.CheckedChanged
-        If CheckBox13.Checked = True Then
-            CheckBox12.Enabled = False
-            Label92.Visible = True
-            CheckBox16.Visible = True
-            CheckBox17.Visible = True
-        Else
-            CheckBox12.Enabled = True
             Label92.Visible = False
-            CheckBox16.Visible = False
-            CheckBox17.Visible = False
-        End If
-    End Sub
-
-    Private Sub CheckBox17_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox17.CheckedChanged
-        If CheckBox17.Checked = True Then
-            Panel41.Visible = True
-            CheckBox16.Enabled = False
+            ComboBox7.Visible = True
+            ComboBox103.Visible = False
+            ComboBox105.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox6.Text = "No" Then
+            Label91.Visible = False
+            Label92.Visible = True
+            ComboBox7.Visible = False
+            ComboBox103.Visible = True
+            ComboBox105.Text = ""
         Else
-            Panel41.Visible = False
-            CheckBox16.Enabled = True
+            Label91.Visible = False
+            Label92.Visible = False
+            ComboBox7.Visible = False
+            ComboBox103.Visible = False
+            ComboBox105.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox16_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox16.CheckedChanged
-        If CheckBox16.Checked = True Then
-            CheckBox17.Enabled = False
-            ComboBox6.Text = "NONE SUSCEPTIBILITY"
+    Private Sub ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox7.SelectedIndexChanged
+        If ComboBox7.Text = "Yes" Then
+            ComboBox105.Text = "NONE SUSCEPTIBILITY"
+            Panel42.Visible = False
+        ElseIf ComboBox7.Text = "No" Then
+            ComboBox105.Text = "PLEASE DETERMINE BY FFS"
+            Panel42.Visible = False
         Else
-            CheckBox17.Enabled = True
-            ComboBox6.Text = ""
+            ComboBox105.Text = "HIGH SUSCEPTIBILITY"
+            Panel42.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox14_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox14.CheckedChanged
-        If CheckBox14.Checked = True Then
-            CheckBox15.Enabled = False
-            ComboBox6.Text = "NONE SUSCEPTIBILITY"
+    Private Sub ComboBox103_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox103.SelectedIndexChanged
+        If ComboBox103.Text = "Yes" Then
+            ComboBox105.Text = "NONE SUSCEPTIBILITY"
+            Panel42.Visible = False
+        ElseIf ComboBox103.Text = "No" Then
+            ComboBox105.Text = ""
+            Panel42.Visible = True
         Else
-            CheckBox15.Enabled = True
-            ComboBox6.Text = ""
+            ComboBox105.Text = ""
+            Panel42.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox15_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox15.CheckedChanged
-        If CheckBox15.Checked = True Then
-            CheckBox14.Enabled = False
-            ComboBox6.Text = "PLEASE DETERMINE BY FFS"
-        Else
-            CheckBox14.Enabled = True
-            ComboBox6.Text = ""
+    Private Sub CheckBox26_CheckedChanged(sender As Object, e As EventArgs)
+        If CheckBox26.Checked = True Then
+            ComboBox105.Items.Clear()
+            ComboBox105.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox105.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox105.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox105.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    'SCC Amine Cracking DF
-    Private Sub CheckBox27_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox27.CheckedChanged
-        If CheckBox27.Checked = True Then
-            CheckBox28.Enabled = False
+    'SCC Amine Cracking DF --------------------------------------------------------------------------------------
+
+    Private Sub ComboBox8_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox8.SelectedIndexChanged
+        If ComboBox8.Text = "Yes" Then
             Label102.Visible = True
-            CheckBox29.Visible = True
-            CheckBox30.Visible = True
-            ComboBox8.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox28.Enabled = True
-            Label102.Visible = False
-            CheckBox29.Visible = False
-            CheckBox30.Visible = False
-            ComboBox8.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox28_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox28.CheckedChanged
-        If CheckBox28.Checked = True Then
-            CheckBox27.Enabled = False
-            Label101.Visible = True
-            CheckBox31.Visible = True
-            CheckBox32.Visible = True
-        Else
-            CheckBox27.Enabled = True
             Label101.Visible = False
-            CheckBox31.Visible = False
-            CheckBox32.Visible = False
-        End If
-    End Sub
-
-    Private Sub CheckBox29_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox29.CheckedChanged
-        If CheckBox29.Checked = True Then
-            CheckBox30.Enabled = False
-            ComboBox8.Text = "NONE SUSCEPTIBILITY"
+            ComboBox9.Visible = True
+            ComboBox106.Visible = False
+            ComboBox108.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox8.Text = "No" Then
+            Label102.Visible = False
+            Label101.Visible = True
+            ComboBox9.Visible = False
+            ComboBox106.Visible = True
+            ComboBox108.Text = ""
         Else
-            CheckBox30.Enabled = True
-            ComboBox6.Text = ""
+            Label102.Visible = False
+            Label101.Visible = False
+            ComboBox9.Visible = False
+            ComboBox106.Visible = False
+            ComboBox108.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox30_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox30.CheckedChanged
-        If CheckBox30.Checked = True Then
-            CheckBox29.Enabled = False
-            ComboBox8.Text = "PLEASE DETERMINE BY FFS"
+
+    Private Sub ComboBox9_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox9.SelectedIndexChanged
+        If ComboBox9.Text = "Yes" Then
+            ComboBox108.Text = "NONE SUSCEPTIBILITY"
+            Panel44.Visible = False
+        ElseIf ComboBox9.Text = "No" Then
+            ComboBox108.Text = "PLEASE DETERMINE BY FFS"
+            Panel44.Visible = False
         Else
-            CheckBox29.Enabled = True
-            ComboBox6.Text = ""
+            ComboBox108.Text = "HIGH SUSCEPTIBILITY"
+            Panel44.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox31_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox31.CheckedChanged
-        If CheckBox31.Checked = True Then
-            CheckBox32.Enabled = False
-            ComboBox8.Text = "NONE SUSCEPTIBILITY"
+    Private Sub ComboBox106_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox106.SelectedIndexChanged
+        If ComboBox106.Text = "Yes" Then
+            ComboBox108.Text = "NONE SUSCEPTIBILITY"
+            Panel44.Visible = False
+        ElseIf ComboBox106.Text = "No" Then
+            ComboBox108.Text = ""
+            Panel44.Visible = True
         Else
-            CheckBox32.Enabled = True
-            ComboBox6.Text = ""
+            ComboBox108.Text = ""
+            Panel44.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox32_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox32.CheckedChanged
-        If CheckBox32.Checked = True Then
-            CheckBox31.Enabled = False
+    Private Sub CheckBox35_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox35.CheckedChanged
+        If CheckBox35.Checked = True Then
+            ComboBox108.Items.Clear()
+            ComboBox108.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox108.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox108.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox108.Items.Add("HIGH SUSCEPTIBILITY")
+        End If
+    End Sub
 
+    'SCC Sulfide Stress Cracking DF -----------------------------------------------------------------------------
+
+    Private Sub ComboBox94_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox94.SelectedIndexChanged
+        If ComboBox94.Text = "Yes" Then
+            Label124.Visible = True
+            ComboBox95.Visible = True
+            ComboBox110.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox94.Text = "No" Then
+            Label124.Visible = False
+            ComboBox95.Visible = False
+            ComboBox110.Text = ""
         Else
-            CheckBox31.Enabled = True
-
+            Label124.Visible = False
+            ComboBox95.Visible = False
+            ComboBox110.Text = ""
         End If
     End Sub
 
-    'SCC Sulfide Stress Cracking DF
+    Private Sub CheckBox73_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox73.CheckedChanged
+        If CheckBox73.Checked = True Then
+            ComboBox110.Items.Clear()
+            ComboBox110.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox110.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox110.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox110.Items.Add("HIGH SUSCEPTIBILITY")
+        End If
+    End Sub
 
 
-    Private Sub CheckBox64_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox64.Checked = True Then
-            CheckBox65.Enabled = False
-            ComboBox10.Text = "HIGH SUSCEPTIBILITY"
+    'SCC-HIC/SOHIC-H2S DF --------------------------------------------------------------------------------------
+
+    Private Sub ComboBox13_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox13.SelectedIndexChanged
+        If ComboBox13.Text = "Yes" Then
+            Label125.Visible = True
+            ComboBox17.Visible = True
+            ComboBox112.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox13.Text = "No" Then
+            Label125.Visible = False
+            ComboBox17.Visible = False
+            ComboBox112.Text = ""
         Else
-            CheckBox65.Enabled = True
-            ComboBox10.Text = ""
+            Label125.Visible = False
+            ComboBox17.Visible = False
+            ComboBox112.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox65_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox65.Checked = True Then
-            CheckBox64.Enabled = False
-
-        Else
-            CheckBox64.Enabled = True
+    Private Sub CheckBox76_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox76.CheckedChanged
+        If CheckBox76.Checked = True Then
+            ComboBox112.Items.Clear()
+            ComboBox112.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox112.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox112.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox112.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    'SCC-HIC/SOHIC-H2S DF
+    'Scc Damage Factor – Alkaline Carbonate Stress Corrosion Cracking ------------------------------------------
 
-
-    Private Sub CheckBox69_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox69.Checked = True Then
-            CheckBox70.Enabled = False
-            ComboBox11.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox70.Enabled = True
-            ComboBox11.Text = ""
-        End If
-    End Sub
-
-    'Scc Damage Factor – Alkaline Carbonate Stress Corrosion Cracking
-    Private Sub CheckBox77_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox77.Checked = True Then
-            CheckBox78.Checked = False
-            CheckBox79.Checked = False
-            CheckBox80.Checked = False
-        Else
-            CheckBox78.Checked = True
-            CheckBox79.Checked = True
-            CheckBox80.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox78_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox78.Checked = True Then
-            CheckBox77.Checked = False
-            CheckBox79.Checked = False
-            CheckBox80.Checked = False
-        Else
-            CheckBox77.Checked = True
-            CheckBox79.Checked = True
-            CheckBox80.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox79_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox79.Checked = True Then
-            CheckBox78.Checked = False
-            CheckBox77.Checked = False
-            CheckBox80.Checked = False
-        Else
-            CheckBox78.Checked = True
-            CheckBox77.Checked = True
-            CheckBox80.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox80_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox80.Checked = True Then
-            CheckBox78.Checked = False
-            CheckBox79.Checked = False
-            CheckBox77.Checked = False
-        Else
-            CheckBox78.Checked = True
-            CheckBox79.Checked = True
-            CheckBox77.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox81_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox81.Checked = True Then
-            CheckBox82.Checked = False
-        Else
-            CheckBox82.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox82_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox82.Checked = True Then
-            CheckBox81.Checked = False
-        Else
-            CheckBox81.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox83_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox83.Checked = True Then
-            CheckBox84.Checked = False
+    Private Sub ComboBox16_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox16.SelectedIndexChanged
+        If ComboBox16.Text = "Yes" Then
             Label127.Visible = True
-            CheckBox85.Visible = True
-            CheckBox86.Visible = True
-            ComboBox15.Text = "HIGH SUSCEPTIBILITY"
+            ComboBox97.Visible = True
+            ComboBox114.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox16.Text = "No" Then
+            Label127.Visible = False
+            ComboBox97.Visible = False
+            ComboBox114.Text = ""
         Else
-            CheckBox84.Checked = True
-            Label127.Visible = False
-            Label127.Visible = False
-            CheckBox85.Visible = False
-            CheckBox86.Visible = False
-            ComboBox15.Text = ""
+            Label125.Visible = False
+            ComboBox17.Visible = False
+            ComboBox114.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox84_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox84.Checked = True Then
-            CheckBox83.Checked = False
-        Else
-            CheckBox83.Checked = True
+    Private Sub CheckBox87_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox87.CheckedChanged
+        If CheckBox87.Checked = True Then
+            ComboBox114.Items.Clear()
+            ComboBox114.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox114.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox114.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox114.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    'Scc Damage Factor – Polythionic Acid Stress Corrosion Cracking
-    Private Sub CheckBox88_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox88.CheckedChanged
-        If CheckBox88.Checked = True Then
-            CheckBox89.Checked = False
+    'Scc Damage Factor – Polythionic Acid Stress Corrosion Cracking --------------------------------------------
+
+    Private Sub ComboBox115_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox115.SelectedIndexChanged
+        If ComboBox115.Text = "Yes" Then
             Label140.Visible = True
-            CheckBox90.Visible = True
-            CheckBox91.Visible = True
-            ComboBox20.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox89.Checked = True
-            Label140.Visible = False
-            CheckBox90.Visible = False
-            CheckBox91.Visible = False
-            ComboBox20.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox89_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox89.CheckedChanged
-        If CheckBox89.Checked = True Then
-            CheckBox88.Checked = False
-            Label141.Visible = True
-            CheckBox92.Visible = True
-            CheckBox93.Visible = True
-            CheckBox94.Visible = True
-        Else
-            CheckBox88.Checked = True
             Label141.Visible = False
-            CheckBox92.Visible = False
-            CheckBox93.Visible = False
-            CheckBox94.Visible = False
-        End If
-    End Sub
-
-    Private Sub CheckBox90_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox90.CheckedChanged
-        If CheckBox90.Checked = True Then
-            CheckBox91.Checked = False
-
+            ComboBox20.Visible = True
+            ComboBox21.Visible = False
+            ComboBox117.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox115.Text = "No" Then
+            Label140.Visible = False
+            Label141.Visible = True
+            ComboBox20.Visible = False
+            ComboBox21.Visible = True
+            ComboBox117.Text = ""
         Else
-            CheckBox91.Checked = True
-
+            Label140.Visible = False
+            Label141.Visible = False
+            ComboBox20.Visible = False
+            ComboBox21.Visible = False
+            ComboBox117.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox91_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox91.CheckedChanged
-        If CheckBox91.Checked = True Then
-            CheckBox90.Checked = False
-            ComboBox20.Text = "PLEASE DETERMINE BY FFS"
+    Private Sub ComboBox20_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox20.SelectedIndexChanged
+        If ComboBox20.Text = "Yes" Then
+            ComboBox117.Text = "NONE SUSCEPTIBILITY"
+            Panel48.Visible = False
+        ElseIf ComboBox20.Text = "No" Then
+            ComboBox117.Text = "PLEASE DETERMINE BY FFS"
+            Panel48.Visible = False
         Else
-            CheckBox90.Checked = True
-            ComboBox20.Text = ""
+            ComboBox117.Text = "HIGH SUSCEPTIBILITY"
+            Panel48.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox92_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox92.CheckedChanged
-        If CheckBox92.Checked = True Then
-            CheckBox93.Checked = False
-            CheckBox94.Checked = False
-            Panel48.Show()
+    Private Sub ComboBox21_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox21.SelectedIndexChanged
+        If ComboBox21.Text = "During Operation" Then
+            'ComboBox117.Text = ""
+            Panel48.Visible = True
+        ElseIf ComboBox21.Text = "During Shutdown" Then
+            'ComboBox117.Text = ""
+            Panel48.Visible = True
+        ElseIf ComboBox21.Text = "None" Then
+            ComboBox117.Text = "NONE SUSCEPTIBILITY"
+            Panel48.Visible = False
         Else
-            CheckBox93.Checked = True
-            CheckBox94.Checked = True
-            Panel48.Hide()
-        End If
-
-    End Sub
-
-    Private Sub CheckBox93_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox93.CheckedChanged
-        If CheckBox93.Checked = True Then
-            CheckBox92.Checked = False
-            CheckBox94.Checked = False
-            Panel48.Show()
-        Else
-            CheckBox92.Checked = True
-            CheckBox94.Checked = True
-            Panel48.Hide()
+            'ComboBox117.Text = ""
+            Panel48.Visible = False
         End If
     End Sub
 
-    Private Sub CheckBox94_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox94.CheckedChanged
-        If CheckBox94.Checked = True Then
-            CheckBox92.Checked = False
-            CheckBox93.Checked = False
-            ComboBox20.Text = "NONE SUSCEPTIBILITY"
-        Else
-            CheckBox92.Checked = True
-            CheckBox93.Checked = True
-            ComboBox20.Text = ""
+    Private Sub CheckBox97_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox97.CheckedChanged
+        If CheckBox97.Checked = True Then
+            ComboBox117.Items.Clear()
+            ComboBox117.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox117.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox117.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox117.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    Private Sub CheckBox95_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox95.CheckedChanged
-        If CheckBox95.Checked = True Then
-            CheckBox96.Checked = False
-        Else
-            CheckBox96.Checked = True
-        End If
-    End Sub
+    'Scc Damage Factor – Chloride Stress Corrosion Cracking ----------------------------------------------------
 
-    Private Sub CheckBox96_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox96.CheckedChanged
-        If CheckBox96.Checked = True Then
-            CheckBox95.Checked = False
-        Else
-            CheckBox95.Checked = True
-        End If
-    End Sub
-
-
-    'Scc Damage Factor – Chloride Stress Corrosion Cracking
-
-    Private Sub CheckBox98_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox98.Checked = True Then
-            CheckBox99.Checked = False
-            CheckBox100.Checked = False
-            CheckBox101.Checked = False
-        Else
-            CheckBox99.Checked = True
-            CheckBox100.Checked = True
-            CheckBox101.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox99_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox99.Checked = True Then
-            CheckBox98.Checked = False
-            CheckBox100.Checked = False
-            CheckBox101.Checked = False
-        Else
-            CheckBox98.Checked = True
-            CheckBox100.Checked = True
-            CheckBox101.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox100_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox100.Checked = True Then
-            CheckBox98.Checked = False
-            CheckBox99.Checked = False
-            CheckBox101.Checked = False
-        Else
-            CheckBox98.Checked = True
-            CheckBox99.Checked = True
-            CheckBox101.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox101_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox101.Checked = True Then
-            CheckBox98.Checked = False
-            CheckBox100.Checked = False
-            CheckBox99.Checked = False
-        Else
-            CheckBox98.Checked = True
-            CheckBox100.Checked = True
-            CheckBox99.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox102_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox102.Checked = True Then
-            CheckBox103.Checked = False
-        Else
-            CheckBox103.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox103_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox103.Checked = True Then
-            CheckBox102.Checked = False
-        Else
-            CheckBox102.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox104.Checked = True Then
-            CheckBox105.Checked = False
+    Private Sub ComboBox99_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox99.SelectedIndexChanged
+        If ComboBox99.Text = "Yes" Then
             Label152.Visible = True
-            CheckBox106.Visible = True
-            CheckBox107.Visible = True
-            ComboBox22.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox105.Checked = True
+            ComboBox100.Visible = True
+            ComboBox120.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox99.Text = "No" Then
             Label152.Visible = False
-            CheckBox106.Visible = False
-            CheckBox107.Visible = False
-            ComboBox22.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox105_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox105.Checked = True Then
-            CheckBox104.Checked = False
+            ComboBox100.Visible = False
+            ComboBox120.Text = ""
         Else
-            CheckBox104.Checked = True
+            Label152.Visible = False
+            ComboBox100.Visible = False
+            ComboBox120.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox106_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox106.Checked = True Then
-            CheckBox107.Checked = False
-        Else
-            CheckBox107.Checked = True
+    Private Sub ComboBox100_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox100.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub CheckBox108_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox108.CheckedChanged
+        If CheckBox108.Checked = True Then
+            ComboBox120.Items.Clear()
+            ComboBox120.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox120.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox120.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox120.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    Private Sub CheckBox107_CheckedChanged(sender As Object, e As EventArgs)
-        If CheckBox107.Checked = True Then
-            CheckBox106.Checked = False
-            ComboBox22.Text = "PLEASE DETERMINE BY FFS"
-        Else
-            CheckBox106.Checked = True
-            ComboBox22.Text = ""
-        End If
-    End Sub
+    'Scc Damage Factor – Hydrogen Stress Cracking-Hf -----------------------------------------------------------
 
-    'Scc Damage Factor – Hydrogen Stress Cracking-Hf
-    Private Sub CheckBox109_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox109.CheckedChanged
-        If CheckBox109.Checked = True Then
-            CheckBox110.Checked = False
+    Private Sub ComboBox24_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox24.SelectedIndexChanged
+        If ComboBox24.Text = "Yes" Then
             Label156.Visible = True
-            CheckBox111.Visible = True
-            CheckBox112.Visible = True
-            ComboBox24.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox110.Checked = True
+            ComboBox121.Visible = True
+            ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox24.Text = "No" Then
             Label156.Visible = False
-            CheckBox111.Visible = False
-            CheckBox112.Visible = False
-            ComboBox24.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox110_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox110.CheckedChanged
-        If CheckBox110.Checked = True Then
-            CheckBox109.Checked = False
-            Label158.Visible = True
-            CheckBox113.Visible = True
-            CheckBox114.Visible = True
-
+            ComboBox121.Visible = False
+            ComboBox124.Text = ""
         Else
-            CheckBox109.Checked = True
-            Label158.Visible = False
-            CheckBox113.Visible = False
-            CheckBox114.Visible = False
-
+            Label156.Visible = False
+            ComboBox121.Visible = False
+            ComboBox124.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox111_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox111.CheckedChanged
-        If CheckBox111.Checked = True Then
-            CheckBox112.Checked = False
-        Else
-            CheckBox112.Checked = True
+    Private Sub CheckBox122_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox122.CheckedChanged
+        If CheckBox122.Checked = True Then
+            ComboBox124.Items.Clear()
+            ComboBox124.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox124.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox124.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox124.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
-    Private Sub CheckBox112_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox112.CheckedChanged
-        If CheckBox112.Checked = True Then
-            CheckBox111.Checked = False
-            ComboBox24.Text = "PLEASE DETERMINE BY FFS"
-        Else
-            CheckBox111.Checked = True
-            ComboBox24.Text = ""
-        End If
-    End Sub
+    'Scc Damage Factor – Hic/Sohic-Hf --------------------------------------------------------------------------
 
-    Private Sub CheckBox113_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox113.CheckedChanged
-        If CheckBox113.Checked = True Then
-            CheckBox114.Checked = False
-            Label159.Visible = True
-            CheckBox115.Visible = True
-            CheckBox116.Visible = True
-
-        Else
-            CheckBox114.Checked = True
-            Label159.Visible = False
-            CheckBox115.Visible = False
-            CheckBox116.Visible = False
-
-        End If
-    End Sub
-
-    Private Sub CheckBox114_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox114.CheckedChanged
-        If CheckBox114.Checked = True Then
-            CheckBox113.Checked = False
-            ComboBox24.Text = "NONE SUSCEPTIBILITY"
-        Else
-            CheckBox113.Checked = True
-            ComboBox24.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox115_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox115.CheckedChanged
-        If CheckBox115.Checked = True Then
-            CheckBox116.Checked = False
-            Label163.Visible = True
-            Label164.Visible = True
-            ComboBox101.Visible = True
-            ComboBox102.Visible = True
-        Else
-            CheckBox116.Checked = True
-            Label163.Visible = False
-            Label164.Visible = False
-            ComboBox101.Visible = True
-            ComboBox102.Visible = True
-        End If
-    End Sub
-
-    Private Sub CheckBox116_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox116.CheckedChanged
-        If CheckBox116.Checked = True Then
-            CheckBox115.Checked = False
-            ComboBox24.Text = "NONE SUSCEPTIBILITY"
-        Else
-            CheckBox115.Checked = True
-            ComboBox24.Text = ""
-        End If
-    End Sub
-
-
-
-    'Scc Damage Factor – Hic/Sohic-Hf
-    Private Sub CheckBox123_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox123.CheckedChanged
-        If CheckBox123.Checked = True Then
-            CheckBox124.Checked = False
+    Private Sub ComboBox26_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox26.SelectedIndexChanged
+        If ComboBox26.Text = "Yes" Then
             Label165.Visible = True
-            CheckBox125.Visible = True
-            CheckBox126.Visible = True
-            ComboBox27.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox124.Checked = True
-            Label165.Visible = False
-            CheckBox125.Visible = False
-            CheckBox126.Visible = False
-            ComboBox27.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox124_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox124.CheckedChanged
-        If CheckBox124.Checked = True Then
-            CheckBox123.Checked = False
-            Label167.Visible = True
-            ComboBox26.Visible = True
-        Else
-            CheckBox123.Checked = True
             Label167.Visible = False
-            ComboBox26.Visible = False
-        End If
-    End Sub
-
-    Private Sub CheckBox125_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox125.CheckedChanged
-        If CheckBox125.Checked = True Then
-            CheckBox126.Checked = False
-
+            ComboBox27.Visible = True
+            ComboBox126.Visible = False
+            ComboBox125.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox26.Text = "No" Then
+            Label165.Visible = False
+            Label167.Visible = True
+            ComboBox27.Visible = False
+            ComboBox126.Visible = True
+            ComboBox125.Text = ""
         Else
-            CheckBox126.Checked = True
-
+            Label140.Visible = False
+            Label141.Visible = False
+            ComboBox20.Visible = False
+            ComboBox21.Visible = False
+            ComboBox125.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox126_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox126.CheckedChanged
-        If CheckBox126.Checked = True Then
-            CheckBox125.Checked = False
-            ComboBox27.Text = "PLEASE DETERMINE BY FFS"
+    Private Sub CheckBox127_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox127.CheckedChanged
+        If CheckBox127.Checked = True Then
+            ComboBox125.Items.Clear()
+            ComboBox125.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox125.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox125.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox125.Items.Add("HIGH SUSCEPTIBILITY")
+        End If
+    End Sub
+
+    'External Corrosion Damage Factor – Ferritic Component -----------------------------------------------------
+
+
+    'Corrosion Under Insulation Damage Factor – Ferritic Component ---------------------------------------------
+
+
+    'External Chloride Stress Corrosion Cracking Damage Factor – Austenitic Component --------------------------
+
+    Private Sub ComboBox30_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox30.SelectedIndexChanged
+        If ComboBox24.Text = "Yes" Then
+            Label156.Visible = True
+            ComboBox121.Visible = True
+            ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+        ElseIf ComboBox24.Text = "No" Then
+            Label156.Visible = False
+            ComboBox121.Visible = False
+            ComboBox124.Text = ""
         Else
-            CheckBox125.Checked = True
-            ComboBox27.Text = ""
+            Label156.Visible = False
+            ComboBox121.Visible = False
+            ComboBox124.Text = ""
         End If
     End Sub
 
-    'External Chloride Stress Corrosion Cracking Damage Factor – Austenitic Component
-    Private Sub CheckBox128_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox128.CheckedChanged
-        If CheckBox128.Checked = True Then
-            CheckBox129.Checked = False
-            Label184.Visible = True
-            CheckBox132.Visible = True
-            CheckBox133.Visible = True
-            TextBox39.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox129.Checked = True
-            Label184.Visible = False
-            CheckBox132.Visible = False
-            CheckBox133.Visible = False
-            TextBox39.Text = ""
-        End If
-    End Sub
+    'External Chloride Stress Corrosion Cracking Under Insulation Damage Factor – Austenitic Component ---------
 
-    Private Sub CheckBox129_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox129.CheckedChanged
-        If CheckBox129.Checked = True Then
-            CheckBox128.Checked = False
-        Else
-            CheckBox128.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox132_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox132.CheckedChanged
-        If CheckBox132.Checked = True Then
-            CheckBox133.Checked = False
-        Else
-            CheckBox133.Checked = True
-        End If
-    End Sub
-
-    Private Sub CheckBox133_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox133.CheckedChanged
-        If CheckBox133.Checked = True Then
-            CheckBox132.Checked = False
-            TextBox39.Text = "PLEASE DETERMINE BY FFS"
-        Else
-            CheckBox125.Checked = True
-            TextBox39.Text = ""
-        End If
-    End Sub
-
-    'External Chloride Stress Corrosion Cracking Under Insulation Damage Factor – Austenitic Component
-    Private Sub CheckBox130_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox130.CheckedChanged
-        If CheckBox130.Checked = True Then
-            CheckBox131.Checked = False
+    Private Sub ComboBox32_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox32.SelectedIndexChanged
+        If ComboBox32.Text = "Yes" Then
             Label190.Visible = True
-            CheckBox134.Visible = True
-            CheckBox135.Visible = True
+            ComboBox129.Visible = True
             TextBox40.Text = "HIGH SUSCEPTIBILITY"
-        Else
-            CheckBox131.Checked = True
+        ElseIf ComboBox32.Text = "No" Then
             Label190.Visible = False
-            CheckBox134.Visible = False
-            CheckBox135.Visible = False
+            ComboBox129.Visible = False
+            TextBox40.Text = ""
+        Else
+            Label156.Visible = False
+            ComboBox121.Visible = False
             TextBox40.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox131_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox131.CheckedChanged
-        If CheckBox131.Checked = True Then
-            CheckBox130.Checked = False
-            Panel51.Show()
-        Else
-            CheckBox130.Checked = True
-            Label190.Visible = False
-            Panel51.Hide()
-        End If
-    End Sub
-
-    Private Sub CheckBox134_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox134.CheckedChanged
-        If CheckBox134.Checked = True Then
-            CheckBox135.Checked = False
-
-        Else
-            CheckBox135.Checked = True
+    'High Temperature Hydrogen Attack Damage Factor ------------------------------------------------------------
 
 
-        End If
-    End Sub
-
-    Private Sub CheckBox135_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox135.CheckedChanged
-        If CheckBox135.Checked = True Then
-            CheckBox134.Checked = False
-            TextBox40.Text = "PLEASE DETERMINE BY FFS"
-        Else
-            CheckBox134.Checked = True
-            TextBox40.Text = ""
-        End If
-    End Sub
-
-    Private Sub CheckBox136_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox136.CheckedChanged
-        If CheckBox136.Checked = True Then
-            CheckBox137.Enabled = True
-            CheckBox138.Enabled = True
-            CheckBox139.Enabled = True
-        Else
-            CheckBox137.Enabled = False
-            CheckBox138.Enabled = False
-            CheckBox139.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CheckBox137_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox137.CheckedChanged
-        If CheckBox137.Checked = True Then
-            CheckBox138.Checked = False
-            CheckBox139.Checked = False
-        Else
-            CheckBox138.Checked = True
-            CheckBox139.Checked = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox138_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox138.CheckedChanged
-        If CheckBox138.Checked = True Then
-            CheckBox137.Checked = False
-            CheckBox139.Checked = False
-        Else
-            CheckBox137.Checked = True
-            CheckBox139.Checked = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox139_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox139.CheckedChanged
-        If CheckBox139.Checked = True Then
-            CheckBox137.Checked = False
-            CheckBox138.Checked = False
-        Else
-            CheckBox137.Checked = True
-            CheckBox138.Checked = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox140_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox140.CheckedChanged
-        If CheckBox140.Checked = True Then
-            CheckBox141.Enabled = True
-            CheckBox142.Enabled = True
-            CheckBox143.Enabled = True
-        Else
-            CheckBox141.Enabled = False
-            CheckBox142.Enabled = False
-            CheckBox143.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CheckBox141_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox141.CheckedChanged
-        If CheckBox141.Checked = True Then
-            CheckBox142.Checked = False
-            CheckBox143.Checked = False
-        Else
-            CheckBox142.Checked = True
-            CheckBox143.Checked = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox142_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox142.CheckedChanged
-        If CheckBox142.Checked = True Then
-            CheckBox141.Checked = False
-            CheckBox143.Checked = False
-        Else
-            CheckBox141.Checked = True
-            CheckBox143.Checked = True
-
-        End If
-    End Sub
-
-    Private Sub CheckBox143_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox143.CheckedChanged
-        If CheckBox143.Checked = True Then
-            CheckBox141.Checked = False
-            CheckBox142.Checked = False
-        Else
-            CheckBox141.Checked = True
-            CheckBox142.Checked = True
-
-        End If
-    End Sub
-
-    'High Temperature Hydrogen Attack Damage Factor
-    Private Sub CheckBox145_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox145.CheckedChanged
-        If CheckBox145.Checked = True Then
-            CheckBox146.Checked = False
-
-        Else
-            CheckBox146.Checked = True
-
-
-        End If
-    End Sub
-
-    Private Sub CheckBox146_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox146.CheckedChanged
-        If CheckBox146.Checked = True Then
-            CheckBox145.Checked = False
-
-        Else
-            CheckBox145.Checked = True
-
-
-        End If
-    End Sub
-
-    Private Sub CheckBox147_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox147.CheckedChanged
-        If CheckBox147.Checked = True Then
-            CheckBox148.Checked = False
-
-        Else
-            CheckBox148.Checked = True
-
-
-        End If
-    End Sub
-
-    Private Sub CheckBox148_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox148.CheckedChanged
-        If CheckBox148.Checked = True Then
-            CheckBox149.Checked = False
-
-        Else
-            CheckBox149.Checked = True
-
-
-        End If
-    End Sub
 
     Private Sub CheckBox196_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox196.CheckedChanged
         If CheckBox196.Checked = True Then
             TextBox80.Text = FMS.TextBox2.Text
         End If
     End Sub
+
+    'Brittle Fracture Damage Factor ----------------------------------------------------------------------------
+
+
+    'Low Alloy Steel Embrittlement Damage Factor ---------------------------------------------------------------
+
+
+    '885°F Embrittlement Damage Factor -------------------------------------------------------------------------
+
+
+    'Sigma Phase Embrittlement Damage Factor -------------------------------------------------------------------
+
+
+    'Piping Mechanical Fatigue Damage Factor -------------------------------------------------------------------
+
+    'GFF -------------------------------------------------------------------------------------------------------
 
     Private Sub ComboBox62_SelectedIndexChanged(sender As Object, e As EventArgs)
         If ComboBox62.Text = "COMPC" Then
@@ -2102,6 +1665,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Call tampildatafluidacombobox()
     End Sub
 
+    'Koneksi Database ------------------------------------------------------------------------------------------
+
     Public Sub tampildatamaterial()
         Call koneksi()
         Dim CMD As New MySqlCommand("SELECT * FROM `tbl_material` WHERE `nama_material`=@nama AND `units`=@unit", constring)
@@ -2191,6 +1756,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Call tampildatafluida()
     End Sub
 
+
     '------------------------------------------------------------------------
     'interpolasi
 
@@ -2248,7 +1814,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     '--------------------------------------------------------------------------------------
 
 
-    'Lining
+    'Lining Coding perhitungan --------------------------------------------------------------------------------------------
+
     Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox5.SelectedIndexChanged
         If ComboBox5.Text = "Inorganic Lining Type" Then
             ComboBox76.Text = ""
@@ -2927,7 +2494,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Label325.Text = dflining
 
     End Sub
-
 
 
 End Class

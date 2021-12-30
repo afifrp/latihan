@@ -117,8 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="TabPage1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panelnewanalysis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelgeneraldataPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panelgeneraldata.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelgeneraldataHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelPOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
+  </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="ComboBox147.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="ComboBox143.ToolTip" xml:space="preserve">
+    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
+a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.
+</value>
+  </data>
+  <data name="Label340.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="Label343.ToolTip" xml:space="preserve">
+    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
+a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.</value>
+  </data>
+  <metadata name="PanelPOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelPOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <data name="Label319.Text" xml:space="preserve">
     <value>Risk-based inspection is an inspection planning method aimed at making the analysis more accurate. 
@@ -1775,6 +1821,39 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Panelnewanalysis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelgeneraldataPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Panelgeneraldata.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <metadata name="PanelgeneraldataHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAC1CAYAAADlY8JKAAAABGdBTUEAALGPC/xhBQAAtr1JREFUeF7t
@@ -3256,9 +3335,16 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         rkVe+IUVZhTOmLNhRY+o+2ADPVGbR8pBj2WFO84Mtu0LQ9dcUuXRtgcAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
+  <data name="ComboBox142.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="Label172.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>31</value>
   </metadata>

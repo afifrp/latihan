@@ -129,49 +129,187 @@
   <metadata name="Panelgeneraldata.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
   <metadata name="PanelgeneraldataHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="PanelPOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <data name="ComboBox147.ToolTip" xml:space="preserve">
-    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
-directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
-water egress and/or does not allow for proper coating maintenance.</value>
-  </data>
-  <data name="ComboBox143.ToolTip" xml:space="preserve">
-    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
-a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.
-</value>
-  </data>
-  <data name="Label340.ToolTip" xml:space="preserve">
-    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
-directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
-water egress and/or does not allow for proper coating maintenance.</value>
-  </data>
-  <data name="Label343.ToolTip" xml:space="preserve">
-    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
-a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.</value>
-  </data>
   <metadata name="PanelPOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="PanelPOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Label319.Text" xml:space="preserve">
-    <value>Risk-based inspection is an inspection planning method aimed at making the analysis more accurate. 
-The main goal of this software is to simplify and speed up inspector's task in carrying out inspection activity
-on static equipment in the process plant, as well as trimming inspection costs.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Button35.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        rkJggg==
+</value>
+  </data>
+  <data name="Button34.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="Button33.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATpJREFUWEft
+        lFGKwzAMRHOE/ey9es792EOUnqTQK+xPsnLRhIktj9UlKf3og6GKR/IoUDIx8zwvr5DHtUhzJ9ILYNv/
+        yK8Ikf5oeA8+C+yygPX9evk0ey0w/LP1eHoBhEH12aOJ6J0D5TUmLovkLQ0Z38uW2sRlUDlbluUEr/zW
+        cG+E8lIL1M81yisob2Pam37hsp68dYPyCsprTFzWk7dtUF5Bee+3QAEX1nK7IeN72TIaNC7+2OWwBbLw
+        AlwDmcGmve0PLohk3E2PbwIDv65B/bxBmkk4lGsgM6SZhEO5BjKDTQyP5O0rfB71RDMr0kzCoVwDmSHN
+        JBzKNZAZ0kzCoVwDmSHNJBzKNZAZbGJ4JG9f4fOoJ5pZkeYAm73ah+mGUOOb6rO3HbdAlvdf4BXyuJao
+        +Qh5nDFNf7SJyyzJjs7EAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button32.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARZJREFUSEvt
+        lFEKwjAQRPsh6Cm8tZfwFp5E8McD+OVHGzexM6xhN0lLCxUdGJrOvsl+WOygYRjCWh5XvGUBS/tjUXpZ
+        SdzxXwaBn9OZtAys9jgqiqxXQq7neYa8JrJeycpCCBfw1twTea845bKatrksn4G3Op7Ie0Wd4QxWOwEV
+        kW0pYQ5We8yf4pt8QFdkWmR5cKRnfd+fwHsdKydfKs7Rdy6T3+QIPu/g3bqLPA8NAqtt5QlWYl4CRDvx
+        XnxAlht5fHoiq0ta3gXg87nHR5G3ilGl8lRtc5megdUeR0WR9UrI9TzPkNdEtlaSL/GMeXyK4v/fXfwo
+        9bQil1geHLVeWFLzsiX0A8v0y5pOiyALWMrvDV33Ah926lGgUzeqAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button31.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAWBJREFUWEfF
+        kjtSxEAMRDcgICMlICOCmIyQa3AJqjgDd+UCZLaRqNagsXtGmv14X5Wqdrpb7dldH05hnudFB8f9ueoF
+        lmV5sgsIr5Aviz0wGsTPB3tIZrB+PKxUB/bmHfAZG+Eb9hik6A5WwTwcC5K98bss00UKvjLLWV9HeIcc
+        4xchUUYyUa6QXfC5kSykNhYUHiBV+DI2iFVIV3knIHGiorUXnT3mtfw/eiGmZzXFdOYVeoHu4opeR7Nn
+        mqbPVqC7SIh6hBdI/+LIYHUDy0Zz/QsY8rN8bETQ0ltEPcIzpJrWotLSGb2Obo8FWIjpWU0xnXmFKLT2
+        orPHvJZfsJBwC6nCF7FBbEPkFzJlis+NZCH1yS6MZKJchYR/MotZHzNBzrFa1nfiHlbBPBwLkn30uyyT
+        QhaVqkgH9uYCPuMH9vGw0sxg/Xywh7BB/LLI//xmD9TPkPdl12/MOP0Ch8MvRs0V45L8BSgAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="Button13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAABGdBTUEAALGPC/xhBQAAATNJREFUWEft
+        klGuglAMRNn/BvxzIe7DrRjjB8iFlgx1emlBwQ9O0lA707lN3mvatu2OrgZhhr1LThmhw504D1riKwf1
+        3mfGX4O+TYcVsv4aNCv7gOfP5hToTjbI82dzCnQnGqQ+9Ht9FLoTDVIf+r0+Ct2pBaGmPZvZPgrdqQWh
+        pj2b2T4K3akFoaY9m7G+fBHVWYllhA4F1LRnM09XrMZKrPNQC2ras5mnF9gM+dAjZujbrusuZkb78i3g
+        3IJ+qUd1YSuRbNUnb2RpLZFs1SdvZGktkWzVJ682v6ye6/A6oddf8h28uxxUanjdIeJZBB+rBW7VQ2CI
+        LbHMYD5bYs3DwmyJdUb/f3Rj3lJiycPCvJIVl4yXggHRklWK8d5lfBzmoPV/tm9yHrQEHvR3R42/muYN
+        SMhT7ummMdcAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABIEAAAR7CAYAAAAXP7S+AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1810,6 +1948,70 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         QKQaVc+lsAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="ViewToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
   <data name="HelpToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAAStJREFUSEu9
@@ -1821,22 +2023,51 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="Panelnewanalysis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PanelgeneraldataPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Panelgeneraldata.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
-  <metadata name="PanelgeneraldataHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="ComboBox147.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="ComboBox143.ToolTip" xml:space="preserve">
+    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
+a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.
+</value>
+  </data>
+  <data name="Label340.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="Label343.ToolTip" xml:space="preserve">
+    <value>The drivers for external CUI corrosion. This can be the condition of the insulation and weather resistant jacketing,  the weather at 
+a location (e.g. Marine), the potential for cooling tower drift, the use of sprinkler systems, or other contributors.</value>
+  </data>
+  <data name="ComboBox142.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <data name="Label172.ToolTip" xml:space="preserve">
+    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
+directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
+water egress and/or does not allow for proper coating maintenance.</value>
+  </data>
+  <metadata name="PanelCOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="PanelCOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFlevel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelCOFAST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="PanelCOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1848,12 +2079,39 @@ on static equipment in the process plant, as well as trimming inspection costs.<
   <metadata name="PanelCOFHE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="PanelCOF.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PanelCOFlevel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="PanelCOFPRD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PanelCOFAST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="Label355.Text" xml:space="preserve">
+    <value>Generic Failure Frequency 
+
+Management System Factor
+
+Damage Factor Thinning
+
+Damage Factor External Damage
+
+Damage Factor Brittle Fracture
+
+Damage Factor Stress Corrosion Cracking
+
+Damage Factor HTHA
+
+Damage Factor Mechanical Fatigue
+
+Total Damage Factor
+
+Component Damage Flammable
+
+Personnel Injury Flammable
+
+Personnel Injury Toxic
+
+Personnel Injury Non Flammable, Non Toxic</value>
+  </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAC1CAYAAADlY8JKAAAABGdBTUEAALGPC/xhBQAAtr1JREFUeF7t
@@ -2639,6 +2897,11 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         nJdI1a26Vbfqtutud9y+VN743Xrzjqpbdfu3u/3d3/3/AVdM5JP8Ut5lAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Label319.Text" xml:space="preserve">
+    <value>Risk-based inspection is an inspection planning method aimed at making the analysis more accurate. 
+The main goal of this software is to simplify and speed up inspector's task in carrying out inspection activity
+on static equipment in the process plant, as well as trimming inspection costs.</value>
+  </data>
   <data name="Button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAgCAYAAADjaQM7AAAABGdBTUEAALGPC/xhBQAAARZJREFUSEvt
@@ -2805,6 +3068,63 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         DPWeGjTQmp9Q76lBA7hbs6/yatAA7rLINlFZNWgg/pM5w/6L/6aIQmTnnBo0gvtSFFmgMmrQCO6jKJZR
         vhp8AXagKJZZePJDGnwJ9qAolslzGUqDDrCLRbYiebXhWqy++Gu5rnZbC73Irvj4U/aqNzjMovEQ4uM3
         2Wm+wUPT7IT74iGn4htFcwBV/TLUK6rMrM2dc+4NElTqhWxQnEYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="UploadStripMenuItem4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
 </value>
   </data>
   <data name="ExitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3334,16 +3654,6 @@ on static equipment in the process plant, as well as trimming inspection costs.<
         Uzs8SGKrgd1q//8B2DJhndruATaGsG42/U1vNCB4slpEbYjHB366MQOg8yziQje3Qv1ci7Phl9zRR6ti
         rkVe+IUVZhTOmLNhRY+o+2ADPVGbR8pBj2WFO84Mtu0LQ9dcUuXRtgcAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="ComboBox142.ToolTip" xml:space="preserve">
-    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
-directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
-water egress and/or does not allow for proper coating maintenance.</value>
-  </data>
-  <data name="Label172.ToolTip" xml:space="preserve">
-    <value>If the equipment has a design which allows water to pool and increase metal loss rates, such as piping supported 
-directly on beams, vessel stiffening rings or insulation supports or other such configuration that does not allow 
-water egress and/or does not allow for proper coating maintenance.</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>31</value>

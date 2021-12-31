@@ -47,6 +47,8 @@ Public Class Home
         Panelnewanalysis.Show()
     End Sub
 
+    'Home ------------------------------------------------------------------------------------
+
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         If Button15.Text = "<" Then
             Panel4.Hide()
@@ -569,12 +571,89 @@ Public Class Home
         Call tampildatafluidacombobox()
     End Sub
 
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        If Panel87.Visible = False Then
+            Panel87.Visible = True
+        ElseIf Panel87.Visible = True Then
+            Panel87.Visible = False
+        End If
+
+        Panel6.Visible = False
+        Panel7.Visible = True
+        Panel8.Visible = False
+        Panel9.Visible = False
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = False
+        Panel14.Visible = False
+
+        PictureBox2.Visible = False
+        Button13.Visible = False
+        Panel18.Visible = True
+    End Sub
+
+    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        Panel6.Visible = False
+        Panel7.Visible = False
+        Panel8.Visible = False
+        Panel9.Visible = False
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = True
+        Panel13.Visible = False
+        Panel14.Visible = False
+
+
+        TabPage1.Enabled = False
+        TabPage2.Enabled = False
+        TabPage3.Enabled = False
+        TabPage4.Enabled = False
+
+
+        TabPage1.Text = ""
+        TabPage2.Text = ""
+        TabPage3.Text = ""
+        TabPage4.Text = ""
+
+    End Sub
+
+    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+        Panel6.Visible = False
+        Panel7.Visible = False
+        Panel8.Visible = False
+        Panel9.Visible = False
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = True
+        Panel14.Visible = False
+
+    End Sub
+
+    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+        Panel6.Visible = False
+        Panel7.Visible = False
+        Panel8.Visible = False
+        Panel9.Visible = False
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = False
+        Panel14.Visible = True
+    End Sub
+
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Me.Close()
         Start.Close()
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
+        Login.ShowDialog()
 
     End Sub
 
@@ -608,37 +687,6 @@ Public Class Home
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         FMS.ShowDialog()
-    End Sub
-
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        Panel6.Visible = False
-        Panel7.Visible = True
-        Panel8.Visible = True
-        Panel9.Visible = False
-        Panel10.Visible = False
-        Panel11.Visible = False
-        Panel12.Visible = False
-        Panel13.Visible = False
-        Panel14.Visible = False
-
-
-        PictureBox2.Visible = False
-        Button13.Visible = False
-        Panel18.Visible = True
-
-        TabPage1.Enabled = True
-        TabPage2.Enabled = False
-        TabPage3.Enabled = False
-        TabPage4.Enabled = False
-
-
-        TabPage1.Text = "Equipment"
-        TabPage2.Text = ""
-        TabPage3.Text = ""
-        TabPage4.Text = ""
-
-
-        TabControl1.SelectedTab = TabPage1
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs)

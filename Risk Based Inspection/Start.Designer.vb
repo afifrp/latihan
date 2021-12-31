@@ -35,13 +35,13 @@ Partial Class Start
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bord Demo", 50.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 45.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label1.Location = New System.Drawing.Point(285, 50)
+        Me.Label1.Location = New System.Drawing.Point(286, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(488, 85)
+        Me.Label1.Size = New System.Drawing.Size(480, 69)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "RAFAOLEC"
+        Me.Label1.Text = "R A F A O L E C"
         '
         'ProgressBar1
         '

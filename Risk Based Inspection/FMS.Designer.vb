@@ -26,6 +26,8 @@ Partial Class FMS
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox269 = New System.Windows.Forms.CheckBox()
         Me.CheckBox268 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
@@ -370,8 +372,6 @@ Partial Class FMS
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -749,6 +749,26 @@ Partial Class FMS
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(846, 9100)
         Me.Panel5.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(20, 9052)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 340
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(714, 9046)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(114, 30)
+        Me.Button1.TabIndex = 339
+        Me.Button1.Text = "OK"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'CheckBox269
         '
@@ -4276,26 +4296,6 @@ Partial Class FMS
         Me.Label1.Size = New System.Drawing.Size(317, 25)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Management Systems Factor"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(591, 9046)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 30)
-        Me.Button1.TabIndex = 339
-        Me.Button1.Text = "OK"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(437, 9046)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 340
         '
         'FMS
         '

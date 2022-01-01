@@ -31,17 +31,7 @@ Public Class Insert_Equipment
         Me.Close()
     End Sub
 
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        TextBox1.Text = ""
-        TextBox2.Text = ""
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
-
-    End Sub
-
     Private Sub ComboBox6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
-
         ComboBox2.Items.Clear()
 
         If ComboBox6.Text = "Pressure Vessel" Then
@@ -84,5 +74,12 @@ Public Class Insert_Equipment
         ElseIf ComboBox6.Text = "Heat Exchanger Tube Bundles" Then
             ComboBox2.Items.Add("Heat Exchanger Tube Bundles")
         End If
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
     End Sub
 End Class

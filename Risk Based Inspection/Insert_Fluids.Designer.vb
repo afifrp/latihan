@@ -58,8 +58,8 @@ Partial Class Insert_Fluids
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -341,9 +341,9 @@ Partial Class Insert_Fluids
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(20, 118)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 13)
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Fluid Code"
+        Me.Label3.Text = "Code"
         '
         'Panel2
         '
@@ -401,21 +401,6 @@ Partial Class Insert_Fluids
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Fluid Properties"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(201, 467)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 30)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "  SAVE"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -430,6 +415,21 @@ Partial Class Insert_Fluids
         Me.Button2.Text = "  UPDATE"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(201, 467)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(114, 30)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "  SAVE"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Insert_Fluids
         '

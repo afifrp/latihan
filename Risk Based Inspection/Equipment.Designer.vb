@@ -31,6 +31,7 @@ Partial Class Equipment
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -59,7 +60,7 @@ Partial Class Equipment
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(484, 561)
+        Me.Panel1.Size = New System.Drawing.Size(633, 561)
         Me.Panel1.TabIndex = 2
         '
         'Button4
@@ -83,7 +84,7 @@ Partial Class Equipment
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button5.Location = New System.Drawing.Point(388, 519)
+        Me.Button5.Location = New System.Drawing.Point(537, 519)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(83, 30)
         Me.Button5.TabIndex = 3
@@ -141,12 +142,12 @@ Partial Class Equipment
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
         Me.DataGridView1.Location = New System.Drawing.Point(0, 96)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(482, 415)
+        Me.DataGridView1.Size = New System.Drawing.Size(631, 415)
         Me.DataGridView1.TabIndex = 2
         '
         'Column1
@@ -156,6 +157,13 @@ Partial Class Equipment
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 150
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Equipment Description"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 150
         '
         'Column2
         '
@@ -181,7 +189,7 @@ Partial Class Equipment
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(482, 96)
+        Me.Panel2.Size = New System.Drawing.Size(631, 96)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
@@ -191,7 +199,7 @@ Partial Class Equipment
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(482, 33)
+        Me.Panel3.Size = New System.Drawing.Size(631, 33)
         Me.Panel3.TabIndex = 3
         '
         'Button11
@@ -201,7 +209,7 @@ Partial Class Equipment
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Image = CType(resources.GetObject("Button11.Image"), System.Drawing.Image)
-        Me.Button11.Location = New System.Drawing.Point(443, 0)
+        Me.Button11.Location = New System.Drawing.Point(592, 0)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(38, 31)
         Me.Button11.TabIndex = 5
@@ -241,7 +249,7 @@ Partial Class Equipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 561)
+        Me.ClientSize = New System.Drawing.Size(633, 561)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Equipment"
@@ -271,6 +279,7 @@ Partial Class Equipment
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class

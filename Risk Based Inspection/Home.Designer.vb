@@ -453,9 +453,31 @@ Partial Class Home
         Me.Label196 = New System.Windows.Forms.Label()
         Me.Label195 = New System.Windows.Forms.Label()
         Me.df18 = New System.Windows.Forms.Panel()
+        Me.Panel96 = New System.Windows.Forms.Panel()
+        Me.ComboBox162 = New System.Windows.Forms.ComboBox()
+        Me.Label387 = New System.Windows.Forms.Label()
+        Me.Panel95 = New System.Windows.Forms.Panel()
+        Me.Label386 = New System.Windows.Forms.Label()
         Me.Panel76 = New System.Windows.Forms.Panel()
         Me.Label70 = New System.Windows.Forms.Label()
+        Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.ComboBox161 = New System.Windows.Forms.ComboBox()
+        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
+        Me.ComboBox160 = New System.Windows.Forms.ComboBox()
+        Me.Label384 = New System.Windows.Forms.Label()
+        Me.Label385 = New System.Windows.Forms.Label()
         Me.df17 = New System.Windows.Forms.Panel()
+        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.ComboBox159 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox158 = New System.Windows.Forms.ComboBox()
+        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.ComboBox157 = New System.Windows.Forms.ComboBox()
+        Me.TextBox90 = New System.Windows.Forms.TextBox()
+        Me.Label383 = New System.Windows.Forms.Label()
+        Me.Label382 = New System.Windows.Forms.Label()
+        Me.Label381 = New System.Windows.Forms.Label()
+        Me.Label380 = New System.Windows.Forms.Label()
         Me.Panel75 = New System.Windows.Forms.Panel()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.df16 = New System.Windows.Forms.Panel()
@@ -1001,28 +1023,7 @@ Partial Class Home
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label380 = New System.Windows.Forms.Label()
-        Me.TextBox90 = New System.Windows.Forms.TextBox()
-        Me.Label381 = New System.Windows.Forms.Label()
-        Me.ComboBox157 = New System.Windows.Forms.ComboBox()
-        Me.Label382 = New System.Windows.Forms.Label()
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.ComboBox158 = New System.Windows.Forms.ComboBox()
-        Me.Label383 = New System.Windows.Forms.Label()
-        Me.ComboBox159 = New System.Windows.Forms.ComboBox()
-        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
-        Me.Panel39 = New System.Windows.Forms.Panel()
-        Me.Label384 = New System.Windows.Forms.Label()
-        Me.ComboBox160 = New System.Windows.Forms.ComboBox()
-        Me.Label385 = New System.Windows.Forms.Label()
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
-        Me.ComboBox161 = New System.Windows.Forms.ComboBox()
-        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
-        Me.Panel95 = New System.Windows.Forms.Panel()
-        Me.Label386 = New System.Windows.Forms.Label()
-        Me.Panel96 = New System.Windows.Forms.Panel()
-        Me.Label387 = New System.Windows.Forms.Label()
-        Me.ComboBox162 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker13 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel18.SuspendLayout()
@@ -1075,7 +1076,10 @@ Partial Class Home
         Me.df19.SuspendLayout()
         Me.Panel77.SuspendLayout()
         Me.df18.SuspendLayout()
+        Me.Panel96.SuspendLayout()
+        Me.Panel95.SuspendLayout()
         Me.Panel76.SuspendLayout()
+        Me.Panel39.SuspendLayout()
         Me.df17.SuspendLayout()
         Me.Panel75.SuspendLayout()
         Me.df16.SuspendLayout()
@@ -1168,9 +1172,6 @@ Partial Class Home
         Me.Panel3.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel39.SuspendLayout()
-        Me.Panel95.SuspendLayout()
-        Me.Panel96.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -1233,10 +1234,10 @@ Partial Class Home
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
-        Me.TabPage1.Controls.Add(Me.Panelnewanalysis)
-        Me.TabPage1.Controls.Add(Me.PanelgeneraldataPRD)
         Me.TabPage1.Controls.Add(Me.Panelgeneraldata)
         Me.TabPage1.Controls.Add(Me.PanelgeneraldataHE)
+        Me.TabPage1.Controls.Add(Me.Panelnewanalysis)
+        Me.TabPage1.Controls.Add(Me.PanelgeneraldataPRD)
         Me.TabPage1.ForeColor = System.Drawing.Color.CornflowerBlue
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
@@ -1281,7 +1282,7 @@ Partial Class Home
         Me.Panelnewanalysis.Controls.Add(Me.Label310)
         Me.Panelnewanalysis.Location = New System.Drawing.Point(1, 1)
         Me.Panelnewanalysis.Name = "Panelnewanalysis"
-        Me.Panelnewanalysis.Size = New System.Drawing.Size(750, 580)
+        Me.Panelnewanalysis.Size = New System.Drawing.Size(733, 580)
         Me.Panelnewanalysis.TabIndex = 7
         Me.Panelnewanalysis.TabStop = True
         '
@@ -1292,7 +1293,7 @@ Partial Class Home
         Me.Button30.FlatAppearance.BorderSize = 0
         Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button30.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button30.Location = New System.Drawing.Point(694, 543)
+        Me.Button30.Location = New System.Drawing.Point(685, 543)
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(48, 25)
         Me.Button30.TabIndex = 234
@@ -1303,7 +1304,7 @@ Partial Class Home
         '
         Me.ComboBox63.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox63.FormattingEnabled = True
-        Me.ComboBox63.Location = New System.Drawing.Point(410, 544)
+        Me.ComboBox63.Location = New System.Drawing.Point(401, 544)
         Me.ComboBox63.Name = "ComboBox63"
         Me.ComboBox63.Size = New System.Drawing.Size(250, 21)
         Me.ComboBox63.TabIndex = 49
@@ -1312,7 +1313,7 @@ Partial Class Home
         '
         Me.ComboBox62.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox62.FormattingEnabled = True
-        Me.ComboBox62.Location = New System.Drawing.Point(100, 544)
+        Me.ComboBox62.Location = New System.Drawing.Point(91, 544)
         Me.ComboBox62.Name = "ComboBox62"
         Me.ComboBox62.Size = New System.Drawing.Size(250, 21)
         Me.ComboBox62.TabIndex = 48
@@ -1325,7 +1326,7 @@ Partial Class Home
         Me.Button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button29.ForeColor = System.Drawing.Color.Transparent
-        Me.Button29.Location = New System.Drawing.Point(143, 112)
+        Me.Button29.Location = New System.Drawing.Point(134, 112)
         Me.Button29.Name = "Button29"
         Me.Button29.Size = New System.Drawing.Size(130, 60)
         Me.Button29.TabIndex = 46
@@ -1336,7 +1337,7 @@ Partial Class Home
         '
         Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox12.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox12.Location = New System.Drawing.Point(137, 106)
+        Me.PictureBox12.Location = New System.Drawing.Point(128, 106)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(143, 73)
         Me.PictureBox12.TabIndex = 47
@@ -1351,7 +1352,7 @@ Partial Class Home
         Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button28.ForeColor = System.Drawing.Color.Transparent
-        Me.Button28.Location = New System.Drawing.Point(76, 204)
+        Me.Button28.Location = New System.Drawing.Point(67, 204)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(130, 60)
         Me.Button28.TabIndex = 44
@@ -1362,7 +1363,7 @@ Partial Class Home
         '
         Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox11.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox11.Location = New System.Drawing.Point(70, 198)
+        Me.PictureBox11.Location = New System.Drawing.Point(61, 198)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(143, 73)
         Me.PictureBox11.TabIndex = 45
@@ -1377,7 +1378,7 @@ Partial Class Home
         Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button27.ForeColor = System.Drawing.Color.Transparent
-        Me.Button27.Location = New System.Drawing.Point(76, 298)
+        Me.Button27.Location = New System.Drawing.Point(67, 298)
         Me.Button27.Name = "Button27"
         Me.Button27.Size = New System.Drawing.Size(130, 60)
         Me.Button27.TabIndex = 42
@@ -1388,7 +1389,7 @@ Partial Class Home
         '
         Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox10.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox10.Location = New System.Drawing.Point(70, 292)
+        Me.PictureBox10.Location = New System.Drawing.Point(61, 292)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(143, 73)
         Me.PictureBox10.TabIndex = 43
@@ -1403,7 +1404,7 @@ Partial Class Home
         Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button26.ForeColor = System.Drawing.Color.Transparent
-        Me.Button26.Location = New System.Drawing.Point(142, 392)
+        Me.Button26.Location = New System.Drawing.Point(133, 392)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(130, 60)
         Me.Button26.TabIndex = 40
@@ -1414,7 +1415,7 @@ Partial Class Home
         '
         Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox9.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox9.Location = New System.Drawing.Point(136, 386)
+        Me.PictureBox9.Location = New System.Drawing.Point(127, 386)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(143, 73)
         Me.PictureBox9.TabIndex = 41
@@ -1429,7 +1430,7 @@ Partial Class Home
         Me.Button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button25.ForeColor = System.Drawing.Color.Transparent
-        Me.Button25.Location = New System.Drawing.Point(319, 417)
+        Me.Button25.Location = New System.Drawing.Point(310, 417)
         Me.Button25.Name = "Button25"
         Me.Button25.Size = New System.Drawing.Size(130, 61)
         Me.Button25.TabIndex = 38
@@ -1440,7 +1441,7 @@ Partial Class Home
         '
         Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox8.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox8.Location = New System.Drawing.Point(313, 411)
+        Me.PictureBox8.Location = New System.Drawing.Point(304, 411)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(143, 73)
         Me.PictureBox8.TabIndex = 39
@@ -1455,7 +1456,7 @@ Partial Class Home
         Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button24.ForeColor = System.Drawing.Color.Transparent
-        Me.Button24.Location = New System.Drawing.Point(496, 391)
+        Me.Button24.Location = New System.Drawing.Point(487, 391)
         Me.Button24.Name = "Button24"
         Me.Button24.Size = New System.Drawing.Size(130, 61)
         Me.Button24.TabIndex = 36
@@ -1466,7 +1467,7 @@ Partial Class Home
         '
         Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox7.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox7.Location = New System.Drawing.Point(490, 385)
+        Me.PictureBox7.Location = New System.Drawing.Point(481, 385)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(143, 74)
         Me.PictureBox7.TabIndex = 37
@@ -1481,7 +1482,7 @@ Partial Class Home
         Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button23.ForeColor = System.Drawing.Color.Transparent
-        Me.Button23.Location = New System.Drawing.Point(561, 298)
+        Me.Button23.Location = New System.Drawing.Point(552, 298)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(130, 62)
         Me.Button23.TabIndex = 34
@@ -1492,7 +1493,7 @@ Partial Class Home
         '
         Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox6.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox6.Location = New System.Drawing.Point(554, 292)
+        Me.PictureBox6.Location = New System.Drawing.Point(545, 292)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(144, 74)
         Me.PictureBox6.TabIndex = 35
@@ -1507,7 +1508,7 @@ Partial Class Home
         Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button22.ForeColor = System.Drawing.Color.Transparent
-        Me.Button22.Location = New System.Drawing.Point(561, 204)
+        Me.Button22.Location = New System.Drawing.Point(552, 204)
         Me.Button22.Name = "Button22"
         Me.Button22.Size = New System.Drawing.Size(130, 62)
         Me.Button22.TabIndex = 32
@@ -1518,7 +1519,7 @@ Partial Class Home
         '
         Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox5.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox5.Location = New System.Drawing.Point(554, 198)
+        Me.PictureBox5.Location = New System.Drawing.Point(545, 198)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(144, 74)
         Me.PictureBox5.TabIndex = 33
@@ -1533,7 +1534,7 @@ Partial Class Home
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button21.ForeColor = System.Drawing.Color.Transparent
-        Me.Button21.Location = New System.Drawing.Point(496, 112)
+        Me.Button21.Location = New System.Drawing.Point(487, 112)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(130, 62)
         Me.Button21.TabIndex = 30
@@ -1544,7 +1545,7 @@ Partial Class Home
         '
         Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox4.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox4.Location = New System.Drawing.Point(489, 106)
+        Me.PictureBox4.Location = New System.Drawing.Point(480, 106)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(144, 74)
         Me.PictureBox4.TabIndex = 31
@@ -1559,7 +1560,7 @@ Partial Class Home
         Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button20.ForeColor = System.Drawing.Color.Transparent
-        Me.Button20.Location = New System.Drawing.Point(320, 90)
+        Me.Button20.Location = New System.Drawing.Point(311, 90)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(129, 62)
         Me.Button20.TabIndex = 28
@@ -1570,7 +1571,7 @@ Partial Class Home
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox3.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox3.Location = New System.Drawing.Point(313, 84)
+        Me.PictureBox3.Location = New System.Drawing.Point(304, 84)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(143, 74)
         Me.PictureBox3.TabIndex = 29
@@ -1583,7 +1584,7 @@ Partial Class Home
         Me.Label309.AutoSize = True
         Me.Label309.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label309.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label309.Location = New System.Drawing.Point(313, 10)
+        Me.Label309.Location = New System.Drawing.Point(304, 10)
         Me.Label309.Name = "Label309"
         Me.Label309.Size = New System.Drawing.Size(125, 20)
         Me.Label309.TabIndex = 0
@@ -1593,7 +1594,7 @@ Partial Class Home
         '
         Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(259, 40)
+        Me.ComboBox2.Location = New System.Drawing.Point(250, 40)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(250, 21)
         Me.ComboBox2.TabIndex = 1
@@ -1604,7 +1605,7 @@ Partial Class Home
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(457, 506)
+        Me.Label5.Location = New System.Drawing.Point(448, 506)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(163, 20)
         Me.Label5.TabIndex = 0
@@ -1616,7 +1617,7 @@ Partial Class Home
         Me.Label308.AutoSize = True
         Me.Label308.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label308.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label308.Location = New System.Drawing.Point(148, 506)
+        Me.Label308.Location = New System.Drawing.Point(139, 506)
         Me.Label308.Name = "Label308"
         Me.Label308.Size = New System.Drawing.Size(154, 20)
         Me.Label308.TabIndex = 0
@@ -1628,7 +1629,7 @@ Partial Class Home
         Me.Label310.AutoSize = True
         Me.Label310.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label310.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label310.Location = New System.Drawing.Point(315, 274)
+        Me.Label310.Location = New System.Drawing.Point(306, 274)
         Me.Label310.Name = "Label310"
         Me.Label310.Size = New System.Drawing.Size(138, 20)
         Me.Label310.TabIndex = 0
@@ -1640,13 +1641,14 @@ Partial Class Home
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelgeneraldataPRD.Location = New System.Drawing.Point(1, 1)
         Me.PanelgeneraldataPRD.Name = "PanelgeneraldataPRD"
-        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(750, 655)
+        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(733, 655)
         Me.PanelgeneraldataPRD.TabIndex = 6
         '
         'Panelgeneraldata
         '
         Me.Panelgeneraldata.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker13)
         Me.Panelgeneraldata.Controls.Add(Me.Button10)
         Me.Panelgeneraldata.Controls.Add(Me.Panel59)
         Me.Panelgeneraldata.Controls.Add(Me.Panel32)
@@ -1743,7 +1745,7 @@ Partial Class Home
         Me.Panelgeneraldata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panelgeneraldata.Location = New System.Drawing.Point(1, 1)
         Me.Panelgeneraldata.Name = "Panelgeneraldata"
-        Me.Panelgeneraldata.Size = New System.Drawing.Size(750, 1282)
+        Me.Panelgeneraldata.Size = New System.Drawing.Size(733, 1282)
         Me.Panelgeneraldata.TabIndex = 1
         '
         'Button10
@@ -2934,7 +2936,7 @@ Partial Class Home
         '
         Me.Label13.AutoSize = True
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label13.Location = New System.Drawing.Point(37, 360)
+        Me.Label13.Location = New System.Drawing.Point(37, 332)
         Me.Label13.Name = "Label13"
         Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label13.Size = New System.Drawing.Size(125, 15)
@@ -2945,7 +2947,7 @@ Partial Class Home
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label12.Location = New System.Drawing.Point(37, 332)
+        Me.Label12.Location = New System.Drawing.Point(36, 504)
         Me.Label12.Name = "Label12"
         Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label12.Size = New System.Drawing.Size(159, 15)
@@ -2967,7 +2969,7 @@ Partial Class Home
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label17.Location = New System.Drawing.Point(36, 505)
+        Me.Label17.Location = New System.Drawing.Point(36, 448)
         Me.Label17.Name = "Label17"
         Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label17.Size = New System.Drawing.Size(131, 15)
@@ -2978,7 +2980,7 @@ Partial Class Home
         '
         Me.Label19.AutoSize = True
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label19.Location = New System.Drawing.Point(37, 447)
+        Me.Label19.Location = New System.Drawing.Point(37, 419)
         Me.Label19.Name = "Label19"
         Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label19.Size = New System.Drawing.Size(103, 15)
@@ -2989,7 +2991,7 @@ Partial Class Home
         '
         Me.Label16.AutoSize = True
         Me.Label16.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label16.Location = New System.Drawing.Point(37, 475)
+        Me.Label16.Location = New System.Drawing.Point(36, 476)
         Me.Label16.Name = "Label16"
         Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label16.Size = New System.Drawing.Size(153, 15)
@@ -3000,7 +3002,7 @@ Partial Class Home
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label15.Location = New System.Drawing.Point(36, 419)
+        Me.Label15.Location = New System.Drawing.Point(36, 391)
         Me.Label15.Name = "Label15"
         Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label15.Size = New System.Drawing.Size(124, 15)
@@ -3011,7 +3013,7 @@ Partial Class Home
         '
         Me.Label14.AutoSize = True
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label14.Location = New System.Drawing.Point(36, 390)
+        Me.Label14.Location = New System.Drawing.Point(36, 362)
         Me.Label14.Name = "Label14"
         Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label14.Size = New System.Drawing.Size(125, 15)
@@ -3294,7 +3296,7 @@ Partial Class Home
         Me.PanelgeneraldataHE.ForeColor = System.Drawing.SystemColors.ControlText
         Me.PanelgeneraldataHE.Location = New System.Drawing.Point(1, 1)
         Me.PanelgeneraldataHE.Name = "PanelgeneraldataHE"
-        Me.PanelgeneraldataHE.Size = New System.Drawing.Size(750, 2000)
+        Me.PanelgeneraldataHE.Size = New System.Drawing.Size(733, 2000)
         Me.PanelgeneraldataHE.TabIndex = 2
         '
         'Button16
@@ -5157,7 +5159,7 @@ Partial Class Home
         Me.PanelPOF.Controls.Add(Me.df1)
         Me.PanelPOF.Location = New System.Drawing.Point(1, 1)
         Me.PanelPOF.Name = "PanelPOF"
-        Me.PanelPOF.Size = New System.Drawing.Size(750, 5515)
+        Me.PanelPOF.Size = New System.Drawing.Size(733, 5515)
         Me.PanelPOF.TabIndex = 0
         '
         'Panel64
@@ -5182,7 +5184,7 @@ Partial Class Home
         Me.Panel64.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Panel64.Location = New System.Drawing.Point(0, 5258)
         Me.Panel64.Name = "Panel64"
-        Me.Panel64.Size = New System.Drawing.Size(750, 264)
+        Me.Panel64.Size = New System.Drawing.Size(733, 264)
         Me.Panel64.TabIndex = 21
         '
         'Button17
@@ -5376,7 +5378,7 @@ Partial Class Home
         Me.df21.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df21.Location = New System.Drawing.Point(0, 4999)
         Me.df21.Name = "df21"
-        Me.df21.Size = New System.Drawing.Size(750, 259)
+        Me.df21.Size = New System.Drawing.Size(733, 259)
         Me.df21.TabIndex = 20
         '
         'Panel79
@@ -5574,7 +5576,7 @@ Partial Class Home
         Me.df20.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df20.Location = New System.Drawing.Point(0, 4830)
         Me.df20.Name = "df20"
-        Me.df20.Size = New System.Drawing.Size(750, 169)
+        Me.df20.Size = New System.Drawing.Size(733, 169)
         Me.df20.TabIndex = 19
         '
         'Panel78
@@ -5657,7 +5659,7 @@ Partial Class Home
         Me.df19.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df19.Location = New System.Drawing.Point(0, 4714)
         Me.df19.Name = "df19"
-        Me.df19.Size = New System.Drawing.Size(750, 116)
+        Me.df19.Size = New System.Drawing.Size(733, 116)
         Me.df19.TabIndex = 18
         '
         'Panel77
@@ -5724,8 +5726,54 @@ Partial Class Home
         Me.df18.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df18.Location = New System.Drawing.Point(0, 4502)
         Me.df18.Name = "df18"
-        Me.df18.Size = New System.Drawing.Size(750, 212)
+        Me.df18.Size = New System.Drawing.Size(733, 212)
         Me.df18.TabIndex = 17
+        '
+        'Panel96
+        '
+        Me.Panel96.Controls.Add(Me.ComboBox162)
+        Me.Panel96.Controls.Add(Me.Label387)
+        Me.Panel96.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel96.Location = New System.Drawing.Point(0, 176)
+        Me.Panel96.Name = "Panel96"
+        Me.Panel96.Size = New System.Drawing.Size(733, 36)
+        Me.Panel96.TabIndex = 9
+        '
+        'ComboBox162
+        '
+        Me.ComboBox162.FormattingEnabled = True
+        Me.ComboBox162.Items.AddRange(New Object() {"Component Not Subject to PWHT", "Component Subject to PWHT"})
+        Me.ComboBox162.Location = New System.Drawing.Point(200, 7)
+        Me.ComboBox162.Name = "ComboBox162"
+        Me.ComboBox162.Size = New System.Drawing.Size(201, 21)
+        Me.ComboBox162.TabIndex = 9
+        '
+        'Label387
+        '
+        Me.Label387.AutoSize = True
+        Me.Label387.Location = New System.Drawing.Point(17, 10)
+        Me.Label387.Name = "Label387"
+        Me.Label387.Size = New System.Drawing.Size(93, 13)
+        Me.Label387.TabIndex = 8
+        Me.Label387.Text = "PWHT Condition :"
+        '
+        'Panel95
+        '
+        Me.Panel95.Controls.Add(Me.Label386)
+        Me.Panel95.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel95.Location = New System.Drawing.Point(0, 109)
+        Me.Panel95.Name = "Panel95"
+        Me.Panel95.Size = New System.Drawing.Size(733, 67)
+        Me.Panel95.TabIndex = 8
+        '
+        'Label386
+        '
+        Me.Label386.AutoSize = True
+        Me.Label386.Location = New System.Drawing.Point(353, 26)
+        Me.Label386.Name = "Label386"
+        Me.Label386.Size = New System.Drawing.Size(44, 13)
+        Me.Label386.TabIndex = 7
+        Me.Label386.Text = " ΔFATT"
         '
         'Panel76
         '
@@ -5747,6 +5795,76 @@ Partial Class Home
         Me.Label70.TabIndex = 0
         Me.Label70.Text = "Low Alloy Steel Embrittlement Damage Factor"
         '
+        'Panel39
+        '
+        Me.Panel39.Controls.Add(Me.LinkLabel7)
+        Me.Panel39.Controls.Add(Me.ComboBox161)
+        Me.Panel39.Controls.Add(Me.LinkLabel6)
+        Me.Panel39.Controls.Add(Me.ComboBox160)
+        Me.Panel39.Controls.Add(Me.Label384)
+        Me.Panel39.Controls.Add(Me.Label385)
+        Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel39.Location = New System.Drawing.Point(0, 0)
+        Me.Panel39.Name = "Panel39"
+        Me.Panel39.Size = New System.Drawing.Size(733, 109)
+        Me.Panel39.TabIndex = 7
+        '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Location = New System.Drawing.Point(312, 88)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(39, 13)
+        Me.LinkLabel7.TabIndex = 12
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "Details"
+        '
+        'ComboBox161
+        '
+        Me.ComboBox161.FormattingEnabled = True
+        Me.ComboBox161.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.ComboBox161.Location = New System.Drawing.Point(200, 84)
+        Me.ComboBox161.Name = "ComboBox161"
+        Me.ComboBox161.Size = New System.Drawing.Size(101, 21)
+        Me.ComboBox161.TabIndex = 11
+        '
+        'LinkLabel6
+        '
+        Me.LinkLabel6.AutoSize = True
+        Me.LinkLabel6.Location = New System.Drawing.Point(312, 60)
+        Me.LinkLabel6.Name = "LinkLabel6"
+        Me.LinkLabel6.Size = New System.Drawing.Size(39, 13)
+        Me.LinkLabel6.TabIndex = 10
+        Me.LinkLabel6.TabStop = True
+        Me.LinkLabel6.Text = "Details"
+        '
+        'ComboBox160
+        '
+        Me.ComboBox160.FormattingEnabled = True
+        Me.ComboBox160.Items.AddRange(New Object() {"A", "B", "C", "D"})
+        Me.ComboBox160.Location = New System.Drawing.Point(200, 57)
+        Me.ComboBox160.Name = "ComboBox160"
+        Me.ComboBox160.Size = New System.Drawing.Size(101, 21)
+        Me.ComboBox160.TabIndex = 9
+        '
+        'Label384
+        '
+        Me.Label384.AutoSize = True
+        Me.Label384.Location = New System.Drawing.Point(19, 60)
+        Me.Label384.Name = "Label384"
+        Me.Label384.Size = New System.Drawing.Size(126, 13)
+        Me.Label384.TabIndex = 8
+        Me.Label384.Text = "ASME Exemption Curve :"
+        '
+        'Label385
+        '
+        Me.Label385.AutoSize = True
+        Me.Label385.Location = New System.Drawing.Point(16, 89)
+        Me.Label385.Name = "Label385"
+        Me.Label385.Size = New System.Drawing.Size(89, 13)
+        Me.Label385.TabIndex = 7
+        Me.Label385.Text = " ΔFATT Method :"
+        '
         'df17
         '
         Me.df17.Controls.Add(Me.LinkLabel5)
@@ -5764,8 +5882,98 @@ Partial Class Home
         Me.df17.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df17.Location = New System.Drawing.Point(0, 4314)
         Me.df17.Name = "df17"
-        Me.df17.Size = New System.Drawing.Size(750, 188)
+        Me.df17.Size = New System.Drawing.Size(733, 188)
         Me.df17.TabIndex = 16
+        '
+        'LinkLabel5
+        '
+        Me.LinkLabel5.AutoSize = True
+        Me.LinkLabel5.Location = New System.Drawing.Point(312, 159)
+        Me.LinkLabel5.Name = "LinkLabel5"
+        Me.LinkLabel5.Size = New System.Drawing.Size(39, 13)
+        Me.LinkLabel5.TabIndex = 13
+        Me.LinkLabel5.TabStop = True
+        Me.LinkLabel5.Text = "Details"
+        '
+        'ComboBox159
+        '
+        Me.ComboBox159.FormattingEnabled = True
+        Me.ComboBox159.Items.AddRange(New Object() {"1", "0.01"})
+        Me.ComboBox159.Location = New System.Drawing.Point(201, 156)
+        Me.ComboBox159.Name = "ComboBox159"
+        Me.ComboBox159.Size = New System.Drawing.Size(100, 21)
+        Me.ComboBox159.TabIndex = 12
+        '
+        'ComboBox158
+        '
+        Me.ComboBox158.FormattingEnabled = True
+        Me.ComboBox158.Items.AddRange(New Object() {"Component Not Subject to PWHT", "Component Subject to PWHT"})
+        Me.ComboBox158.Location = New System.Drawing.Point(201, 124)
+        Me.ComboBox158.Name = "ComboBox158"
+        Me.ComboBox158.Size = New System.Drawing.Size(200, 21)
+        Me.ComboBox158.TabIndex = 11
+        '
+        'LinkLabel4
+        '
+        Me.LinkLabel4.AutoSize = True
+        Me.LinkLabel4.Location = New System.Drawing.Point(312, 96)
+        Me.LinkLabel4.Name = "LinkLabel4"
+        Me.LinkLabel4.Size = New System.Drawing.Size(39, 13)
+        Me.LinkLabel4.TabIndex = 10
+        Me.LinkLabel4.TabStop = True
+        Me.LinkLabel4.Text = "Details"
+        '
+        'ComboBox157
+        '
+        Me.ComboBox157.FormattingEnabled = True
+        Me.ComboBox157.Items.AddRange(New Object() {"A", "B", "C", "D"})
+        Me.ComboBox157.Location = New System.Drawing.Point(201, 92)
+        Me.ComboBox157.Name = "ComboBox157"
+        Me.ComboBox157.Size = New System.Drawing.Size(100, 21)
+        Me.ComboBox157.TabIndex = 9
+        '
+        'TextBox90
+        '
+        Me.TextBox90.Location = New System.Drawing.Point(201, 63)
+        Me.TextBox90.Name = "TextBox90"
+        Me.TextBox90.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox90.TabIndex = 8
+        '
+        'Label383
+        '
+        Me.Label383.AutoSize = True
+        Me.Label383.Location = New System.Drawing.Point(17, 159)
+        Me.Label383.Name = "Label383"
+        Me.Label383.Size = New System.Drawing.Size(153, 13)
+        Me.Label383.TabIndex = 7
+        Me.Label383.Text = "Factor for Service Experience :"
+        '
+        'Label382
+        '
+        Me.Label382.AutoSize = True
+        Me.Label382.Location = New System.Drawing.Point(18, 128)
+        Me.Label382.Name = "Label382"
+        Me.Label382.Size = New System.Drawing.Size(93, 13)
+        Me.Label382.TabIndex = 7
+        Me.Label382.Text = "PWHT Condition :"
+        '
+        'Label381
+        '
+        Me.Label381.AutoSize = True
+        Me.Label381.Location = New System.Drawing.Point(19, 95)
+        Me.Label381.Name = "Label381"
+        Me.Label381.Size = New System.Drawing.Size(126, 13)
+        Me.Label381.TabIndex = 7
+        Me.Label381.Text = "ASME Exemption Curve :"
+        '
+        'Label380
+        '
+        Me.Label380.AutoSize = True
+        Me.Label380.Location = New System.Drawing.Point(19, 66)
+        Me.Label380.Name = "Label380"
+        Me.Label380.Size = New System.Drawing.Size(154, 13)
+        Me.Label380.TabIndex = 7
+        Me.Label380.Text = "Critical Exposure Temperature :"
         '
         'Panel75
         '
@@ -5810,7 +6018,7 @@ Partial Class Home
         Me.df16.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df16.Location = New System.Drawing.Point(0, 4106)
         Me.df16.Name = "df16"
-        Me.df16.Size = New System.Drawing.Size(750, 208)
+        Me.df16.Size = New System.Drawing.Size(733, 208)
         Me.df16.TabIndex = 15
         '
         'TextBox45
@@ -5984,7 +6192,7 @@ Partial Class Home
         Me.df15.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df15.Location = New System.Drawing.Point(0, 3890)
         Me.df15.Name = "df15"
-        Me.df15.Size = New System.Drawing.Size(750, 216)
+        Me.df15.Size = New System.Drawing.Size(733, 216)
         Me.df15.TabIndex = 14
         '
         'NumericUpDown11
@@ -6044,7 +6252,7 @@ Partial Class Home
         Me.Panel51.AutoScroll = True
         Me.Panel51.Controls.Add(Me.Panel52)
         Me.Panel51.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel51.Location = New System.Drawing.Point(491, 71)
+        Me.Panel51.Location = New System.Drawing.Point(474, 71)
         Me.Panel51.Name = "Panel51"
         Me.Panel51.Size = New System.Drawing.Size(259, 145)
         Me.Panel51.TabIndex = 9
@@ -6160,7 +6368,7 @@ Partial Class Home
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel50.Location = New System.Drawing.Point(0, 0)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(750, 71)
+        Me.Panel50.Size = New System.Drawing.Size(733, 71)
         Me.Panel50.TabIndex = 8
         '
         'Panel73
@@ -6208,7 +6416,7 @@ Partial Class Home
         Me.df14.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df14.Location = New System.Drawing.Point(0, 3589)
         Me.df14.Name = "df14"
-        Me.df14.Size = New System.Drawing.Size(750, 301)
+        Me.df14.Size = New System.Drawing.Size(733, 301)
         Me.df14.TabIndex = 13
         '
         'NumericUpDown10
@@ -6401,7 +6609,7 @@ Partial Class Home
         Me.df13.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df13.Location = New System.Drawing.Point(0, 3210)
         Me.df13.Name = "df13"
-        Me.df13.Size = New System.Drawing.Size(750, 379)
+        Me.df13.Size = New System.Drawing.Size(733, 379)
         Me.df13.TabIndex = 12
         '
         'NumericUpDown15
@@ -6659,7 +6867,7 @@ Partial Class Home
         Me.df12.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df12.Location = New System.Drawing.Point(0, 2935)
         Me.df12.Name = "df12"
-        Me.df12.Size = New System.Drawing.Size(750, 275)
+        Me.df12.Size = New System.Drawing.Size(733, 275)
         Me.df12.TabIndex = 11
         '
         'NumericUpDown14
@@ -6863,7 +7071,7 @@ Partial Class Home
         Me.df11.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df11.Location = New System.Drawing.Point(0, 2738)
         Me.df11.Name = "df11"
-        Me.df11.Size = New System.Drawing.Size(750, 197)
+        Me.df11.Size = New System.Drawing.Size(733, 197)
         Me.df11.TabIndex = 10
         '
         'NumericUpDown9
@@ -7028,7 +7236,7 @@ Partial Class Home
         Me.df10.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df10.Location = New System.Drawing.Point(0, 2538)
         Me.df10.Name = "df10"
-        Me.df10.Size = New System.Drawing.Size(750, 200)
+        Me.df10.Size = New System.Drawing.Size(733, 200)
         Me.df10.TabIndex = 9
         '
         'NumericUpDown8
@@ -7195,7 +7403,7 @@ Partial Class Home
         Me.Panel49.Controls.Add(Me.Label164)
         Me.Panel49.Controls.Add(Me.Label163)
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel49.Location = New System.Drawing.Point(490, 0)
+        Me.Panel49.Location = New System.Drawing.Point(473, 0)
         Me.Panel49.Name = "Panel49"
         Me.Panel49.Size = New System.Drawing.Size(260, 200)
         Me.Panel49.TabIndex = 11
@@ -7258,7 +7466,7 @@ Partial Class Home
         Me.df9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df9.Location = New System.Drawing.Point(0, 2280)
         Me.df9.Name = "df9"
-        Me.df9.Size = New System.Drawing.Size(750, 258)
+        Me.df9.Size = New System.Drawing.Size(733, 258)
         Me.df9.TabIndex = 8
         '
         'NumericUpDown7
@@ -7437,7 +7645,7 @@ Partial Class Home
         Me.df8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df8.Location = New System.Drawing.Point(0, 2089)
         Me.df8.Name = "df8"
-        Me.df8.Size = New System.Drawing.Size(750, 191)
+        Me.df8.Size = New System.Drawing.Size(733, 191)
         Me.df8.TabIndex = 7
         '
         'NumericUpDown6
@@ -7542,7 +7750,7 @@ Partial Class Home
         Me.Panel48.Controls.Add(Me.Label144)
         Me.Panel48.Controls.Add(Me.Label143)
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel48.Location = New System.Drawing.Point(503, 43)
+        Me.Panel48.Location = New System.Drawing.Point(486, 43)
         Me.Panel48.Name = "Panel48"
         Me.Panel48.Size = New System.Drawing.Size(247, 148)
         Me.Panel48.TabIndex = 8
@@ -7607,7 +7815,7 @@ Partial Class Home
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel47.Location = New System.Drawing.Point(0, 0)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(750, 43)
+        Me.Panel47.Size = New System.Drawing.Size(733, 43)
         Me.Panel47.TabIndex = 7
         '
         'Panel66
@@ -7681,7 +7889,7 @@ Partial Class Home
         Me.df7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df7.Location = New System.Drawing.Point(0, 1792)
         Me.df7.Name = "df7"
-        Me.df7.Size = New System.Drawing.Size(750, 297)
+        Me.df7.Size = New System.Drawing.Size(733, 297)
         Me.df7.TabIndex = 6
         '
         'NumericUpDown5
@@ -7879,7 +8087,7 @@ Partial Class Home
         Me.df6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df6.Location = New System.Drawing.Point(0, 1536)
         Me.df6.Name = "df6"
-        Me.df6.Size = New System.Drawing.Size(750, 256)
+        Me.df6.Size = New System.Drawing.Size(733, 256)
         Me.df6.TabIndex = 5
         '
         'ComboBox96
@@ -8064,7 +8272,7 @@ Partial Class Home
         Me.df5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df5.Location = New System.Drawing.Point(0, 1184)
         Me.df5.Name = "df5"
-        Me.df5.Size = New System.Drawing.Size(750, 352)
+        Me.df5.Size = New System.Drawing.Size(733, 352)
         Me.df5.TabIndex = 4
         '
         'NumericUpDown3
@@ -8296,7 +8504,7 @@ Partial Class Home
         Me.df4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df4.Location = New System.Drawing.Point(0, 975)
         Me.df4.Name = "df4"
-        Me.df4.Size = New System.Drawing.Size(750, 209)
+        Me.df4.Size = New System.Drawing.Size(733, 209)
         Me.df4.TabIndex = 3
         '
         'NumericUpDown2
@@ -8349,7 +8557,7 @@ Partial Class Home
         Me.Panel44.Controls.Add(Me.Panel46)
         Me.Panel44.Controls.Add(Me.Label105)
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel44.Location = New System.Drawing.Point(490, 43)
+        Me.Panel44.Location = New System.Drawing.Point(473, 43)
         Me.Panel44.Name = "Panel44"
         Me.Panel44.Size = New System.Drawing.Size(260, 166)
         Me.Panel44.TabIndex = 14
@@ -8534,7 +8742,7 @@ Partial Class Home
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel43.Location = New System.Drawing.Point(0, 0)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(750, 43)
+        Me.Panel43.Size = New System.Drawing.Size(733, 43)
         Me.Panel43.TabIndex = 13
         '
         'Panel55
@@ -8654,7 +8862,7 @@ Partial Class Home
         Me.df3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df3.Location = New System.Drawing.Point(0, 780)
         Me.df3.Name = "df3"
-        Me.df3.Size = New System.Drawing.Size(750, 195)
+        Me.df3.Size = New System.Drawing.Size(733, 195)
         Me.df3.TabIndex = 2
         '
         'NumericUpDown1
@@ -8715,7 +8923,7 @@ Partial Class Home
         Me.Panel42.AutoScroll = True
         Me.Panel42.Controls.Add(Me.Panel45)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel42.Location = New System.Drawing.Point(490, 40)
+        Me.Panel42.Location = New System.Drawing.Point(473, 40)
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(260, 155)
         Me.Panel42.TabIndex = 13
@@ -8876,7 +9084,7 @@ Partial Class Home
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel41.Location = New System.Drawing.Point(0, 0)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(750, 40)
+        Me.Panel41.Size = New System.Drawing.Size(733, 40)
         Me.Panel41.TabIndex = 12
         '
         'Panel38
@@ -8981,7 +9189,7 @@ Partial Class Home
         Me.df2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df2.Location = New System.Drawing.Point(0, 577)
         Me.df2.Name = "df2"
-        Me.df2.Size = New System.Drawing.Size(750, 203)
+        Me.df2.Size = New System.Drawing.Size(733, 203)
         Me.df2.TabIndex = 1
         '
         'ComboBox78
@@ -9095,7 +9303,7 @@ Partial Class Home
         Me.df1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.df1.Location = New System.Drawing.Point(0, 0)
         Me.df1.Name = "df1"
-        Me.df1.Size = New System.Drawing.Size(750, 577)
+        Me.df1.Size = New System.Drawing.Size(733, 577)
         Me.df1.TabIndex = 0
         '
         'Panel92
@@ -9107,7 +9315,7 @@ Partial Class Home
         Me.Panel92.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel92.Location = New System.Drawing.Point(0, 506)
         Me.Panel92.Name = "Panel92"
-        Me.Panel92.Size = New System.Drawing.Size(750, 71)
+        Me.Panel92.Size = New System.Drawing.Size(733, 71)
         Me.Panel92.TabIndex = 15
         Me.Panel92.Visible = False
         '
@@ -9156,7 +9364,7 @@ Partial Class Home
         Me.Panel91.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel91.Location = New System.Drawing.Point(0, 441)
         Me.Panel91.Name = "Panel91"
-        Me.Panel91.Size = New System.Drawing.Size(750, 65)
+        Me.Panel91.Size = New System.Drawing.Size(733, 65)
         Me.Panel91.TabIndex = 14
         Me.Panel91.Visible = False
         '
@@ -9202,7 +9410,7 @@ Partial Class Home
         Me.Panel54.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel54.Location = New System.Drawing.Point(0, 387)
         Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(750, 54)
+        Me.Panel54.Size = New System.Drawing.Size(733, 54)
         Me.Panel54.TabIndex = 13
         Me.Panel54.Visible = False
         '
@@ -9240,7 +9448,7 @@ Partial Class Home
         Me.Panel90.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel90.Location = New System.Drawing.Point(0, 105)
         Me.Panel90.Name = "Panel90"
-        Me.Panel90.Size = New System.Drawing.Size(750, 282)
+        Me.Panel90.Size = New System.Drawing.Size(733, 282)
         Me.Panel90.TabIndex = 12
         '
         'ComboBox154
@@ -9427,7 +9635,7 @@ Partial Class Home
         Me.Panel89.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel89.Location = New System.Drawing.Point(0, 46)
         Me.Panel89.Name = "Panel89"
-        Me.Panel89.Size = New System.Drawing.Size(750, 59)
+        Me.Panel89.Size = New System.Drawing.Size(733, 59)
         Me.Panel89.TabIndex = 11
         Me.Panel89.Visible = False
         '
@@ -9469,7 +9677,7 @@ Partial Class Home
         Me.Panel60.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel60.Location = New System.Drawing.Point(0, 0)
         Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(750, 46)
+        Me.Panel60.Size = New System.Drawing.Size(733, 46)
         Me.Panel60.TabIndex = 1
         '
         'Panel21
@@ -9508,7 +9716,7 @@ Partial Class Home
         Me.PanelPOFHE.ForeColor = System.Drawing.SystemColors.ControlText
         Me.PanelPOFHE.Location = New System.Drawing.Point(1, 1)
         Me.PanelPOFHE.Name = "PanelPOFHE"
-        Me.PanelPOFHE.Size = New System.Drawing.Size(681, 744)
+        Me.PanelPOFHE.Size = New System.Drawing.Size(664, 744)
         Me.PanelPOFHE.TabIndex = 1
         '
         'Panelhistory
@@ -9609,7 +9817,7 @@ Partial Class Home
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelPOFPRD.Location = New System.Drawing.Point(1, 1)
         Me.PanelPOFPRD.Name = "PanelPOFPRD"
-        Me.PanelPOFPRD.Size = New System.Drawing.Size(679, 252)
+        Me.PanelPOFPRD.Size = New System.Drawing.Size(662, 252)
         Me.PanelPOFPRD.TabIndex = 2
         '
         'TabPage3
@@ -11400,211 +11608,13 @@ Partial Class Home
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Rafaolec"
         '
-        'Label380
+        'DateTimePicker13
         '
-        Me.Label380.AutoSize = True
-        Me.Label380.Location = New System.Drawing.Point(19, 66)
-        Me.Label380.Name = "Label380"
-        Me.Label380.Size = New System.Drawing.Size(154, 13)
-        Me.Label380.TabIndex = 7
-        Me.Label380.Text = "Critical Exposure Temperature :"
-        '
-        'TextBox90
-        '
-        Me.TextBox90.Location = New System.Drawing.Point(201, 63)
-        Me.TextBox90.Name = "TextBox90"
-        Me.TextBox90.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox90.TabIndex = 8
-        '
-        'Label381
-        '
-        Me.Label381.AutoSize = True
-        Me.Label381.Location = New System.Drawing.Point(19, 95)
-        Me.Label381.Name = "Label381"
-        Me.Label381.Size = New System.Drawing.Size(126, 13)
-        Me.Label381.TabIndex = 7
-        Me.Label381.Text = "ASME Exemption Curve :"
-        '
-        'ComboBox157
-        '
-        Me.ComboBox157.FormattingEnabled = True
-        Me.ComboBox157.Items.AddRange(New Object() {"A", "B", "C", "D"})
-        Me.ComboBox157.Location = New System.Drawing.Point(201, 92)
-        Me.ComboBox157.Name = "ComboBox157"
-        Me.ComboBox157.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox157.TabIndex = 9
-        '
-        'Label382
-        '
-        Me.Label382.AutoSize = True
-        Me.Label382.Location = New System.Drawing.Point(18, 128)
-        Me.Label382.Name = "Label382"
-        Me.Label382.Size = New System.Drawing.Size(93, 13)
-        Me.Label382.TabIndex = 7
-        Me.Label382.Text = "PWHT Condition :"
-        '
-        'LinkLabel4
-        '
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Location = New System.Drawing.Point(312, 96)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(39, 13)
-        Me.LinkLabel4.TabIndex = 10
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "Details"
-        '
-        'ComboBox158
-        '
-        Me.ComboBox158.FormattingEnabled = True
-        Me.ComboBox158.Items.AddRange(New Object() {"Component Not Subject to PWHT", "Component Subject to PWHT"})
-        Me.ComboBox158.Location = New System.Drawing.Point(201, 124)
-        Me.ComboBox158.Name = "ComboBox158"
-        Me.ComboBox158.Size = New System.Drawing.Size(200, 21)
-        Me.ComboBox158.TabIndex = 11
-        '
-        'Label383
-        '
-        Me.Label383.AutoSize = True
-        Me.Label383.Location = New System.Drawing.Point(17, 159)
-        Me.Label383.Name = "Label383"
-        Me.Label383.Size = New System.Drawing.Size(153, 13)
-        Me.Label383.TabIndex = 7
-        Me.Label383.Text = "Factor for Service Experience :"
-        '
-        'ComboBox159
-        '
-        Me.ComboBox159.FormattingEnabled = True
-        Me.ComboBox159.Items.AddRange(New Object() {"1", "0.01"})
-        Me.ComboBox159.Location = New System.Drawing.Point(201, 156)
-        Me.ComboBox159.Name = "ComboBox159"
-        Me.ComboBox159.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox159.TabIndex = 12
-        '
-        'LinkLabel5
-        '
-        Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(312, 159)
-        Me.LinkLabel5.Name = "LinkLabel5"
-        Me.LinkLabel5.Size = New System.Drawing.Size(39, 13)
-        Me.LinkLabel5.TabIndex = 13
-        Me.LinkLabel5.TabStop = True
-        Me.LinkLabel5.Text = "Details"
-        '
-        'Panel39
-        '
-        Me.Panel39.Controls.Add(Me.LinkLabel7)
-        Me.Panel39.Controls.Add(Me.ComboBox161)
-        Me.Panel39.Controls.Add(Me.LinkLabel6)
-        Me.Panel39.Controls.Add(Me.ComboBox160)
-        Me.Panel39.Controls.Add(Me.Label384)
-        Me.Panel39.Controls.Add(Me.Label385)
-        Me.Panel39.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel39.Location = New System.Drawing.Point(0, 0)
-        Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(750, 109)
-        Me.Panel39.TabIndex = 7
-        '
-        'Label384
-        '
-        Me.Label384.AutoSize = True
-        Me.Label384.Location = New System.Drawing.Point(19, 60)
-        Me.Label384.Name = "Label384"
-        Me.Label384.Size = New System.Drawing.Size(126, 13)
-        Me.Label384.TabIndex = 8
-        Me.Label384.Text = "ASME Exemption Curve :"
-        '
-        'ComboBox160
-        '
-        Me.ComboBox160.FormattingEnabled = True
-        Me.ComboBox160.Items.AddRange(New Object() {"A", "B", "C", "D"})
-        Me.ComboBox160.Location = New System.Drawing.Point(200, 57)
-        Me.ComboBox160.Name = "ComboBox160"
-        Me.ComboBox160.Size = New System.Drawing.Size(101, 21)
-        Me.ComboBox160.TabIndex = 9
-        '
-        'Label385
-        '
-        Me.Label385.AutoSize = True
-        Me.Label385.Location = New System.Drawing.Point(16, 89)
-        Me.Label385.Name = "Label385"
-        Me.Label385.Size = New System.Drawing.Size(89, 13)
-        Me.Label385.TabIndex = 7
-        Me.Label385.Text = " ΔFATT Method :"
-        '
-        'LinkLabel6
-        '
-        Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.Location = New System.Drawing.Point(312, 60)
-        Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(39, 13)
-        Me.LinkLabel6.TabIndex = 10
-        Me.LinkLabel6.TabStop = True
-        Me.LinkLabel6.Text = "Details"
-        '
-        'ComboBox161
-        '
-        Me.ComboBox161.FormattingEnabled = True
-        Me.ComboBox161.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.ComboBox161.Location = New System.Drawing.Point(200, 84)
-        Me.ComboBox161.Name = "ComboBox161"
-        Me.ComboBox161.Size = New System.Drawing.Size(101, 21)
-        Me.ComboBox161.TabIndex = 11
-        '
-        'LinkLabel7
-        '
-        Me.LinkLabel7.AutoSize = True
-        Me.LinkLabel7.Location = New System.Drawing.Point(312, 88)
-        Me.LinkLabel7.Name = "LinkLabel7"
-        Me.LinkLabel7.Size = New System.Drawing.Size(39, 13)
-        Me.LinkLabel7.TabIndex = 12
-        Me.LinkLabel7.TabStop = True
-        Me.LinkLabel7.Text = "Details"
-        '
-        'Panel95
-        '
-        Me.Panel95.Controls.Add(Me.Label386)
-        Me.Panel95.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel95.Location = New System.Drawing.Point(0, 109)
-        Me.Panel95.Name = "Panel95"
-        Me.Panel95.Size = New System.Drawing.Size(750, 67)
-        Me.Panel95.TabIndex = 8
-        '
-        'Label386
-        '
-        Me.Label386.AutoSize = True
-        Me.Label386.Location = New System.Drawing.Point(353, 26)
-        Me.Label386.Name = "Label386"
-        Me.Label386.Size = New System.Drawing.Size(44, 13)
-        Me.Label386.TabIndex = 7
-        Me.Label386.Text = " ΔFATT"
-        '
-        'Panel96
-        '
-        Me.Panel96.Controls.Add(Me.ComboBox162)
-        Me.Panel96.Controls.Add(Me.Label387)
-        Me.Panel96.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel96.Location = New System.Drawing.Point(0, 176)
-        Me.Panel96.Name = "Panel96"
-        Me.Panel96.Size = New System.Drawing.Size(750, 36)
-        Me.Panel96.TabIndex = 9
-        '
-        'Label387
-        '
-        Me.Label387.AutoSize = True
-        Me.Label387.Location = New System.Drawing.Point(17, 10)
-        Me.Label387.Name = "Label387"
-        Me.Label387.Size = New System.Drawing.Size(93, 13)
-        Me.Label387.TabIndex = 8
-        Me.Label387.Text = "PWHT Condition :"
-        '
-        'ComboBox162
-        '
-        Me.ComboBox162.FormattingEnabled = True
-        Me.ComboBox162.Items.AddRange(New Object() {"Component Not Subject to PWHT", "Component Subject to PWHT"})
-        Me.ComboBox162.Location = New System.Drawing.Point(200, 7)
-        Me.ComboBox162.Name = "ComboBox162"
-        Me.ComboBox162.Size = New System.Drawing.Size(201, 21)
-        Me.ComboBox162.TabIndex = 9
+        Me.DateTimePicker13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker13.Location = New System.Drawing.Point(200, 23)
+        Me.DateTimePicker13.Name = "DateTimePicker13"
+        Me.DateTimePicker13.Size = New System.Drawing.Size(149, 20)
+        Me.DateTimePicker13.TabIndex = 234
         '
         'Home
         '
@@ -11702,8 +11712,14 @@ Partial Class Home
         Me.Panel77.ResumeLayout(False)
         Me.Panel77.PerformLayout()
         Me.df18.ResumeLayout(False)
+        Me.Panel96.ResumeLayout(False)
+        Me.Panel96.PerformLayout()
+        Me.Panel95.ResumeLayout(False)
+        Me.Panel95.PerformLayout()
         Me.Panel76.ResumeLayout(False)
         Me.Panel76.PerformLayout()
+        Me.Panel39.ResumeLayout(False)
+        Me.Panel39.PerformLayout()
         Me.df17.ResumeLayout(False)
         Me.df17.PerformLayout()
         Me.Panel75.ResumeLayout(False)
@@ -11853,12 +11869,6 @@ Partial Class Home
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel39.ResumeLayout(False)
-        Me.Panel39.PerformLayout()
-        Me.Panel95.ResumeLayout(False)
-        Me.Panel95.PerformLayout()
-        Me.Panel96.ResumeLayout(False)
-        Me.Panel96.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -12854,4 +12864,5 @@ Partial Class Home
     Friend WithEvents Panel96 As Panel
     Friend WithEvents ComboBox162 As ComboBox
     Friend WithEvents Label387 As Label
+    Friend WithEvents DateTimePicker13 As DateTimePicker
 End Class

@@ -27,6 +27,70 @@ Public Class Insert_Equipment
         End If
     End Function
 
+    'Koneksi Database ------------------------------------------------------------------------------------------
+
+    Public Sub tampildataindustrycombobox()
+        Call koneksi()
+        Dim CMD As New MySqlCommand("SELECT `industry_name` FROM `tbl_industry`", constring)
+
+        Dim adapter As New MySqlDataAdapter(CMD)
+        Dim rd As MySqlDataReader
+
+        rd = CMD.ExecuteReader
+        ComboBox1.Items.Clear()
+        Do While rd.Read
+            ComboBox1.Items.Add(rd.Item(0))
+        Loop
+    End Sub
+
+    Private Sub simpandataequipment()
+        Call koneksi()
+        Dim simpan_command As New MySqlCommand("INSERT INTO `tbl_equipment`(`industry_name`, `equipment_code`, `equipment_description`, `equipment_type`, `component_type`) VALUES (@name,@code,@desc,@type,@comp)", constring)
+        simpan_command.Parameters.Add("@name", MySqlDbType.VarChar).Value = ComboBox1.Text
+        simpan_command.Parameters.Add("@code", MySqlDbType.VarChar).Value = TextBox1.Text
+        simpan_command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = TextBox2.Text
+        simpan_command.Parameters.Add("@type", MySqlDbType.VarChar).Value = ComboBox6.Text
+        simpan_command.Parameters.Add("@comp", MySqlDbType.VarChar).Value = ComboBox2.Text
+
+        If execCommand(simpan_command) Then
+            MessageBox.Show("Data Saved")
+        Else
+            MessageBox.Show("Data Not Saved")
+        End If
+
+        If constring.State = ConnectionState.Open Then
+            constring.Close()
+        End If
+    End Sub
+
+    Public Sub updatedataequipment()
+        Call koneksi()
+
+        Dim update_command As New MySqlCommand("UPDATE `tbl_equipment` SET `industry_name`=@name,`equipment_description`=@desc,`equipment_type`=@type,`component_type`=@comp WHERE `equipment_code`=@code", constring)
+        update_command.Parameters.Add("@name", MySqlDbType.VarChar).Value = ComboBox1.Text
+        update_command.Parameters.Add("@code", MySqlDbType.VarChar).Value = TextBox1.Text
+        update_command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = TextBox2.Text
+        update_command.Parameters.Add("@type", MySqlDbType.VarChar).Value = ComboBox6.Text
+        update_command.Parameters.Add("@comp", MySqlDbType.VarChar).Value = ComboBox2.Text
+
+        If execCommand(update_command) Then
+            MessageBox.Show("Data Updated")
+        Else
+            MessageBox.Show("Data Not Updated")
+        End If
+
+        If constring.State = ConnectionState.Open Then
+            constring.Close()
+        End If
+    End Sub
+
+    'Load ------------------------------------------------------------------------------------------------------
+    Private Sub Insert_Equipment_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Call tampildataindustrycombobox()
+    End Sub
+
+    'Button Coding ---------------------------------------------------------------------------------------------
+
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Me.Close()
     End Sub
@@ -81,5 +145,28 @@ Public Class Insert_Equipment
         TextBox2.Text = ""
         ComboBox1.Text = ""
         ComboBox2.Text = ""
+        ComboBox6.Text = ""
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Call simpandataequipment()
+
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        ComboBox6.Text = ""
+
+        Call Equipment.loaddataequipment()
+        Call Equipment.aturDGV()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Call updatedataequipment()
+
+        Call Equipment.loaddataequipment()
+        Call Equipment.aturDGV()
+
+        Me.Close()
     End Sub
 End Class

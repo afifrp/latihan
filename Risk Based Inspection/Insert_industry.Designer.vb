@@ -55,7 +55,7 @@ Partial Class Insert_industry
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(457, 232)
+        Me.Panel1.Size = New System.Drawing.Size(457, 203)
         Me.Panel1.TabIndex = 0
         '
         'Button3
@@ -65,7 +65,7 @@ Partial Class Insert_industry
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(317, 182)
+        Me.Button3.Location = New System.Drawing.Point(317, 153)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(114, 30)
         Me.Button3.TabIndex = 27
@@ -80,7 +80,7 @@ Partial Class Insert_industry
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(189, 182)
+        Me.Button1.Location = New System.Drawing.Point(189, 153)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 30)
         Me.Button1.TabIndex = 25
@@ -90,7 +90,7 @@ Partial Class Insert_industry
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(189, 146)
+        Me.TextBox2.Location = New System.Drawing.Point(189, 115)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(242, 20)
         Me.TextBox2.TabIndex = 23
@@ -102,15 +102,16 @@ Partial Class Insert_industry
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(242, 20)
         Me.TextBox1.TabIndex = 22
+        Me.TextBox1.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(20, 151)
+        Me.Label4.Location = New System.Drawing.Point(20, 120)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.Size = New System.Drawing.Size(75, 13)
         Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Industry Unit"
+        Me.Label4.Text = "Industry Name"
         '
         'Label3
         '
@@ -120,6 +121,7 @@ Partial Class Insert_industry
         Me.Label3.Size = New System.Drawing.Size(72, 13)
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Industry Code"
+        Me.Label3.Visible = False
         '
         'Panel2
         '
@@ -184,7 +186,7 @@ Partial Class Insert_industry
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(189, 182)
+        Me.Button2.Location = New System.Drawing.Point(189, 153)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(114, 30)
         Me.Button2.TabIndex = 26
@@ -196,7 +198,7 @@ Partial Class Insert_industry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 232)
+        Me.ClientSize = New System.Drawing.Size(457, 203)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Insert_industry"

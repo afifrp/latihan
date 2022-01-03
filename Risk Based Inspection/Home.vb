@@ -45,6 +45,7 @@ Public Class Home
         Panel4.Hide()
         Button15.Text = ">"
         Panelnewanalysis.Show()
+        Call tampildataindustrycombobox()
     End Sub
 
     'Home ------------------------------------------------------------------------------------
@@ -58,6 +59,60 @@ Public Class Home
             Panel4.Show()
             Button15.Text = "<"
         End If
+    End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs)
+        Panel6.Visible = False
+        Panel7.Visible = True
+        Panel8.Visible = False
+        Panel9.Visible = True
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = False
+        Panel14.Visible = False
+
+
+        TabPage1.Text = ""
+        TabPage2.Text = "General Data"
+        TabPage3.Text = ""
+        TabPage4.Text = ""
+
+
+        TabPage1.Enabled = False
+        TabPage2.Enabled = True
+        TabPage3.Enabled = False
+        TabPage4.Enabled = False
+
+
+        TabControl1.SelectedTab = TabPage2
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs)
+        Panel6.Visible = False
+        Panel7.Visible = True
+        Panel8.Visible = False
+        Panel9.Visible = True
+        Panel10.Visible = False
+        Panel11.Visible = False
+        Panel12.Visible = False
+        Panel13.Visible = False
+        Panel14.Visible = False
+
+
+        TabPage1.Text = ""
+        TabPage2.Text = "General Data"
+        TabPage3.Text = ""
+        TabPage4.Text = ""
+
+
+        TabPage1.Enabled = False
+        TabPage2.Enabled = True
+        TabPage3.Enabled = False
+        TabPage4.Enabled = False
+
+
+        TabControl1.SelectedTab = TabPage2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -300,13 +355,17 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("KODRUM")
-        ComboBox62.Items.Add("DRUM")
-        ComboBox62.Items.Add("REACTOR")
-        ComboBox62.Items.Add("COLTOP")
-        ComboBox62.Items.Add("COLMID")
-        ComboBox62.Items.Add("COLBTM")
+        Label391.Text = "Pressure Vessel"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("KODRUM")
+        'ComboBox62.Items.Add("DRUM")
+        'ComboBox62.Items.Add("REACTOR")
+        'ComboBox62.Items.Add("COLTOP")
+        'ComboBox62.Items.Add("COLMID")
+        'ComboBox62.Items.Add("COLBTM")
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
@@ -321,16 +380,20 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("PIPE-1")
-        ComboBox62.Items.Add("PIPE-3")
-        ComboBox62.Items.Add("PIPE-4")
-        ComboBox62.Items.Add("PIPE-6")
-        ComboBox62.Items.Add("PIPE-8")
-        ComboBox62.Items.Add("PIPE-10")
-        ComboBox62.Items.Add("PIPE-13")
-        ComboBox62.Items.Add("PIPE-16")
-        ComboBox62.Items.Add("PIPEGT16")
+        Label391.Text = "Pipes and Tubes"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("PIPE-1")
+        'ComboBox62.Items.Add("PIPE-3")
+        'ComboBox62.Items.Add("PIPE-4")
+        'ComboBox62.Items.Add("PIPE-6")
+        'ComboBox62.Items.Add("PIPE-8")
+        'ComboBox62.Items.Add("PIPE-10")
+        'ComboBox62.Items.Add("PIPE-13")
+        'ComboBox62.Items.Add("PIPE-16")
+        'ComboBox62.Items.Add("PIPEGT16")
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
@@ -345,8 +408,12 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("TANKBOTTOM")
+        Label391.Text = "Atmospheric Storage Tank - Bottom Plates"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("TANKBOTTOM")
     End Sub
 
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
@@ -361,9 +428,13 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("FINFAN")
-        ComboBox62.Items.Add("FILTER")
+        Label391.Text = "AirFin Heat Exchanger Header Boxes"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("FINFAN")
+        'ComboBox62.Items.Add("FILTER")
     End Sub
 
     Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
@@ -378,9 +449,13 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("COMPC")
-        ComboBox62.Items.Add("COMPR")
+        Label391.Text = "Compressors"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("COMPC")
+        'ComboBox62.Items.Add("COMPR")
     End Sub
 
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
@@ -395,10 +470,14 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("PUMP3S")
-        ComboBox62.Items.Add("PUMP1S")
-        ComboBox62.Items.Add("PUMPR")
+        Label391.Text = "Pumps"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("PUMP3S")
+        'ComboBox62.Items.Add("PUMP1S")
+        'ComboBox62.Items.Add("PUMPR")
     End Sub
 
     Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
@@ -413,10 +492,14 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("HEXSS")
-        ComboBox62.Items.Add("HEXTS")
-        ComboBox62.Items.Add("HEXTUBE")
+        Label391.Text = "Heat Exchanger"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("HEXSS")
+        'ComboBox62.Items.Add("HEXTS")
+        'ComboBox62.Items.Add("HEXTUBE")
     End Sub
 
     Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
@@ -431,8 +514,11 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("Pressure Relief Devices")
+        Label391.Text = "Pressure Relief Devices"
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("Pressure Relief Devices")
     End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
@@ -447,8 +533,12 @@ Public Class Home
         PictureBox11.Visible = True
         PictureBox12.Visible = False
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("COURSES-1-10")
+        Label391.Text = "Atmospheric Storage Tank - Shell Courses"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("COURSES-1-10")
     End Sub
 
     Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
@@ -463,8 +553,16 @@ Public Class Home
         PictureBox11.Visible = False
         PictureBox12.Visible = True
 
-        ComboBox62.Items.Clear()
-        ComboBox62.Items.Add("Heat Exchanger Tube Bundles")
+        Label391.Text = "Heat Exchanger Tube Bundles"
+
+        Call tampildatacomponentcombobox()
+
+        'ComboBox62.Items.Clear()
+        'ComboBox62.Items.Add("Heat Exchanger Tube Bundles")
+    End Sub
+
+    Private Sub ComboBox62_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox62.SelectedIndexChanged
+        Call tampildatacodeequipmentcombobox()
     End Sub
 
     Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
@@ -687,60 +785,6 @@ Public Class Home
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         FMS.ShowDialog()
-    End Sub
-
-    Private Sub Button19_Click(sender As Object, e As EventArgs)
-        Panel6.Visible = False
-        Panel7.Visible = True
-        Panel8.Visible = False
-        Panel9.Visible = True
-        Panel10.Visible = False
-        Panel11.Visible = False
-        Panel12.Visible = False
-        Panel13.Visible = False
-        Panel14.Visible = False
-
-
-        TabPage1.Text = ""
-        TabPage2.Text = "General Data"
-        TabPage3.Text = ""
-        TabPage4.Text = ""
-
-
-        TabPage1.Enabled = False
-        TabPage2.Enabled = True
-        TabPage3.Enabled = False
-        TabPage4.Enabled = False
-
-
-        TabControl1.SelectedTab = TabPage2
-    End Sub
-
-    Private Sub Button14_Click(sender As Object, e As EventArgs)
-        Panel6.Visible = False
-        Panel7.Visible = True
-        Panel8.Visible = False
-        Panel9.Visible = True
-        Panel10.Visible = False
-        Panel11.Visible = False
-        Panel12.Visible = False
-        Panel13.Visible = False
-        Panel14.Visible = False
-
-
-        TabPage1.Text = ""
-        TabPage2.Text = "General Data"
-        TabPage3.Text = ""
-        TabPage4.Text = ""
-
-
-        TabPage1.Enabled = False
-        TabPage2.Enabled = True
-        TabPage3.Enabled = False
-        TabPage4.Enabled = False
-
-
-        TabControl1.SelectedTab = TabPage2
     End Sub
 
     'NEXT TO POF
@@ -1250,11 +1294,19 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox94.Text = "No" Then
             Label124.Visible = False
             ComboBox95.Visible = False
-            ComboBox110.Text = ""
+            'ComboBox110.Text = ""
         Else
             Label124.Visible = False
             ComboBox95.Visible = False
-            ComboBox110.Text = ""
+            'ComboBox110.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox95_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox95.SelectedIndexChanged
+        If ComboBox95.Text = "Yes" Then
+        ElseIf ComboBox95.Text = "No" Then
+            ComboBox110.Text = "PLEASE DETERMINE BY FFS"
+        Else
         End If
     End Sub
 
@@ -1279,11 +1331,19 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox13.Text = "No" Then
             Label125.Visible = False
             ComboBox17.Visible = False
-            ComboBox112.Text = ""
+            'ComboBox112.Text = ""
         Else
             Label125.Visible = False
             ComboBox17.Visible = False
-            ComboBox112.Text = ""
+            'ComboBox112.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox17_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox17.SelectedIndexChanged
+        If ComboBox17.Text = "Yes" Then
+        ElseIf ComboBox17.Text = "No" Then
+            ComboBox112.Text = "PLEASE DETERMINE BY FFS"
+        Else
         End If
     End Sub
 
@@ -1307,11 +1367,19 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox16.Text = "No" Then
             Label127.Visible = False
             ComboBox97.Visible = False
-            ComboBox114.Text = ""
+            'ComboBox114.Text = ""
         Else
             Label125.Visible = False
             ComboBox17.Visible = False
-            ComboBox114.Text = ""
+            'ComboBox114.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox97_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox97.SelectedIndexChanged
+        If ComboBox97.Text = "Yes" Then
+        ElseIf ComboBox97.Text = "No" Then
+            ComboBox114.Text = "PLEASE DETERMINE BY FFS"
+        Else
         End If
     End Sub
 
@@ -1398,16 +1466,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox99.Text = "No" Then
             Label152.Visible = False
             ComboBox100.Visible = False
-            ComboBox120.Text = ""
+            'ComboBox120.Text = ""
         Else
             Label152.Visible = False
             ComboBox100.Visible = False
-            ComboBox120.Text = ""
+            'ComboBox120.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox100_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox100.SelectedIndexChanged
-
+        If ComboBox100.Text = "Yes" Then
+        ElseIf ComboBox100.Text = "No" Then
+            ComboBox114.Text = "PLEASE DETERMINE BY FFS"
+        Else
+        End If
     End Sub
 
     Private Sub CheckBox108_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox108.CheckedChanged
@@ -1425,15 +1497,58 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     Private Sub ComboBox24_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox24.SelectedIndexChanged
         If ComboBox24.Text = "Yes" Then
             Label156.Visible = True
+            Label158.Visible = False
             ComboBox121.Visible = True
+            ComboBox25.Visible = False
             ComboBox124.Text = "HIGH SUSCEPTIBILITY"
         ElseIf ComboBox24.Text = "No" Then
             Label156.Visible = False
+            Label158.Visible = True
             ComboBox121.Visible = False
+            ComboBox25.Visible = True
             ComboBox124.Text = ""
         Else
             Label156.Visible = False
+            Label158.Visible = False
             ComboBox121.Visible = False
+            ComboBox25.Visible = False
+            ComboBox124.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox121_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox121.SelectedIndexChanged
+        If ComboBox121.Text = "Yes" Then
+        ElseIf ComboBox121.Text = "No" Then
+            ComboBox124.Text = "PLEASE DETERMINE BY FFS"
+        Else
+        End If
+    End Sub
+
+    Private Sub ComboBox25_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox25.SelectedIndexChanged
+        If ComboBox25.Text = "Yes" Then
+            Panel49.Visible = True
+            ComboBox124.Text = ""
+        ElseIf ComboBox25.Text = "No" Then
+            Panel49.Visible = False
+            ComboBox124.Text = "NONE SUSCEPTIBILITY"
+        Else
+            Panel49.Visible = False
+            ComboBox124.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox122_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox122.SelectedIndexChanged
+        If ComboBox122.Text = "Yes" Then
+            Label159.Visible = True
+            ComboBox122.Visible = True
+            ComboBox124.Text = ""
+        ElseIf ComboBox122.Text = "No" Then
+            Label159.Visible = False
+            ComboBox122.Visible = False
+            ComboBox124.Text = "NONE SUSCEPTIBILITY"
+        Else
+            Label152.Visible = False
+            ComboBox100.Visible = False
             ComboBox124.Text = ""
         End If
     End Sub
@@ -1456,37 +1571,76 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label167.Visible = False
             ComboBox27.Visible = True
             ComboBox126.Visible = False
-            ComboBox125.Text = "HIGH SUSCEPTIBILITY"
+            ComboBox165.Text = "HIGH SUSCEPTIBILITY"
         ElseIf ComboBox26.Text = "No" Then
             Label165.Visible = False
             Label167.Visible = True
             ComboBox27.Visible = False
             ComboBox126.Visible = True
-            ComboBox125.Text = ""
+            ComboBox165.Text = ""
         Else
             Label140.Visible = False
             Label141.Visible = False
             ComboBox20.Visible = False
             ComboBox21.Visible = False
-            ComboBox125.Text = ""
+            ComboBox165.Text = ""
         End If
     End Sub
 
-    Private Sub CheckBox127_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox127.CheckedChanged
+    Private Sub ComboBox27_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox27.SelectedIndexChanged
+        If ComboBox27.Text = "Yes" Then
+        ElseIf ComboBox27.Text = "No" Then
+            ComboBox165.Text = "PLEASE DETERMINE BY FFS"
+        Else
+        End If
+    End Sub
+
+    Private Sub ComboBox126_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox126.SelectedIndexChanged
+        If ComboBox25.Text = "Yes" Then
+            Panel97.Visible = True
+            ComboBox165.Text = ""
+        ElseIf ComboBox25.Text = "No" Then
+            Panel97.Visible = False
+            ComboBox165.Text = "NONE SUSCEPTIBILITY"
+        Else
+            Panel97.Visible = False
+            ComboBox165.Text = ""
+        End If
+    End Sub
+
+    Private Sub CheckBox127_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox127.Checked = True Then
-            ComboBox125.Items.Clear()
-            ComboBox125.Items.Add("NONE SUSCEPTIBILITY")
-            ComboBox125.Items.Add("LOW SUSCEPTIBILITY")
-            ComboBox125.Items.Add("MEDIUM SUSCEPTIBILITY")
-            ComboBox125.Items.Add("HIGH SUSCEPTIBILITY")
+            ComboBox165.Items.Clear()
+            ComboBox165.Items.Add("NONE SUSCEPTIBILITY")
+            ComboBox165.Items.Add("LOW SUSCEPTIBILITY")
+            ComboBox165.Items.Add("MEDIUM SUSCEPTIBILITY")
+            ComboBox165.Items.Add("HIGH SUSCEPTIBILITY")
         End If
     End Sub
 
     'External Corrosion Damage Factor – Ferritic Component -----------------------------------------------------
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            Label334.Visible = True
+            TextBox85.Visible = True
+        Else
+            Label334.Visible = False
+            TextBox85.Visible = False
+        End If
+    End Sub
 
     'Corrosion Under Insulation Damage Factor – Ferritic Component ---------------------------------------------
 
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If CheckBox2.Checked = True Then
+            Label347.Visible = True
+            TextBox88.Visible = True
+        Else
+            Label347.Visible = False
+            TextBox88.Visible = False
+        End If
+    End Sub
 
     'External Chloride Stress Corrosion Cracking Damage Factor – Austenitic Component --------------------------
 
@@ -1796,6 +1950,53 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Loop
     End Sub
 
+    Public Sub tampildataindustrycombobox()
+        Call koneksi()
+        Dim CMD As New MySqlCommand("SELECT `industry_name` FROM `tbl_industry`", constring)
+
+        Dim adapter As New MySqlDataAdapter(CMD)
+        Dim rd As MySqlDataReader
+
+        rd = CMD.ExecuteReader
+        ComboBox2.Items.Clear()
+        Do While rd.Read
+            ComboBox2.Items.Add(rd.Item(0))
+        Loop
+    End Sub
+
+    Public Sub tampildatacomponentcombobox()
+        Call koneksi()
+        Dim CMD As New MySqlCommand("SELECT `component_type` FROM `tbl_equipment` WHERE `equipment_type`=@type AND `industry_name`=@name", constring)
+        CMD.Parameters.Add("@type", MySqlDbType.VarChar).Value = Label391.Text
+        CMD.Parameters.Add("@name", MySqlDbType.VarChar).Value = ComboBox2.Text
+
+        Dim adapter As New MySqlDataAdapter(CMD)
+        Dim rd As MySqlDataReader
+
+        rd = CMD.ExecuteReader
+        ComboBox62.Items.Clear()
+        Do While rd.Read
+            ComboBox62.Items.Add(rd.Item(0))
+        Loop
+    End Sub
+
+    Public Sub tampildatacodeequipmentcombobox()
+        Call koneksi()
+        Dim CMD As New MySqlCommand("SELECT `equipment_code` FROM `tbl_equipment` WHERE `equipment_type`=@type AND `component_type`=@comp AND `industry_name`=@name", constring)
+        CMD.Parameters.Add("@type", MySqlDbType.VarChar).Value = Label391.Text
+        CMD.Parameters.Add("@comp", MySqlDbType.VarChar).Value = ComboBox62.Text
+        CMD.Parameters.Add("@name", MySqlDbType.VarChar).Value = ComboBox2.Text
+
+        Dim adapter As New MySqlDataAdapter(CMD)
+        Dim rd As MySqlDataReader
+
+        rd = CMD.ExecuteReader
+        ComboBox63.Items.Clear()
+        Do While rd.Read
+            ComboBox63.Items.Add(rd.Item(0))
+        Loop
+    End Sub
+
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
         Call tampildatamaterial()
     End Sub
@@ -1806,8 +2007,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
 
     '------------------------------------------------------------------------
-    'interpolasi
 
+    'interpolasi -----------------------------------------------------------------------------------------------
 
     Private Function Inter(ByVal temp As Double, ByVal Up1 As Double, ByVal Up2 As Double, ByVal Lo1 As Double, ByVal Lo2 As Double) As Double
         Inter = ((temp - Lo1) * (Up2 - Lo2) / (Up1 - Lo1)) + Lo2
@@ -1854,13 +2055,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Inter3cb = ((moa - lotb) * (zb - xb) / (uptb - lotb)) + xb
     End Function
 
-
     Private Function Inter5(ByVal up1 As Double, ByVal Lo1 As Double, ByVal temp As Double, ByVal up2 As Double, ByVal lo2 As Double) As Double
         Inter5 = ((temp - up1) * (lo2 - up2) / (Lo1 - up1)) + up2
     End Function
 
-    '--------------------------------------------------------------------------------------
 
+    '----------------------------------------------------------------------------------------------------------------------
+    '                                                   PERHITUNGAN DF
 
     'Lining Coding perhitungan --------------------------------------------------------------------------------------------
 
@@ -2543,5 +2744,119 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     End Sub
 
+    'Mechanical Fatigue Coding perhitungan --------------------------------------------------------------------------------
+
+    Public Sub mechanicalfatigue()
+        Dim step1 As Double
+        Dim step2 As Double
+        Dim step3 As Double
+        Dim step4 As Double
+
+        If ComboBox65.Text = "None" Then
+            step1 = 1
+        ElseIf ComboBox65.Text = "One" Then
+            step1 = 50
+        ElseIf ComboBox65.Text = "Greater than one" Then
+            step1 = 500
+        End If
+
+        If ComboBox66.Text = "Minor" Then
+            step2 = 1
+        ElseIf ComboBox66.Text = "Moderate" Then
+            step2 = 50
+        ElseIf ComboBox66.Text = "Severe" Then
+            step2 = 500
+        End If
+
+        If ComboBox67.Text = "Shaking less than 2 weeks" Then
+            step3 = 1
+        ElseIf ComboBox67.Text = "Shaking between 2 and 13 weeks" Then
+            step3 = 0.2
+        ElseIf ComboBox67.Text = "Shaking between 13 and 52 weeks" Then
+            step3 = 0.02
+        End If
+
+        If ComboBox68.Text = "Reciprocating Machinery" Then
+            step4 = 50
+        ElseIf ComboBox68.Text = "PRV Chatter" Then
+            step4 = 25
+        ElseIf ComboBox68.Text = "Valve with high pressure drop" Then
+            step4 = 10
+        ElseIf ComboBox68.Text = "None" Then
+            step4 = 1
+        End If
+
+        Dim step2_3 As Double
+
+        step2_3 = step2 * step3
+
+        Dim basedf As Double
+
+        If step1 > step2_3 AndAlso step1 > step4 Then
+            basedf = step1
+        End If
+        If step2_3 > step1 AndAlso step2_3 > step4 Then
+            basedf = step2_3
+        End If
+        If step4 > step1 AndAlso step4 > step2_3 Then
+            basedf = step4
+        End If
+        If step1 = 1 AndAlso step2_3 = 1 AndAlso step4 = 1 Then
+            basedf = 1
+        End If
+
+        Dim adj1 As Double
+        Dim adj2 As Double
+        Dim adj3 As Double
+        Dim adj4 As Double
+        Dim adj5 As Double
+
+        If ComboBox69.Text = "Modification based on complete engineering analysis" Then
+            adj1 = 0.002
+        ElseIf ComboBox69.Text = "Modification based on experience" Then
+            adj1 = 0.2
+        ElseIf ComboBox69.Text = "No modifications" Then
+            adj1 = 2
+        End If
+
+        If ComboBox70.Text = "0 to 5 total pipe fittings" Then
+            adj2 = 0.5
+        ElseIf ComboBox70.Text = "6 to 10 total pipe fittings" Then
+            adj2 = 1
+        ElseIf ComboBox70.Text = "Greater than 10 total pipe fittings" Then
+            adj2 = 2
+        End If
+
+        If ComboBox71.Text = "Missing or damaged supports, improper support" Then
+            adj3 = 2
+        ElseIf ComboBox71.Text = "Broken gussets, gussets welded directly to the pipe" Then
+            adj3 = 2
+        ElseIf ComboBox71.Text = "Good Condition" Then
+            adj3 = 1
+        End If
+
+        If ComboBox72.Text = "Threaded, socketweld, saddle on" Then
+            adj4 = 2
+        ElseIf ComboBox72.Text = "Saddle in fittings" Then
+            adj4 = 1
+        ElseIf ComboBox72.Text = "Piping tee, Weldolets" Then
+            adj4 = 0.2
+        ElseIf ComboBox72.Text = "Sweepolets" Then
+            adj4 = 0.02
+        End If
+
+        If ComboBox73.Text = "All branches less than or equal to 2 NPS" Then
+            adj5 = 1
+        ElseIf ComboBox73.Text = "Any branch greater than 2 NPS" Then
+            adj5 = 0.02
+        End If
+
+        Dim dfmechanicalfatigue As Double
+
+        dfmechanicalfatigue = basedf * adj1 * adj2 * adj3 * adj4 * adj5
+
+        Label378.Text = dfmechanicalfatigue
+
+    End Sub
 
 End Class

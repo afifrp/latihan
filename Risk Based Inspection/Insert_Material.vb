@@ -27,24 +27,7 @@ Public Class Insert_Material
         End If
     End Function
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Me.Close()
-        Materials.loaddatamaterial()
-        Materials.aturDGV()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        TextBox1.Text = ""
-        TextBox2.Text = ""
-        TextBox3.Text = ""
-        TextBox4.Text = ""
-        TextBox5.Text = ""
-        TextBox6.Text = ""
-        TextBox7.Text = ""
-        TextBox8.Text = ""
-        TextBox9.Text = ""
-
-    End Sub
+    'Koneksi Database ------------------------------------------------------------------------------------
 
     Private Sub simpandatamaterial()
         Call koneksi()
@@ -71,23 +54,6 @@ Public Class Insert_Material
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Call simpandatamaterial()
-
-        TextBox1.Text = ""
-        TextBox2.Text = ""
-        TextBox3.Text = ""
-        TextBox4.Text = ""
-        TextBox5.Text = ""
-        TextBox6.Text = ""
-        TextBox7.Text = ""
-        TextBox8.Text = ""
-        TextBox9.Text = ""
-
-        Materials.loaddatamaterial()
-        Materials.aturDGV()
-    End Sub
-
     Public Sub updatedatamaterial()
         Call koneksi()
 
@@ -112,6 +78,47 @@ Public Class Insert_Material
         If constring.State = ConnectionState.Open Then
             constring.Close()
         End If
+    End Sub
+
+    'Load ------------------------------------------------------------------------------------------------
+
+
+    'Button Coding ---------------------------------------------------------------------------------------
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Me.Close()
+        Materials.loaddatamaterial()
+        Materials.aturDGV()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
+        TextBox7.Text = ""
+        TextBox8.Text = ""
+        TextBox9.Text = ""
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Call simpandatamaterial()
+
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
+        TextBox7.Text = ""
+        TextBox8.Text = ""
+        TextBox9.Text = ""
+
+        Materials.loaddatamaterial()
+        Materials.aturDGV()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

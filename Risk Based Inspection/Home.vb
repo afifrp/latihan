@@ -994,7 +994,11 @@ Public Class Home
         PanelCOFPRD.Hide()
 
         Call liningdf()
+        Call sccsulfidedf()
+        Call sccalkalinecarbonatedf()
         Call sccclsccdf()
+        Call scchydrogenschfdf()
+        Call scchicsohichfdf()
         Call hthadf()
         Call mechanicalfatiguedf()
     End Sub
@@ -1311,6 +1315,26 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'SCC Sulfide Stress Cracking DF -----------------------------------------------------------------------------
 
+    Private Sub ComboBox10_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox10.SelectedIndexChanged
+        Call enviromentalseveritysulfide()
+    End Sub
+
+    Private Sub ComboBox12_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox12.SelectedIndexChanged
+        Call enviromentalseveritysulfide()
+    End Sub
+
+    Private Sub ComboBox80_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox80.SelectedIndexChanged
+        Call susceptibilitysulfide()
+    End Sub
+
+    Private Sub ComboBox93_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox93.SelectedIndexChanged
+        Call susceptibilitysulfide()
+    End Sub
+
+    Private Sub TextBox38_TextChanged(sender As Object, e As EventArgs) Handles TextBox38.TextChanged
+        Call susceptibilitysulfide()
+    End Sub
+
     Private Sub ComboBox94_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox94.SelectedIndexChanged
         If ComboBox94.Text = "Yes" Then
             Label124.Visible = True
@@ -1342,6 +1366,18 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox110.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox110.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox110.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox110.Items.Clear()
+            If ComboBox94.Text = "Yes" Then
+                ComboBox110.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox95.Text = "Yes" Then
+                    Call susceptibilitysulfide()
+                ElseIf ComboBox95.Text = "No" Then
+                    ComboBox110.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox94.Text = "No" Then
+                Call susceptibilitysulfide()
+            End If
         End If
     End Sub
 
@@ -1384,6 +1420,24 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'Scc Damage Factor – Alkaline Carbonate Stress Corrosion Cracking ------------------------------------------
 
+    Private Sub ComboBox14_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox14.SelectedIndexChanged
+        Call susceptibilitysccalkalinecarbonate()
+    End Sub
+
+    Private Sub ComboBox15_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox15.SelectedIndexChanged
+        If ComboBox15.Text = "PWHT" Then
+            ComboBox98.Enabled = False
+        Else
+            ComboBox98.Enabled = True
+        End If
+
+        Call susceptibilitysccalkalinecarbonate()
+    End Sub
+
+    Private Sub ComboBox98_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox98.SelectedIndexChanged
+        Call susceptibilitysccalkalinecarbonate()
+    End Sub
+
     Private Sub ComboBox16_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox16.SelectedIndexChanged
         If ComboBox16.Text = "Yes" Then
             Label127.Visible = True
@@ -1415,6 +1469,18 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox114.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox114.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox114.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox114.Items.Clear()
+            If ComboBox16.Text = "Yes" Then
+                ComboBox114.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox97.Text = "Yes" Then
+                    Call susceptibilitysccalkalinecarbonate()
+                ElseIf ComboBox97.Text = "No" Then
+                    ComboBox114.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox16.Text = "No" Then
+                Call susceptibilitysccalkalinecarbonate()
+            End If
         End If
     End Sub
 
@@ -1482,6 +1548,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'Scc Damage Factor – Chloride Stress Corrosion Cracking ----------------------------------------------------
+
     Private Sub ComboBox23_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox23.SelectedIndexChanged
         Call susceptibilitysccchloride()
     End Sub
@@ -1513,7 +1580,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox119.Enabled = True
             NumericUpDown7.Enabled = True
         ElseIf ComboBox100.Text = "No" Then
-            ComboBox114.Text = "PLEASE DETERMINE BY FFS"
+            ComboBox120.Text = "PLEASE DETERMINE BY FFS"
             CheckBox108.Enabled = False
             ComboBox119.Enabled = False
             NumericUpDown7.Enabled = False
@@ -1534,8 +1601,18 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox120.Items.Add("HIGH SUSCEPTIBILITY")
         Else
             ComboBox120.Items.Clear()
-            Call susceptibilitysccchloride()
+            If ComboBox99.Text = "Yes" Then
+                ComboBox120.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox100.Text = "Yes" Then
+                    Call susceptibilitysccchloride()
+                ElseIf ComboBox100.Text = "No" Then
+                    ComboBox120.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox99.Text = "No" Then
+                Call susceptibilitysccchloride()
+            End If
         End If
+
     End Sub
 
     'Scc Damage Factor – Hydrogen Stress Cracking-Hf -----------------------------------------------------------
@@ -1572,23 +1649,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Sub ComboBox25_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox25.SelectedIndexChanged
         If ComboBox25.Text = "Yes" Then
-            Panel49.Visible = True
-            ComboBox124.Text = ""
-        ElseIf ComboBox25.Text = "No" Then
-            Panel49.Visible = False
-            ComboBox124.Text = "NONE SUSCEPTIBILITY"
-        Else
-            Panel49.Visible = False
-            ComboBox124.Text = ""
-        End If
-    End Sub
-
-    Private Sub ComboBox122_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox122.SelectedIndexChanged
-        If ComboBox122.Text = "Yes" Then
             Label159.Visible = True
             ComboBox122.Visible = True
             ComboBox124.Text = ""
-        ElseIf ComboBox122.Text = "No" Then
+        ElseIf ComboBox25.Text = "No" Then
             Label159.Visible = False
             ComboBox122.Visible = False
             ComboBox124.Text = "NONE SUSCEPTIBILITY"
@@ -1599,6 +1663,27 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
+    Private Sub ComboBox122_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox122.SelectedIndexChanged
+        If ComboBox122.Text = "Yes" Then
+            Panel49.Visible = True
+            ComboBox124.Text = ""
+        ElseIf ComboBox122.Text = "No" Then
+            Panel49.Visible = False
+            ComboBox124.Text = "NONE SUSCEPTIBILITY"
+        Else
+            Panel49.Visible = False
+            ComboBox124.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox101_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox101.SelectedIndexChanged
+        Call susceptibilityscchydrogenschf()
+    End Sub
+
+    Private Sub ComboBox102_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox102.SelectedIndexChanged
+        Call susceptibilityscchydrogenschf()
+    End Sub
+
     Private Sub CheckBox122_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox122.CheckedChanged
         If CheckBox122.Checked = True Then
             ComboBox124.Items.Clear()
@@ -1606,6 +1691,26 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox124.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox124.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox124.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox124.Items.Clear()
+            If ComboBox24.Text = "Yes" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox121.Text = "Yes" Then
+                    Call susceptibilityscchydrogenschf()
+                ElseIf ComboBox121.Text = "No" Then
+                    ComboBox124.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox24.Text = "No" Then
+                If ComboBox25.Text = "Yes" Then
+                    If ComboBox122.Text = "Yes" Then
+                        Call susceptibilityscchydrogenschf()
+                    ElseIf ComboBox122.Text = "No" Then
+                        ComboBox124.Text = "NONE SUSCEPTIBILITY"
+                    End If
+                ElseIf ComboBox25.Text = "No" Then
+                    ComboBox124.Text = "NONE SUSCEPTIBILITY"
+                End If
+            End If
         End If
     End Sub
 
@@ -1654,6 +1759,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
+    Private Sub ComboBox28_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox28.SelectedIndexChanged
+        Call susceptibilityscchicsohichf()
+    End Sub
+
+    Private Sub ComboBox163_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox163.SelectedIndexChanged
+        Call susceptibilityscchicsohichf()
+    End Sub
+
     Private Sub CheckBox127_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox127.Checked = True Then
             ComboBox165.Items.Clear()
@@ -1661,6 +1774,26 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox165.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox165.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox165.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox165.Items.Clear()
+            If ComboBox26.Text = "Yes" Then
+                ComboBox165.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox27.Text = "Yes" Then
+                    Call susceptibilityscchicsohichf()
+                ElseIf ComboBox27.Text = "No" Then
+                    ComboBox165.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox26.Text = "No" Then
+                If ComboBox126.Text = "Yes" Then
+                    If ComboBox125.Text = "Yes" Then
+                        Call susceptibilityscchicsohichf()
+                    ElseIf ComboBox125.Text = "No" Then
+                        ComboBox165.Text = "NONE SUSCEPTIBILITY"
+                    End If
+                ElseIf ComboBox126.Text = "No" Then
+                    ComboBox165.Text = "NONE SUSCEPTIBILITY"
+                End If
+            End If
         End If
     End Sub
 
@@ -3072,6 +3205,838 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     End Sub
 
+    'Scc – Sulfide Stress Cracking Coding perhitungan ---------------------------------------------------------------------
+    Private Sub enviromentalseveritysulfide()
+        If ComboBox10.Text = "< 5.5" Then
+            If ComboBox12.Text = "< 50 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "50 to 1,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "1,000 to 10,000 ppm" Then
+                TextBox38.Text = "HIGH"
+            ElseIf ComboBox12.Text = "> 10,000 ppm" Then
+                TextBox38.Text = "HIGH"
+            End If
+
+        ElseIf ComboBox10.Text = "5.5 to 7.5" Then
+            If ComboBox12.Text = "< 50 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "50 to 1,000 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "1,000 to 10,000 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "> 10,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            End If
+
+        ElseIf ComboBox10.Text = "7.6 to 8.3" Then
+            If ComboBox12.Text = "< 50 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "50 to 1,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "1,000 to 10,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "> 10,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            End If
+
+        ElseIf ComboBox10.Text = "8.4 to 8.9" Then
+            If ComboBox12.Text = "< 50 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "50 to 1,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "1,000 to 10,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "> 10,000 ppm" Then
+                TextBox38.Text = "HIGH"
+            End If
+
+        ElseIf ComboBox10.Text = "> 9.0" Then
+            If ComboBox12.Text = "< 50 ppm" Then
+                TextBox38.Text = "LOW"
+            ElseIf ComboBox12.Text = "50 to 1,000 ppm" Then
+                TextBox38.Text = "MODERATE"
+            ElseIf ComboBox12.Text = "1,000 to 10,000 ppm" Then
+                TextBox38.Text = "HIGH"
+            ElseIf ComboBox12.Text = "> 10,000 ppm" Then
+                TextBox38.Text = "HIGH"
+            End If
+        End If
+    End Sub
+
+    Private Sub susceptibilitysulfide()
+        If TextBox38.Text = "HIGH" Then
+            If ComboBox80.Text = "As-Welded" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "MEDIUM SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "HIGH SUSCEPTIBILITY"
+                End If
+            ElseIf ComboBox80.Text = "PWHT" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "MEDIUM SUSCEPTIBILITY"
+                End If
+            End If
+        ElseIf TextBox38.Text = "MODERATE" Then
+            If ComboBox80.Text = "As-Welded" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "MEDIUM SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "HIGH SUSCEPTIBILITY"
+                End If
+            ElseIf ComboBox80.Text = "PWHT" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                End If
+            End If
+        ElseIf TextBox38.Text = "LOW" Then
+            If ComboBox80.Text = "As-Welded" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "MEDIUM SUSCEPTIBILITY"
+                End If
+            ElseIf ComboBox80.Text = "PWHT" Then
+                If ComboBox93.Text = "< 200" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "200-237" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox93.Text = "> 237" Then
+                    ComboBox110.Text = "NONE SUSCEPTIBILITY"
+                End If
+            End If
+        End If
+    End Sub
+
+    Public Sub sccsulfidedf()
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim dateforcalculation As Double
+
+        If ComboBox109.Text = "A" Or ComboBox109.Text = "B" Or ComboBox109.Text = "C" AndAlso ComboBox94.Text = "No" Or ComboBox95.Text = "Yes" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+        End If
+
+        If datelastforgood > 0 Then
+            dateforcalculation = datelastforgood
+        Else
+            dateforcalculation = datestartforpoor
+        End If
+
+        Dim severityindex As Double
+
+        If ComboBox110.Text = "HIGH SUSCEPTIBILITY" Then
+            severityindex = 100
+        ElseIf ComboBox110.Text = "MEDIUM SUSCEPTIBILITY" Then
+            severityindex = 10
+        ElseIf ComboBox110.Text = "LOW SUSCEPTIBILITY" Then
+            severityindex = 1
+        ElseIf ComboBox110.Text = "NONE SUSCEPTIBILITY" Then
+            severityindex = 0
+        End If
+
+        Dim basedf As Double
+
+        If NumericUpDown3.Value = 1 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "3"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "33"
+
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "8"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "80"
+
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 1 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "4"
+
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "6"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "60"
+
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 2 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "4"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "40"
+
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 3 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 4 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 5 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "C" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "D" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown3.Value = 6 And ComboBox109.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+        End If
+
+        Dim maxage1 As Double
+        Dim maxage2 As Double
+        Dim totaldf As Double
+
+        If dateforcalculation > 1 Then
+            maxage1 = dateforcalculation
+            totaldf = basedf * (maxage1 ^ 1.1)
+            Label369.Text = totaldf
+        ElseIf dateforcalculation <= 1 Then
+            maxage2 = 1
+            totaldf = basedf * (maxage2 ^ 1.1)
+            Label369.Text = totaldf
+        End If
+    End Sub
+
+    'Scc – Hic/Sohic-H2S Coding perhitungan -------------------------------------------------------------------------------
+
+
+    'Scc – Alkaline Carbonate Stress Corrosion Cracking Coding perhitungan ------------------------------------------------
+    Private Sub susceptibilitysccalkalinecarbonate()
+        If ComboBox14.Text = "< 7.5" Then
+            If ComboBox15.Text = "PWHT" Then
+                ComboBox114.Text = "NONE SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "No PWHT" Then
+                If ComboBox98.Text = "CO3 < 100 ppm" Then
+                    ComboBox114.Text = "NONE SUSCEPTIBILITY"
+                ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
+                    ComboBox114.Text = "NONE SUSCEPTIBILITY"
+                End If
+            End If
+        ElseIf ComboBox14.Text = "≥7.5 to 8.0" Then
+            If ComboBox15.Text = "PWHT" Then
+                ComboBox114.Text = "NONE SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "No PWHT" Then
+                If ComboBox98.Text = "CO3 < 100 ppm" Then
+                    ComboBox114.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
+                    ComboBox114.Text = "MEDIUM SUSCEPTIBILITY"
+                End If
+            End If
+        ElseIf ComboBox14.Text = "≥8.0 to 9.0" Then
+            If ComboBox15.Text = "PWHT" Then
+                ComboBox114.Text = "NONE SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "No PWHT" Then
+                If ComboBox98.Text = "CO3 < 100 ppm" Then
+                    ComboBox114.Text = "LOW SUSCEPTIBILITY"
+                ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
+                    ComboBox114.Text = "HIGH SUSCEPTIBILITY"
+                End If
+            End If
+        ElseIf ComboBox14.Text = "≥ 9.0" Then
+            If ComboBox15.Text = "PWHT" Then
+                ComboBox114.Text = "NONE SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "No PWHT" Then
+                If ComboBox98.Text = "CO3 < 100 ppm" Then
+                    ComboBox114.Text = "HIGH SUSCEPTIBILITY"
+                ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
+                    ComboBox114.Text = "HIGH SUSCEPTIBILITY"
+                End If
+            End If
+        End If
+    End Sub
+
+    Public Sub sccalkalinecarbonatedf()
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim dateforcalculation As Double
+
+        If ComboBox113.Text = "A" Or ComboBox113.Text = "B" Or ComboBox113.Text = "C" AndAlso ComboBox16.Text = "No" Or ComboBox97.Text = "Yes" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+        End If
+
+        If datelastforgood > 0 Then
+            dateforcalculation = datelastforgood
+        Else
+            dateforcalculation = datestartforpoor
+        End If
+
+        Dim severityindex As Double
+
+        If ComboBox114.Text = "HIGH SUSCEPTIBILITY" Then
+            severityindex = 1000
+        ElseIf ComboBox114.Text = "MEDIUM SUSCEPTIBILITY" Then
+            severityindex = 100
+        ElseIf ComboBox114.Text = "LOW SUSCEPTIBILITY" Then
+            severityindex = 10
+        ElseIf ComboBox114.Text = "NONE SUSCEPTIBILITY" Then
+            severityindex = 0
+        End If
+
+        Dim basedf As Double
+
+        If NumericUpDown5.Value = 1 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "5"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "50"
+
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "100"
+
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "3"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "33"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "330"
+
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "8"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "80"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "800"
+
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 1 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+
+
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "4"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "40"
+
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "20"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "200"
+
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "6"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "60"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "600"
+
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 2 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+
+
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "2"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "16"
+
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "100"
+
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "4"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "40"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "400"
+
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 3 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+
+
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "5"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "50"
+
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "20"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "200"
+
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 4 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+
+
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "2"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "25"
+
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "100"
+
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 5 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+
+
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "A" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "A" And severityindex = “1000” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "B" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "B" And severityindex = “1000” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "C" And severityindex = "100" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "C" And severityindex = “1000” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "D" And severityindex = "100" Then
+            basedf = "5"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "D" And severityindex = “1000” Then
+            basedf = "50"
+
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "E" And severityindex = "100" Then
+            basedf = "100"
+        ElseIf NumericUpDown5.Value = 6 And ComboBox113.Text = "E" And severityindex = “1000” Then
+            basedf = “1000”
+        End If
+
+        Dim maxage1 As Double
+        Dim maxage2 As Double
+        Dim totaldf As Double
+
+        If dateforcalculation > 1 Then
+            maxage1 = dateforcalculation
+            totaldf = basedf * (maxage1 ^ 1.1)
+            Label371.Text = totaldf
+        ElseIf dateforcalculation <= 1 Then
+            maxage2 = 1
+            totaldf = basedf * (maxage2 ^ 1.1)
+            Label371.Text = totaldf
+        End If
+    End Sub
+
+    'Scc – Polythionic Acid Stress Corrosion Cracking Coding perhitungan --------------------------------------------------
+
+
     'Scc – Chloride Stress Corrosion Cracking Coding perhitungan ----------------------------------------------------------
     Private Sub susceptibilitysccchloride()
         If Units.ComboBox1.Text = "SI" Then
@@ -3642,6 +4607,722 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             maxage2 = 1
             totaldf = basedf * (maxage2 ^ 1.1)
             Label373.Text = totaldf
+        End If
+    End Sub
+
+    'Scc – Hydrogen Stress Cracking-Hf Coding perhitungan -----------------------------------------------------------------
+    Private Sub susceptibilityscchydrogenschf()
+        If ComboBox101.Text = "PWHT" Then
+            If ComboBox102.Text = "< 200" Then
+                ComboBox124.Text = "NONE SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "200-237" Then
+                ComboBox124.Text = "LOW SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "> 237" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+            End If
+        ElseIf ComboBox101.Text = "As-Welded" Then
+            If ComboBox102.Text = "< 200" Then
+                ComboBox124.Text = "LOW SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "200-237" Then
+                ComboBox124.Text = "MEDIUM SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "> 237" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+            End If
+        End If
+    End Sub
+
+    Public Sub scchydrogenschfdf()
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim dateforcalculation As Double
+
+        If ComboBox123.Text = "A" Or ComboBox123.Text = "B" Or ComboBox123.Text = "C" AndAlso ComboBox24.Text = "No" Or ComboBox121.Text = "Yes" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+        End If
+
+        If datelastforgood > 0 Then
+            dateforcalculation = datelastforgood
+        Else
+            dateforcalculation = datestartforpoor
+        End If
+
+        Dim severityindex As Double
+
+        If ComboBox124.Text = "HIGH SUSCEPTIBILITY" Then
+            severityindex = 100
+        ElseIf ComboBox124.Text = "MEDIUM SUSCEPTIBILITY" Then
+            severityindex = 10
+        ElseIf ComboBox124.Text = "LOW SUSCEPTIBILITY" Then
+            severityindex = 1
+        ElseIf ComboBox124.Text = "NONE SUSCEPTIBILITY" Then
+            severityindex = 0
+        End If
+
+        Dim basedf As Double
+
+        If NumericUpDown8.Value = 1 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "3"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "33"
+
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "8"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "80"
+
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 1 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "4"
+
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "6"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "60"
+
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 2 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "4"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "40"
+
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 3 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 4 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 5 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "C" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "D" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown8.Value = 6 And ComboBox123.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+        End If
+
+        Dim maxage1 As Double
+        Dim maxage2 As Double
+        Dim totaldf As Double
+
+        If dateforcalculation > 1 Then
+            maxage1 = dateforcalculation
+            totaldf = basedf * (maxage1 ^ 1.1)
+            Label374.Text = totaldf
+        ElseIf dateforcalculation <= 1 Then
+            maxage2 = 1
+            totaldf = basedf * (maxage2 ^ 1.1)
+            Label374.Text = totaldf
+        End If
+    End Sub
+
+    'Scc – Hic/Sohic-Hf Coding perhitungan --------------------------------------------------------------------------------
+    Private Sub susceptibilityscchicsohichf()
+        If ComboBox101.Text = "PWHT" Then
+            If ComboBox102.Text = "High Sulfur Steel > 0.01% S" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "Low Sulfur Steel ≤ 0.01% S" Then
+                ComboBox124.Text = "MEDIUM SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "Product Form – Seamless/Extruded Pipe" Then
+                ComboBox124.Text = "LOW SUSCEPTIBILITY"
+            End If
+        ElseIf ComboBox101.Text = "Non-PWHT" Then
+            If ComboBox102.Text = "High Sulfur Steel > 0.01% S" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "Low Sulfur Steel ≤ 0.01% S" Then
+                ComboBox124.Text = "HIGH SUSCEPTIBILITY"
+            ElseIf ComboBox102.Text = "Product Form – Seamless/Extruded Pipe" Then
+                ComboBox124.Text = "LOW SUSCEPTIBILITY"
+            End If
+        End If
+    End Sub
+
+    Public Sub scchicsohichfdf()
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim dateforcalculation As Double
+
+        If ComboBox164.Text = "A" Or ComboBox164.Text = "B" Or ComboBox164.Text = "C" AndAlso ComboBox26.Text = "No" Or ComboBox27.Text = "Yes" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+        End If
+
+        If datelastforgood > 0 Then
+            dateforcalculation = datelastforgood
+        Else
+            dateforcalculation = datestartforpoor
+        End If
+
+        Dim severityindex As Double
+
+        If ComboBox165.Text = "HIGH SUSCEPTIBILITY" Then
+            severityindex = 100
+        ElseIf ComboBox165.Text = "MEDIUM SUSCEPTIBILITY" Then
+            severityindex = 10
+        ElseIf ComboBox165.Text = "LOW SUSCEPTIBILITY" Then
+            severityindex = 1
+        ElseIf ComboBox165.Text = "NONE SUSCEPTIBILITY" Then
+            severityindex = 0
+        End If
+
+        Dim basedf As Double
+
+        If NumericUpDown9.Value = 1 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "3"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "33"
+
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "8"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "80"
+
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 1 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "4"
+
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "6"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "60"
+
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 2 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "4"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "40"
+
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 3 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 4 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 5 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+
+
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "A" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "B" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "C" And severityindex = “100” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "D" And severityindex = “100” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown9.Value = 6 And ComboBox164.Text = "E" And severityindex = “100” Then
+            basedf = “100”
+        End If
+
+        Dim onlineadjfactor As Double
+
+        If ComboBox168.Text = "Key Process Variables" Then
+            onlineadjfactor = 2
+        ElseIf ComboBox168.Text = "Hydrogen Probes" Then
+            onlineadjfactor = 2
+        ElseIf ComboBox168.Text = "Key Process Variables and Hydrogen Probes" Then
+            onlineadjfactor = 4
+        End If
+
+        Dim maxage1 As Double
+        Dim maxage2 As Double
+        Dim totaldf As Double
+
+        If dateforcalculation > 1 Then
+            maxage1 = dateforcalculation
+            totaldf = (basedf * (maxage1 ^ 1.1)) / onlineadjfactor
+            Label375.Text = totaldf
+        ElseIf dateforcalculation <= 1 Then
+            maxage2 = 1
+            totaldf = (basedf * (maxage2 ^ 1.1)) / onlineadjfactor
+            Label375.Text = totaldf
         End If
     End Sub
 

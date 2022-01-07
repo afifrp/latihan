@@ -911,6 +911,10 @@ Public Class Home
         Call sccclsccdf()
         Call scchydrogenschfdf()
         Call scchicsohichfdf()
+        Call brittledf()
+
+        Call delapandelapanlimafembrittlementdf()
+        Call sigmaphasedf()
         Call hthadf()
         Call mechanicalfatiguedf()
     End Sub
@@ -998,6 +1002,7 @@ Public Class Home
         Panelmttf.Hide()
         Panelhistory.Show()
     End Sub
+
     Private Sub RadioButton14_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton14.CheckedChanged
         Label90.Visible = True
         RadioButton24.Visible = True
@@ -1430,11 +1435,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     Private Sub ComboBox15_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox15.SelectedIndexChanged
         If ComboBox15.Text = "PWHT" Then
             ComboBox98.Enabled = False
+            ComboBox98.Text = ""
+            Call susceptibilitysccalkalinecarbonate()
         Else
             ComboBox98.Enabled = True
+            Call susceptibilitysccalkalinecarbonate()
         End If
-
-        Call susceptibilitysccalkalinecarbonate()
     End Sub
 
     Private Sub ComboBox98_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox98.SelectedIndexChanged
@@ -1449,19 +1455,31 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox16.Text = "No" Then
             Label127.Visible = False
             ComboBox97.Visible = False
-            'ComboBox114.Text = ""
+            ComboBox97.Text = ""
+            Call susceptibilitysccalkalinecarbonate()
         Else
             Label125.Visible = False
             ComboBox17.Visible = False
-            'ComboBox114.Text = ""
+            ComboBox97.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox97_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox97.SelectedIndexChanged
         If ComboBox97.Text = "Yes" Then
+            Call susceptibilitysccalkalinecarbonate()
+            CheckBox87.Enabled = True
+            ComboBox113.Enabled = True
+            NumericUpDown5.Enabled = True
         ElseIf ComboBox97.Text = "No" Then
             ComboBox114.Text = "PLEASE DETERMINE BY FFS"
+            CheckBox87.Enabled = False
+            ComboBox113.Enabled = False
+            NumericUpDown5.Enabled = False
         Else
+            Call susceptibilitysccalkalinecarbonate()
+            CheckBox87.Enabled = True
+            ComboBox113.Enabled = True
+            NumericUpDown5.Enabled = True
         End If
     End Sub
 
@@ -1624,10 +1642,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox99.Text = "No" Then
             Label152.Visible = False
             ComboBox100.Visible = False
+            ComboBox100.Text = ""
             Call susceptibilitysccchloride()
         Else
             Label152.Visible = False
             ComboBox100.Visible = False
+            ComboBox100.Text = ""
             Call susceptibilitysccchloride()
         End If
     End Sub
@@ -2334,10 +2354,231 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
 
     'Low Alloy Steel Embrittlement Damage Factor ---------------------------------------------------------------
+    Private Sub ComboBox160_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox160.SelectedIndexChanged
+        If ComboBox160.Text = "Yes" Then
+            TextBox91.ReadOnly = False
+            ComboBox161.Visible = False
+            ComboBox161.Text = ""
+            TextBox46.Text = ""
+        ElseIf ComboBox160.Text = "No" Then
+            TextBox91.ReadOnly = True
+            ComboBox161.Visible = True
+        Else
+            TextBox91.ReadOnly = True
+        End If
+    End Sub
 
+    Private Sub ComboBox161_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox161.SelectedIndexChanged
+        If ComboBox161.Text = "Minimum Design Temperature" Then
+            TextBox91.ReadOnly = False
+            TextBox91.Text = ""
+        ElseIf ComboBox169.Text = "Minimum Pressurization Temperature" Then
+            TextBox91.ReadOnly = False
+            TextBox91.Text = ""
+        Else
+            TextBox91.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub ComboBox162_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox162.SelectedIndexChanged
+        If ComboBox162.Text = "Yes" Then
+            TextBox91.ReadOnly = False
+            ComboBox171.Visible = False
+            Panel95.Visible = False
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+            ComboBox171.Text = ""
+            TextBox103.Text = ""
+        ElseIf ComboBox162.Text = "No" Then
+            TextBox103.ReadOnly = True
+            ComboBox171.Visible = True
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+        Else
+            TextBox91.ReadOnly = True
+            ComboBox171.Visible = True
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox171_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox171.SelectedIndexChanged
+        If ComboBox171.Text = "Engineering analysis or Impact Test" Then
+            TextBox91.ReadOnly = True
+            Panel95.Visible = True
+            FATT1.Visible = True
+            FATT2.Visible = False
+            FATT3.Visible = False
+            FATT4.Visible = False
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+            ComboBox171.Text = ""
+            TextBox103.Text = ""
+        ElseIf ComboBox171.Text = "Step Cooling Embrittlement (SCE) test" Then
+            TextBox91.ReadOnly = True
+            Panel95.Visible = True
+            FATT1.Visible = False
+            FATT2.Visible = True
+            FATT3.Visible = False
+            FATT4.Visible = False
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+            ComboBox171.Text = ""
+            TextBox103.Text = ""
+        ElseIf ComboBox171.Text = "J-factor correlation, X-bar factor" Then
+            TextBox91.ReadOnly = True
+            Panel95.Visible = True
+            FATT1.Visible = False
+            FATT2.Visible = False
+            FATT3.Visible = True
+            FATT4.Visible = False
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+            ComboBox171.Text = ""
+            TextBox103.Text = ""
+        ElseIf ComboBox171.Text = "Conservative Assumption based on year of fabrication" Then
+            TextBox91.ReadOnly = True
+            Panel95.Visible = True
+            FATT1.Visible = False
+            FATT2.Visible = False
+            FATT3.Visible = False
+            FATT4.Visible = True
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+            ComboBox171.Text = ""
+            TextBox103.Text = ""
+        Else
+            Panel95.Visible = False
+            FATT1.Visible = False
+            FATT2.Visible = False
+            FATT3.Visible = False
+            FATT4.Visible = False
+            TextBox91.ReadOnly = True
+            TextBox92.Text = ""
+            TextBox93.Text = ""
+            TextBox94.Text = ""
+            TextBox95.Text = ""
+            TextBox96.Text = ""
+            TextBox97.Text = ""
+            TextBox98.Text = ""
+            TextBox99.Text = ""
+            TextBox100.Text = ""
+            TextBox101.Text = ""
+            TextBox102.Text = ""
+            ComboBox172.Text = ""
+        End If
+    End Sub
 
     '885°F Embrittlement Damage Factor -------------------------------------------------------------------------
+    Private Sub ComboBox34_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox34.SelectedIndexChanged
+        If ComboBox34.Text = "Yes" Then
+            TextBox46.ReadOnly = False
+            ComboBox169.Visible = False
+            ComboBox169.Text = ""
+            TextBox46.Text = ""
+        ElseIf ComboBox34.Text = "No" Then
+            TextBox46.ReadOnly = True
+            ComboBox169.Visible = True
+        Else
+            TextBox46.ReadOnly = True
+        End If
+    End Sub
 
+    Private Sub ComboBox169_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox169.SelectedIndexChanged
+        If ComboBox169.Text = "Minimum Design Temperature" Then
+            TextBox46.ReadOnly = False
+            TextBox46.Text = ""
+        ElseIf ComboBox169.Text = "Minimum Operating Temperature" Then
+            TextBox46.ReadOnly = False
+            TextBox46.Text = ""
+        Else
+            TextBox46.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub ComboBox84_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox84.SelectedIndexChanged
+        If ComboBox84.Text = "Type 405" Then
+            TextBox48.Text = "11.5 - 14.5"
+        ElseIf ComboBox84.Text = "Type 430" Then
+            TextBox48.Text = "16 - 18"
+        ElseIf ComboBox84.Text = "Type 430F" Then
+            TextBox48.Text = "16 - 18"
+        ElseIf ComboBox84.Text = "Type 442" Then
+            TextBox48.Text = "18 - 23"
+        ElseIf ComboBox84.Text = "Type 446" Then
+            TextBox48.Text = "23 - 27"
+        End If
+    End Sub
 
     'Sigma Phase Embrittlement Damage Factor -------------------------------------------------------------------
 
@@ -2709,6 +2950,47 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Inter5 = ((temp - up1) * (lo2 - up2) / (Lo1 - up1)) + up2
     End Function
 
+    '=============================================================================================================================
+    '                                          INTERPOLASI BRITTLE DAMAGE FACTOR
+
+    Private Function Interx(ByVal temp As Double, ByVal Up1 As Double, ByVal Up2 As Double, ByVal Lo1 As Double, ByVal Lo2 As Double) As Double
+        Interx = ((temp - Lo1) * (Up2 - Lo2) / (Up1 - Lo1)) + Lo2
+    End Function
+
+    Private Function Interx1(ByVal temp As Double, ByVal Up3 As Double, ByVal Up4 As Double, ByVal Lo3 As Double, ByVal Lo4 As Double) As Double
+        Interx1 = ((temp - Lo3) * (Up4 - Lo4) / (Up3 - Lo3)) + Lo4
+    End Function
+
+    Private Function Inter3a1(ByVal upt As Double, ByVal Lot As Double, ByVal ph As Double, ByVal x As Double, ByVal z As Double) As Double
+        Inter3a1 = ((ph - Lot) * (z - x) / (upt - Lot)) + x
+    End Function
+
+    'extrapolation lower
+
+    Private Function Inter3b1(ByVal upt As Double, ByVal Lot As Double, ByVal ph As Double, ByVal x As Double, ByVal z As Double) As Double
+        Inter3b1 = ((ph - upt) * (x - z) / (Lot - upt)) + z
+    End Function
+
+    'extrapolation upper
+    Private Function Inter3c1(ByVal upt As Double, ByVal Lot As Double, ByVal ph As Double, ByVal x As Double, ByVal z As Double) As Double
+        Inter3c1 = ((ph - Lot) * (z - x) / (upt - Lot)) + x
+    End Function
+
+    Private Function Inter3da(ByVal upta As Double, ByVal Lota As Double, ByVal temp As Double, ByVal xa As Double, ByVal za As Double) As Double
+        Inter3da = ((temp - upta) * (xa - za) / (Lota - upta)) + za
+    End Function
+
+    Private Function Inter3db(ByVal uptb As Double, ByVal Lotb As Double, ByVal temp As Double, ByVal xb As Double, ByVal zb As Double) As Double
+        Inter3db = ((temp - uptb) * (xb - zb) / (Lotb - uptb)) + zb
+    End Function
+
+    Private Function Inter3ex(ByVal uptx As Double, ByVal Lotx As Double, ByVal temp As Double, ByVal xx As Double, ByVal zx As Double) As Double
+        Inter3ex = ((temp - Lotx) * (zx - xx) / (uptx - Lotx)) + xx
+    End Function
+
+    Private Function Inter3ez(ByVal uptz As Double, ByVal Lotz As Double, ByVal temp As Double, ByVal xz As Double, ByVal zz As Double) As Double
+        Inter3ez = ((temp - Lotz) * (zz - xz) / (uptz - Lotz)) + xz
+    End Function
 
     '=============================================================================================================================
     '                                                   PERHITUNGAN DF
@@ -5089,7 +5371,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox14.Text = "< 7.5" Then
             If ComboBox15.Text = "PWHT" Then
                 ComboBox114.Text = "NONE SUSCEPTIBILITY"
-            ElseIf ComboBox102.Text = "No PWHT" Then
+            ElseIf ComboBox15.Text = "No PWHT" Then
+                ComboBox114.Text = ""
                 If ComboBox98.Text = "CO3 < 100 ppm" Then
                     ComboBox114.Text = "NONE SUSCEPTIBILITY"
                 ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
@@ -5099,7 +5382,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox14.Text = "≥7.5 to 8.0" Then
             If ComboBox15.Text = "PWHT" Then
                 ComboBox114.Text = "NONE SUSCEPTIBILITY"
-            ElseIf ComboBox102.Text = "No PWHT" Then
+            ElseIf ComboBox15.Text = "No PWHT" Then
+                ComboBox114.Text = ""
                 If ComboBox98.Text = "CO3 < 100 ppm" Then
                     ComboBox114.Text = "LOW SUSCEPTIBILITY"
                 ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
@@ -5109,7 +5393,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox14.Text = "≥8.0 to 9.0" Then
             If ComboBox15.Text = "PWHT" Then
                 ComboBox114.Text = "NONE SUSCEPTIBILITY"
-            ElseIf ComboBox102.Text = "No PWHT" Then
+            ElseIf ComboBox15.Text = "No PWHT" Then
+                ComboBox114.Text = ""
                 If ComboBox98.Text = "CO3 < 100 ppm" Then
                     ComboBox114.Text = "LOW SUSCEPTIBILITY"
                 ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
@@ -5119,7 +5404,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox14.Text = "≥ 9.0" Then
             If ComboBox15.Text = "PWHT" Then
                 ComboBox114.Text = "NONE SUSCEPTIBILITY"
-            ElseIf ComboBox102.Text = "No PWHT" Then
+            ElseIf ComboBox15.Text = "No PWHT" Then
+                ComboBox114.Text = ""
                 If ComboBox98.Text = "CO3 < 100 ppm" Then
                     ComboBox114.Text = "HIGH SUSCEPTIBILITY"
                 ElseIf ComboBox98.Text = "CO3 ≥ 100 ppm" Then
@@ -6226,13 +6512,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim severityindex As Double
 
-        If ComboBox20.Text = "HIGH SUSCEPTIBILITY" Then
+        If ComboBox120.Text = "HIGH SUSCEPTIBILITY" Then
             severityindex = 5000
-        ElseIf ComboBox20.Text = "MEDIUM SUSCEPTIBILITY" Then
+        ElseIf ComboBox120.Text = "MEDIUM SUSCEPTIBILITY" Then
             severityindex = 500
-        ElseIf ComboBox20.Text = "LOW SUSCEPTIBILITY" Then
+        ElseIf ComboBox120.Text = "LOW SUSCEPTIBILITY" Then
             severityindex = 50
-        ElseIf ComboBox20.Text = "NONE SUSCEPTIBILITY" Then
+        ElseIf ComboBox120.Text = "NONE SUSCEPTIBILITY" Then
             severityindex = 0
         End If
 
@@ -7271,22 +7557,5647 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'Brittle Fracture Coding perhitungan ----------------------------------------------------------------------------------
+    Public Sub brittledf()
+
+        Dim reftemp As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            If ComboBox1.Text = "Carbon Steel" Then
+                If ComboBox157.Text = "A" Then
+                    Dim chart(,) As Double = {{200, 42},
+                            {210, 38},
+                            {220, 36},
+                            {230, 33},
+                            {240, 31},
+                            {260, 27},
+                            {280, 24},
+                            {300, 22},
+                            {320, 19},
+                            {340, 17},
+                            {360, 15}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
 
 
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart.GetUpperBound(0) - 1
+                            If chart(r, 0) <= 210 AndAlso chart(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart(r, c)
+                                    UpNum2(c) = chart(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 360 Then
+
+                        For r As Integer = 0 To chart.GetUpperBound(0) - 1
+                            If chart(r, 0) <= 340 AndAlso chart(r + 1, 0) >= 360 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart(r, c)
+                                    UpNum2(c) = chart(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 360
+                                    lot = 340
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart.GetUpperBound(0) - 1
+                        If chart(r, 0) <= mys AndAlso chart(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart(r, c)
+                                UpNum2(c) = chart(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "B" Then
+                    Dim chart10(,) As Double = {{200, 21},
+                        {210, 17},
+                        {220, 15},
+                        {230, 1.25},
+                        {240, 10},
+                        {260, 6},
+                        {280, 3},
+                        {300, 1},
+                        {320, -2},
+                        {340, -4},
+                        {360, -6}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart10.GetUpperBound(0) - 1
+                            If chart10(r, 0) <= 210 AndAlso chart10(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart10(r, c)
+                                    UpNum2(c) = chart10(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 360 Then
+
+                        For r As Integer = 0 To chart10.GetUpperBound(0) - 1
+                            If chart10(r, 0) <= 340 AndAlso chart10(r + 1, 0) >= 360 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart10(r, c)
+                                    UpNum2(c) = chart10(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 360
+                                    lot = 340
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart10.GetUpperBound(0) - 1
+                        If chart10(r, 0) <= mys AndAlso chart10(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart10(r, c)
+                                UpNum2(c) = chart10(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "C" Then
+                    Dim chart11(,) As Double = {{200, 0},
+                        {210, -4},
+                        {220, -7},
+                        {230, -9},
+                        {240, -11},
+                        {260, -15},
+                        {280, -18},
+                        {300, -21},
+                        {320, -23},
+                        {340, -25},
+                        {360, -27}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 210 AndAlso chart11(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 360 Then
+
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 340 AndAlso chart11(r + 1, 0) >= 360 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 360
+                                    lot = 340
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= mys AndAlso chart11(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "D" Then
+                    Dim chart12(,) As Double = {{200, -15},
+                        {210, -18},
+                        {220, -21},
+                        {230, -23},
+                        {240, -26},
+                        {260, -29},
+                        {280, -32},
+                        {300, -35},
+                        {320, -37},
+                        {340, -39},
+                        {360, -41}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart12.GetUpperBound(0) - 1
+                            If chart12(r, 0) <= 210 AndAlso chart12(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart12(r, c)
+                                    UpNum2(c) = chart12(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 360 Then
+
+                        For r As Integer = 0 To chart12.GetUpperBound(0) - 1
+                            If chart12(r, 0) <= 340 AndAlso chart12(r + 1, 0) >= 360 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart12(r, c)
+                                    UpNum2(c) = chart12(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 360
+                                    lot = 340
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart12.GetUpperBound(0) - 1
+                        If chart12(r, 0) <= mys AndAlso chart12(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart12(r, c)
+                                UpNum2(c) = chart12(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+            ElseIf ComboBox1.Text = "Low Alloy Steel" Then
+                If ComboBox157.Text = "A" Then
+                    Dim chart13(,) As Double = {{200, 55},
+                        {210, 50},
+                        {220, 46},
+                        {230, 43},
+                        {240, 40},
+                        {250, 38},
+                        {260, 36},
+                        {270, 34},
+                        {280, 32},
+                        {290, 31},
+                        {300, 30},
+                        {310, 28},
+                        {320, 27},
+                        {330, 26},
+                        {340, 25},
+                        {360, 23},
+                        {380, 21},
+                        {400, 19},
+                        {420, 18},
+                        {440, 16},
+                        {460, 15},
+                        {480, 14},
+                        {500, 13},
+                        {520, 12},
+                        {540, 11},
+                        {560, 10}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart13.GetUpperBound(0) - 1
+                            If chart13(r, 0) <= 210 AndAlso chart13(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart13(r, c)
+                                    UpNum2(c) = chart13(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 560 Then
+
+                        For r As Integer = 0 To chart13.GetUpperBound(0) - 1
+                            If chart13(r, 0) <= 540 AndAlso chart13(r + 1, 0) >= 560 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart13(r, c)
+                                    UpNum2(c) = chart13(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 560
+                                    lot = 540
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart13.GetUpperBound(0) - 1
+                        If chart13(r, 0) <= mys AndAlso chart13(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart13(r, c)
+                                UpNum2(c) = chart13(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "B" Then
+                    Dim chart14(,) As Double = {{200, 33},
+                        {210, 29},
+                        {220, 25},
+                        {230, 22},
+                        {240, 19},
+                        {250, 17},
+                        {260, 15},
+                        {270, 13},
+                        {280, 11},
+                        {290, 10},
+                        {300, 8},
+                        {310, 7},
+                        {320, 6},
+                        {330, 5},
+                        {340, 4},
+                        {360, 2},
+                        {380, 0},
+                        {400, -2},
+                        {420, -3},
+                        {440, -5},
+                        {460, -6},
+                        {480, -7},
+                        {500, -8},
+                        {520, -9},
+                        {540, -10},
+                        {560, -11}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart14.GetUpperBound(0) - 1
+                            If chart14(r, 0) <= 210 AndAlso chart14(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart14(r, c)
+                                    UpNum2(c) = chart14(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 560 Then
+
+                        For r As Integer = 0 To chart14.GetUpperBound(0) - 1
+                            If chart14(r, 0) <= 540 AndAlso chart14(r + 1, 0) >= 560 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart14(r, c)
+                                    UpNum2(c) = chart14(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 560
+                                    lot = 540
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart14.GetUpperBound(0) - 1
+                        If chart14(r, 0) <= mys AndAlso chart14(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart14(r, c)
+                                UpNum2(c) = chart14(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "C" Then
+                    Dim chart15(,) As Double = {{200, 12},
+                        {210, 8},
+                        {220, 4},
+                        {230, 1},
+                        {240, -2},
+                        {250, -4},
+                        {260, -6},
+                        {270, -8},
+                        {280, -10},
+                        {290, -11},
+                        {300, -13},
+                        {310, -14},
+                        {320, -15},
+                        {330, -16},
+                        {340, -17},
+                        {360, -19},
+                        {380, -21},
+                        {400, -23},
+                        {420, -24},
+                        {440, -26},
+                        {460, -27},
+                        {480, -28},
+                        {500, -29},
+                        {520, -30},
+                        {540, -31},
+                        {560, -32}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart15.GetUpperBound(0) - 1
+                            If chart15(r, 0) <= 210 AndAlso chart15(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart15(r, c)
+                                    UpNum2(c) = chart15(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 560 Then
+
+                        For r As Integer = 0 To chart15.GetUpperBound(0) - 1
+                            If chart15(r, 0) <= 540 AndAlso chart15(r + 1, 0) >= 560 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart15(r, c)
+                                    UpNum2(c) = chart15(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 560
+                                    lot = 540
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart15.GetUpperBound(0) - 1
+                        If chart15(r, 0) <= mys AndAlso chart15(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart15(r, c)
+                                UpNum2(c) = chart15(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "D" Then
+                    Dim chart16(,) As Double = {{200, -2},
+                        {210, -7},
+                        {220, -11},
+                        {230, -14},
+                        {240, -16},
+                        {250, -19},
+                        {260, -21},
+                        {270, -23},
+                        {280, -24},
+                        {290, -26},
+                        {300, -27},
+                        {310, -28},
+                        {320, -30},
+                        {330, -31},
+                        {340, -32},
+                        {360, -34},
+                        {380, -36},
+                        {400, -37},
+                        {420, -39},
+                        {440, -40},
+                        {460, -42},
+                        {480, -43},
+                        {500, -44},
+                        {520, -45},
+                        {540, -46},
+                        {560, -47}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 200 Then
+                        For r As Integer = 0 To chart16.GetUpperBound(0) - 1
+                            If chart16(r, 0) <= 210 AndAlso chart16(r + 1, 0) >= 200 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart16(r, c)
+                                    UpNum2(c) = chart16(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 210
+                                    lot = 200
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 560 Then
+
+                        For r As Integer = 0 To chart16.GetUpperBound(0) - 1
+                            If chart16(r, 0) <= 540 AndAlso chart16(r + 1, 0) >= 560 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart16(r, c)
+                                    UpNum2(c) = chart16(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 560
+                                    lot = 540
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart16.GetUpperBound(0) - 1
+                        If chart16(r, 0) <= mys AndAlso chart16(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart16(r, c)
+                                UpNum2(c) = chart16(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+            End If
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            If ComboBox1.Text = "Carbon Steel" Then
+                If ComboBox157.Text = "A" Then
+                    Dim chart2(,) As Double = {{30, 104},
+                        {32, 97},
+                        {34, 91},
+                        {36, 86},
+                        {38, 81},
+                        {40, 78},
+                        {42, 74},
+                        {44, 71},
+                        {46, 68},
+                        {48, 66},
+                        {50, 63}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                            If chart2(r, 0) <= 32 AndAlso chart2(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart2(r, c)
+                                    UpNum2(c) = chart2(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 50 Then
+
+                        For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                            If chart2(r, 0) <= 48 AndAlso chart2(r + 1, 0) >= 50 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart2(r, c)
+                                    UpNum2(c) = chart2(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 50
+                                    lot = 48
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= mys AndAlso chart2(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "B" Then
+                    Dim chart3(,) As Double = {{30, 66},
+                        {32, 59},
+                        {34, 53},
+                        {36, 48},
+                        {38, 43},
+                        {40, 40},
+                        {42, 36},
+                        {44, 33},
+                        {46, 30},
+                        {48, 28},
+                        {50, 25}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                            If chart3(r, 0) <= 32 AndAlso chart3(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart3(r, c)
+                                    UpNum2(c) = chart3(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 50 Then
+
+                        For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                            If chart3(r, 0) <= 48 AndAlso chart3(r + 1, 0) >= 50 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart3(r, c)
+                                    UpNum2(c) = chart3(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 50
+                                    lot = 48
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                        If chart3(r, 0) <= mys AndAlso chart3(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart3(r, c)
+                                UpNum2(c) = chart3(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "C" Then
+                    Dim chart4(,) As Double = {{30, 28},
+                        {32, 21},
+                        {34, 15},
+                        {36, 10},
+                        {38, 5},
+                        {40, 2},
+                        {42, -2},
+                        {44, -5},
+                        {46, -8},
+                        {48, -10},
+                        {50, -13}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                            If chart4(r, 0) <= 32 AndAlso chart4(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart4(r, c)
+                                    UpNum2(c) = chart4(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 50 Then
+
+                        For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                            If chart4(r, 0) <= 48 AndAlso chart4(r + 1, 0) >= 50 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart4(r, c)
+                                    UpNum2(c) = chart4(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 50
+                                    lot = 48
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                        If chart4(r, 0) <= mys AndAlso chart4(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart4(r, c)
+                                UpNum2(c) = chart4(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "D" Then
+                    Dim chart5(,) As Double = {{30, 2},
+                        {32, -5},
+                        {34, -11},
+                        {36, -16},
+                        {38, -21},
+                        {40, -24},
+                        {42, -28},
+                        {44, -31},
+                        {46, -34},
+                        {48, -36},
+                        {50, -39}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                            If chart5(r, 0) <= 32 AndAlso chart5(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart5(r, c)
+                                    UpNum2(c) = chart5(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 50 Then
+
+                        For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                            If chart5(r, 0) <= 48 AndAlso chart5(r + 1, 0) >= 50 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart5(r, c)
+                                    UpNum2(c) = chart5(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 50
+                                    lot = 48
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                        If chart5(r, 0) <= mys AndAlso chart5(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart5(r, c)
+                                UpNum2(c) = chart5(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+            ElseIf ComboBox1.Text = "Low Alloy Steel" Then
+                If ComboBox157.Text = "A" Then
+                    Dim chart6(,) As Double = {{30, 124},
+                        {32, 115},
+                        {34, 107},
+                        {36, 101},
+                        {38, 96},
+                        {40, 92},
+                        {42, 88},
+                        {44, 85},
+                        {46, 81},
+                        {48, 79},
+                        {50, 76},
+                        {52, 73},
+                        {54, 71},
+                        {56, 69},
+                        {58, 67},
+                        {60, 65},
+                        {62, 63},
+                        {64, 62},
+                        {66, 60},
+                        {68, 58},
+                        {70, 57},
+                        {72, 56},
+                        {74, 54},
+                        {76, 53},
+                        {78, 52},
+                        {90, 51}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                            If chart6(r, 0) <= 32 AndAlso chart6(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart6(r, c)
+                                    UpNum2(c) = chart6(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 80 Then
+
+                        For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                            If chart6(r, 0) <= 78 AndAlso chart6(r + 1, 0) >= 80 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart6(r, c)
+                                    UpNum2(c) = chart6(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 80
+                                    lot = 78
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                        If chart6(r, 0) <= mys AndAlso chart6(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart6(r, c)
+                                UpNum2(c) = chart6(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "B" Then
+                    Dim chart7(,) As Double = {{30, 86},
+                        {32, 77},
+                        {34, 69},
+                        {36, 63},
+                        {38, 58},
+                        {40, 54},
+                        {42, 50},
+                        {44, 47},
+                        {46, 43},
+                        {48, 41},
+                        {50, 38},
+                        {52, 35},
+                        {54, 33},
+                        {56, 31},
+                        {58, 29},
+                        {60, 27},
+                        {62, 25},
+                        {64, 24},
+                        {66, 22},
+                        {68, 20},
+                        {70, 19},
+                        {72, 18},
+                        {74, 16},
+                        {76, 15},
+                        {78, 14},
+                        {90, 13}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart7.GetUpperBound(0) - 1
+                            If chart7(r, 0) <= 32 AndAlso chart7(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart7(r, c)
+                                    UpNum2(c) = chart7(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 80 Then
+
+                        For r As Integer = 0 To chart7.GetUpperBound(0) - 1
+                            If chart7(r, 0) <= 78 AndAlso chart7(r + 1, 0) >= 80 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart7(r, c)
+                                    UpNum2(c) = chart7(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 80
+                                    lot = 78
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart7.GetUpperBound(0) - 1
+                        If chart7(r, 0) <= mys AndAlso chart7(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart7(r, c)
+                                UpNum2(c) = chart7(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "C" Then
+                    Dim chart8(,) As Double = {{30, 48},
+                        {32, 39},
+                        {34, 31},
+                        {36, 25},
+                        {38, 20},
+                        {40, 16},
+                        {42, 12},
+                        {44, 9},
+                        {46, 5},
+                        {48, 3},
+                        {50, 0},
+                        {52, -3},
+                        {54, -5},
+                        {56, -7},
+                        {58, -9},
+                        {60, -11},
+                        {62, -13},
+                        {64, -14},
+                        {66, -16},
+                        {68, -18},
+                        {70, -19},
+                        {72, -20},
+                        {74, -22},
+                        {76, -23},
+                        {78, -24},
+                        {90, -25}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart8.GetUpperBound(0) - 1
+                            If chart8(r, 0) <= 32 AndAlso chart8(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart8(r, c)
+                                    UpNum2(c) = chart8(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 80 Then
+
+                        For r As Integer = 0 To chart8.GetUpperBound(0) - 1
+                            If chart8(r, 0) <= 78 AndAlso chart8(r + 1, 0) >= 80 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart8(r, c)
+                                    UpNum2(c) = chart8(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 80
+                                    lot = 78
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart8.GetUpperBound(0) - 1
+                        If chart8(r, 0) <= mys AndAlso chart8(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart8(r, c)
+                                UpNum2(c) = chart8(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox157.Text = "D" Then
+                    Dim chart9(,) As Double = {{30, 22},
+                        {32, 13},
+                        {34, 5},
+                        {36, -1},
+                        {38, -6},
+                        {40, -10},
+                        {42, -14},
+                        {44, -17},
+                        {46, -21},
+                        {48, -23},
+                        {50, -26},
+                        {52, -29},
+                        {54, -31},
+                        {56, -33},
+                        {58, -35},
+                        {60, -37},
+                        {62, -39},
+                        {64, -40},
+                        {66, -42},
+                        {68, -44},
+                        {70, -45},
+                        {72, -46},
+                        {74, -48},
+                        {76, -49},
+                        {78, -50},
+                        {90, -51}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim mys As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    mys = Val(TextBox13.Text)
+
+                    If mys < 30 Then
+                        For r As Integer = 0 To chart9.GetUpperBound(0) - 1
+                            If chart9(r, 0) <= 32 AndAlso chart9(r + 1, 0) >= 30 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart9(r, c)
+                                    UpNum2(c) = chart9(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 32
+                                    lot = 30
+
+                                    reftemp = Inter3b(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf mys > 80 Then
+
+                        For r As Integer = 0 To chart9.GetUpperBound(0) - 1
+                            If chart9(r, 0) <= 78 AndAlso chart9(r + 1, 0) >= 80 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart9(r, c)
+                                    UpNum2(c) = chart9(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 80
+                                    lot = 78
+
+                                    reftemp = Inter3c(upt, lot, mys, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart9.GetUpperBound(0) - 1
+                        If chart9(r, 0) <= mys AndAlso chart9(r + 1, 0) >= mys Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart9(r, c)
+                                UpNum2(c) = chart9(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                reftemp = Inter(mys, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+            End If
+        End If
+
+        Dim cetkurangreftemp As Double
+
+        cetkurangreftemp = Val(TextBox90.Text) - reftemp
+
+        Dim basedf As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            If ComboBox158.Text = "Component Not Subject to PWHT" Then
+                Dim chart111(,) As Double = {{-56, 4, 61, 579, 1436, 2336, 3160, 3883, 4509, 5000},
+                    {-44, 3, 46, 474, 1239, 2080, 2873, 3581, 4203, 4746},
+                    {-33, 2, 30, 350, 988, 1740, 2479, 3160, 3769, 4310},
+                    {-22, 2, 16, 220, 697, 1317, 1969, 2596, 3176, 3703},
+                    {-11, 1.2, 7, 109, 405, 850, 1366, 1897, 2415, 2903},
+                    {-0, 0.9, 3, 39, 175, 424, 759, 1142, 1545, 1950},
+                    {11, 0.1, 1.3, 10, 49, 143, 296, 500, 741, 1008},
+                    {22, 0, 0.7, 2, 9, 29, 69, 133, 224, 338},
+                    {33, 0, 0, 1, 2, 4, 9, 19, 36, 60},
+                    {44, 0, 0, 0, 0.8, 1.1, 2, 2, 4, 6},
+                    {56, 0, 0, 0, 0, 0, 0, 0.9, 1.1, 1.2}}
+
+                Dim UpNum2(9) As Double
+                Dim LowNum2(9) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+                Dim Lo3 As Double
+                Dim Lo4 As Double
+                Dim up3 As Double
+                Dim up4 As Double
+                Dim x As Double
+                Dim z As Double
+                Dim temp As Double
+                Dim th As Double
+                Dim upt As Double
+                Dim Lot As Double
+                Dim uptx As Double
+                Dim uptz As Double
+                Dim lotz As Double
+                Dim lotx As Double
+                Dim xx As Double
+                Dim xz As Double
+                Dim zx As Double
+                Dim zz As Double
+                Dim upta As Double
+                Dim uptb As Double
+                Dim lota As Double
+                Dim lotb As Double
+                Dim xa As Double
+                Dim xb As Double
+                Dim za As Double
+                Dim zb As Double
+
+
+                temp = cetkurangreftemp
+                th = Val(TextBox1.Text)
+
+                If th < 6.4 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 12.7
+                                Lot = 6.4
+                                basedf = Inter3b1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 12.7
+                                Lot = 6.4
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf th > 12.7 AndAlso th <= 25.4 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(2)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(2)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(3)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(3)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 25.4
+                                Lot = 12.7
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 25.4 AndAlso th <= 38.1 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(3)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(3)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(4)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(4)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 38.1
+                                Lot = 25.4
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 38.1 AndAlso th <= 50.8 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(4)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(4)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(5)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(5)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 50.8
+                                Lot = 38.1
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 50.8 AndAlso th <= 63.5 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(5)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(5)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(6)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(6)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 63.5
+                                Lot = 50.8
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 63.5 AndAlso th <= 76.2 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 7
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(6)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(6)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(7)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(7)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 76.2
+                                Lot = 63.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 76.2 AndAlso th <= 88.9 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 8
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(7)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(7)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(8)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(8)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 88.9
+                                Lot = 76.2
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 88.9 AndAlso th <= 101.6 Then
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 101.6
+                                Lot = 88.9
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                Else
+                    For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                        If chart111(r, 0) <= temp AndAlso chart111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart111(r, c)
+                                UpNum2(c) = chart111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 101.6
+                                Lot = 88.9
+                                basedf = Inter3c1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                End If
+
+                If temp < -56 Then
+                    If th < 6.4 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 12.7 AndAlso th <= 25.4 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(2)
+                                    xa = LowNum2(2)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(3)
+                                    xb = LowNum2(3)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 25.4
+                                    Lot = 12.7
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 25.4 AndAlso th <= 38.1 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(3)
+                                    xa = LowNum2(3)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(4)
+                                    xb = LowNum2(4)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 38.1
+                                    Lot = 25.4
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 38.1 AndAlso th <= 50.8 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(4)
+                                    xa = LowNum2(4)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(5)
+                                    xb = LowNum2(5)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 50.8
+                                    Lot = 38.1
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 50.8 AndAlso th <= 63.5 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(5)
+                                    xa = LowNum2(5)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(6)
+                                    xb = LowNum2(6)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 63.5
+                                    Lot = 50.8
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 63.5 AndAlso th <= 76.2 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(6)
+                                    xa = LowNum2(6)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(7)
+                                    xb = LowNum2(7)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 76.2
+                                    Lot = 63.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 76.2 AndAlso th <= 88.9 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(7)
+                                    xa = LowNum2(7)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(8)
+                                    xb = LowNum2(8)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 88.9
+                                    Lot = 76.2
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 88.9 AndAlso th <= 101.6 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= -44 AndAlso chart111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+
+                If temp > 56 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 12.7 AndAlso th <= 25.4 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(2)
+                                    xx = LowNum2(2)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(3)
+                                    xz = LowNum2(3)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 25.4
+                                    Lot = 12.7
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 25.4 AndAlso th <= 38.1 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(3)
+                                    xx = LowNum2(3)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(4)
+                                    xz = LowNum2(4)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 38.1
+                                    Lot = 25.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 38.1 AndAlso th <= 50.8 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(4)
+                                    xx = LowNum2(4)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(5)
+                                    xz = LowNum2(5)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 50.8
+                                    Lot = 38.1
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 50.8 AndAlso th <= 63.5 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(5)
+                                    xx = LowNum2(5)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(6)
+                                    xz = LowNum2(6)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 63.5
+                                    Lot = 50.8
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 63.5 AndAlso th <= 76.2 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(6)
+                                    xx = LowNum2(6)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(7)
+                                    xz = LowNum2(7)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 76.2
+                                    Lot = 63.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 76.2 AndAlso th <= 88.9 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(7)
+                                    xx = LowNum2(7)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(8)
+                                    xz = LowNum2(8)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 88.9
+                                    Lot = 76.2
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 88.9 AndAlso th <= 101.6 Then
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart111.GetUpperBound(0) - 1
+                            If chart111(r, 0) <= 44 AndAlso chart111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart111(r, c)
+                                    UpNum2(c) = chart111(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+            End If
+
+            If ComboBox158.Text = "Component Subject to PWHT" Then
+                Dim chart1111(,) As Double = {{-56, 0, 1.3, 9, 46, 133, 277, 472, 704, 962},
+                    {-44, 0, 1.2, 7, 34, 102, 219, 382, 582, 810},
+                    {-33, 0, 1.1, 5, 22, 68, 153, 277, 436, 623},
+                    {-22, 0, 0.9, 3, 12, 38, 90, 171, 281, 416},
+                    {-11, 0, 0.4, 2, 5, 17, 41, 83, 144, 224},
+                    {-0, 0, 0, 1.1, 2, 6, 14, 29, 53, 88},
+                    {11, 0, 0, 0.6, 1.2, 2, 4, 7, 13, 23},
+                    {22, 0, 0, 0, 0.5, 1.1, 1.3, 2, 3, 4},
+                    {33, 0, 0, 0, 0, 0, 0.5, 0.9, 1.1, 1.3},
+                    {44, 0, 0, 0, 0, 0, 0, 0, 0, 0.2},
+                    {56, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
+
+                Dim UpNum2(9) As Double
+                Dim LowNum2(9) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+                Dim Lo3 As Double
+                Dim Lo4 As Double
+                Dim up3 As Double
+                Dim up4 As Double
+                Dim x As Double
+                Dim z As Double
+                Dim temp As Double
+                Dim th As Double
+                Dim upt As Double
+                Dim Lot As Double
+                Dim uptx As Double
+                Dim uptz As Double
+                Dim lotz As Double
+                Dim lotx As Double
+                Dim xx As Double
+                Dim xz As Double
+                Dim zx As Double
+                Dim zz As Double
+                Dim upta As Double
+                Dim uptb As Double
+                Dim lota As Double
+                Dim lotb As Double
+                Dim xa As Double
+                Dim xb As Double
+                Dim za As Double
+                Dim zb As Double
+
+
+                temp = cetkurangreftemp
+                th = Val(TextBox1.Text)
+
+                If th < 6.4 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 12.7
+                                Lot = 6.4
+                                basedf = Inter3b1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 12.7
+                                Lot = 6.4
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf th > 12.7 AndAlso th <= 25.4 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(2)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(2)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(3)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(3)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 25.4
+                                Lot = 12.7
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 25.4 AndAlso th <= 38.1 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(3)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(3)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(4)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(4)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 38.1
+                                Lot = 25.4
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 38.1 AndAlso th <= 50.8 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(4)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(4)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(5)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(5)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 50.8
+                                Lot = 38.1
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 50.8 AndAlso th <= 63.5 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(5)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(5)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(6)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(6)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 63.5
+                                Lot = 50.8
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 63.5 AndAlso th <= 76.2 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 7
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(6)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(6)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(7)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(7)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 76.2
+                                Lot = 63.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 76.2 AndAlso th <= 88.9 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 8
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(7)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(7)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(8)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(8)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 88.9
+                                Lot = 76.2
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 88.9 AndAlso th <= 101.6 Then
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 101.6
+                                Lot = 88.9
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                Else
+                    For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                        If chart1111(r, 0) <= temp AndAlso chart1111(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart1111(r, c)
+                                UpNum2(c) = chart1111(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 101.6
+                                Lot = 88.9
+                                basedf = Inter3c1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                End If
+
+                If temp < -56 Then
+                    If th < 6.4 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 12.7 AndAlso th <= 25.4 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(2)
+                                    xa = LowNum2(2)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(3)
+                                    xb = LowNum2(3)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 25.4
+                                    Lot = 12.7
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 25.4 AndAlso th <= 38.1 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(3)
+                                    xa = LowNum2(3)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(4)
+                                    xb = LowNum2(4)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 38.1
+                                    Lot = 25.4
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 38.1 AndAlso th <= 50.8 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(4)
+                                    xa = LowNum2(4)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(5)
+                                    xb = LowNum2(5)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 50.8
+                                    Lot = 38.1
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 50.8 AndAlso th <= 63.5 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(5)
+                                    xa = LowNum2(5)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(6)
+                                    xb = LowNum2(6)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 63.5
+                                    Lot = 50.8
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 63.5 AndAlso th <= 76.2 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(6)
+                                    xa = LowNum2(6)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(7)
+                                    xb = LowNum2(7)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 76.2
+                                    Lot = 63.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 76.2 AndAlso th <= 88.9 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(7)
+                                    xa = LowNum2(7)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(8)
+                                    xb = LowNum2(8)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 88.9
+                                    Lot = 76.2
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 88.9 AndAlso th <= 101.6 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= -44 AndAlso chart1111(r + 1, 0) >= -56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -44
+                                    lota = -56
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -44
+                                    lotb = -56
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+
+                If temp > 56 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 6.4 AndAlso th <= 12.7 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 12.7
+                                    Lot = 6.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 12.7 AndAlso th <= 25.4 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(2)
+                                    xx = LowNum2(2)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(3)
+                                    xz = LowNum2(3)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 25.4
+                                    Lot = 12.7
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 25.4 AndAlso th <= 38.1 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(3)
+                                    xx = LowNum2(3)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(4)
+                                    xz = LowNum2(4)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 38.1
+                                    Lot = 25.4
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 38.1 AndAlso th <= 50.8 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(4)
+                                    xx = LowNum2(4)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(5)
+                                    xz = LowNum2(5)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 50.8
+                                    Lot = 38.1
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 50.8 AndAlso th <= 63.5 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(5)
+                                    xx = LowNum2(5)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(6)
+                                    xz = LowNum2(6)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 63.5
+                                    Lot = 50.8
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 63.5 AndAlso th <= 76.2 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(6)
+                                    xx = LowNum2(6)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(7)
+                                    xz = LowNum2(7)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 76.2
+                                    Lot = 63.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 76.2 AndAlso th <= 88.9 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(7)
+                                    xx = LowNum2(7)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(8)
+                                    xz = LowNum2(8)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 88.9
+                                    Lot = 76.2
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 88.9 AndAlso th <= 101.6 Then
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart1111.GetUpperBound(0) - 1
+                            If chart1111(r, 0) <= 44 AndAlso chart1111(r + 1, 0) >= 56 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart1111(r, c)
+                                    UpNum2(c) = chart1111(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 56
+                                    lotx = 44
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 56
+                                    lotz = 44
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 101.6
+                                    Lot = 88.9
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+            End If
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+
+            If ComboBox158.Text = "Component Subject to PWHT" Then
+                Dim chart11(,) As Double = {{-100, 0, 1.3, 9, 46, 133, 277, 472, 704, 962},
+                    {-80, 0, 1.2, 7, 34, 102, 219, 382, 582, 810},
+                    {-60, 0, 1.1, 5, 22, 68, 153, 277, 436, 623},
+                    {-40, 0, 0.9, 3, 12, 38, 90, 171, 281, 416},
+                    {-20, 0, 0.4, 2, 5, 17, 41, 83, 144, 224},
+                    {0, 0, 0, 1.1, 2, 6, 14, 29, 53, 88},
+                    {20, 0, 0, 0.6, 1.2, 2, 4, 7, 13, 23},
+                    {40, 0, 0, 0, 0.5, 1.1, 1.3, 2, 3, 4},
+                    {60, 0, 0, 0, 0, 0, 0.5, 0.9, 1.1, 1.3},
+                    {80, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+                    {100, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
+
+                Dim UpNum2(9) As Double
+                Dim LowNum2(9) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+                Dim Lo3 As Double
+                Dim Lo4 As Double
+                Dim up3 As Double
+                Dim up4 As Double
+                Dim x As Double
+                Dim z As Double
+                Dim temp As Double
+                Dim th As Double
+                Dim upt As Double
+                Dim Lot As Double
+                Dim uptx As Double
+                Dim uptz As Double
+                Dim lotz As Double
+                Dim lotx As Double
+                Dim xx As Double
+                Dim xz As Double
+                Dim zx As Double
+                Dim zz As Double
+                Dim upta As Double
+                Dim uptb As Double
+                Dim lota As Double
+                Dim lotb As Double
+                Dim xa As Double
+                Dim xb As Double
+                Dim za As Double
+                Dim zb As Double
+
+
+                temp = cetkurangreftemp
+                th = Val(TextBox1.Text)
+
+                If th < 0.25 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 0.5
+                                Lot = 0.25
+                                basedf = Inter3b1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 0.5
+                                Lot = 0.25
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf th > 0.5 AndAlso th <= 1.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(2)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(2)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(3)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(3)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 1.0
+                                Lot = 0.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 1.0 AndAlso th <= 1.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(3)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(3)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(4)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(4)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 1.5
+                                Lot = 1.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 1.5 AndAlso th <= 2.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(4)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(4)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(5)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(5)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 2.0
+                                Lot = 1.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 2.0 AndAlso th <= 2.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(5)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(5)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(6)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(6)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 2.5
+                                Lot = 2.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 2.5 AndAlso th <= 3.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 7
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(6)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(6)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(7)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(7)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 3.0
+                                Lot = 2.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 3.0 AndAlso th <= 3.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 8
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(7)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(7)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(8)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(8)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 3.5
+                                Lot = 3.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 3.5 AndAlso th <= 4.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 4.0
+                                Lot = 3.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                Else
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 4.0
+                                Lot = 3.5
+                                basedf = Inter3c1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                End If
+
+                If temp < -100 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 0.5 AndAlso th <= 1.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(2)
+                                    xa = LowNum2(2)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(3)
+                                    xb = LowNum2(3)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 1.0
+                                    Lot = 0.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 1.0 AndAlso th <= 1.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(3)
+                                    xa = LowNum2(3)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(4)
+                                    xb = LowNum2(4)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 1.5
+                                    Lot = 1.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 1.5 AndAlso th <= 2.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(4)
+                                    xa = LowNum2(4)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(5)
+                                    xb = LowNum2(5)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 2.0
+                                    Lot = 1.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 2.0 AndAlso th <= 2.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(5)
+                                    xa = LowNum2(5)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(6)
+                                    xb = LowNum2(6)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 2.5
+                                    Lot = 2.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 2.5 AndAlso th <= 3.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(6)
+                                    xa = LowNum2(6)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(7)
+                                    xb = LowNum2(7)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 3.0
+                                    Lot = 2.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 3.0 AndAlso th <= 3.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(7)
+                                    xa = LowNum2(7)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(8)
+                                    xb = LowNum2(8)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 3.5
+                                    Lot = 3.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 3.5 AndAlso th <= 4.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+
+                If temp > 100 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.5 AndAlso th <= 1.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(2)
+                                    xx = LowNum2(2)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(3)
+                                    xz = LowNum2(3)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 1.0
+                                    Lot = 0.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 1.0 AndAlso th <= 1.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(3)
+                                    xx = LowNum2(3)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(4)
+                                    xz = LowNum2(4)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 1.5
+                                    Lot = 1.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 1.5 AndAlso th <= 2.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(4)
+                                    xx = LowNum2(4)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(5)
+                                    xz = LowNum2(5)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 2.0
+                                    Lot = 1.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 2.0 AndAlso th <= 2.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(5)
+                                    xx = LowNum2(5)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(6)
+                                    xz = LowNum2(6)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 2.5
+                                    Lot = 2.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 2.5 AndAlso th <= 3.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(6)
+                                    xx = LowNum2(6)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(7)
+                                    xz = LowNum2(7)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 3.0
+                                    Lot = 2.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 3.0 AndAlso th <= 3.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(7)
+                                    xx = LowNum2(7)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(8)
+                                    xz = LowNum2(8)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 3.5
+                                    Lot = 3.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 3.5 AndAlso th <= 4.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+            End If
+
+            If ComboBox158.Text = "Component Subject to PWHT" Then
+                Dim chart11(,) As Double = {{-100, 0, 1.3, 9, 46, 133, 277, 472, 704, 962},
+                    {-80, 0, 1.2, 7, 34, 102, 219, 382, 582, 810},
+                    {-60, 0, 1.1, 5, 22, 68, 153, 277, 436, 623},
+                    {-40, 0, 0.9, 3, 12, 38, 90, 171, 281, 416},
+                    {-20, 0, 0.4, 2, 5, 17, 41, 83, 144, 224},
+                    {0, 0, 0, 1.1, 2, 6, 14, 29, 53, 88},
+                    {20, 0, 0, 0.6, 1.2, 2, 4, 7, 13, 23},
+                    {40, 0, 0, 0, 0.5, 1.1, 1.3, 2, 3, 4},
+                    {60, 0, 0, 0, 0, 0, 0.5, 0.9, 1.1, 1.3},
+                    {80, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+                    {100, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
+
+                Dim UpNum2(9) As Double
+                Dim LowNum2(9) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+                Dim Lo3 As Double
+                Dim Lo4 As Double
+                Dim up3 As Double
+                Dim up4 As Double
+                Dim x As Double
+                Dim z As Double
+                Dim temp As Double
+                Dim th As Double
+                Dim upt As Double
+                Dim Lot As Double
+                Dim uptx As Double
+                Dim uptz As Double
+                Dim lotz As Double
+                Dim lotx As Double
+                Dim xx As Double
+                Dim xz As Double
+                Dim zx As Double
+                Dim zz As Double
+                Dim upta As Double
+                Dim uptb As Double
+                Dim lota As Double
+                Dim lotb As Double
+                Dim xa As Double
+                Dim xb As Double
+                Dim za As Double
+                Dim zb As Double
+
+
+                temp = cetkurangreftemp
+                th = Val(TextBox1.Text)
+
+                If th < 0.25 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 0.5
+                                Lot = 0.25
+                                basedf = Inter3b1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(2)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(2)
+
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+
+                                upt = 0.5
+                                Lot = 0.25
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf th > 0.5 AndAlso th <= 1.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(2)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(2)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(3)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(3)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 1.0
+                                Lot = 0.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 1.0 AndAlso th <= 1.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(3)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(3)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(4)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(4)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 1.5
+                                Lot = 1.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 1.5 AndAlso th <= 2.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(4)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(4)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(5)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(5)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 2.0
+                                Lot = 1.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 2.0 AndAlso th <= 2.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 6
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(5)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(5)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(6)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(6)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 2.5
+                                Lot = 2.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 2.5 AndAlso th <= 3.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 7
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(6)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(6)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(7)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(7)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 3.0
+                                Lot = 2.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 3.0 AndAlso th <= 3.5 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 8
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(7)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(7)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(8)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(8)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 3.5
+                                Lot = 3.0
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                ElseIf th > 3.5 AndAlso th <= 4.0 Then
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 4.0
+                                Lot = 3.5
+                                basedf = Inter3a1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                Else
+                    For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                        If chart11(r, 0) <= temp AndAlso chart11(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 9
+                                LowNum2(c) = chart11(r, c)
+                                UpNum2(c) = chart11(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(8)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(8)
+
+                                x = Interx(temp, up1, up2, Lo1, Lo2)
+
+                                up3 = UpNum2(0)
+                                up4 = UpNum2(9)
+
+                                Lo3 = LowNum2(0)
+                                Lo4 = LowNum2(9)
+                                z = Interx1(temp, up3, up4, Lo3, Lo4)
+                                upt = 4.0
+                                Lot = 3.5
+                                basedf = Inter3c1(upt, Lot, th, x, z)
+                            Next
+                        End If
+                    Next
+                End If
+
+                If temp < -100 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(1)
+                                    xa = LowNum2(1)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(2)
+                                    xb = LowNum2(2)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 0.5 AndAlso th <= 1.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(2)
+                                    xa = LowNum2(2)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(3)
+                                    xb = LowNum2(3)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 1.0
+                                    Lot = 0.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 1.0 AndAlso th <= 1.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(3)
+                                    xa = LowNum2(3)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(4)
+                                    xb = LowNum2(4)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 1.5
+                                    Lot = 1.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 1.5 AndAlso th <= 2.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(4)
+                                    xa = LowNum2(4)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(5)
+                                    xb = LowNum2(5)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 2.0
+                                    Lot = 1.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 2.0 AndAlso th <= 2.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(5)
+                                    xa = LowNum2(5)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(6)
+                                    xb = LowNum2(6)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 2.5
+                                    Lot = 2.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 2.5 AndAlso th <= 3.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(6)
+                                    xa = LowNum2(6)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(7)
+                                    xb = LowNum2(7)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 3.0
+                                    Lot = 2.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 3.0 AndAlso th <= 3.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(7)
+                                    xa = LowNum2(7)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(8)
+                                    xb = LowNum2(8)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 3.5
+                                    Lot = 3.0
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th > 3.5 AndAlso th <= 4.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3a1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= -80 AndAlso chart11(r + 1, 0) >= -100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    za = UpNum2(8)
+                                    xa = LowNum2(8)
+                                    upta = -80
+                                    lota = -100
+                                    x = Inter3da(upta, lota, temp, xa, za)
+
+                                    zb = UpNum2(9)
+                                    xb = LowNum2(9)
+                                    uptb = -80
+                                    lotb = -100
+                                    z = Inter3db(uptb, lotb, temp, xb, zb)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+
+                If temp > 100 Then
+                    If th < 0.25 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.25 AndAlso th <= 0.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 2
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(1)
+                                    xx = LowNum2(1)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(2)
+                                    xz = LowNum2(2)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 0.5
+                                    Lot = 0.25
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 0.5 AndAlso th <= 1.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 3
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(2)
+                                    xx = LowNum2(2)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(3)
+                                    xz = LowNum2(3)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 1.0
+                                    Lot = 0.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 1.0 AndAlso th <= 1.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 4
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(3)
+                                    xx = LowNum2(3)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(4)
+                                    xz = LowNum2(4)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 1.5
+                                    Lot = 1.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 1.5 AndAlso th <= 2.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 5
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(4)
+                                    xx = LowNum2(4)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(5)
+                                    xz = LowNum2(5)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 2.0
+                                    Lot = 1.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 2.0 AndAlso th <= 2.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 6
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(5)
+                                    xx = LowNum2(5)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(6)
+                                    xz = LowNum2(6)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 2.5
+                                    Lot = 2.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 2.5 AndAlso th <= 3.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 7
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(6)
+                                    xx = LowNum2(6)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(7)
+                                    xz = LowNum2(7)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 3.0
+                                    Lot = 2.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 3.0 AndAlso th <= 3.5 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 8
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(7)
+                                    xx = LowNum2(7)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(8)
+                                    xz = LowNum2(8)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 3.5
+                                    Lot = 3.0
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf th >= 3.5 AndAlso th <= 4.0 Then
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3b1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For r As Integer = 0 To chart11.GetUpperBound(0) - 1
+                            If chart11(r, 0) <= 80 AndAlso chart11(r + 1, 0) >= 100 Then
+                                For c As Integer = 0 To 9
+                                    LowNum2(c) = chart11(r, c)
+                                    UpNum2(c) = chart11(r + 1, c)
+
+                                    zx = UpNum2(8)
+                                    xx = LowNum2(8)
+                                    uptx = 100
+                                    lotx = 80
+                                    x = Inter3ex(uptx, lotx, temp, xx, zx)
+
+                                    zz = UpNum2(9)
+                                    xz = LowNum2(9)
+                                    uptz = 100
+                                    lotz = 80
+                                    z = Inter3ez(uptz, lotz, temp, xz, zz)
+                                    upt = 4.0
+                                    Lot = 3.5
+                                    basedf = Inter3c1(upt, Lot, th, x, z)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+                End If
+            End If
+        End If
+
+        If ComboBox158.Text = "Component Subject to PWHT" And Units.ComboBox1.Text = "SI" And TextBox1.Text = 101.6 And cetkurangreftemp = 56 Then
+            basedf = "0"
+        End If
+
+        If basedf < 0 Then
+            basedf = 0
+        End If
+
+        Dim fse As Double
+
+        fse = Val(ComboBox159.Text)
+
+        Dim df As Double
+        df = basedf * fse
+
+        Label364.Text = df
+    End Sub
 
     'Low Alloy Steel Embrittlement Coding perhitungan ---------------------------------------------------------------------
 
 
 
     '885°F Embrittlement Coding perhitungan -------------------------------------------------------------------------------
+    Public Sub delapandelapanlimafembrittlementdf()
+        Dim tref As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            tref = 28
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            tref = 80
+        End If
+
+        Dim tminkurangtref As Double
+
+        tminkurangtref = Val(TextBox46.Text) - tref
+
+        Dim df As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            If tminkurangtref >= 57 Then
+                df = 0
+            End If
+
+            Dim chart2(,) As Double = {{-56, 1381},
+                {-44, 1216},
+                {-33, 1022},
+                {-22, 806},
+                {-11, 581},
+                {-0, 371},
+                {11, 200},
+                {22, 87},
+                {33, 30},
+                {44, 8},
+                {56, 2}}
+
+            Dim UpNum2(1) As Double
+            Dim LowNum2(1) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+            temp = tminkurangtref
+
+            If temp < -56 Then
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= -44 AndAlso chart2(r + 1, 0) >= -56 Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+                            x = LowNum2(1)
+                            z = UpNum2(1)
+                            upt = -44
+                            lot = -56
+
+                            df = Inter3b(upt, lot, temp, x, z)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                    For c As Integer = 0 To 1
+                        LowNum2(c) = chart2(r, c)
+                        UpNum2(c) = chart2(r + 1, c)
+
+                        up1 = UpNum2(0)
+                        up2 = UpNum2(1)
+
+                        Lo1 = LowNum2(0)
+                        Lo2 = LowNum2(1)
+
+                        df = Inter(temp, up1, up2, Lo1, Lo2)
 
 
+                    Next
+                    Exit For
+                End If
+            Next
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            If tminkurangtref >= 101 Then
+                df = 0
+            End If
+
+
+            Dim chart2(,) As Double = {{-100, 1381},
+                {-80, 1216},
+                {-60, 1022},
+                {-40, 806},
+                {-20, 581},
+                {-0, 371},
+                {20, 200},
+                {40, 87},
+                {60, 30},
+                {80, 8},
+                {100, 2}}
+
+            Dim UpNum2(1) As Double
+            Dim LowNum2(1) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+            temp = tminkurangtref
+
+            If temp < -100 Then
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= -80 AndAlso chart2(r + 1, 0) >= -100 Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+                            x = LowNum2(1)
+                            z = UpNum2(1)
+                            upt = -80
+                            lot = -100
+
+                            df = Inter3b(upt, lot, temp, x, z)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                    For c As Integer = 0 To 1
+                        LowNum2(c) = chart2(r, c)
+                        UpNum2(c) = chart2(r + 1, c)
+
+                        up1 = UpNum2(0)
+                        up2 = UpNum2(1)
+
+                        Lo1 = LowNum2(0)
+                        Lo2 = LowNum2(1)
+
+                        df = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                    Next
+                    Exit For
+                End If
+            Next
+
+        End If
+
+        Label366.Text = df
+    End Sub
 
     'Sigma Phase Coding perhitungan ---------------------------------------------------------------------------------------
     Public Sub sigmaphasedf()
 
-    End Sub
+        Dim df As Double
 
+        If Units.ComboBox1.Text = "SI" Then
+            If ComboBox166.Text = "(>1%, <5%)" Then
+                Dim chart2(,) As Double = {{-46, 1.1},
+                    {-18, 1.0},
+                    {10, 0.9},
+                    {38, 0.6},
+                    {66, 0.3},
+                    {93, 0.1},
+                    {204, 0},
+                    {316, 0},
+                    {427, 0},
+                    {538, 0},
+                    {649, 0}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -46 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= -18 AndAlso chart2(r + 1, 0) >= -46 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -18
+                                lot = -46
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 649 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 538 AndAlso chart2(r + 1, 0) >= 649 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 649
+                                lot = 538
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+
+                If TextBox47.Text = 204 Then
+                    df = 0
+                End If
+
+
+            ElseIf ComboBox166.Text = "(≥5%, <10%)" Then
+                Dim chart3(,) As Double = {{-46, 34},
+                {-18, 20},
+                {10, 11},
+                {38, 7},
+                {66, 5},
+                {93, 3},
+                {204, 1.3},
+                {316, 0.9},
+                {427, 0.2},
+                {538, 0},
+                {649, 0}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -46 Then
+                    For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                        If chart3(r, 0) <= -18 AndAlso chart3(r + 1, 0) >= -46 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart3(r, c)
+                                UpNum2(c) = chart3(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -18
+                                lot = -46
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 649 Then
+
+                    For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                        If chart3(r, 0) <= 538 AndAlso chart3(r + 1, 0) >= 649 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart3(r, c)
+                                UpNum2(c) = chart3(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 649
+                                lot = 538
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                    If chart3(r, 0) <= temp AndAlso chart3(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart3(r, c)
+                            UpNum2(c) = chart3(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+
+                If TextBox47.Text = 538 Then
+                    df = 0
+                End If
+
+            ElseIf ComboBox166.Text = "(≥10%)" Then
+                Dim chart5(,) As Double = {{-46, 4196},
+                {-18, 4196},
+                {10, 4196},
+                {38, 4196},
+                {66, 3871},
+                {93, 3202},
+                {204, 1333},
+                {316, 481},
+                {427, 160},
+                {538, 53},
+                {649, 18}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -46 Then
+                    For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                        If chart5(r, 0) <= -18 AndAlso chart5(r + 1, 0) >= -46 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart5(r, c)
+                                UpNum2(c) = chart5(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -18
+                                lot = -46
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 649 Then
+
+                    For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                        If chart5(r, 0) <= 538 AndAlso chart5(r + 1, 0) >= 649 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart5(r, c)
+                                UpNum2(c) = chart5(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 649
+                                lot = 538
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart5.GetUpperBound(0) - 1
+                    If chart5(r, 0) <= temp AndAlso chart5(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart5(r, c)
+                            UpNum2(c) = chart5(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            If ComboBox166.Text = "(>1%, <5%)" Then
+                Dim chart3(,) As Double = {{-50, 1.1},
+                {0, 1},
+                {50, 0.9},
+                {100, 0.6},
+                {150, 0.3},
+                {200, 0.1},
+                {400, 0},
+                {600, 0},
+                {800, 0},
+                {1000, 0},
+                {1200, 0}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -50 Then
+                    For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                        If chart3(r, 0) <= -0 AndAlso chart3(r + 1, 0) >= -50 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart3(r, c)
+                                UpNum2(c) = chart3(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -0
+                                lot = -50
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 1200 Then
+
+                    For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                        If chart3(r, 0) <= 1000 AndAlso chart3(r + 1, 0) >= 1200 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart3(r, c)
+                                UpNum2(c) = chart3(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 1200
+                                lot = 1000
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart3.GetUpperBound(0) - 1
+                    If chart3(r, 0) <= temp AndAlso chart3(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart3(r, c)
+                            UpNum2(c) = chart3(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+
+                If TextBox47.Text = 400 Then
+                    df = 0
+                End If
+
+
+            ElseIf ComboBox166.Text = "(≥5%, <10%)" Then
+                Dim chart4(,) As Double = {{-50, 34},
+                    {0, 20},
+                    {50, 11},
+                    {100, 7},
+                    {150, 5},
+                    {200, 3},
+                    {400, 1.3},
+                    {600, 0.9},
+                    {800, 0.2},
+                    {1000, 0},
+                    {1200, 0}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -50 Then
+                    For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                        If chart4(r, 0) <= -0 AndAlso chart4(r + 1, 0) >= -50 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart4(r, c)
+                                UpNum2(c) = chart4(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -0
+                                lot = -50
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 1200 Then
+
+                    For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                        If chart4(r, 0) <= 1000 AndAlso chart4(r + 1, 0) >= 1200 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart4(r, c)
+                                UpNum2(c) = chart4(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 1200
+                                lot = 1000
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart4.GetUpperBound(0) - 1
+                    If chart4(r, 0) <= temp AndAlso chart4(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart4(r, c)
+                            UpNum2(c) = chart4(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+
+                If TextBox47.Text = 1000 Then
+                    df = 0
+                End If
+
+            ElseIf ComboBox166.Text = "(≥10%)" Then
+            Dim chart6(,) As Double = {{-50, 4196},
+                {0, 4196},
+                {50, 4196},
+                {100, 4196},
+                {150, 3871},
+                {200, 3202},
+                {400, 1333},
+                {600, 481},
+                {800, 160},
+                {1000, 53},
+                {1200, 18}}
+
+                Dim UpNum2(1) As Double
+                Dim LowNum2(1) As Double
+
+                Dim Lo1 As Double
+                Dim Lo2 As Double
+                Dim up1 As Double
+                Dim up2 As Double
+
+                Dim temp As Double
+                Dim upt As Double
+                Dim lot As Double
+                Dim x As Double
+                Dim z As Double
+
+                temp = Val(TextBox47.Text)
+
+                If temp < -50 Then
+                    For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                        If chart6(r, 0) <= -0 AndAlso chart6(r + 1, 0) >= -50 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart6(r, c)
+                                UpNum2(c) = chart6(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -0
+                                lot = -50
+
+                                df = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+
+                ElseIf temp > 1200 Then
+
+                    For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                        If chart6(r, 0) <= 1000 AndAlso chart6(r + 1, 0) >= 1200 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart6(r, c)
+                                UpNum2(c) = chart6(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 1200
+                                lot = 1000
+
+                                df = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart6.GetUpperBound(0) - 1
+                    If chart6(r, 0) <= temp AndAlso chart6(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart6(r, c)
+                            UpNum2(c) = chart6(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            df = Inter(temp, up1, up2, Lo1, Lo2)
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+        End If
+
+        Label367.Text = df
+    End Sub
 
     'Mechanical Fatigue Coding perhitungan --------------------------------------------------------------------------------
     Public Sub mechanicalfatiguedf()

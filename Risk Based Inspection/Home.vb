@@ -911,6 +911,10 @@ Public Class Home
         Call sccclsccdf()
         Call scchydrogenschfdf()
         Call scchicsohichfdf()
+
+
+        Call externalsccausteniticdf()
+        Call externalscccuiausteniticdf()
         Call brittledf()
         Call lowalloydf()
         Call delapandelapanlimafembrittlementdf()
@@ -2004,92 +2008,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'Corrosion Under Insulation Damage Factor – Ferritic Component ---------------------------------------------
 
-    Private Sub CheckBox136_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox136.CheckedChanged
-        If CheckBox136.Checked = True Then
-            ComboBox131.Enabled = True
-        Else
-            ComboBox131.Enabled = True
-            ComboBox131.Text = ""
-            If CheckBox140.Checked = False AndAlso CheckBox144.Checked = False Then
-                Call susceptibilityexternalscccuiaustenitic()
-            End If
-        End If
-    End Sub
-
-    Private Sub CheckBox140_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox140.CheckedChanged
-        If CheckBox140.Checked = True Then
-            ComboBox132.Enabled = True
-        Else
-            ComboBox132.Enabled = True
-            ComboBox132.Text = ""
-            If CheckBox136.Checked = False AndAlso CheckBox144.Checked = False Then
-                Call susceptibilityexternalscccuiaustenitic()
-            End If
-        End If
-    End Sub
-
-    Private Sub CheckBox144_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox144.CheckedChanged
-        If CheckBox144.Checked = True Then
-            Call susceptibilityexternalscccuiaustenitic()
-            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
-                TextBox40.Text = "NONE SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
-                TextBox40.Text = "LOW SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
-                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
-            End If
-        Else
-            If CheckBox136.Checked = False AndAlso CheckBox140.Checked = False Then
-                Call susceptibilityexternalscccuiaustenitic()
-            End If
-
-        End If
-    End Sub
-
-    Private Sub ComboBox131_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox131.SelectedIndexChanged
-        If ComboBox131.Text = "Below Average" Then
-            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
-                TextBox40.Text = "NONE SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
-                TextBox40.Text = "LOW SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
-                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
-            End If
-        ElseIf ComboBox131.Text = "Average" Then
-
-        ElseIf ComboBox131.Text = "Above Average" Then
-            If TextBox40.Text = "NONE SUSCEPTIBILITY" Then
-                TextBox40.Text = "LOW SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "LOW SUSCEPTIBILITY" Then
-                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
-                TextBox40.Text = "HIGH SUSCEPTIBILITY"
-            End If
-        End If
-    End Sub
-
-    Private Sub ComboBox132_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox132.SelectedIndexChanged
-        If ComboBox132.Text = "Below Average" Then
-            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
-                TextBox40.Text = "NONE SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
-                TextBox40.Text = "LOW SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
-                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
-            End If
-        ElseIf ComboBox132.Text = "Average" Then
-
-        ElseIf ComboBox132.Text = "Above Average" Then
-            If TextBox40.Text = "NONE SUSCEPTIBILITY" Then
-                TextBox40.Text = "LOW SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "LOW SUSCEPTIBILITY" Then
-                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
-            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
-                TextBox40.Text = "HIGH SUSCEPTIBILITY"
-            End If
-        End If
-    End Sub
-
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
         If CheckBox2.Checked = True Then
             Label347.Visible = True
@@ -2146,6 +2064,98 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
+    Private Sub CheckBox136_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox136.CheckedChanged
+        If CheckBox136.Checked = True Then
+            ComboBox131.Enabled = True
+        Else
+            ComboBox131.Enabled = False
+            If ComboBox132.Text IsNot "" Then
+                Call susceptibilityexternalscccuiaustenitic()
+                Call insulationcondition()
+            Else
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+            ComboBox131.Text = ""
+            If CheckBox140.Checked = False AndAlso CheckBox144.Checked = False Then
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+        End If
+    End Sub
+
+    Private Sub CheckBox140_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox140.CheckedChanged
+        If CheckBox140.Checked = True Then
+            ComboBox132.Enabled = True
+        Else
+            ComboBox132.Enabled = False
+            If ComboBox131.Text IsNot "" Then
+                Call susceptibilityexternalscccuiaustenitic()
+                Call pipingcomplexity()
+            Else
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+            ComboBox132.Text = ""
+            If CheckBox136.Checked = False AndAlso CheckBox144.Checked = False Then
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+        End If
+    End Sub
+
+    Private Sub CheckBox144_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox144.CheckedChanged
+        If CheckBox144.Checked = True Then
+            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                TextBox40.Text = "NONE SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                TextBox40.Text = "LOW SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+            End If
+        Else
+            If ComboBox132.Text IsNot "" AndAlso ComboBox131.Text IsNot "" Then
+                Call susceptibilityexternalscccuiaustenitic()
+                Call pipingcomplexity()
+                Call insulationcondition()
+            ElseIf ComboBox132.Text IsNot "" Then
+                Call susceptibilityexternalscccuiaustenitic()
+                Call insulationcondition()
+            ElseIf ComboBox131.Text IsNot "" Then
+                Call susceptibilityexternalscccuiaustenitic()
+                Call pipingcomplexity()
+            Else
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+
+            If CheckBox136.Checked = False AndAlso CheckBox140.Checked = False Then
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+
+        End If
+    End Sub
+
+    Private Sub ComboBox131_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox131.SelectedIndexChanged
+        If CheckBox136.Checked = True Then
+            Call pipingcomplexity()
+        Else
+            If ComboBox132.Enabled = True Then
+
+            Else
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+        End If
+
+    End Sub
+
+    Private Sub ComboBox132_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox132.SelectedIndexChanged
+        If CheckBox140.Checked = True Then
+            Call insulationcondition()
+        Else
+            If ComboBox131.Enabled = True Then
+
+            Else
+                Call susceptibilityexternalscccuiaustenitic()
+            End If
+        End If
+    End Sub
+
     'External Chloride Stress Corrosion Cracking Under Insulation Damage Factor – Austenitic Component ---------
 
     Private Sub ComboBox32_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox32.SelectedIndexChanged
@@ -2162,6 +2172,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox121.Visible = False
             TextBox40.Text = ""
         End If
+    End Sub
+
+    Private Sub TextBox39_TextChanged(sender As Object, e As EventArgs) Handles TextBox39.TextChanged
+        TextBox40.Text = TextBox39.Text
     End Sub
 
     'High Temperature Hydrogen Attack Damage Factor ------------------------------------------------------------
@@ -3392,6 +3406,49 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Function Inter3ez(ByVal uptz As Double, ByVal Lotz As Double, ByVal temp As Double, ByVal xz As Double, ByVal zz As Double) As Double
         Inter3ez = ((temp - Lotz) * (zz - xz) / (uptz - Lotz)) + xz
+    End Function
+
+    '=============================================================================================================================
+    Function Cumnorm(x As Double) As Double
+        Dim xabs As Double
+        Dim exponential As Double
+        Dim build As Double
+
+
+        xabs = Math.Abs(x)
+        If xabs > 37 Then
+            Cumnorm = 0
+        Else
+            exponential = Math.Exp(-xabs ^ 2 / 2)
+            If xabs < 7.07106781186547 Then
+                build = 0.0352624965998911 * xabs + 0.700383064443688
+                build = build * xabs + 6.37396220353165
+                build = build * xabs + 33.912866078383
+                build = build * xabs + 112.079291497871
+                build = build * xabs + 221.213596169931
+                build = build * xabs + 220.206867912376
+                Cumnorm = exponential * build
+                build = 0.0883883476483184 * xabs + 1.75566716318264
+                build = build * xabs + 16.064177579207
+                build = build * xabs + 86.7807322029461
+                build = build * xabs + 296.564248779674
+                build = build * xabs + 637.333633378831
+                build = build * xabs + 793.826512519948
+                build = build * xabs + 440.413735824752
+                Cumnorm = Cumnorm / build
+            Else
+                build = xabs + 0.65
+                build = xabs + 4 / build
+                build = xabs + 3 / build
+                build = xabs + 2 / build
+                build = xabs + 1 / build
+                Cumnorm = exponential / build / 2.506628274631
+            End If
+        End If
+
+        If x > 0 Then
+            Cumnorm = 1 - Cumnorm
+        End If
     End Function
 
     '=============================================================================================================================
@@ -7935,6 +7992,1242 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
+    'External Corrosion – Ferritic Component Coding perhitungan -----------------------------------------------------------
+    Public Sub externalcorrosionferritic()
+        Dim basecr As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            Dim chart2(,) As Double = {{-12, 0, 0, 0, 0},
+            {-8, 0.025, 0, 0, 0},
+            {6, 0.127, 0.076, 0.025, 0.254},
+            {32, 0.127, 0.076, 0.025, 0.254},
+            {71, 0.127, 0.051, 0.025, 0.254},
+            {107, 0.025, 0, 0, 0.051},
+            {121, 0, 0, 0, 0}}
+
+            Dim UpNum2(4) As Double
+            Dim LowNum2(4) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+
+            temp = Val(TextBox5.Text)
+
+
+            If ComboBox138.Text = "Marine / Cooling Tower Drift Area" Then
+                If temp < -12 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= -8 AndAlso chart2(r + 1, 0) >= -12 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = -8
+                                lot = -12
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 121 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 107 AndAlso chart2(r + 1, 0) >= 121 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 121
+                                lot = 107
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Temperate" Then
+                If temp < -12 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= -8 AndAlso chart2(r + 1, 0) >= -12 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = -8
+                                lot = -12
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 121 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 107 AndAlso chart2(r + 1, 0) >= 121 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 121
+                                lot = 107
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 2
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(2)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(2)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Arid / Dry" Then
+                If temp < -12 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= -8 AndAlso chart2(r + 1, 0) >= -12 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = -8
+                                lot = -12
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 121 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 107 AndAlso chart2(r + 1, 0) >= 121 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 121
+                                lot = 107
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 3
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(3)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(3)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Severe" Then
+                If temp < -12 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= -8 AndAlso chart2(r + 1, 0) >= -12 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = -8
+                                lot = -12
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 121 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 107 AndAlso chart2(r + 1, 0) >= 121 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 121
+                                lot = 107
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 4
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(4)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(4)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            Dim chart2(,) As Double = {{10, 0, 0, 0, 0},
+            {18, 1, 0, 0, 3},
+            {43, 5, 3, 1, 10},
+            {90, 5, 3, 1, 10},
+            {160, 5, 2, 1, 10},
+            {225, 1, 0, 0, 2},
+            {250, 0, 0, 0, 0}}
+
+            Dim UpNum2(4) As Double
+            Dim LowNum2(4) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+
+            temp = Val(TextBox5.Text)
+
+
+            If ComboBox138.Text = "Marine / Cooling Tower Drift Area" Then
+                If temp < 10 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 18 AndAlso chart2(r + 1, 0) >= 10 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 18
+                                lot = 10
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 250 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 225 AndAlso chart2(r + 1, 0) >= 250 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 250
+                                lot = 225
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Temperate" Then
+                If temp < 10 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 18 AndAlso chart2(r + 1, 0) >= 10 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 18
+                                lot = 10
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 250 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 225 AndAlso chart2(r + 1, 0) >= 250 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 250
+                                lot = 225
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 2
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(2)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(2)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Arid / Dry" Then
+                If temp < 10 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 18 AndAlso chart2(r + 1, 0) >= 10 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 18
+                                lot = 10
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 250 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 225 AndAlso chart2(r + 1, 0) >= 250 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 250
+                                lot = 225
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 3
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(3)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(3)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox138.Text = "Severe" Then
+                If temp < 10 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 18 AndAlso chart2(r + 1, 0) >= 10 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 18
+                                lot = 10
+
+                                basecr = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 250 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 225 AndAlso chart2(r + 1, 0) >= 250 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 250
+                                lot = 225
+
+                                basecr = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 4
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(4)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(4)
+
+                            basecr = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+        End If
+
+        Dim feq As Double
+        If ComboBox142.Text = "Yes" Then
+            feq = 2
+        ElseIf ComboBox142.Text = "No" Then
+            feq = 1
+        End If
+
+        Dim fif As Double
+        If ComboBox139.Text = "Yes" Then
+            fif = 2
+        ElseIf ComboBox139.Text = "No" Then
+            fif = 1
+        End If
+
+        Dim cr As Double
+
+        If feq > fif Then
+            cr = basecr * feq
+        End If
+        If feq < fif Then
+            cr = basecr * fif
+        End If
+        If feq = fif Then
+            cr = basecr * feq
+        End If
+
+        Dim p As Double
+        Dim R1 As Double
+        Dim s As Double
+        Dim ejo As Double
+        Dim ca As Double
+        Dim t1 As Double
+        Dim t2 As Double
+        Dim t3 As Double
+        Dim tpipe As Double
+        Dim y As Double
+        Dim ttanksi As Double
+        Dim ttankus As Double
+        Dim d As Double
+        Dim h As Double
+        Dim gsi As Double
+
+        gsi = Val(TextBox59.Text)
+
+        p = Val(TextBox54.Text) * 0.0980665
+        R1 = Val(TextBox53.Text)
+        s = Val(TextBox6.Text)
+        ejo = Val(TextBox7.Text)
+        ca = Val(TextBox55.Text)
+        d = Val(TextBox41.Text)
+        h = Val(TextBox40.Text)
+
+
+        If ComboBox4.Text = "Pipe" Then
+            If RadioButton23.Checked = True Then
+                If ComboBox3.Text = "Ferritic Steels" Then
+                    Dim chart2(,) As Double = {{900, 0.4},
+                {950, 0.5},
+                {1000, 0.7},
+                {1050, 0.7},
+                {1100, 0.7},
+                {1150, 0.7},
+                {1200, 0.7},
+                {1250, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 900 Then
+                        y = 0.4
+
+                    ElseIf temp > 1250 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Austenitic Steels" Then
+                    Dim chart2(,) As Double = {{900, 0.4},
+                {950, 0.4},
+                {1000, 0.4},
+                {1050, 0.4},
+                {1100, 0.5},
+                {1150, 0.7},
+                {1200, 0.7},
+                {1250, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 900 Then
+                        y = 0.4
+                    ElseIf temp > 1250 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Nickel Alloys UNS Nos. N06617 , N08800, N08810, N08825" Then
+                    Dim chart2(,) As Double = {{900, 0.4},
+                {950, 0.4},
+                {1000, 0.4},
+                {1050, 0.4},
+                {1100, 0.5},
+                {1150, 0.7},
+                {1200, 0.5},
+                {1250, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 900 Then
+                        y = 0.4
+                    ElseIf temp > 1250 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Cast Iron" Then
+                    y = 0
+                End If
+
+                If ComboBox3.Text = "Nonferrous" Then
+                    y = 0
+                End If
+            End If
+
+            If RadioButton24.Checked = True Then
+                If ComboBox3.Text = "Ferritic Steels" Then
+                    Dim chart2(,) As Double = {{482, 0.4},
+                {510, 0.5},
+                {538, 0.7},
+                {566, 0.7},
+                {593, 0.7},
+                {621, 0.7},
+                {649, 0.7},
+                {677, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 482 Then
+                        y = 0.4
+                    ElseIf temp > 677 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Austenitic Steels" Then
+                    Dim chart2(,) As Double = {{482, 0.4},
+                {510, 0.4},
+                {538, 0.4},
+                {566, 0.4},
+                {593, 0.5},
+                {621, 0.7},
+                {649, 0.7},
+                {677, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 482 Then
+                        y = 0.4
+                    ElseIf temp > 677 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Nickel Alloys UNS Nos. N06617 , N08800, N08810, N08825" Then
+                    Dim chart2(,) As Double = {{482, 0.4},
+                {510, 0.4},
+                {538, 0.4},
+                {566, 0.4},
+                {593, 0.4},
+                {621, 0.4},
+                {649, 0.5},
+                {677, 0.7}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim temp As Double
+
+                    temp = Val(TextBox14.Text)
+
+                    If temp < 482 Then
+                        y = 0.4
+                    ElseIf temp > 677 Then
+                        y = 0.7
+                    End If
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                y = Inter(temp, up1, up2, Lo1, Lo2)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox3.Text = "Cast Iron" Then
+                    y = 0
+                End If
+
+                If ComboBox3.Text = "Nonferrous" Then
+                    y = 0
+                End If
+            End If
+
+
+            tpipe = ((p * R1) / ((s * ejo) + (p * y))) + ca
+            TextBox8.Text = tpipe
+        End If
+
+        If ComboBox4.Text = "AST (Shell Course)" Then
+            If RadioButton21.Checked = True Then
+                ttanksi = (((4.9 * d) * (h - 0.3) * gsi) / s) + ca
+                TextBox8.Text = ttanksi
+            ElseIf RadioButton22.Checked = True Then
+                ttankus = (((2.6 * d) * (h - 1) * gsi) / s) + ca
+                TextBox8.Text = ttankus
+            End If
+        End If
+
+        If ComboBox4.Text = "Other Components" Then
+            t1 = ((p * R1) / ((s * ejo) - (0.6 * p))) + ca
+            t2 = ((p * R1) / ((2 * s * ejo) + (0.4 * p))) + ca
+            t3 = ((p * R1) / ((2 * s * ejo) - (0.2 * p))) + ca
+
+            If t1 > t2 And t1 > t3 Then
+                TextBox8.Text = t1
+            ElseIf t2 > t1 And t2 > t3 Then
+                TextBox8.Text = t2
+            ElseIf t3 > t1 And t3 > t2 Then
+                TextBox8.Text = t3
+
+            ElseIf t1 = t2 And t1 = t3 Then
+                TextBox8.Text = t1
+
+            ElseIf t1 >= t2 And t1 >= t3 Then
+                TextBox8.Text = t1
+            ElseIf t2 >= t1 And t2 >= t3 Then
+                TextBox8.Text = t2
+            ElseIf t3 >= t2 And t3 >= t1 Then
+                TextBox8.Text = t3
+            End If
+        End If
+
+        Dim trde As Double
+
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim agetk As Double
+
+        If ComboBox141.Text = "A" Or ComboBox141.Text = "B" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+            trde = Val(TextBox2.Text)
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+            trde = Val(TextBox1.Text)
+        End If
+
+        If datelastforgood > 0 Then
+            agetk = datelastforgood
+        Else
+            agetk = datestartforpoor
+        End If
+
+        Dim datecoat As Double
+
+        Dim agecoat As Double
+
+        datecoat = DateDiff(DateInterval.DayOfYear, DateTimePicker11.Value, DateTimePicker13.Value)
+
+        agecoat = datecoat / 365
+
+        Dim coatadj As Double
+
+        If agetk < agecoat Then
+
+            If ComboBox120.Text = "No Coating or Poor – No coating or primer only" Then
+                coatadj = "0"
+            End If
+
+            If ComboBox120.Text = "Medium – Single coat epoxy" Then
+                If 5 < agecoat Then
+                    If 5 < (agecoat - agetk) Then
+                        coatadj = 5 - 5
+                    End If
+                    If 5 > (agecoat - agetk) Then
+                        coatadj = 5 - (agecoat - agetk)
+                    End If
+                    If 5 = (agecoat - agetk) Then
+                        coatadj = "0"
+                    End If
+                End If
+                If 5 > agecoat Then
+                    If 5 < (agecoat - agetk) Then
+                        coatadj = agecoat - 5
+                    End If
+                    If 5 > (agecoat - agetk) Then
+                        coatadj = agecoat - (agecoat - agetk)
+                    End If
+                    If 5 = (agecoat - agetk) Then
+                        coatadj = agecoat - 5
+                    End If
+                End If
+            End If
+
+            If ComboBox120.Text = "High – Multi coat epoxy or filled epoxy" Then
+                If 15 < agecoat Then
+                    If 15 < (agecoat - agetk) Then
+                        coatadj = 15 - 15
+                    End If
+                    If 15 > (agecoat - agetk) Then
+                        coatadj = 15 - (agecoat - agetk)
+                    End If
+                    If 15 = (agecoat - agetk) Then
+                        coatadj = "0"
+                    End If
+                End If
+                If 15 > agecoat Then
+                    If 15 < (agecoat - agetk) Then
+                        coatadj = agecoat - 15
+                    End If
+                    If 15 > (agecoat - agetk) Then
+                        coatadj = agecoat - (agecoat - agetk)
+                    End If
+                    If 15 = (agecoat - agetk) Then
+                        coatadj = agecoat - 15
+                    End If
+                End If
+            End If
+        End If
+
+        If agetk >= agecoat Then
+            If ComboBox120.Text = "No Coating or Poor – No coating or primer only" Then
+                coatadj = "0"
+            End If
+
+            If ComboBox120.Text = "Medium – Single coat epoxy" Then
+                If 5 < agecoat Then
+                    coatadj = "5"
+                Else
+                    coatadj = agecoat
+                End If
+            End If
+
+            If ComboBox120.Text = "High – Multi coat epoxy or filled epoxy" Then
+                If 15 < agecoat Then
+                    coatadj = "15"
+                Else
+                    coatadj = agecoat
+                End If
+            End If
+        End If
+
+        Dim age As Double
+
+        age = agetk - coatadj
+
+        Dim Art As Double
+
+        Art = (cr * age) / trde
+
+        Dim fs As Double
+
+        Dim ys As Double
+        Dim ts As Double
+        Dim wje As Double
+
+        ys = Val(TextBox13.Text)
+        ts = Val(TextBox14.Text)
+        wje = Val(TextBox8.Text)
+
+        fs = ((ys + ts) / 2) * wje * 1.1
+
+        'SRP method 1
+        Dim tmin As Double
+        Dim tc As Double
+        Dim trdi As Double
+
+        tmin = Val(TextBox8.Text)
+        tc = Val(TextBox85.Text)
+        trdi = Val(TextBox49.Text)
+
+        Dim srp As Double
+
+        If CheckBox1.Checked = False Then
+            srp = ((s * wje) / fs) * (tmin / trdi)
+
+        ElseIf CheckBox1.Checked = True Then
+            srp = ((s * wje) / fs) * (tc / trdi)
+
+        End If
+
+        'SRP method 2
+        If ComboBox135.Text = "Cylinder" Then
+            srp = (p * d) / (2 * fs * trdi)
+
+        ElseIf ComboBox135.Text = "Sphere" Then
+            srp = (p * d) / (4 * fs * trdi)
+
+        ElseIf ComboBox135.Text = "Head" Then
+            srp = (p * d) / (1.13 * fs * trdi)
+
+        End If
+
+        'prior probability
+        Dim prp1 As Double
+        Dim prp2 As Double
+        Dim prp3 As Double
+
+        If ComboBox137.Text = "Low" Then
+            prp1 = 0.5
+            prp2 = 0.3
+            prp3 = 0.2
+        ElseIf ComboBox137.Text = "Medium" Then
+            prp1 = 0.7
+            prp2 = 0.2
+            prp3 = 0.1
+        ElseIf ComboBox137.Text = "High" Then
+            prp1 = 0.8
+            prp2 = 0.15
+            prp3 = 0.05
+        End If
+
+        'inspection eff factor
+        Dim cop1a As Double = 0.9
+        Dim cop1b As Double = 0.7
+        Dim cop1c As Double = 0.5
+        Dim cop1d As Double = 0.4
+        Dim cop1e As Double = 0.33
+
+        Dim cop2a As Double = 0.09
+        Dim cop2b As Double = 0.2
+        Dim cop2c As Double = 0.3
+        Dim cop2d As Double = 0.33
+        Dim cop2e As Double = 0.33
+
+        Dim cop3a As Double = 0.01
+        Dim cop3b As Double = 0.1
+        Dim cop3c As Double = 0.2
+        Dim cop3d As Double = 0.27
+        Dim cop3e As Double = 0.33
+
+        Dim na As Double
+        Dim nb As Double
+        Dim nc As Double
+        Dim nd As Double
+        Dim ne As Double
+
+        If ComboBox136.Text = "A" Then
+            na = NumericUpDown13.Value
+            nb = 0
+            nc = 0
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "B" Then
+            na = 0
+            nb = NumericUpDown13.Value
+            nc = 0
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "C" Then
+            na = 0
+            nb = 0
+            nc = NumericUpDown13.Value
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "D" Then
+            na = 0
+            nb = 0
+            nc = 0
+            nd = NumericUpDown13.Value
+            ne = 0
+        ElseIf ComboBox136.Text = "E" Then
+            na = 0
+            nb = 0
+            nc = 0
+            nd = 0
+            ne = NumericUpDown13.Value
+        End If
+
+        Dim i1 As Double
+        Dim i2 As Double
+        Dim i3 As Double
+
+        i1 = prp1 * (cop1a ^ na) * (cop1b ^ nb) * (cop1c ^ nc) * (cop1d ^ nd) * (cop1e ^ ne)
+        i2 = prp2 * (cop2a ^ na) * (cop2b ^ nb) * (cop2c ^ nc) * (cop2d ^ nd) * (cop2e ^ ne)
+        i3 = prp3 * (cop3a ^ na) * (cop3b ^ nb) * (cop3c ^ nc) * (cop3d ^ nd) * (cop3e ^ ne)
+
+        Dim po1 As Double
+        Dim po2 As Double
+        Dim po3 As Double
+
+        po1 = i1 / (i1 + i2 + i3)
+        po2 = i2 / (i1 + i2 + i3)
+        po3 = i3 / (i1 + i2 + i3)
+
+        'reliability indices
+
+        Dim ds1 As Double = 1
+        Dim covt As Double = 0.2
+        Dim covsf As Double = 0.2
+        Dim covp As Double = 0.05
+        Dim ds2 As Double = 2
+        Dim ds3 As Double = 4
+
+        Dim reliabilityindices1 As Double
+        Dim reliabilityindices2 As Double
+        Dim reliabilityindices3 As Double
+
+        reliabilityindices1 = (1 - (ds1 * Art) - srp) / ((((ds1 ^ 2) * (Art ^ 2) * (covt ^ 2)) + (((1 - (ds1 * Art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+        reliabilityindices2 = (1 - (ds2 * Art) - srp) / ((((ds2 ^ 2) * (Art ^ 2) * (covt ^ 2)) + (((1 - (ds2 * Art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+        reliabilityindices3 = (1 - (ds3 * Art) - srp) / ((((ds3 ^ 2) * (Art ^ 2) * (covt ^ 2)) + (((1 - (ds3 * Art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+
+        'final df
+        Dim norm4 As Double
+        Dim norm5 As Double
+        Dim norm6 As Double
+        Dim x1 As Double
+        Dim x2 As Double
+        Dim x3 As Double
+
+        x1 = -1 * reliabilityindices1
+        x2 = -1 * reliabilityindices2
+        x3 = -1 * reliabilityindices3
+
+        norm4 = Cumnorm(x1)
+        norm5 = Cumnorm(x2)
+        norm6 = Cumnorm(x3)
+
+        Dim df As Double
+
+        df = ((po1 * norm4) + (po2 * norm5) + (po3 * norm6)) / 0.000156
+
+        Label360.Text = df
+    End Sub
+
     'External Chloride Stress Corrosion Cracking – Austenitic Component Coding perhitungan --------------------------------
     Private Sub susceptibilityexternalsccaustenitic()
         If Units.ComboBox1.Text = "SI" Then
@@ -8060,7 +9353,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim coat As Double
 
-        datecoat = DateDiff(DateInterval.DayOfYear, DateTimePicker3.Value, DateTimePicker4.Value)
+        datecoat = DateDiff(DateInterval.DayOfYear, DateTimePicker4.Value, DateTimePicker13.Value)
 
         coat = datecoat / 365
 
@@ -8425,6 +9718,50 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     'External Chloride Stress Corrosion Cracking Under Insulation – Austenitic Component Coding perhitungan ---------------
+    Private Sub pipingcomplexity()
+        If ComboBox131.Text = "Below Average" Then
+            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                TextBox40.Text = "NONE SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                TextBox40.Text = "LOW SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+            End If
+        ElseIf ComboBox131.Text = "Average" Then
+
+        ElseIf ComboBox131.Text = "Above Average" Then
+            If TextBox40.Text = "NONE SUSCEPTIBILITY" Then
+                TextBox40.Text = "LOW SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                TextBox40.Text = "HIGH SUSCEPTIBILITY"
+            End If
+        End If
+    End Sub
+
+    Private Sub insulationcondition()
+        If ComboBox132.Text = "Below Average" Then
+            If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                TextBox40.Text = "NONE SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                TextBox40.Text = "LOW SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+            End If
+        ElseIf ComboBox132.Text = "Average" Then
+
+        ElseIf ComboBox132.Text = "Above Average" Then
+            If TextBox40.Text = "NONE SUSCEPTIBILITY" Then
+                TextBox40.Text = "LOW SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+            ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                TextBox40.Text = "HIGH SUSCEPTIBILITY"
+            End If
+        End If
+    End Sub
+
     Private Sub susceptibilityexternalscccuiaustenitic()
         If Units.ComboBox1.Text = "SI" Then
             If TextBox5.Text < 49 And ComboBox29.Text = "Marine / Cooling Tower Drift Area" Then
@@ -8501,6 +9838,414 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ElseIf TextBox5.Text >= 300 And ComboBox29.Text = "Severe" Then
                 TextBox40.Text = "NONE SUSCEPTIBILITY"
             End If
+        End If
+
+    End Sub
+
+    Public Sub externalscccuiausteniticdf()
+        Dim severityindex As Double
+
+        If TextBox40.Text = "NONE SUSCEPTIBILITY" Then
+            severityindex = 0
+        ElseIf TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+            severityindex = 1
+        ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+            severityindex = 10
+        ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+            severityindex = 50
+        End If
+
+        Dim date1 As Double
+        Dim date2 As Double
+
+        Dim datelastforgood As Double
+        Dim datestartforpoor As Double
+
+        Dim crack As Double
+
+        If ComboBox130.Text = "A" Or ComboBox130.Text = "B" AndAlso ComboBox32.Text = "No" Or ComboBox129.Text = "Yes" Then
+
+            date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
+            datelastforgood = date1 / 365
+
+        Else
+
+            date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
+            datestartforpoor = date2 / 365
+
+        End If
+
+        If datelastforgood > 0 Then
+            crack = datelastforgood
+        Else
+            crack = datestartforpoor
+        End If
+
+
+        Dim datecoat As Double
+
+        Dim coat As Double
+
+        datecoat = DateDiff(DateInterval.DayOfYear, DateTimePicker4.Value, DateTimePicker13.Value)
+
+        coat = datecoat / 365
+
+        Dim coatadj As Double
+
+        Dim coatadj1 As Double
+        Dim coatadj2 As Double
+
+        If coat < 5 Then
+            coatadj1 = coat
+        ElseIf coat > 5 Then
+            coatadj1 = 5
+        End If
+
+        If coat < 15 Then
+            coatadj2 = coat
+        ElseIf coat > 15 Then
+            coatadj2 = 15
+        End If
+
+        If crack >= coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
+            coatadj = "0"
+        ElseIf crack >= coat And ComboBox128.Text = "Medium Coating Quality" Then
+            coatadj = coatadj1
+        ElseIf crack >= coat And ComboBox128.Text = "High Coating Quality" Then
+            coatadj = coatadj2
+        End If
+
+        Dim min1 As Double
+        Dim min2 As Double
+        Dim min3 As Double
+        Dim min4 As Double
+
+        If coat < 15 Then
+            min3 = coat
+        ElseIf coat > 15 Then
+            min3 = 15
+        End If
+
+        If (coat - crack) < 15 Then
+            min4 = (coat - crack)
+        ElseIf (coat - crack) > 15 Then
+            min4 = 15
+        End If
+
+        If coat < 5 Then
+            min1 = coat
+        ElseIf coat > 5 Then
+            min1 = 5
+        End If
+
+        If (coat - crack) < 5 Then
+            min2 = (coat - crack)
+        ElseIf (coat - crack) > 5 Then
+            min2 = 5
+        End If
+
+        If crack < coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
+            coatadj = "0"
+        ElseIf crack < coat And ComboBox128.Text = "Medium Coating Quality" Then
+            coatadj = min1 - min2
+        ElseIf crack < coat And ComboBox128.Text = "High Coating Quality" Then
+            coatadj = min3 - min4
+        End If
+
+        Dim age As Double
+
+        age = crack - coatadj
+
+        Dim basedf As Double
+
+        If NumericUpDown11.Value = 1 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "3"
+
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "3"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "17"
+
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "8"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "40"
+
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 1 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+
+
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "6"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "30"
+
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 2 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+
+
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "4"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "20"
+
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 3 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+
+
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "2"
+
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "2"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "10"
+
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 4 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+
+
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "5"
+
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 5 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+
+
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "A" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "A" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "A" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "A" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "B" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "B" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "B" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "B" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "C" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "C" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "C" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "C" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "D" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "D" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "D" And severityindex = "10" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "D" And severityindex = “50” Then
+            basedf = "1"
+
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "E" And severityindex = "0" Then
+            basedf = "0"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "E" And severityindex = "1" Then
+            basedf = "1"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "E" And severityindex = "10" Then
+            basedf = "10"
+        ElseIf NumericUpDown11.Value = 6 And ComboBox130.Text = "E" And severityindex = “50” Then
+            basedf = “50”
+        End If
+
+        Dim maxage1 As Double
+        Dim maxage2 As Double
+        Dim df As Double
+
+        If age > 1 Then
+            maxage1 = age
+            df = basedf * (maxage1 ^ 1.1)
+            Label363.Text = df
+        ElseIf age <= 1 Then
+            maxage2 = 1
+            df = basedf * (maxage2 ^ 1.1)
+            Label363.Text = df
         End If
 
     End Sub

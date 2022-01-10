@@ -9,6 +9,7 @@
 
     Private Sub SI()
         RadioButton1.Checked = True
+        RadioButton5.Checked = True
         RadioButton6.Checked = True
         RadioButton9.Checked = True
         RadioButton12.Checked = True
@@ -17,21 +18,24 @@
         RadioButton16.Checked = True
         RadioButton18.Checked = True
         RadioButton21.Checked = True
+        RadioButton22.Checked = True
         RadioButton30.Checked = True
 
     End Sub
 
     Private Sub US()
         RadioButton2.Checked = True
+        RadioButton3.Checked = True
         RadioButton4.Checked = True
+        RadioButton7.Checked = True
         RadioButton8.Checked = True
         RadioButton11.Checked = True
-        RadioButton7.Checked = True
         RadioButton13.Checked = True
         RadioButton15.Checked = True
         RadioButton17.Checked = True
-        RadioButton23.Checked = True
-        RadioButton28.Checked = True
+        RadioButton19.Checked = True
+        RadioButton20.Checked = True
+        RadioButton26.Checked = True
     End Sub
     Private Sub Units_Load(sender As Object, e As EventArgs) Handles Me.Load
         If ComboBox1.Text = "SI" Then

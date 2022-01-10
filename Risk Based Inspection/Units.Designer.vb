@@ -33,13 +33,10 @@ Partial Class Units
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -50,9 +47,7 @@ Partial Class Units
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.RadioButton11 = New System.Windows.Forms.RadioButton()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.RadioButton17 = New System.Windows.Forms.RadioButton()
@@ -67,24 +62,22 @@ Partial Class Units
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.RadioButton25 = New System.Windows.Forms.RadioButton()
         Me.RadioButton26 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
         Me.RadioButton30 = New System.Windows.Forms.RadioButton()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
         Me.RadioButton20 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton23 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton21 = New System.Windows.Forms.RadioButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton21 = New System.Windows.Forms.RadioButton()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +93,8 @@ Partial Class Units
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -193,7 +188,6 @@ Partial Class Units
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
@@ -210,29 +204,17 @@ Partial Class Units
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label4.Location = New System.Drawing.Point(75, 20)
+        Me.Label4.Location = New System.Drawing.Point(85, 20)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(9, 9)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "o"
         '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton3.Location = New System.Drawing.Point(107, 20)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(32, 17)
-        Me.RadioButton3.TabIndex = 0
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "K"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton2.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton2.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(37, 17)
         Me.RadioButton2.TabIndex = 0
@@ -255,7 +237,6 @@ Partial Class Units
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
         Me.GroupBox2.Controls.Add(Me.RadioButton6)
         Me.GroupBox2.ForeColor = System.Drawing.Color.SteelBlue
         Me.GroupBox2.Location = New System.Drawing.Point(203, 172)
@@ -269,37 +250,13 @@ Partial Class Units
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton4.Location = New System.Drawing.Point(107, 20)
+        Me.RadioButton4.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(33, 17)
+        Me.RadioButton4.Size = New System.Drawing.Size(45, 17)
         Me.RadioButton4.TabIndex = 0
         Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "in"
+        Me.RadioButton4.Text = "inch"
         Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton5.Location = New System.Drawing.Point(59, 20)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(33, 17)
-        Me.RadioButton5.TabIndex = 0
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "m"
-        Me.RadioButton5.UseVisualStyleBackColor = True
-        '
-        'RadioButton6
-        '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton6.Location = New System.Drawing.Point(7, 20)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(41, 17)
-        Me.RadioButton6.TabIndex = 0
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "mm"
-        Me.RadioButton6.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -318,9 +275,11 @@ Partial Class Units
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.ComboBox1)
         Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.GroupBox8)
         Me.Panel2.Controls.Add(Me.GroupBox4)
         Me.Panel2.Controls.Add(Me.GroupBox5)
-        Me.Panel2.Controls.Add(Me.GroupBox8)
+        Me.Panel2.Controls.Add(Me.GroupBox12)
+        Me.Panel2.Controls.Add(Me.GroupBox11)
         Me.Panel2.Controls.Add(Me.GroupBox7)
         Me.Panel2.Controls.Add(Me.GroupBox6)
         Me.Panel2.Controls.Add(Me.GroupBox3)
@@ -367,19 +326,19 @@ Partial Class Units
         Me.GroupBox4.Controls.Add(Me.Label9)
         Me.GroupBox4.Controls.Add(Me.RadioButton10)
         Me.GroupBox4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.GroupBox4.Location = New System.Drawing.Point(24, 294)
+        Me.GroupBox4.Location = New System.Drawing.Point(203, 355)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Flow Rate"
+        Me.GroupBox4.Text = "Volume of Liquid"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label8.Location = New System.Drawing.Point(83, 20)
+        Me.Label8.Location = New System.Drawing.Point(94, 20)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(9, 9)
         Me.Label8.TabIndex = 2
@@ -389,12 +348,12 @@ Partial Class Units
         '
         Me.RadioButton7.AutoSize = True
         Me.RadioButton7.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton7.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton7.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton7.Size = New System.Drawing.Size(31, 17)
         Me.RadioButton7.TabIndex = 0
         Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "ft  /hr"
+        Me.RadioButton7.Text = "ft"
         Me.RadioButton7.UseVisualStyleBackColor = True
         '
         'Label9
@@ -414,17 +373,15 @@ Partial Class Units
         Me.RadioButton10.ForeColor = System.Drawing.Color.SteelBlue
         Me.RadioButton10.Location = New System.Drawing.Point(7, 20)
         Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton10.Size = New System.Drawing.Size(33, 17)
         Me.RadioButton10.TabIndex = 0
         Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "m  /hr"
+        Me.RadioButton10.Text = "m"
         Me.RadioButton10.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Controls.Add(Me.RadioButton11)
-        Me.GroupBox5.Controls.Add(Me.Label11)
         Me.GroupBox5.Controls.Add(Me.RadioButton12)
         Me.GroupBox5.ForeColor = System.Drawing.Color.SteelBlue
         Me.GroupBox5.Location = New System.Drawing.Point(203, 231)
@@ -432,41 +389,19 @@ Partial Class Units
         Me.GroupBox5.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Volume"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label10.Location = New System.Drawing.Point(85, 20)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(9, 9)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "3"
+        Me.GroupBox5.Text = "AST Dimension"
         '
         'RadioButton11
         '
         Me.RadioButton11.AutoSize = True
         Me.RadioButton11.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton11.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton11.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton11.Name = "RadioButton11"
         Me.RadioButton11.Size = New System.Drawing.Size(31, 17)
         Me.RadioButton11.TabIndex = 0
         Me.RadioButton11.TabStop = True
         Me.RadioButton11.Text = "ft"
         Me.RadioButton11.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label11.Location = New System.Drawing.Point(34, 20)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(9, 9)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "3"
         '
         'RadioButton12
         '
@@ -485,7 +420,7 @@ Partial Class Units
         Me.GroupBox8.Controls.Add(Me.RadioButton17)
         Me.GroupBox8.Controls.Add(Me.RadioButton18)
         Me.GroupBox8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.GroupBox8.Location = New System.Drawing.Point(203, 355)
+        Me.GroupBox8.Location = New System.Drawing.Point(24, 294)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox8.TabIndex = 3
@@ -496,12 +431,12 @@ Partial Class Units
         '
         Me.RadioButton17.AutoSize = True
         Me.RadioButton17.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton17.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton17.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(37, 17)
+        Me.RadioButton17.Size = New System.Drawing.Size(45, 17)
         Me.RadioButton17.TabIndex = 0
         Me.RadioButton17.TabStop = True
-        Me.RadioButton17.Text = "mil"
+        Me.RadioButton17.Text = "inch"
         Me.RadioButton17.UseVisualStyleBackColor = True
         '
         'RadioButton18
@@ -532,12 +467,12 @@ Partial Class Units
         '
         Me.RadioButton15.AutoSize = True
         Me.RadioButton15.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton15.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton15.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton15.Name = "RadioButton15"
-        Me.RadioButton15.Size = New System.Drawing.Size(50, 17)
+        Me.RadioButton15.Size = New System.Drawing.Size(44, 17)
         Me.RadioButton15.TabIndex = 0
         Me.RadioButton15.TabStop = True
-        Me.RadioButton15.Text = "mil/yr"
+        Me.RadioButton15.Text = "mpy"
         Me.RadioButton15.UseVisualStyleBackColor = True
         '
         'RadioButton16
@@ -546,10 +481,10 @@ Partial Class Units
         Me.RadioButton16.ForeColor = System.Drawing.Color.SteelBlue
         Me.RadioButton16.Location = New System.Drawing.Point(7, 20)
         Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(54, 17)
+        Me.RadioButton16.Size = New System.Drawing.Size(52, 17)
         Me.RadioButton16.TabIndex = 0
         Me.RadioButton16.TabStop = True
-        Me.RadioButton16.Text = "mm/yr"
+        Me.RadioButton16.Text = "mmpy"
         Me.RadioButton16.UseVisualStyleBackColor = True
         '
         'GroupBox6
@@ -562,18 +497,18 @@ Partial Class Units
         Me.GroupBox6.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox6.TabIndex = 3
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Wall Thickness"
+        Me.GroupBox6.Text = "Thickness"
         '
         'RadioButton13
         '
         Me.RadioButton13.AutoSize = True
         Me.RadioButton13.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton13.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton13.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(33, 17)
+        Me.RadioButton13.Size = New System.Drawing.Size(45, 17)
         Me.RadioButton13.TabIndex = 0
         Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "in"
+        Me.RadioButton13.Text = "inch"
         Me.RadioButton13.UseVisualStyleBackColor = True
         '
         'RadioButton14
@@ -590,6 +525,7 @@ Partial Class Units
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.RadioButton8)
         Me.GroupBox3.Controls.Add(Me.RadioButton9)
         Me.GroupBox3.ForeColor = System.Drawing.Color.SteelBlue
@@ -598,18 +534,18 @@ Partial Class Units
         Me.GroupBox3.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Pipe Diameter"
+        Me.GroupBox3.Text = "Auto Ignition Temperature"
         '
         'RadioButton8
         '
         Me.RadioButton8.AutoSize = True
         Me.RadioButton8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton8.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton8.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(33, 17)
+        Me.RadioButton8.Size = New System.Drawing.Size(39, 17)
         Me.RadioButton8.TabIndex = 0
         Me.RadioButton8.TabStop = True
-        Me.RadioButton8.Text = "in"
+        Me.RadioButton8.Text = "  R"
         Me.RadioButton8.UseVisualStyleBackColor = True
         '
         'RadioButton9
@@ -618,111 +554,35 @@ Partial Class Units
         Me.RadioButton9.ForeColor = System.Drawing.Color.SteelBlue
         Me.RadioButton9.Location = New System.Drawing.Point(7, 20)
         Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(41, 17)
+        Me.RadioButton9.Size = New System.Drawing.Size(32, 17)
         Me.RadioButton9.TabIndex = 0
         Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "mm"
+        Me.RadioButton9.Text = "K"
         Me.RadioButton9.UseVisualStyleBackColor = True
         '
         'GroupBox10
         '
-        Me.GroupBox10.Controls.Add(Me.Label12)
-        Me.GroupBox10.Controls.Add(Me.Label13)
-        Me.GroupBox10.Controls.Add(Me.RadioButton25)
         Me.GroupBox10.Controls.Add(Me.RadioButton26)
-        Me.GroupBox10.Controls.Add(Me.RadioButton27)
-        Me.GroupBox10.Controls.Add(Me.RadioButton28)
-        Me.GroupBox10.Controls.Add(Me.RadioButton29)
         Me.GroupBox10.Controls.Add(Me.RadioButton30)
         Me.GroupBox10.ForeColor = System.Drawing.Color.SteelBlue
         Me.GroupBox10.Location = New System.Drawing.Point(24, 485)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(330, 46)
+        Me.GroupBox10.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox10.TabIndex = 3
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Stress/Strength"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label12.Location = New System.Drawing.Point(165, 20)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(9, 9)
-        Me.Label12.TabIndex = 2
-        Me.Label12.Text = "2"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label13.Location = New System.Drawing.Point(100, 20)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(9, 9)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "2"
-        '
-        'RadioButton25
-        '
-        Me.RadioButton25.AutoSize = True
-        Me.RadioButton25.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton25.Location = New System.Drawing.Point(120, 20)
-        Me.RadioButton25.Name = "RadioButton25"
-        Me.RadioButton25.Size = New System.Drawing.Size(52, 17)
-        Me.RadioButton25.TabIndex = 0
-        Me.RadioButton25.TabStop = True
-        Me.RadioButton25.Text = "N/cm"
-        Me.RadioButton25.UseVisualStyleBackColor = True
         '
         'RadioButton26
         '
         Me.RadioButton26.AutoSize = True
         Me.RadioButton26.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton26.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton26.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton26.Name = "RadioButton26"
-        Me.RadioButton26.Size = New System.Drawing.Size(46, 17)
+        Me.RadioButton26.Size = New System.Drawing.Size(38, 17)
         Me.RadioButton26.TabIndex = 0
         Me.RadioButton26.TabStop = True
-        Me.RadioButton26.Text = "N/m"
+        Me.RadioButton26.Text = "psi"
         Me.RadioButton26.UseVisualStyleBackColor = True
-        '
-        'RadioButton27
-        '
-        Me.RadioButton27.AutoSize = True
-        Me.RadioButton27.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton27.Location = New System.Drawing.Point(286, 20)
-        Me.RadioButton27.Name = "RadioButton27"
-        Me.RadioButton27.Size = New System.Drawing.Size(40, 17)
-        Me.RadioButton27.TabIndex = 0
-        Me.RadioButton27.TabStop = True
-        Me.RadioButton27.Text = "bar"
-        Me.RadioButton27.UseVisualStyleBackColor = True
-        '
-        'RadioButton28
-        '
-        Me.RadioButton28.AutoSize = True
-        Me.RadioButton28.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton28.Location = New System.Drawing.Point(238, 20)
-        Me.RadioButton28.Name = "RadioButton28"
-        Me.RadioButton28.Size = New System.Drawing.Size(38, 17)
-        Me.RadioButton28.TabIndex = 0
-        Me.RadioButton28.TabStop = True
-        Me.RadioButton28.Text = "psi"
-        Me.RadioButton28.UseVisualStyleBackColor = True
-        '
-        'RadioButton29
-        '
-        Me.RadioButton29.AutoSize = True
-        Me.RadioButton29.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton29.Location = New System.Drawing.Point(186, 20)
-        Me.RadioButton29.Name = "RadioButton29"
-        Me.RadioButton29.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton29.TabIndex = 0
-        Me.RadioButton29.TabStop = True
-        Me.RadioButton29.Text = "KSI"
-        Me.RadioButton29.UseVisualStyleBackColor = True
         '
         'RadioButton30
         '
@@ -738,103 +598,50 @@ Partial Class Units
         '
         'GroupBox9
         '
-        Me.GroupBox9.Controls.Add(Me.Label6)
-        Me.GroupBox9.Controls.Add(Me.Label5)
-        Me.GroupBox9.Controls.Add(Me.RadioButton19)
         Me.GroupBox9.Controls.Add(Me.RadioButton20)
-        Me.GroupBox9.Controls.Add(Me.RadioButton24)
-        Me.GroupBox9.Controls.Add(Me.RadioButton23)
-        Me.GroupBox9.Controls.Add(Me.RadioButton22)
         Me.GroupBox9.Controls.Add(Me.RadioButton21)
         Me.GroupBox9.ForeColor = System.Drawing.Color.SteelBlue
         Me.GroupBox9.Location = New System.Drawing.Point(24, 419)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(330, 46)
+        Me.GroupBox9.Size = New System.Drawing.Size(151, 46)
         Me.GroupBox9.TabIndex = 3
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Pressure"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label6.Location = New System.Drawing.Point(165, 20)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(9, 9)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "2"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label5.Location = New System.Drawing.Point(100, 20)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(9, 9)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "2"
-        '
-        'RadioButton19
-        '
-        Me.RadioButton19.AutoSize = True
-        Me.RadioButton19.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton19.Location = New System.Drawing.Point(120, 20)
-        Me.RadioButton19.Name = "RadioButton19"
-        Me.RadioButton19.Size = New System.Drawing.Size(52, 17)
-        Me.RadioButton19.TabIndex = 0
-        Me.RadioButton19.TabStop = True
-        Me.RadioButton19.Text = "N/cm"
-        Me.RadioButton19.UseVisualStyleBackColor = True
         '
         'RadioButton20
         '
         Me.RadioButton20.AutoSize = True
         Me.RadioButton20.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton20.Location = New System.Drawing.Point(59, 20)
+        Me.RadioButton20.Location = New System.Drawing.Point(69, 20)
         Me.RadioButton20.Name = "RadioButton20"
-        Me.RadioButton20.Size = New System.Drawing.Size(46, 17)
+        Me.RadioButton20.Size = New System.Drawing.Size(38, 17)
         Me.RadioButton20.TabIndex = 0
         Me.RadioButton20.TabStop = True
-        Me.RadioButton20.Text = "N/m"
+        Me.RadioButton20.Text = "psi"
         Me.RadioButton20.UseVisualStyleBackColor = True
         '
-        'RadioButton24
+        'Panel4
         '
-        Me.RadioButton24.AutoSize = True
-        Me.RadioButton24.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton24.Location = New System.Drawing.Point(286, 20)
-        Me.RadioButton24.Name = "RadioButton24"
-        Me.RadioButton24.Size = New System.Drawing.Size(40, 17)
-        Me.RadioButton24.TabIndex = 0
-        Me.RadioButton24.TabStop = True
-        Me.RadioButton24.Text = "bar"
-        Me.RadioButton24.UseVisualStyleBackColor = True
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Panel1)
+        Me.Panel4.Controls.Add(Me.Panel2)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(384, 611)
+        Me.Panel4.TabIndex = 5
         '
-        'RadioButton23
+        'RadioButton6
         '
-        Me.RadioButton23.AutoSize = True
-        Me.RadioButton23.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton23.Location = New System.Drawing.Point(238, 20)
-        Me.RadioButton23.Name = "RadioButton23"
-        Me.RadioButton23.Size = New System.Drawing.Size(38, 17)
-        Me.RadioButton23.TabIndex = 0
-        Me.RadioButton23.TabStop = True
-        Me.RadioButton23.Text = "psi"
-        Me.RadioButton23.UseVisualStyleBackColor = True
-        '
-        'RadioButton22
-        '
-        Me.RadioButton22.AutoSize = True
-        Me.RadioButton22.ForeColor = System.Drawing.Color.SteelBlue
-        Me.RadioButton22.Location = New System.Drawing.Point(186, 20)
-        Me.RadioButton22.Name = "RadioButton22"
-        Me.RadioButton22.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton22.TabIndex = 0
-        Me.RadioButton22.TabStop = True
-        Me.RadioButton22.Text = "KSI"
-        Me.RadioButton22.UseVisualStyleBackColor = True
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.RadioButton6.Location = New System.Drawing.Point(7, 20)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(41, 17)
+        Me.RadioButton6.TabIndex = 0
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "mm"
+        Me.RadioButton6.UseVisualStyleBackColor = True
         '
         'RadioButton21
         '
@@ -848,16 +655,112 @@ Partial Class Units
         Me.RadioButton21.Text = "MPa"
         Me.RadioButton21.UseVisualStyleBackColor = True
         '
-        'Panel4
+        'Label5
         '
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Panel1)
-        Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(384, 611)
-        Me.Panel4.TabIndex = 5
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label5.Location = New System.Drawing.Point(85, 20)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(9, 9)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "o"
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.Label10)
+        Me.GroupBox11.Controls.Add(Me.RadioButton3)
+        Me.GroupBox11.Controls.Add(Me.Label6)
+        Me.GroupBox11.Controls.Add(Me.RadioButton5)
+        Me.GroupBox11.ForeColor = System.Drawing.Color.SteelBlue
+        Me.GroupBox11.Location = New System.Drawing.Point(203, 419)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(151, 46)
+        Me.GroupBox11.TabIndex = 3
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Density"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.RadioButton3.Location = New System.Drawing.Point(69, 20)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(44, 17)
+        Me.RadioButton3.TabIndex = 0
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "lb/ft"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.RadioButton5.Location = New System.Drawing.Point(7, 20)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(50, 17)
+        Me.RadioButton5.TabIndex = 0
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "kg/m"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.Controls.Add(Me.RadioButton22)
+        Me.GroupBox12.Controls.Add(Me.RadioButton19)
+        Me.GroupBox12.ForeColor = System.Drawing.Color.SteelBlue
+        Me.GroupBox12.Location = New System.Drawing.Point(203, 485)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(151, 46)
+        Me.GroupBox12.TabIndex = 3
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "Mass"
+        '
+        'RadioButton19
+        '
+        Me.RadioButton19.AutoSize = True
+        Me.RadioButton19.ForeColor = System.Drawing.Color.SteelBlue
+        Me.RadioButton19.Location = New System.Drawing.Point(69, 20)
+        Me.RadioButton19.Name = "RadioButton19"
+        Me.RadioButton19.Size = New System.Drawing.Size(38, 17)
+        Me.RadioButton19.TabIndex = 0
+        Me.RadioButton19.TabStop = True
+        Me.RadioButton19.Text = "lbs"
+        Me.RadioButton19.UseVisualStyleBackColor = True
+        '
+        'RadioButton22
+        '
+        Me.RadioButton22.AutoSize = True
+        Me.RadioButton22.ForeColor = System.Drawing.Color.SteelBlue
+        Me.RadioButton22.Location = New System.Drawing.Point(7, 20)
+        Me.RadioButton22.Name = "RadioButton22"
+        Me.RadioButton22.Size = New System.Drawing.Size(42, 17)
+        Me.RadioButton22.TabIndex = 0
+        Me.RadioButton22.TabStop = True
+        Me.RadioButton22.Text = "kgs"
+        Me.RadioButton22.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label6.Location = New System.Drawing.Point(51, 21)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(9, 9)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "3"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label10.Location = New System.Drawing.Point(107, 22)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(9, 9)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "3"
         '
         'Units
         '
@@ -898,6 +801,10 @@ Partial Class Units
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.Panel4.ResumeLayout(False)
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        Me.GroupBox12.ResumeLayout(False)
+        Me.GroupBox12.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -910,13 +817,10 @@ Partial Class Units
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox4 As GroupBox
@@ -925,9 +829,7 @@ Partial Class Units
     Friend WithEvents Label9 As Label
     Friend WithEvents RadioButton10 As RadioButton
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents RadioButton11 As RadioButton
-    Friend WithEvents Label11 As Label
     Friend WithEvents RadioButton12 As RadioButton
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents RadioButton17 As RadioButton
@@ -942,26 +844,24 @@ Partial Class Units
     Friend WithEvents RadioButton8 As RadioButton
     Friend WithEvents RadioButton9 As RadioButton
     Friend WithEvents GroupBox10 As GroupBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents RadioButton25 As RadioButton
     Friend WithEvents RadioButton26 As RadioButton
-    Friend WithEvents RadioButton27 As RadioButton
-    Friend WithEvents RadioButton28 As RadioButton
-    Friend WithEvents RadioButton29 As RadioButton
     Friend WithEvents RadioButton30 As RadioButton
     Friend WithEvents GroupBox9 As GroupBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents RadioButton19 As RadioButton
     Friend WithEvents RadioButton20 As RadioButton
-    Friend WithEvents RadioButton24 As RadioButton
-    Friend WithEvents RadioButton23 As RadioButton
-    Friend WithEvents RadioButton22 As RadioButton
-    Friend WithEvents RadioButton21 As RadioButton
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button11 As Button
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents RadioButton21 As RadioButton
+    Friend WithEvents Label5 As Label
+    Friend WithEvents GroupBox12 As GroupBox
+    Friend WithEvents RadioButton19 As RadioButton
+    Friend WithEvents RadioButton22 As RadioButton
+    Friend WithEvents GroupBox11 As GroupBox
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label6 As Label
 End Class

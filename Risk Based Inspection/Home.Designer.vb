@@ -39,6 +39,36 @@ Partial Class Home
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panelnewanalysis = New System.Windows.Forms.Panel()
+        Me.Button30 = New System.Windows.Forms.Button()
+        Me.ComboBox63 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox62 = New System.Windows.Forms.ComboBox()
+        Me.Button29 = New System.Windows.Forms.Button()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.Button28 = New System.Windows.Forms.Button()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.Button27 = New System.Windows.Forms.Button()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label309 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label308 = New System.Windows.Forms.Label()
+        Me.Label310 = New System.Windows.Forms.Label()
+        Me.Label391 = New System.Windows.Forms.Label()
         Me.Panelgeneraldata = New System.Windows.Forms.Panel()
         Me.DateTimePicker13 = New System.Windows.Forms.DateTimePicker()
         Me.Button10 = New System.Windows.Forms.Button()
@@ -364,36 +394,6 @@ Partial Class Home
         Me.Label217 = New System.Windows.Forms.Label()
         Me.TextBox51 = New System.Windows.Forms.TextBox()
         Me.Label216 = New System.Windows.Forms.Label()
-        Me.Panelnewanalysis = New System.Windows.Forms.Panel()
-        Me.Button30 = New System.Windows.Forms.Button()
-        Me.ComboBox63 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox62 = New System.Windows.Forms.ComboBox()
-        Me.Button29 = New System.Windows.Forms.Button()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.Button28 = New System.Windows.Forms.Button()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.Button27 = New System.Windows.Forms.Button()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.Button25 = New System.Windows.Forms.Button()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Button20 = New System.Windows.Forms.Button()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Label309 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label308 = New System.Windows.Forms.Label()
-        Me.Label310 = New System.Windows.Forms.Label()
-        Me.Label391 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.PanelPOF = New System.Windows.Forms.Panel()
@@ -906,8 +906,8 @@ Partial Class Home
         Me.Label348 = New System.Windows.Forms.Label()
         Me.Panel89 = New System.Windows.Forms.Panel()
         Me.TextBox104 = New System.Windows.Forms.TextBox()
-        Me.ComboBox135 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.ComboBox135 = New System.Windows.Forms.ComboBox()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.Panel90 = New System.Windows.Forms.Panel()
         Me.ComboBox79 = New System.Windows.Forms.ComboBox()
@@ -1096,6 +1096,17 @@ Partial Class Home
         Me.Panel18.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Panelnewanalysis.SuspendLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panelgeneraldata.SuspendLayout()
         Me.Panel59.SuspendLayout()
         Me.Panel32.SuspendLayout()
@@ -1119,17 +1130,6 @@ Partial Class Home
         Me.PanelgeneraldataHE.SuspendLayout()
         CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel61.SuspendLayout()
-        Me.Panelnewanalysis.SuspendLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel33.SuspendLayout()
         Me.PanelPOF.SuspendLayout()
@@ -1313,10 +1313,10 @@ Partial Class Home
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
-        Me.TabPage1.Controls.Add(Me.Panelnewanalysis)
         Me.TabPage1.Controls.Add(Me.Panelgeneraldata)
         Me.TabPage1.Controls.Add(Me.PanelgeneraldataPRD)
         Me.TabPage1.Controls.Add(Me.PanelgeneraldataHE)
+        Me.TabPage1.Controls.Add(Me.Panelnewanalysis)
         Me.TabPage1.ForeColor = System.Drawing.Color.CornflowerBlue
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
@@ -1326,6 +1326,404 @@ Partial Class Home
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General Data"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Panelnewanalysis
+        '
+        Me.Panelnewanalysis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panelnewanalysis.Controls.Add(Me.Button30)
+        Me.Panelnewanalysis.Controls.Add(Me.ComboBox63)
+        Me.Panelnewanalysis.Controls.Add(Me.ComboBox62)
+        Me.Panelnewanalysis.Controls.Add(Me.Button29)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox12)
+        Me.Panelnewanalysis.Controls.Add(Me.Button28)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox11)
+        Me.Panelnewanalysis.Controls.Add(Me.Button27)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox10)
+        Me.Panelnewanalysis.Controls.Add(Me.Button26)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox9)
+        Me.Panelnewanalysis.Controls.Add(Me.Button25)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox8)
+        Me.Panelnewanalysis.Controls.Add(Me.Button24)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox7)
+        Me.Panelnewanalysis.Controls.Add(Me.Button23)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox6)
+        Me.Panelnewanalysis.Controls.Add(Me.Button22)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox5)
+        Me.Panelnewanalysis.Controls.Add(Me.Button21)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox4)
+        Me.Panelnewanalysis.Controls.Add(Me.Button20)
+        Me.Panelnewanalysis.Controls.Add(Me.PictureBox3)
+        Me.Panelnewanalysis.Controls.Add(Me.Label309)
+        Me.Panelnewanalysis.Controls.Add(Me.ComboBox2)
+        Me.Panelnewanalysis.Controls.Add(Me.Label5)
+        Me.Panelnewanalysis.Controls.Add(Me.Label308)
+        Me.Panelnewanalysis.Controls.Add(Me.Label310)
+        Me.Panelnewanalysis.Controls.Add(Me.Label391)
+        Me.Panelnewanalysis.Location = New System.Drawing.Point(1, 1)
+        Me.Panelnewanalysis.Name = "Panelnewanalysis"
+        Me.Panelnewanalysis.Size = New System.Drawing.Size(716, 580)
+        Me.Panelnewanalysis.TabIndex = 7
+        Me.Panelnewanalysis.TabStop = True
+        '
+        'Button30
+        '
+        Me.Button30.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button30.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button30.FlatAppearance.BorderSize = 0
+        Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button30.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button30.Location = New System.Drawing.Point(677, 543)
+        Me.Button30.Name = "Button30"
+        Me.Button30.Size = New System.Drawing.Size(48, 25)
+        Me.Button30.TabIndex = 234
+        Me.Button30.Text = "Next"
+        Me.Button30.UseVisualStyleBackColor = False
+        '
+        'ComboBox63
+        '
+        Me.ComboBox63.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox63.FormattingEnabled = True
+        Me.ComboBox63.Location = New System.Drawing.Point(393, 544)
+        Me.ComboBox63.Name = "ComboBox63"
+        Me.ComboBox63.Size = New System.Drawing.Size(250, 21)
+        Me.ComboBox63.TabIndex = 49
+        '
+        'ComboBox62
+        '
+        Me.ComboBox62.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox62.FormattingEnabled = True
+        Me.ComboBox62.Location = New System.Drawing.Point(83, 544)
+        Me.ComboBox62.Name = "ComboBox62"
+        Me.ComboBox62.Size = New System.Drawing.Size(250, 21)
+        Me.ComboBox62.TabIndex = 48
+        '
+        'Button29
+        '
+        Me.Button29.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button29.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button29.FlatAppearance.BorderSize = 0
+        Me.Button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button29.ForeColor = System.Drawing.Color.Transparent
+        Me.Button29.Location = New System.Drawing.Point(126, 112)
+        Me.Button29.Name = "Button29"
+        Me.Button29.Size = New System.Drawing.Size(130, 60)
+        Me.Button29.TabIndex = 46
+        Me.Button29.Text = "Heat Exchanger Tube Bundles"
+        Me.Button29.UseVisualStyleBackColor = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox12.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox12.Location = New System.Drawing.Point(120, 106)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(143, 73)
+        Me.PictureBox12.TabIndex = 47
+        Me.PictureBox12.TabStop = False
+        Me.PictureBox12.Visible = False
+        '
+        'Button28
+        '
+        Me.Button28.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button28.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button28.FlatAppearance.BorderSize = 0
+        Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button28.ForeColor = System.Drawing.Color.Transparent
+        Me.Button28.Location = New System.Drawing.Point(59, 204)
+        Me.Button28.Name = "Button28"
+        Me.Button28.Size = New System.Drawing.Size(130, 60)
+        Me.Button28.TabIndex = 44
+        Me.Button28.Text = "Atmospheric Storage Tank - Shell Courses"
+        Me.Button28.UseVisualStyleBackColor = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox11.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox11.Location = New System.Drawing.Point(53, 198)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(143, 73)
+        Me.PictureBox11.TabIndex = 45
+        Me.PictureBox11.TabStop = False
+        Me.PictureBox11.Visible = False
+        '
+        'Button27
+        '
+        Me.Button27.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button27.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button27.FlatAppearance.BorderSize = 0
+        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button27.ForeColor = System.Drawing.Color.Transparent
+        Me.Button27.Location = New System.Drawing.Point(59, 298)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(130, 60)
+        Me.Button27.TabIndex = 42
+        Me.Button27.Text = "Pressure Relief Devices"
+        Me.Button27.UseVisualStyleBackColor = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox10.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox10.Location = New System.Drawing.Point(53, 292)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(143, 73)
+        Me.PictureBox10.TabIndex = 43
+        Me.PictureBox10.TabStop = False
+        Me.PictureBox10.Visible = False
+        '
+        'Button26
+        '
+        Me.Button26.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button26.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button26.FlatAppearance.BorderSize = 0
+        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button26.ForeColor = System.Drawing.Color.Transparent
+        Me.Button26.Location = New System.Drawing.Point(125, 392)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(130, 60)
+        Me.Button26.TabIndex = 40
+        Me.Button26.Text = "Heat Exchanger"
+        Me.Button26.UseVisualStyleBackColor = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox9.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox9.Location = New System.Drawing.Point(119, 386)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(143, 73)
+        Me.PictureBox9.TabIndex = 41
+        Me.PictureBox9.TabStop = False
+        Me.PictureBox9.Visible = False
+        '
+        'Button25
+        '
+        Me.Button25.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button25.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button25.FlatAppearance.BorderSize = 0
+        Me.Button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button25.ForeColor = System.Drawing.Color.Transparent
+        Me.Button25.Location = New System.Drawing.Point(302, 417)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(130, 61)
+        Me.Button25.TabIndex = 38
+        Me.Button25.Text = "Pumps"
+        Me.Button25.UseVisualStyleBackColor = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox8.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox8.Location = New System.Drawing.Point(296, 411)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(143, 73)
+        Me.PictureBox8.TabIndex = 39
+        Me.PictureBox8.TabStop = False
+        Me.PictureBox8.Visible = False
+        '
+        'Button24
+        '
+        Me.Button24.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button24.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button24.FlatAppearance.BorderSize = 0
+        Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button24.ForeColor = System.Drawing.Color.Transparent
+        Me.Button24.Location = New System.Drawing.Point(479, 391)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(130, 61)
+        Me.Button24.TabIndex = 36
+        Me.Button24.Text = "Compressors"
+        Me.Button24.UseVisualStyleBackColor = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox7.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox7.Location = New System.Drawing.Point(473, 385)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(143, 74)
+        Me.PictureBox7.TabIndex = 37
+        Me.PictureBox7.TabStop = False
+        Me.PictureBox7.Visible = False
+        '
+        'Button23
+        '
+        Me.Button23.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button23.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button23.FlatAppearance.BorderSize = 0
+        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button23.ForeColor = System.Drawing.Color.Transparent
+        Me.Button23.Location = New System.Drawing.Point(544, 298)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(130, 62)
+        Me.Button23.TabIndex = 34
+        Me.Button23.Text = "AirFin Heat Exchanger Header Boxes"
+        Me.Button23.UseVisualStyleBackColor = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox6.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox6.Location = New System.Drawing.Point(537, 292)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(144, 74)
+        Me.PictureBox6.TabIndex = 35
+        Me.PictureBox6.TabStop = False
+        Me.PictureBox6.Visible = False
+        '
+        'Button22
+        '
+        Me.Button22.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button22.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button22.FlatAppearance.BorderSize = 0
+        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button22.ForeColor = System.Drawing.Color.Transparent
+        Me.Button22.Location = New System.Drawing.Point(544, 204)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(130, 62)
+        Me.Button22.TabIndex = 32
+        Me.Button22.Text = "Atmospheric Storage Tank - Bottom Plates"
+        Me.Button22.UseVisualStyleBackColor = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox5.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox5.Location = New System.Drawing.Point(537, 198)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(144, 74)
+        Me.PictureBox5.TabIndex = 33
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = False
+        '
+        'Button21
+        '
+        Me.Button21.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button21.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button21.FlatAppearance.BorderSize = 0
+        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button21.ForeColor = System.Drawing.Color.Transparent
+        Me.Button21.Location = New System.Drawing.Point(479, 112)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(130, 62)
+        Me.Button21.TabIndex = 30
+        Me.Button21.Text = "Pipes and Tubes"
+        Me.Button21.UseVisualStyleBackColor = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox4.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox4.Location = New System.Drawing.Point(472, 106)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(144, 74)
+        Me.PictureBox4.TabIndex = 31
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
+        'Button20
+        '
+        Me.Button20.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button20.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button20.ForeColor = System.Drawing.Color.Transparent
+        Me.Button20.Location = New System.Drawing.Point(303, 90)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(129, 62)
+        Me.Button20.TabIndex = 28
+        Me.Button20.Text = "Pressure Vessel"
+        Me.Button20.UseVisualStyleBackColor = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox3.BackColor = System.Drawing.Color.LightBlue
+        Me.PictureBox3.Location = New System.Drawing.Point(296, 84)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(143, 74)
+        Me.PictureBox3.TabIndex = 29
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
+        '
+        'Label309
+        '
+        Me.Label309.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label309.AutoSize = True
+        Me.Label309.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label309.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label309.Location = New System.Drawing.Point(296, 10)
+        Me.Label309.Name = "Label309"
+        Me.Label309.Size = New System.Drawing.Size(125, 20)
+        Me.Label309.TabIndex = 0
+        Me.Label309.Text = "Industry Name"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(242, 40)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(250, 21)
+        Me.ComboBox2.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label5.Location = New System.Drawing.Point(440, 506)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(163, 20)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Code of Equipment"
+        '
+        'Label308
+        '
+        Me.Label308.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label308.AutoSize = True
+        Me.Label308.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label308.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label308.Location = New System.Drawing.Point(131, 506)
+        Me.Label308.Name = "Label308"
+        Me.Label308.Size = New System.Drawing.Size(154, 20)
+        Me.Label308.TabIndex = 0
+        Me.Label308.Text = "Componnent Type"
+        '
+        'Label310
+        '
+        Me.Label310.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label310.AutoSize = True
+        Me.Label310.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label310.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label310.Location = New System.Drawing.Point(298, 274)
+        Me.Label310.Name = "Label310"
+        Me.Label310.Size = New System.Drawing.Size(138, 20)
+        Me.Label310.TabIndex = 0
+        Me.Label310.Text = "Equipment Type"
+        '
+        'Label391
+        '
+        Me.Label391.AutoSize = True
+        Me.Label391.Location = New System.Drawing.Point(355, 44)
+        Me.Label391.Name = "Label391"
+        Me.Label391.Size = New System.Drawing.Size(51, 13)
+        Me.Label391.TabIndex = 235
+        Me.Label391.Text = "Label391"
+        Me.Label391.Visible = False
         '
         'Panelgeneraldata
         '
@@ -1427,7 +1825,7 @@ Partial Class Home
         Me.Panelgeneraldata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panelgeneraldata.Location = New System.Drawing.Point(1, 1)
         Me.Panelgeneraldata.Name = "Panelgeneraldata"
-        Me.Panelgeneraldata.Size = New System.Drawing.Size(733, 1282)
+        Me.Panelgeneraldata.Size = New System.Drawing.Size(750, 1282)
         Me.Panelgeneraldata.TabIndex = 1
         '
         'DateTimePicker13
@@ -2792,7 +3190,7 @@ Partial Class Home
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelgeneraldataPRD.Location = New System.Drawing.Point(1, 1)
         Me.PanelgeneraldataPRD.Name = "PanelgeneraldataPRD"
-        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(682, 655)
+        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(648, 655)
         Me.PanelgeneraldataPRD.TabIndex = 6
         '
         'PanelgeneraldataHE
@@ -2987,7 +3385,7 @@ Partial Class Home
         Me.PanelgeneraldataHE.ForeColor = System.Drawing.SystemColors.ControlText
         Me.PanelgeneraldataHE.Location = New System.Drawing.Point(1, 1)
         Me.PanelgeneraldataHE.Name = "PanelgeneraldataHE"
-        Me.PanelgeneraldataHE.Size = New System.Drawing.Size(682, 2000)
+        Me.PanelgeneraldataHE.Size = New System.Drawing.Size(648, 2000)
         Me.PanelgeneraldataHE.TabIndex = 2
         '
         'Button16
@@ -4795,404 +5193,6 @@ Partial Class Home
         Me.Label216.Size = New System.Drawing.Size(191, 15)
         Me.Label216.TabIndex = 332
         Me.Label216.Text = "Estimated Remaining Bundle Life"
-        '
-        'Panelnewanalysis
-        '
-        Me.Panelnewanalysis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panelnewanalysis.Controls.Add(Me.Button30)
-        Me.Panelnewanalysis.Controls.Add(Me.ComboBox63)
-        Me.Panelnewanalysis.Controls.Add(Me.ComboBox62)
-        Me.Panelnewanalysis.Controls.Add(Me.Button29)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox12)
-        Me.Panelnewanalysis.Controls.Add(Me.Button28)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox11)
-        Me.Panelnewanalysis.Controls.Add(Me.Button27)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox10)
-        Me.Panelnewanalysis.Controls.Add(Me.Button26)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox9)
-        Me.Panelnewanalysis.Controls.Add(Me.Button25)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox8)
-        Me.Panelnewanalysis.Controls.Add(Me.Button24)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox7)
-        Me.Panelnewanalysis.Controls.Add(Me.Button23)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox6)
-        Me.Panelnewanalysis.Controls.Add(Me.Button22)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox5)
-        Me.Panelnewanalysis.Controls.Add(Me.Button21)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox4)
-        Me.Panelnewanalysis.Controls.Add(Me.Button20)
-        Me.Panelnewanalysis.Controls.Add(Me.PictureBox3)
-        Me.Panelnewanalysis.Controls.Add(Me.Label309)
-        Me.Panelnewanalysis.Controls.Add(Me.ComboBox2)
-        Me.Panelnewanalysis.Controls.Add(Me.Label5)
-        Me.Panelnewanalysis.Controls.Add(Me.Label308)
-        Me.Panelnewanalysis.Controls.Add(Me.Label310)
-        Me.Panelnewanalysis.Controls.Add(Me.Label391)
-        Me.Panelnewanalysis.Location = New System.Drawing.Point(1, 1)
-        Me.Panelnewanalysis.Name = "Panelnewanalysis"
-        Me.Panelnewanalysis.Size = New System.Drawing.Size(750, 580)
-        Me.Panelnewanalysis.TabIndex = 7
-        Me.Panelnewanalysis.TabStop = True
-        '
-        'Button30
-        '
-        Me.Button30.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button30.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button30.FlatAppearance.BorderSize = 0
-        Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button30.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button30.Location = New System.Drawing.Point(694, 543)
-        Me.Button30.Name = "Button30"
-        Me.Button30.Size = New System.Drawing.Size(48, 25)
-        Me.Button30.TabIndex = 234
-        Me.Button30.Text = "Next"
-        Me.Button30.UseVisualStyleBackColor = False
-        '
-        'ComboBox63
-        '
-        Me.ComboBox63.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.ComboBox63.FormattingEnabled = True
-        Me.ComboBox63.Location = New System.Drawing.Point(410, 544)
-        Me.ComboBox63.Name = "ComboBox63"
-        Me.ComboBox63.Size = New System.Drawing.Size(250, 21)
-        Me.ComboBox63.TabIndex = 49
-        '
-        'ComboBox62
-        '
-        Me.ComboBox62.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.ComboBox62.FormattingEnabled = True
-        Me.ComboBox62.Location = New System.Drawing.Point(100, 544)
-        Me.ComboBox62.Name = "ComboBox62"
-        Me.ComboBox62.Size = New System.Drawing.Size(250, 21)
-        Me.ComboBox62.TabIndex = 48
-        '
-        'Button29
-        '
-        Me.Button29.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button29.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button29.FlatAppearance.BorderSize = 0
-        Me.Button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button29.ForeColor = System.Drawing.Color.Transparent
-        Me.Button29.Location = New System.Drawing.Point(143, 112)
-        Me.Button29.Name = "Button29"
-        Me.Button29.Size = New System.Drawing.Size(130, 60)
-        Me.Button29.TabIndex = 46
-        Me.Button29.Text = "Heat Exchanger Tube Bundles"
-        Me.Button29.UseVisualStyleBackColor = False
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox12.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox12.Location = New System.Drawing.Point(137, 106)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(143, 73)
-        Me.PictureBox12.TabIndex = 47
-        Me.PictureBox12.TabStop = False
-        Me.PictureBox12.Visible = False
-        '
-        'Button28
-        '
-        Me.Button28.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button28.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button28.FlatAppearance.BorderSize = 0
-        Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button28.ForeColor = System.Drawing.Color.Transparent
-        Me.Button28.Location = New System.Drawing.Point(76, 204)
-        Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(130, 60)
-        Me.Button28.TabIndex = 44
-        Me.Button28.Text = "Atmospheric Storage Tank - Shell Courses"
-        Me.Button28.UseVisualStyleBackColor = False
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox11.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox11.Location = New System.Drawing.Point(70, 198)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(143, 73)
-        Me.PictureBox11.TabIndex = 45
-        Me.PictureBox11.TabStop = False
-        Me.PictureBox11.Visible = False
-        '
-        'Button27
-        '
-        Me.Button27.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button27.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button27.FlatAppearance.BorderSize = 0
-        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button27.ForeColor = System.Drawing.Color.Transparent
-        Me.Button27.Location = New System.Drawing.Point(76, 298)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(130, 60)
-        Me.Button27.TabIndex = 42
-        Me.Button27.Text = "Pressure Relief Devices"
-        Me.Button27.UseVisualStyleBackColor = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox10.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox10.Location = New System.Drawing.Point(70, 292)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(143, 73)
-        Me.PictureBox10.TabIndex = 43
-        Me.PictureBox10.TabStop = False
-        Me.PictureBox10.Visible = False
-        '
-        'Button26
-        '
-        Me.Button26.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button26.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button26.FlatAppearance.BorderSize = 0
-        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button26.ForeColor = System.Drawing.Color.Transparent
-        Me.Button26.Location = New System.Drawing.Point(142, 392)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(130, 60)
-        Me.Button26.TabIndex = 40
-        Me.Button26.Text = "Heat Exchanger"
-        Me.Button26.UseVisualStyleBackColor = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox9.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox9.Location = New System.Drawing.Point(136, 386)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(143, 73)
-        Me.PictureBox9.TabIndex = 41
-        Me.PictureBox9.TabStop = False
-        Me.PictureBox9.Visible = False
-        '
-        'Button25
-        '
-        Me.Button25.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button25.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button25.FlatAppearance.BorderSize = 0
-        Me.Button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button25.ForeColor = System.Drawing.Color.Transparent
-        Me.Button25.Location = New System.Drawing.Point(319, 417)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(130, 61)
-        Me.Button25.TabIndex = 38
-        Me.Button25.Text = "Pumps"
-        Me.Button25.UseVisualStyleBackColor = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox8.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox8.Location = New System.Drawing.Point(313, 411)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(143, 73)
-        Me.PictureBox8.TabIndex = 39
-        Me.PictureBox8.TabStop = False
-        Me.PictureBox8.Visible = False
-        '
-        'Button24
-        '
-        Me.Button24.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button24.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button24.FlatAppearance.BorderSize = 0
-        Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button24.ForeColor = System.Drawing.Color.Transparent
-        Me.Button24.Location = New System.Drawing.Point(496, 391)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(130, 61)
-        Me.Button24.TabIndex = 36
-        Me.Button24.Text = "Compressors"
-        Me.Button24.UseVisualStyleBackColor = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox7.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox7.Location = New System.Drawing.Point(490, 385)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(143, 74)
-        Me.PictureBox7.TabIndex = 37
-        Me.PictureBox7.TabStop = False
-        Me.PictureBox7.Visible = False
-        '
-        'Button23
-        '
-        Me.Button23.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button23.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button23.FlatAppearance.BorderSize = 0
-        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button23.ForeColor = System.Drawing.Color.Transparent
-        Me.Button23.Location = New System.Drawing.Point(561, 298)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(130, 62)
-        Me.Button23.TabIndex = 34
-        Me.Button23.Text = "AirFin Heat Exchanger Header Boxes"
-        Me.Button23.UseVisualStyleBackColor = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox6.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox6.Location = New System.Drawing.Point(554, 292)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(144, 74)
-        Me.PictureBox6.TabIndex = 35
-        Me.PictureBox6.TabStop = False
-        Me.PictureBox6.Visible = False
-        '
-        'Button22
-        '
-        Me.Button22.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button22.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button22.FlatAppearance.BorderSize = 0
-        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button22.ForeColor = System.Drawing.Color.Transparent
-        Me.Button22.Location = New System.Drawing.Point(561, 204)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(130, 62)
-        Me.Button22.TabIndex = 32
-        Me.Button22.Text = "Atmospheric Storage Tank - Bottom Plates"
-        Me.Button22.UseVisualStyleBackColor = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox5.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox5.Location = New System.Drawing.Point(554, 198)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(144, 74)
-        Me.PictureBox5.TabIndex = 33
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = False
-        '
-        'Button21
-        '
-        Me.Button21.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button21.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button21.FlatAppearance.BorderSize = 0
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button21.ForeColor = System.Drawing.Color.Transparent
-        Me.Button21.Location = New System.Drawing.Point(496, 112)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(130, 62)
-        Me.Button21.TabIndex = 30
-        Me.Button21.Text = "Pipes and Tubes"
-        Me.Button21.UseVisualStyleBackColor = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox4.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox4.Location = New System.Drawing.Point(489, 106)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(144, 74)
-        Me.PictureBox4.TabIndex = 31
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
-        '
-        'Button20
-        '
-        Me.Button20.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button20.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button20.FlatAppearance.BorderSize = 0
-        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button20.ForeColor = System.Drawing.Color.Transparent
-        Me.Button20.Location = New System.Drawing.Point(320, 90)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(129, 62)
-        Me.Button20.TabIndex = 28
-        Me.Button20.Text = "Pressure Vessel"
-        Me.Button20.UseVisualStyleBackColor = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox3.BackColor = System.Drawing.Color.LightBlue
-        Me.PictureBox3.Location = New System.Drawing.Point(313, 84)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(143, 74)
-        Me.PictureBox3.TabIndex = 29
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
-        '
-        'Label309
-        '
-        Me.Label309.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label309.AutoSize = True
-        Me.Label309.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label309.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label309.Location = New System.Drawing.Point(313, 10)
-        Me.Label309.Name = "Label309"
-        Me.Label309.Size = New System.Drawing.Size(125, 20)
-        Me.Label309.TabIndex = 0
-        Me.Label309.Text = "Industry Name"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(259, 40)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(250, 21)
-        Me.ComboBox2.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(457, 506)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(163, 20)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Code of Equipment"
-        '
-        'Label308
-        '
-        Me.Label308.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label308.AutoSize = True
-        Me.Label308.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label308.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label308.Location = New System.Drawing.Point(148, 506)
-        Me.Label308.Name = "Label308"
-        Me.Label308.Size = New System.Drawing.Size(154, 20)
-        Me.Label308.TabIndex = 0
-        Me.Label308.Text = "Componnent Type"
-        '
-        'Label310
-        '
-        Me.Label310.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label310.AutoSize = True
-        Me.Label310.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label310.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label310.Location = New System.Drawing.Point(315, 274)
-        Me.Label310.Name = "Label310"
-        Me.Label310.Size = New System.Drawing.Size(138, 20)
-        Me.Label310.TabIndex = 0
-        Me.Label310.Text = "Equipment Type"
-        '
-        'Label391
-        '
-        Me.Label391.AutoSize = True
-        Me.Label391.Location = New System.Drawing.Point(355, 44)
-        Me.Label391.Name = "Label391"
-        Me.Label391.Size = New System.Drawing.Size(51, 13)
-        Me.Label391.TabIndex = 235
-        Me.Label391.Text = "Label391"
-        Me.Label391.Visible = False
         '
         'TabPage2
         '
@@ -8809,7 +8809,7 @@ Partial Class Home
         'ComboBox96
         '
         Me.ComboBox96.FormattingEnabled = True
-        Me.ComboBox96.Items.AddRange(New Object() {"Key Process Variables", "Hydrogen Probes", "Key Process Variables and Hydrogen Probes"})
+        Me.ComboBox96.Items.AddRange(New Object() {"Key Process Variables", "Hydrogen Probes", "Key Process Variables and Hydrogen Probes", "No Online Monitoring Used"})
         Me.ComboBox96.Location = New System.Drawing.Point(163, 219)
         Me.ComboBox96.Name = "ComboBox96"
         Me.ComboBox96.Size = New System.Drawing.Size(197, 21)
@@ -8825,6 +8825,7 @@ Partial Class Home
         'ComboBox111
         '
         Me.ComboBox111.FormattingEnabled = True
+        Me.ComboBox111.Items.AddRange(New Object() {"A", "B", "C", "D", "E"})
         Me.ComboBox111.Location = New System.Drawing.Point(163, 154)
         Me.ComboBox111.Name = "ComboBox111"
         Me.ComboBox111.Size = New System.Drawing.Size(63, 21)
@@ -10226,6 +10227,7 @@ Partial Class Home
         'ComboBox152
         '
         Me.ComboBox152.FormattingEnabled = True
+        Me.ComboBox152.Items.AddRange(New Object() {"Ferritic Steels", "Austenitic Steels", "Nickel Alloys UNS Nos. N06617 , N08800, N08810, N08825", "Cast Iron", "Nonferrous"})
         Me.ComboBox152.Location = New System.Drawing.Point(204, 3)
         Me.ComboBox152.Name = "ComboBox152"
         Me.ComboBox152.Size = New System.Drawing.Size(327, 21)
@@ -10403,15 +10405,6 @@ Partial Class Home
         Me.TextBox104.Size = New System.Drawing.Size(100, 20)
         Me.TextBox104.TabIndex = 6
         '
-        'ComboBox135
-        '
-        Me.ComboBox135.FormattingEnabled = True
-        Me.ComboBox135.Items.AddRange(New Object() {"Cylinder", "Sphere", "Head"})
-        Me.ComboBox135.Location = New System.Drawing.Point(202, 2)
-        Me.ComboBox135.Name = "ComboBox135"
-        Me.ComboBox135.Size = New System.Drawing.Size(101, 21)
-        Me.ComboBox135.TabIndex = 5
-        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -10420,6 +10413,15 @@ Partial Class Home
         Me.Label16.Size = New System.Drawing.Size(168, 26)
         Me.Label16.TabIndex = 0
         Me.Label16.Text = "Minimum Structural Thickness " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of The Component Base Material :"
+        '
+        'ComboBox135
+        '
+        Me.ComboBox135.FormattingEnabled = True
+        Me.ComboBox135.Items.AddRange(New Object() {"Cylinder", "Sphere", "Head"})
+        Me.ComboBox135.Location = New System.Drawing.Point(202, 2)
+        Me.ComboBox135.Name = "ComboBox135"
+        Me.ComboBox135.Size = New System.Drawing.Size(101, 21)
+        Me.ComboBox135.TabIndex = 5
         '
         'Label103
         '
@@ -10540,7 +10542,7 @@ Partial Class Home
         Me.PanelPOFHE.ForeColor = System.Drawing.SystemColors.ControlText
         Me.PanelPOFHE.Location = New System.Drawing.Point(1, 1)
         Me.PanelPOFHE.Name = "PanelPOFHE"
-        Me.PanelPOFHE.Size = New System.Drawing.Size(495, 744)
+        Me.PanelPOFHE.Size = New System.Drawing.Size(461, 744)
         Me.PanelPOFHE.TabIndex = 1
         '
         'Panelhistory
@@ -10641,7 +10643,7 @@ Partial Class Home
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelPOFPRD.Location = New System.Drawing.Point(1, 1)
         Me.PanelPOFPRD.Name = "PanelPOFPRD"
-        Me.PanelPOFPRD.Size = New System.Drawing.Size(495, 252)
+        Me.PanelPOFPRD.Size = New System.Drawing.Size(461, 252)
         Me.PanelPOFPRD.TabIndex = 2
         '
         'TabPage3
@@ -12449,6 +12451,18 @@ Partial Class Home
         Me.Panel18.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.Panelnewanalysis.ResumeLayout(False)
+        Me.Panelnewanalysis.PerformLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panelgeneraldata.ResumeLayout(False)
         Me.Panelgeneraldata.PerformLayout()
         Me.Panel59.ResumeLayout(False)
@@ -12494,18 +12508,6 @@ Partial Class Home
         CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel61.ResumeLayout(False)
         Me.Panel61.PerformLayout()
-        Me.Panelnewanalysis.ResumeLayout(False)
-        Me.Panelnewanalysis.PerformLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.Panel33.ResumeLayout(False)
         Me.Panel33.PerformLayout()

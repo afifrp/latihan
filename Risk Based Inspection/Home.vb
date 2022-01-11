@@ -817,27 +817,27 @@ Public Class Home
 
         TabControl1.SelectedTab = TabPage2
 
-        df1.Show()
-        df2.Show()
+        'df1.Show()
+        'df2.Show()
         df3.Show()
         df4.Show()
         df5.Show()
         df6.Show()
-        df7.Show()
-        df8.Show()
-        df9.Show()
-        df10.Show()
-        df11.Show()
-        df12.Show()
-        df13.Show()
-        df14.Show()
-        df15.Show()
-        df16.Show()
-        df17.Show()
-        df18.Show()
-        df19.Show()
-        df20.Show()
-        df21.Show()
+        'df7.Show()
+        'df8.Show()
+        'df9.Show()
+        'df10.Show()
+        'df11.Show()
+        'df12.Show()
+        'df13.Show()
+        'df14.Show()
+        'df15.Show()
+        'df16.Show()
+        'df17.Show()
+        'df18.Show()
+        'df19.Show()
+        'df20.Show()
+        'df21.Show()
 
         Call panggilpanel()
     End Sub
@@ -902,6 +902,7 @@ Public Class Home
         PanelCOFHE.Hide()
         PanelCOFPRD.Hide()
 
+        Call thinningdf()
         Call liningdf()
         Call scccausticdf()
         Call sccaminedf()
@@ -912,12 +913,12 @@ Public Class Home
         Call sccclsccdf()
         Call scchydrogenschfdf()
         Call scchicsohichfdf()
-
-
+        Call externalcorrosionferriticdf()
+        Call cuiferriticdf()
         Call externalsccausteniticdf()
         Call externalscccuiausteniticdf()
-        Call brittledf()
-        Call lowalloydf()
+        'Call brittledf()
+        'Call lowalloydf()
         Call delapandelapanlimafembrittlementdf()
         Call sigmaphasedf()
         Call hthadf()
@@ -1381,21 +1382,33 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox95.Visible = True
             ComboBox110.Text = "HIGH SUSCEPTIBILITY"
         ElseIf ComboBox94.Text = "No" Then
+            Call susceptibilitysulfide()
             Label124.Visible = False
             ComboBox95.Visible = False
-            'ComboBox110.Text = ""
+            ComboBox95.Text = ""
         Else
             Label124.Visible = False
             ComboBox95.Visible = False
-            'ComboBox110.Text = ""
+            ComboBox95.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox95_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox95.SelectedIndexChanged
         If ComboBox95.Text = "Yes" Then
+            Call susceptibilitysulfide()
+            CheckBox73.Enabled = True
+            ComboBox109.Enabled = True
+            NumericUpDown3.Enabled = True
         ElseIf ComboBox95.Text = "No" Then
             ComboBox110.Text = "PLEASE DETERMINE BY FFS"
+            CheckBox73.Enabled = False
+            ComboBox109.Enabled = False
+            NumericUpDown3.Enabled = False
         Else
+            Call susceptibilitysulfide()
+            CheckBox73.Enabled = True
+            ComboBox109.Enabled = True
+            NumericUpDown3.Enabled = True
         End If
     End Sub
 
@@ -1424,6 +1437,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'SCC-HIC/SOHIC-H2S DF --------------------------------------------------------------------------------------
 
+    Private Sub ComboBox11_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox11.SelectedIndexChanged
+        Call susceptibilityhicsohich2s()
+    End Sub
+
     Private Sub ComboBox13_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox13.SelectedIndexChanged
         If ComboBox13.Text = "Yes" Then
             Label125.Visible = True
@@ -1432,19 +1449,34 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox13.Text = "No" Then
             Label125.Visible = False
             ComboBox17.Visible = False
-            'ComboBox112.Text = ""
+            ComboBox17.Text = ""
+            Call susceptibilityhicsohich2s()
         Else
             Label125.Visible = False
             ComboBox17.Visible = False
-            'ComboBox112.Text = ""
+            ComboBox17.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox17_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox17.SelectedIndexChanged
         If ComboBox17.Text = "Yes" Then
+            Call susceptibilityhicsohich2s()
+            CheckBox76.Enabled = True
+            ComboBox96.Enabled = True
+            ComboBox111.Enabled = True
+            NumericUpDown4.Enabled = True
         ElseIf ComboBox17.Text = "No" Then
             ComboBox112.Text = "PLEASE DETERMINE BY FFS"
+            CheckBox76.Enabled = False
+            ComboBox96.Enabled = False
+            ComboBox111.Enabled = False
+            NumericUpDown4.Enabled = False
         Else
+            Call susceptibilityhicsohich2s()
+            CheckBox76.Enabled = True
+            ComboBox96.Enabled = True
+            ComboBox111.Enabled = True
+            NumericUpDown4.Enabled = True
         End If
     End Sub
 
@@ -1455,6 +1487,18 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox112.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox112.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox112.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox112.Items.Clear()
+            If ComboBox13.Text = "Yes" Then
+                ComboBox112.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox17.Text = "Yes" Then
+                    Call susceptibilityhicsohich2s()
+                ElseIf ComboBox17.Text = "No" Then
+                    ComboBox112.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox13.Text = "No" Then
+                Call susceptibilityhicsohich2s()
+            End If
         End If
     End Sub
 
@@ -1546,12 +1590,21 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox20.Visible = True
             ComboBox21.Visible = False
             ComboBox117.Text = "HIGH SUSCEPTIBILITY"
+            ComboBox21.Text = ""
+            ComboBox18.Text = ""
+            ComboBox19.Text = ""
+            ComboBox118.Text = ""
+            Panel48.Visible = False
         ElseIf ComboBox115.Text = "No" Then
             Label140.Visible = False
             Label141.Visible = True
             ComboBox20.Visible = False
             ComboBox21.Visible = True
             ComboBox117.Text = ""
+            ComboBox20.Text = ""
+            CheckBox97.Enabled = True
+            ComboBox116.Enabled = True
+            NumericUpDown6.Enabled = True
         Else
             Label140.Visible = False
             Label141.Visible = False
@@ -1565,12 +1618,21 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox20.Text = "Yes" Then
             ComboBox117.Text = "NONE SUSCEPTIBILITY"
             Panel48.Visible = False
+            CheckBox97.Enabled = True
+            ComboBox116.Enabled = True
+            NumericUpDown6.Enabled = True
         ElseIf ComboBox20.Text = "No" Then
             ComboBox117.Text = "PLEASE DETERMINE BY FFS"
             Panel48.Visible = False
+            CheckBox97.Enabled = False
+            ComboBox116.Enabled = False
+            NumericUpDown6.Enabled = False
         Else
             ComboBox117.Text = "HIGH SUSCEPTIBILITY"
             Panel48.Visible = False
+            CheckBox97.Enabled = True
+            ComboBox116.Enabled = True
+            NumericUpDown6.Enabled = True
         End If
     End Sub
 
@@ -1608,7 +1670,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 ComboBox117.Text = "NONE SUSCEPTIBILITY"
             End If
         ElseIf ComboBox118.Text = "No" Then
-
+            Call susceptibilitypolythionicacid()
         End If
     End Sub
 
@@ -2020,7 +2082,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
     End Sub
-
 
     'External Corrosion Damage Factor – Ferritic Component -----------------------------------------------------
 
@@ -3512,7 +3573,15 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'Thinning Coding perhitungan ------------------------------------------------------------------------------------------
     Public Sub thinningdf()
-        Dim trde As Double
+        Dim basethickness As Double
+        Dim crbm As Double
+        Dim crcm As Double
+
+        basethickness = Val(TextBox1.Text)
+        crbm = Val(TextBox83.Text)
+        crcm = Val(TextBox84.Text)
+
+        Dim trdi As Double
 
         Dim date1 As Double
         Dim date2 As Double
@@ -3527,13 +3596,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
             datelastforgood = date1 / 365
 
-            trde = Val(TextBox2.Text)
+            trdi = Val(TextBox3.Text)
         Else
 
             date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
             datestartforpoor = date2 / 365
 
-            trde = Val(TextBox1.Text)
+            trdi = Val(TextBox2.Text)
         End If
 
         If datelastforgood > 0 Then
@@ -3542,14 +3611,9 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             agetk = datestartforpoor
         End If
 
-        Dim rc As Double
-        Dim basethickness As Double
-        Dim crcladding As Double
+        Dim agerc As Double
 
-        basethickness = Val(TextBox1.Text)
-        crcladding = Val(TextBox84.Text)
-
-        rc = Math.Max(trde - basethickness / crcladding, 0.0)
+        agerc = Math.Max((trdi - basethickness / crcm), 0.0)
 
         Dim p As Double
         Dim R1 As Double
@@ -3569,12 +3633,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        If Units.ComboBox1.Text = "SI" Then
-            p = Val(TextBox15.Text) * 0.0980665
-        ElseIf Units.ComboBox1.Text = "US Customary" Then
-            p = Val(TextBox15.Text)
-        End If
-
+        p = Val(TextBox15.Text)
         R1 = Val(TextBox11.Text)
         s = Val(TextBox6.Text)
         ejo = Val(TextBox8.Text)
@@ -3584,17 +3643,17 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim tmin As Double
 
-        If ComboBox62.Text = "PIPE-1" Or ComboBox62.Text = "PIPE-3" Or ComboBox62.Text = "PIPE-4" Or ComboBox62.Text = "PIPE-6" Or ComboBox62.Text = "PIPE-8" Or ComboBox62.Text = "PIPE-10" Or ComboBox62.Text = "PIPE-13" Or ComboBox62.Text = "PIPE-16" Or ComboBox62.Text = "PIPEGT16" Then
+        If Label391.Text = "Pipes and Tubes" Then
             If Units.ComboBox1.Text = "US Customary" Then
                 If ComboBox152.Text = "Ferritic Steels" Then
                     Dim chart2(,) As Double = {{900, 0.4},
-                    {950, 0.5},
-                    {1000, 0.7},
-                    {1050, 0.7},
-                    {1100, 0.7},
-                    {1150, 0.7},
-                    {1200, 0.7},
-                    {1250, 0.7}}
+                {950, 0.5},
+                {1000, 0.7},
+                {1050, 0.7},
+                {1100, 0.7},
+                {1150, 0.7},
+                {1200, 0.7},
+                {1250, 0.7}}
 
                     Dim UpNum2(1) As Double
                     Dim LowNum2(1) As Double
@@ -3638,13 +3697,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
                 If ComboBox152.Text = "Austenitic Steels" Then
                     Dim chart2(,) As Double = {{900, 0.4},
-                    {950, 0.4},
-                    {1000, 0.4},
-                    {1050, 0.4},
-                    {1100, 0.5},
-                    {1150, 0.7},
-                    {1200, 0.7},
-                    {1250, 0.7}}
+                {950, 0.4},
+                {1000, 0.4},
+                {1050, 0.4},
+                {1100, 0.5},
+                {1150, 0.7},
+                {1200, 0.7},
+                {1250, 0.7}}
 
                     Dim UpNum2(1) As Double
                     Dim LowNum2(1) As Double
@@ -3686,13 +3745,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
                 If ComboBox152.Text = "Nickel Alloys UNS Nos. N06617 , N08800, N08810, N08825" Then
                     Dim chart2(,) As Double = {{900, 0.4},
-                    {950, 0.4},
-                    {1000, 0.4},
-                    {1050, 0.4},
-                    {1100, 0.5},
-                    {1150, 0.7},
-                    {1200, 0.5},
-                    {1250, 0.7}}
+                {950, 0.4},
+                {1000, 0.4},
+                {1050, 0.4},
+                {1100, 0.5},
+                {1150, 0.7},
+                {1200, 0.5},
+                {1250, 0.7}}
 
                     Dim UpNum2(1) As Double
                     Dim LowNum2(1) As Double
@@ -3898,13 +3957,28 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             tpipe = ((p * R1) / ((s * ejo) + (p * y))) + ca
             tmin = tpipe
 
-        ElseIf ComboBox62.Text = "COURSES-1-10" Then
+        ElseIf Label391.Text = "Atmospheric Storage Tank - Shell Courses" Then
             If Units.ComboBox1.Text = "SI" Then
                 ttanksi = (((4.9 * d) * (h - 0.3) * gsi) / s) + ca
                 tmin = ttanksi
             ElseIf Units.ComboBox1.Text = "US Customary" Then
                 ttankus = (((2.6 * d) * (h - 1) * gsi) / s) + ca
                 tmin = ttankus
+            End If
+
+        ElseIf Label391.Text = "Atmospheric Storage Tank - Bottom Plates" Then
+            If ComboBox175.Text = "Yes" Then
+                If Units.ComboBox1.Text = "SI" Then
+                    tmin = 2.54
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    tmin = 0.1
+                End If
+            ElseIf ComboBox175.Text = "No" Then
+                If Units.ComboBox1.Text = "SI" Then
+                    tmin = 1.27
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    tmin = 0.05
+                End If
             End If
 
         Else
@@ -3930,10 +4004,604 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ElseIf t3 >= t2 And t3 >= t1 Then
                 tmin = t3
             End If
+        End If
+
+        Dim art As Double
+
+        If Label391.Text = "Atmospheric Storage Tank - Bottom Plates" Then
+
+            art = 1 - ((trdi - (crbm * agetk)) / (tmin + ca))
+
+            If art > 0 Then
+                art = art
+            End If
+            If 0 > art Then
+                art = "0"
+            End If
+        Else
+            'cladding (yes/no)
+            If ComboBox64.Text = "Yes" Then
+                If agerc >= 0 AndAlso agetk < agerc Then
+                    art = (crcm * agetk) / trdi
+                ElseIf agerc >= 0 AndAlso agetk >= agerc Then
+                    art = ((crcm * agerc) + (crbm * (agetk - agerc))) / trdi
+                End If
+            ElseIf ComboBox64.Text = "No" Then
+                art = (crbm * agetk) / trdi
+            End If
 
         End If
 
+        Dim fs As Double
 
+        Dim ys As Double
+        Dim ts As Double
+        Dim wje As Double
+
+        ys = Val(TextBox13.Text)
+        ts = Val(TextBox14.Text)
+        wje = Val(TextBox8.Text)
+
+        fs = ((ys + ts) / 2) * wje * 1.1
+
+        Dim tc As Double
+
+        tc = Val(TextBox104.Text)
+
+        Dim srp As Double
+
+        If ComboBox151.Text = "Yes" Then
+            'SRP method 1
+            If CheckBox1.Checked = False Then
+                srp = ((s * wje) / fs) * (tmin / trdi)
+
+            ElseIf CheckBox1.Checked = True Then
+                srp = ((s * wje) / fs) * (tc / trdi)
+
+            End If
+        ElseIf ComboBox151.Text = "No" Then
+            'SRP method 2
+            If ComboBox135.Text = "Cylinder" Then
+                srp = (p * d) / (2 * fs * trdi)
+
+            ElseIf ComboBox135.Text = "Sphere" Then
+                srp = (p * d) / (4 * fs * trdi)
+
+            ElseIf ComboBox135.Text = "Head" Then
+                srp = (p * d) / (1.13 * fs * trdi)
+
+            End If
+        End If
+
+        'prior probability
+        Dim prp1 As Double
+        Dim prp2 As Double
+        Dim prp3 As Double
+
+        If ComboBox137.Text = "Low" Then
+            prp1 = 0.5
+            prp2 = 0.3
+            prp3 = 0.2
+        ElseIf ComboBox137.Text = "Medium" Then
+            prp1 = 0.7
+            prp2 = 0.2
+            prp3 = 0.1
+        ElseIf ComboBox137.Text = "High" Then
+            prp1 = 0.8
+            prp2 = 0.15
+            prp3 = 0.05
+        End If
+
+        'inspection eff factor
+        Dim cop1a As Double = 0.9
+        Dim cop1b As Double = 0.7
+        Dim cop1c As Double = 0.5
+        Dim cop1d As Double = 0.4
+        Dim cop1e As Double = 0.33
+
+        Dim cop2a As Double = 0.09
+        Dim cop2b As Double = 0.2
+        Dim cop2c As Double = 0.3
+        Dim cop2d As Double = 0.33
+        Dim cop2e As Double = 0.33
+
+        Dim cop3a As Double = 0.01
+        Dim cop3b As Double = 0.1
+        Dim cop3c As Double = 0.2
+        Dim cop3d As Double = 0.27
+        Dim cop3e As Double = 0.33
+
+        Dim na As Double
+        Dim nb As Double
+        Dim nc As Double
+        Dim nd As Double
+        Dim ne As Double
+
+        If ComboBox136.Text = "A" Then
+            na = NumericUpDown13.Value
+            nb = 0
+            nc = 0
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "B" Then
+            na = 0
+            nb = NumericUpDown13.Value
+            nc = 0
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "C" Then
+            na = 0
+            nb = 0
+            nc = NumericUpDown13.Value
+            nd = 0
+            ne = 0
+        ElseIf ComboBox136.Text = "D" Then
+            na = 0
+            nb = 0
+            nc = 0
+            nd = NumericUpDown13.Value
+            ne = 0
+        ElseIf ComboBox136.Text = "E" Then
+            na = 0
+            nb = 0
+            nc = 0
+            nd = 0
+            ne = NumericUpDown13.Value
+        End If
+
+        Dim i1 As Double
+        Dim i2 As Double
+        Dim i3 As Double
+
+        i1 = prp1 * (cop1a ^ na) * (cop1b ^ nb) * (cop1c ^ nc) * (cop1d ^ nd) * (cop1e ^ ne)
+        i2 = prp2 * (cop2a ^ na) * (cop2b ^ nb) * (cop2c ^ nc) * (cop2d ^ nd) * (cop2e ^ ne)
+        i3 = prp3 * (cop3a ^ na) * (cop3b ^ nb) * (cop3c ^ nc) * (cop3d ^ nd) * (cop3e ^ ne)
+
+        Dim po1 As Double
+        Dim po2 As Double
+        Dim po3 As Double
+
+        po1 = i1 / (i1 + i2 + i3)
+        po2 = i2 / (i1 + i2 + i3)
+        po3 = i3 / (i1 + i2 + i3)
+
+        'reliability indices
+
+        Dim ds1 As Double = 1
+        Dim covt As Double = 0.2
+        Dim covsf As Double = 0.2
+        Dim covp As Double = 0.05
+        Dim ds2 As Double = 2
+        Dim ds3 As Double = 4
+
+        Dim reliabilityindices1 As Double
+        Dim reliabilityindices2 As Double
+        Dim reliabilityindices3 As Double
+
+        reliabilityindices1 = (1 - (ds1 * art) - srp) / ((((ds1 ^ 2) * (art ^ 2) * (covt ^ 2)) + (((1 - (ds1 * art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+        reliabilityindices2 = (1 - (ds2 * art) - srp) / ((((ds2 ^ 2) * (art ^ 2) * (covt ^ 2)) + (((1 - (ds2 * art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+        reliabilityindices3 = (1 - (ds3 * art) - srp) / ((((ds3 ^ 2) * (art ^ 2) * (covt ^ 2)) + (((1 - (ds3 * art)) ^ 2) * (covsf ^ 2)) + ((srp ^ 2) * (covp ^ 2))) ^ 0.5)
+
+        'final df
+        Dim norm4 As Double
+        Dim norm5 As Double
+        Dim norm6 As Double
+        Dim x1 As Double
+        Dim x2 As Double
+        Dim x3 As Double
+
+        x1 = -1 * reliabilityindices1
+        x2 = -1 * reliabilityindices2
+        x3 = -1 * reliabilityindices3
+
+        norm4 = Cumnorm(x1)
+        norm5 = Cumnorm(x2)
+        norm6 = Cumnorm(x3)
+
+        Dim basedf As Double
+
+        If Label391.Text = "Atmospheric Storage Tank - Bottom Plates" Then
+            Dim chart2(,) As Double = {{0.00, 0.1, 0.1, 0.1, 0.1, 0.1},
+           {0.05, 4, 1, 0.5, 0.4, 0.4},
+           {0.1, 14, 3, 1, 0.7, 0.7},
+           {0.15, 32, 8, 2, 1, 1},
+           {0.2, 56, 18, 6, 2, 1},
+           {0.25, 87, 32, 11, 4, 3},
+           {0.3, 125, 53, 21, 9, 6},
+           {0.35, 170, 80, 36, 16, 12},
+           {0.4, 222, 115, 57, 29, 21},
+           {0.45, 281, 158, 86, 47, 36},
+           {0.5, 347, 211, 124, 73, 58},
+           {0.55, 420, 273, 173, 109, 89},
+           {0.6, 500, 346, 234, 158, 133},
+           {0.65, 587, 430, 309, 222, 192},
+           {0.7, 681, 527, 401, 305, 270},
+           {0.75, 782, 635, 510, 409, 370},
+           {0.8, 890, 757, 638, 538, 498},
+           {0.85, 1005, 893, 789, 696, 658},
+           {0.9, 1126, 1044, 963, 888, 856},
+           {0.95, 1255, 1209, 1163, 1118, 1098},
+           {1.0, 1390, 1390, 1390, 1390, 1390}}
+
+            Dim UpNum2(5) As Double
+            Dim LowNum2(5) As Double
+
+            Dim Lo1 As Double
+            Dim Lo2 As Double
+            Dim up1 As Double
+            Dim up2 As Double
+
+            Dim temp As Double
+            Dim upt As Double
+            Dim lot As Double
+            Dim x As Double
+            Dim z As Double
+
+            temp = art
+
+            If ComboBox136.Text = "A" Then
+                If temp < 0.00 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.05 AndAlso chart2(r + 1, 0) >= 0.00 Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(5)
+                                z = UpNum2(5)
+                                upt = 0.05
+                                lot = 0.00
+
+                                basedf = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 1.0 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.95 AndAlso chart2(r + 1, 0) >= 1.0 Then
+                            For c As Integer = 0 To 5
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(5)
+                                z = UpNum2(5)
+                                upt = 1.0
+                                lot = 0.95
+
+                                basedf = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 5
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(5)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(5)
+
+                            basedf = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox136.Text = "B" Then
+                If temp < 0.00 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.05 AndAlso chart2(r + 1, 0) >= 0.00 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 0.05
+                                lot = 0.00
+
+                                basedf = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 1.0 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.95 AndAlso chart2(r + 1, 0) >= 1.0 Then
+                            For c As Integer = 0 To 4
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(4)
+                                z = UpNum2(4)
+                                upt = 1.0
+                                lot = 0.95
+
+                                basedf = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 4
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(4)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(4)
+
+                            basedf = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox136.Text = "C" Then
+                If temp < 0.00 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.05 AndAlso chart2(r + 1, 0) >= 0.00 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 0.05
+                                lot = 0.00
+
+                                basedf = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 1.0 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.95 AndAlso chart2(r + 1, 0) >= 1.0 Then
+                            For c As Integer = 0 To 3
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(3)
+                                z = UpNum2(3)
+                                upt = 1.0
+                                lot = 0.95
+
+                                basedf = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 3
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(3)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(3)
+
+                            basedf = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox136.Text = "D" Then
+                If temp < 0.00 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.05 AndAlso chart2(r + 1, 0) >= 0.00 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 0.05
+                                lot = 0.00
+
+                                basedf = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 1.0 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.95 AndAlso chart2(r + 1, 0) >= 1.0 Then
+                            For c As Integer = 0 To 2
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(2)
+                                z = UpNum2(2)
+                                upt = 1.0
+                                lot = 0.95
+
+                                basedf = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 2
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(2)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(2)
+
+                            basedf = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If ComboBox136.Text = "E" Then
+                If temp < 0.00 Then
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.05 AndAlso chart2(r + 1, 0) >= 0.00 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 0.05
+                                lot = 0.00
+
+                                basedf = Inter3b(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                ElseIf temp > 1.0 Then
+
+                    For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                        If chart2(r, 0) <= 0.95 AndAlso chart2(r + 1, 0) >= 1.0 Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart2(r, c)
+                                UpNum2(c) = chart2(r + 1, c)
+                                x = LowNum2(1)
+                                z = UpNum2(1)
+                                upt = 1.0
+                                lot = 0.95
+
+                                basedf = Inter3c(upt, lot, temp, x, z)
+
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                For r As Integer = 0 To chart2.GetUpperBound(0) - 1
+                    If chart2(r, 0) <= temp AndAlso chart2(r + 1, 0) >= temp Then
+                        For c As Integer = 0 To 1
+                            LowNum2(c) = chart2(r, c)
+                            UpNum2(c) = chart2(r + 1, c)
+
+                            up1 = UpNum2(0)
+                            up2 = UpNum2(1)
+
+                            Lo1 = LowNum2(0)
+                            Lo2 = LowNum2(1)
+
+                            basedf = Inter(temp, up1, up2, Lo1, Lo2)
+
+
+                        Next
+                        Exit For
+                    End If
+                Next
+            End If
+        Else
+            basedf = ((po1 * norm4) + (po2 * norm5) + (po3 * norm6)) / 0.000156
+        End If
+
+        'adj factor
+        Dim fom As Double
+        Dim fip As Double
+        Dim fdl As Double
+        Dim fwd As Double
+        Dim fam As Double
+        Dim fsm As Double
+
+        If ComboBox176.Text = "Yes" Then
+
+        ElseIf ComboBox176.Text = "No" Then
+            fom = 1
+        End If
+
+        If ComboBox174.Text = "Yes" Then
+            fip = 3
+        ElseIf ComboBox174.Text = "No" Then
+            fip = 1
+        End If
+
+        If ComboBox153.Text = "Yes" Then
+            fdl = 3
+        ElseIf ComboBox153.Text = "No" Then
+            fdl = 1
+        End If
+
+        If ComboBox154.Text = "Welded" Then
+            fwd = 1
+        ElseIf ComboBox154.Text = "Riveted" Then
+            fwd = 10
+        End If
+
+        If ComboBox155.Text = "Yes" Then
+            fam = 1
+        ElseIf ComboBox155.Text = "No" Then
+            fam = 5
+        End If
+
+        If ComboBox156.Text = "Recorded settlement exceeds API STD 653 criteria" Then
+            fsm = 2
+        ElseIf ComboBox156.Text = "Recorded settlement meets API STD 653 criteria" Then
+            fsm = 1
+        ElseIf ComboBox156.Text = "Settlement never evaluated" Then
+            fsm = 1.5
+        ElseIf ComboBox156.Text = "Concrete foundation, no settlement" Then
+            fsm = 1
+        Else
+            fsm = 1
+        End If
+
+        'df final
+        Dim std As Double = 0.1
+
+        Dim df As Double
+
+        df = (basedf * fip * fdl * fwd * fam * fsm) / fom
+
+        If df > std Then
+            df = df
+        End If
+        If std > df Then
+            df = std
+        End If
+
+        Label359.Text = df
     End Sub
 
     'Lining Coding perhitungan --------------------------------------------------------------------------------------------
@@ -6286,6 +6954,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             onlineadjfactor = 2
         ElseIf ComboBox96.Text = "Key Process Variables and Hydrogen Probes" Then
             onlineadjfactor = 4
+        ElseIf ComboBox96.Text = "No Online Monitoring Used" Then
+            onlineadjfactor = 1
         End If
 
         Dim maxage1 As Double
@@ -6876,13 +7546,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim severityindex As Double
 
-        If ComboBox20.Text = "HIGH SUSCEPTIBILITY" Then
+        If ComboBox117.Text = "HIGH SUSCEPTIBILITY" Then
             severityindex = 5000
-        ElseIf ComboBox20.Text = "MEDIUM SUSCEPTIBILITY" Then
+        ElseIf ComboBox117.Text = "MEDIUM SUSCEPTIBILITY" Then
             severityindex = 500
-        ElseIf ComboBox20.Text = "LOW SUSCEPTIBILITY" Then
+        ElseIf ComboBox117.Text = "LOW SUSCEPTIBILITY" Then
             severityindex = 50
-        ElseIf ComboBox20.Text = "NONE SUSCEPTIBILITY" Then
+        ElseIf ComboBox117.Text = "NONE SUSCEPTIBILITY" Then
             severityindex = 0
         End If
 
@@ -22729,5 +23399,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Label378.Text = dfmechanicalfatigue
 
     End Sub
+
 
 End Class

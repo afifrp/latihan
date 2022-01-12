@@ -819,20 +819,20 @@ Public Class Home
 
         'df1.Show()
         'df2.Show()
-        df3.Show()
-        df4.Show()
-        df5.Show()
-        df6.Show()
+        'df3.Show()
+        'df4.Show()
+        'df5.Show()
+        'df6.Show()
         'df7.Show()
         'df8.Show()
         'df9.Show()
         'df10.Show()
         'df11.Show()
         'df12.Show()
-        'df13.Show()
-        'df14.Show()
-        'df15.Show()
-        'df16.Show()
+        df13.Show()
+        df14.Show()
+        df15.Show()
+        df16.Show()
         'df17.Show()
         'df18.Show()
         'df19.Show()
@@ -1151,19 +1151,59 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label92.Visible = False
             ComboBox7.Visible = True
             ComboBox103.Visible = False
+            ComboBox104.Enabled = True
+            CheckBox26.Enabled = True
+            NumericUpDown1.Enabled = True
             ComboBox105.Text = "HIGH SUSCEPTIBILITY"
+            ComboBox103.Text = ""
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         ElseIf ComboBox6.Text = "No" Then
             Label91.Visible = False
             Label92.Visible = True
             ComboBox7.Visible = False
             ComboBox103.Visible = True
+            ComboBox104.Enabled = True
+            CheckBox26.Enabled = True
+            NumericUpDown1.Enabled = True
             ComboBox105.Text = ""
+            ComboBox7.Text = ""
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         Else
             Label91.Visible = False
             Label92.Visible = False
             ComboBox7.Visible = False
             ComboBox103.Visible = False
+            ComboBox104.Enabled = True
+            CheckBox26.Enabled = True
+            NumericUpDown1.Enabled = True
+            ComboBox7.Text = ""
             ComboBox105.Text = ""
+            ComboBox103.Text = ""
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         End If
     End Sub
 
@@ -1171,12 +1211,48 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox7.Text = "Yes" Then
             ComboBox105.Text = "NONE SUSCEPTIBILITY"
             Panel42.Visible = False
+            ComboBox104.Enabled = True
+            CheckBox26.Enabled = True
+            NumericUpDown1.Enabled = True
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         ElseIf ComboBox7.Text = "No" Then
             ComboBox105.Text = "PLEASE DETERMINE BY FFS"
             Panel42.Visible = False
+            ComboBox104.Enabled = False
+            CheckBox26.Enabled = False
+            NumericUpDown1.Enabled = False
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         Else
             ComboBox105.Text = "HIGH SUSCEPTIBILITY"
             Panel42.Visible = False
+            ComboBox104.Enabled = True
+            CheckBox26.Enabled = True
+            NumericUpDown1.Enabled = True
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         End If
     End Sub
 
@@ -1184,60 +1260,144 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox103.Text = "Yes" Then
             ComboBox105.Text = "NONE SUSCEPTIBILITY"
             Panel42.Visible = False
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         ElseIf ComboBox103.Text = "No" Then
             ComboBox105.Text = ""
             Panel42.Visible = True
         Else
             ComboBox105.Text = ""
             Panel42.Visible = False
+            TextBox35.Text = ""
+            TextBox36.Text = ""
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
         End If
     End Sub
 
     Private Sub TextBox35_TextChanged(sender As Object, e As EventArgs) Handles TextBox35.TextChanged
-        Call plotarea()
+        If TextBox35.Text = "" Or TextBox36.Text = "" Then
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+        Else
+            Call plotarea()
+        End If
+
     End Sub
 
     Private Sub TextBox36_TextChanged(sender As Object, e As EventArgs) Handles TextBox36.TextChanged
-        Call plotarea()
+        If TextBox35.Text = "" Or TextBox36.Text = "" Then
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
+            TextBox37.Text = ""
+            ComboBox81.Text = ""
+            ComboBox82.Text = ""
+            ComboBox83.Text = ""
+        Else
+            Call plotarea()
+        End If
+    End Sub
+
+    Private Sub TextBox37_TextChanged(sender As Object, e As EventArgs) Handles TextBox37.TextChanged
+        If TextBox37.Text IsNot "" Then
+            ComboBox81.Enabled = True
+            ComboBox82.Enabled = True
+            ComboBox83.Enabled = True
+            If TextBox37.Text = "A" Then
+                ComboBox81.Enabled = True
+                ComboBox82.Enabled = True
+                ComboBox83.Enabled = True
+                ComboBox81.Text = ""
+                ComboBox82.Text = ""
+                ComboBox83.Text = ""
+            Else
+                ComboBox81.Enabled = True
+                ComboBox82.Enabled = False
+                ComboBox83.Enabled = False
+                ComboBox81.Text = ""
+                ComboBox82.Text = ""
+                ComboBox83.Text = ""
+            End If
+        Else
+            ComboBox81.Enabled = False
+            ComboBox82.Enabled = False
+            ComboBox83.Enabled = False
+        End If
+
+
+
     End Sub
 
     Private Sub ComboBox81_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox81.SelectedIndexChanged
-        If TextBox37.Text = "A" Then
-            If ComboBox81.Text = "Yes" Then
-                ComboBox82.Enabled = True
-                ComboBox83.Enabled = True
-            ElseIf ComboBox81.Text = "No" Then
-                ComboBox82.Enabled = True
-                ComboBox83.Enabled = True
-            End If
+        If TextBox37.Text = "" Then
+            MsgBox("Check and fill in data input :
+- NaOH Concentration(%) by weight
+- Maximum Process Temperature")
         Else
-            If ComboBox81.Text = "Yes" Then
-                ComboBox82.Enabled = False
-                ComboBox83.Enabled = False
-            ElseIf ComboBox81.Text = "No" Then
-                ComboBox82.Enabled = False
-                ComboBox83.Enabled = False
-            End If
+                Call susceptibilitycaustic()
         End If
 
-        Call susceptibilitycaustic()
     End Sub
 
     Private Sub ComboBox82_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox82.SelectedIndexChanged
-        Call susceptibilitycaustic()
+        If TextBox37.Text = "" Then
+            MsgBox("Check and fill in data input :
+- NaOH Concentration(%) by weight
+- Maximum Process Temperature")
+        Else
+            Call susceptibilitycaustic()
+        End If
+
     End Sub
 
     Private Sub ComboBox83_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox83.SelectedIndexChanged
-        Call susceptibilitycaustic()
+        If TextBox37.Text = "" Then
+            MsgBox("Check and fill in data input :
+- NaOH Concentration(%) by weight
+- Maximum Process Temperature")
+        Else
+            Call susceptibilitycaustic()
+        End If
+
     End Sub
 
-    Private Sub CheckBox26_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CheckBox26_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox26.CheckedChanged
         If CheckBox26.Checked = True Then
             ComboBox105.Items.Clear()
             ComboBox105.Items.Add("NONE SUSCEPTIBILITY")
             ComboBox105.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox105.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox105.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox105.Items.Clear()
+            If ComboBox6.Text = "Yes" Then
+                ComboBox105.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox7.Text = "Yes" Then
+                    Call susceptibilitycaustic()
+                ElseIf ComboBox7.Text = "No" Then
+                    ComboBox105.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox6.Text = "No" Then
+                Call susceptibilitycaustic()
+            End If
         End If
     End Sub
 
@@ -1250,18 +1410,60 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox9.Visible = True
             ComboBox106.Visible = False
             ComboBox108.Text = "HIGH SUSCEPTIBILITY"
+            ComboBox106.Text = ""
+            Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
+            ComboBox108.Enabled = True
+            ComboBox107.Enabled = True
+            CheckBox35.Enabled = True
+            NumericUpDown2.Enabled = True
         ElseIf ComboBox8.Text = "No" Then
             Label102.Visible = False
             Label101.Visible = True
             ComboBox9.Visible = False
             ComboBox106.Visible = True
             ComboBox108.Text = ""
+            ComboBox9.Text = ""
+            Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
+            ComboBox108.Enabled = True
+            ComboBox107.Enabled = True
+            CheckBox35.Enabled = True
+            NumericUpDown2.Enabled = True
         Else
             Label102.Visible = False
             Label101.Visible = False
             ComboBox9.Visible = False
             ComboBox106.Visible = False
             ComboBox108.Text = ""
+            ComboBox106.Text = ""
+            ComboBox9.Text = ""
+            Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         End If
     End Sub
 
@@ -1269,12 +1471,25 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox9.Text = "Yes" Then
             ComboBox108.Text = "NONE SUSCEPTIBILITY"
             Panel44.Visible = False
+            ComboBox108.Enabled = True
+            ComboBox107.Enabled = True
+            CheckBox35.Enabled = True
+            NumericUpDown2.Enabled = True
         ElseIf ComboBox9.Text = "No" Then
             ComboBox108.Text = "PLEASE DETERMINE BY FFS"
             Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox108.Enabled = False
+            ComboBox107.Enabled = False
+            CheckBox35.Enabled = False
+            NumericUpDown2.Enabled = False
         Else
             ComboBox108.Text = "HIGH SUSCEPTIBILITY"
             Panel44.Visible = False
+            ComboBox108.Enabled = True
+            ComboBox107.Enabled = True
+            CheckBox35.Enabled = True
+            NumericUpDown2.Enabled = True
         End If
     End Sub
 
@@ -1282,31 +1497,85 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox106.Text = "Yes" Then
             ComboBox108.Text = "NONE SUSCEPTIBILITY"
             Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         ElseIf ComboBox106.Text = "No" Then
             ComboBox108.Text = ""
             Panel44.Visible = True
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         Else
             ComboBox108.Text = ""
             Panel44.Visible = False
+            Panel46.Visible = False
+            ComboBox85.Text = ""
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox85_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox85.SelectedIndexChanged
         If ComboBox85.Text = "Yes" Then
             Panel46.Visible = True
+            ComboBox108.Text = ""
         ElseIf ComboBox85.Text = "No" Then
             ComboBox108.Text = "NONE SUSCEPTIBILITY"
             Panel46.Visible = False
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         Else
             Panel46.Visible = False
+            ComboBox86.Text = ""
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         End If
     End Sub
 
     Private Sub ComboBox86_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox86.SelectedIndexChanged
         If ComboBox86.Text = "Yes" Then
             ComboBox87.Enabled = False
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         ElseIf ComboBox86.Text = "No" Then
             ComboBox87.Enabled = True
+            ComboBox87.Text = ""
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         End If
 
         Call susceptibilityamine()
@@ -1316,9 +1585,19 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox87.Text = "Yes" Then
             ComboBox89.Enabled = False
             ComboBox90.Enabled = True
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         ElseIf ComboBox87.Text = "No" Then
             ComboBox89.Enabled = False
             ComboBox90.Enabled = False
+            ComboBox88.Text = ""
+            ComboBox89.Text = ""
+            ComboBox90.Text = ""
+            ComboBox91.Text = ""
+            ComboBox92.Text = ""
         End If
 
         Call susceptibilityamine()
@@ -1351,6 +1630,18 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox108.Items.Add("LOW SUSCEPTIBILITY")
             ComboBox108.Items.Add("MEDIUM SUSCEPTIBILITY")
             ComboBox108.Items.Add("HIGH SUSCEPTIBILITY")
+        Else
+            ComboBox108.Items.Clear()
+            If ComboBox8.Text = "Yes" Then
+                ComboBox108.Text = "HIGH SUSCEPTIBILITY"
+                If ComboBox9.Text = "Yes" Then
+                    Call susceptibilityamine()
+                ElseIf ComboBox9.Text = "No" Then
+                    ComboBox108.Text = "PLEASE DETERMINE BY FFS"
+                End If
+            ElseIf ComboBox8.Text = "No" Then
+                Call susceptibilityamine()
+            End If
         End If
     End Sub
 
@@ -2283,21 +2574,25 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Sub ComboBox134_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox134.SelectedIndexChanged
         If ComboBox134.Text = "Yes, replace in kind" Then
-            TextBox45.Text = "High Susceptibility"
+            TextBox45.Text = "HIGH SUSCEPTIBILITY"
             TextBox41.ReadOnly = True
             TextBox42.ReadOnly = True
         ElseIf ComboBox134.Text = "No, not replaced" Then
-            TextBox45.Text = "Damage Observed"
+            TextBox45.Text = "DAMAGE OBSERVED"
             TextBox41.ReadOnly = True
             TextBox42.ReadOnly = True
         ElseIf ComboBox134.Text = "No, replaced with upgraded material" Then
             TextBox45.Text = ""
             TextBox41.ReadOnly = False
             TextBox42.ReadOnly = False
+            TextBox41.Text = ""
+            TextBox42.Text = ""
         Else
             TextBox45.Text = ""
             TextBox41.ReadOnly = False
             TextBox42.ReadOnly = False
+            TextBox41.Text = ""
+            TextBox42.Text = ""
         End If
     End Sub
 
@@ -2320,32 +2615,36 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox1.Text = "Carbon Steel" Then
             If Units.ComboBox1.Text = "SI" Then
                 If Val(TextBox41.Text) > 177 And Val(TextBox42.Text) > 0.345 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             ElseIf Units.ComboBox1.Text = "US Customary" Then
                 If Val(TextBox41.Text) > 350 And Val(TextBox42.Text) > 50 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             End If
 
         ElseIf ComboBox1.Text = "C-1/2 Mo Alloy Steel" Then
             If Units.ComboBox1.Text = "SI" Then
                 If Val(TextBox41.Text) > 177 And Val(TextBox42.Text) > 0.345 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             ElseIf Units.ComboBox1.Text = "US Customary" Then
                 If Val(TextBox41.Text) > 350 And Val(TextBox42.Text) > 50 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             End If
+        End If
+
+        If TextBox41.Text = "" Or TextBox42.Text = "" Then
+            TextBox45.Text = ""
         End If
     End Sub
 
@@ -2365,36 +2664,41 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
             End If
 
-        ElseIf textbox45.Text = "Carbon Steel" Then
+        ElseIf ComboBox1.Text = "Carbon Steel" Then
             If Units.ComboBox1.Text = "SI" Then
                 If Val(TextBox41.Text) > 177 And Val(TextBox42.Text) > 0.345 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             ElseIf Units.ComboBox1.Text = "US Customary" Then
                 If Val(TextBox41.Text) > 350 And Val(TextBox42.Text) > 50 Then
-                    textbox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    textbox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             End If
 
-        ElseIf textbox45.Text = "C-1/2 Mo Alloy Steel" Then
+        ElseIf ComboBox1.Text = "C-1/2 Mo Alloy Steel" Then
             If Units.ComboBox1.Text = "SI" Then
                 If Val(TextBox41.Text) > 177 And Val(TextBox42.Text) > 0.345 Then
-                    TextBox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    TextBox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             ElseIf Units.ComboBox1.Text = "US Customary" Then
                 If Val(TextBox41.Text) > 350 And Val(TextBox42.Text) > 50 Then
-                    textbox45.Text = "High Susceptibility"
+                    TextBox45.Text = "HIGH SUSCEPTIBILITY"
                 Else
-                    textbox45.Text = "No Susceptibility"
+                    TextBox45.Text = "NONE SUSCEPTIBILITY"
                 End If
             End If
         End If
+
+        If TextBox41.Text = "" Or TextBox42.Text = "" Then
+            TextBox45.Text = ""
+        End If
+
     End Sub
 
     Private Sub Button14_Click_1(sender As Object, e As EventArgs) Handles Button14.Click
@@ -2411,7 +2715,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             partialpressure = Val(TextBox42.Text)
         End If
 
-        If ComboBox134.Text = "6.0Cr-0.5Mo Steel" Then
+        If ComboBox33.Text = "6.0Cr-0.5Mo Steel" Then
             Dim a As Double
             a = -0.1714 * partialpressure + 1300
 
@@ -2422,7 +2726,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
-        If ComboBox134.Text = "3.0Cr-1.0Mo Steel" Then
+        If ComboBox33.Text = "3.0Cr-1.0Mo Steel" Then
             Dim b As Double
             b = -0.1648 * partialpressure + 1250
 
@@ -2433,7 +2737,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
-        If ComboBox134.Text = "2.25Cr-1.0Mo-V Steel" Then
+        If ComboBox33.Text = "2.25Cr-1.0Mo-V Steel" Then
             Dim c As Double
             c = -0.1975 * partialpressure + 1200
 
@@ -2444,7 +2748,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
-        If ComboBox134.Text = "2.25Cr-1.0Mo Steel" Then
+        If ComboBox33.Text = "2.25Cr-1.0Mo Steel" Then
             Dim c As Double
             c = -0.1975 * partialpressure + 1200
 
@@ -2455,7 +2759,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
-        If ComboBox134.Text = "1.25Cr-0.5Mo Steel" Then
+        If ComboBox33.Text = "1.25Cr-0.5Mo Steel" Then
             Dim d As Double
             d = -0.1646 * partialpressure + 1150
 
@@ -2501,7 +2805,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
-        If ComboBox134.Text = "1.0Cr-0.5Mo Steel" Then
+        If ComboBox33.Text = "1.0Cr-0.5Mo Steel" Then
             Dim f As Double
             f = -0.2941 * partialpressure + 1100
 
@@ -2557,13 +2861,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         If ComboBox1.Text = "Cr-Mo Low Alloy Steel" Then
             If deltatempproximity <= 0 Then
-                TextBox45.Text = "High Susceptibility"
+                TextBox45.Text = "HIGH SUSCEPTIBILITY"
             ElseIf deltatempproximity >= 0 And deltatempproximity <= 50 Then
-                TextBox45.Text = "Medium Susceptibility"
+                TextBox45.Text = "MEDIUM SUSCEPTIBILITY"
             ElseIf deltatempproximity >= 50 And deltatempproximity <= 100 Then
-                TextBox45.Text = "Low Susceptibility"
+                TextBox45.Text = "LOW SUSCEPTIBILITY"
             ElseIf deltatempproximity >= 100 Then
-                TextBox45.Text = "No Susceptibility"
+                TextBox45.Text = "NONE SUSCEPTIBILITY"
             End If
         End If
 
@@ -2579,11 +2883,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox161.Visible = False
             ComboBox161.Text = ""
             TextBox46.Text = ""
+            TextBox91.Text = ""
         ElseIf ComboBox160.Text = "No" Then
             TextBox91.ReadOnly = True
             ComboBox161.Visible = True
+            TextBox91.Text = ""
         Else
             TextBox91.ReadOnly = True
+            TextBox91.Text = ""
         End If
     End Sub
 
@@ -2591,7 +2898,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox161.Text = "Minimum Design Temperature" Then
             TextBox91.ReadOnly = False
             TextBox91.Text = ""
-        ElseIf ComboBox169.Text = "Minimum Pressurization Temperature" Then
+        ElseIf ComboBox161.Text = "Minimum Pressurization Temperature" Then
             TextBox91.ReadOnly = False
             TextBox91.Text = ""
         Else
@@ -2601,7 +2908,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Sub ComboBox162_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox162.SelectedIndexChanged
         If ComboBox162.Text = "Yes" Then
-            TextBox91.ReadOnly = False
+            TextBox103.ReadOnly = False
             ComboBox171.Visible = False
             Panel95.Visible = False
             TextBox92.Text = ""
@@ -2633,6 +2940,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             TextBox101.Text = ""
             TextBox102.Text = ""
             ComboBox172.Text = ""
+            TextBox103.Text = ""
         Else
             TextBox91.ReadOnly = True
             ComboBox171.Visible = True
@@ -2648,6 +2956,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             TextBox101.Text = ""
             TextBox102.Text = ""
             ComboBox172.Text = ""
+            TextBox103.Text = ""
         End If
     End Sub
 
@@ -5321,11 +5630,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             If ComboBox81.Text = "Yes" Then
                 ComboBox82.Enabled = True
                 ComboBox83.Enabled = True
+                ComboBox105.Text = ""
                 If ComboBox82.Text = "Yes" Then
                     ComboBox105.Text = "MEDIUM SUSCEPTIBILITY"
                     ComboBox83.Enabled = False
+                    ComboBox83.Text = ""
                 ElseIf ComboBox82.Text = "No" Then
                     ComboBox83.Enabled = True
+                    ComboBox105.Text = ""
                     If ComboBox83.Text = "Yes" Then
                         ComboBox105.Text = "LOW SUSCEPTIBILITY"
                     ElseIf ComboBox83.Text = "No" Then
@@ -5335,11 +5647,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ElseIf ComboBox81.Text = "No" Then
                 ComboBox82.Enabled = True
                 ComboBox83.Enabled = True
+                ComboBox105.Text = ""
                 If ComboBox82.Text = "Yes" Then
                     ComboBox105.Text = "HIGH SUSCEPTIBILITY"
                     ComboBox83.Enabled = False
+                    ComboBox83.Text = ""
                 ElseIf ComboBox82.Text = "No" Then
                     ComboBox83.Enabled = True
+                    ComboBox105.Text = ""
                     If ComboBox83.Text = "Yes" Then
                         ComboBox105.Text = "MEDIUM SUSCEPTIBILITY"
                     ElseIf ComboBox83.Text = "No" Then
@@ -5351,10 +5666,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             If ComboBox81.Text = "Yes" Then
                 ComboBox82.Enabled = False
                 ComboBox83.Enabled = False
+                ComboBox82.Text = ""
+                ComboBox83.Text = ""
                 ComboBox105.Text = "MEDIUM SUSCEPTIBILITY"
             ElseIf ComboBox81.Text = "No" Then
                 ComboBox82.Enabled = False
                 ComboBox83.Enabled = False
+                ComboBox82.Text = ""
+                ComboBox83.Text = ""
                 ComboBox105.Text = "HIGH SUSCEPTIBILITY"
             End If
         End If
@@ -5696,29 +6015,41 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     Private Sub susceptibilityamine()
         If ComboBox86.Text = "Yes" Then
             ComboBox87.Enabled = False
+            ComboBox87.Text = ""
             If ComboBox88.Text = "Yes" Then
                 ComboBox108.Text = "HIGH SUSCEPTIBILITY"
                 ComboBox89.Enabled = False
                 ComboBox90.Enabled = False
                 ComboBox91.Enabled = False
                 ComboBox92.Enabled = False
+                ComboBox89.Text = ""
+                ComboBox90.Text = ""
+                ComboBox91.Text = ""
+                ComboBox92.Text = ""
             ElseIf ComboBox88.Text = "No" Then
                 ComboBox89.Enabled = True
                 ComboBox90.Enabled = False
                 ComboBox91.Enabled = True
                 ComboBox92.Enabled = True
+                ComboBox90.Text = ""
+                ComboBox108.Text = ""
                 If ComboBox89.Text = "Yes" Then
                     ComboBox108.Text = "MEDIUM SUSCEPTIBILITY"
                     ComboBox91.Enabled = False
                     ComboBox92.Enabled = False
+                    ComboBox91.Text = ""
+                    ComboBox92.Text = ""
                 ElseIf ComboBox89.Text = "No" Then
                     ComboBox91.Enabled = True
                     ComboBox92.Enabled = True
+                    ComboBox108.Text = ""
                     If ComboBox91.Text = "Yes" Then
                         ComboBox108.Text = "MEDIUM SUSCEPTIBILITY"
                         ComboBox92.Enabled = False
+                        ComboBox92.Text = ""
                     ElseIf ComboBox91.Text = "No" Then
                         ComboBox92.Enabled = True
+                        ComboBox108.Text = ""
                         If ComboBox92.Text = "Yes" Then
                             ComboBox108.Text = "MEDIUM SUSCEPTIBILITY"
                         ElseIf ComboBox92.Text = "No" Then
@@ -5736,23 +6067,34 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                     ComboBox90.Enabled = False
                     ComboBox91.Enabled = False
                     ComboBox92.Enabled = False
+                    ComboBox89.Text = ""
+                    ComboBox90.Text = ""
+                    ComboBox91.Text = ""
+                    ComboBox92.Text = ""
                 ElseIf ComboBox88.Text = "No" Then
                     ComboBox89.Enabled = False
                     ComboBox90.Enabled = True
                     ComboBox91.Enabled = True
                     ComboBox92.Enabled = True
+                    ComboBox89.Text = ""
+                    ComboBox108.Text = ""
                     If ComboBox90.Text = "Yes" Then
                         ComboBox108.Text = "LOW SUSCEPTIBILITY"
                         ComboBox91.Enabled = False
                         ComboBox92.Enabled = False
-                    ElseIf ComboBox89.Text = "No" Then
+                        ComboBox91.Text = ""
+                        ComboBox92.Text = ""
+                    ElseIf ComboBox90.Text = "No" Then
                         ComboBox91.Enabled = True
                         ComboBox92.Enabled = True
+                        ComboBox108.Text = ""
                         If ComboBox91.Text = "Yes" Then
                             ComboBox108.Text = "LOW SUSCEPTIBILITY"
                             ComboBox92.Enabled = False
+                            ComboBox92.Text = ""
                         ElseIf ComboBox91.Text = "No" Then
                             ComboBox92.Enabled = True
+                            ComboBox108.Text = ""
                             If ComboBox92.Text = "Yes" Then
                                 ComboBox108.Text = "LOW SUSCEPTIBILITY"
                             ElseIf ComboBox92.Text = "No" Then
@@ -5768,16 +6110,25 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                     ComboBox90.Enabled = False
                     ComboBox91.Enabled = False
                     ComboBox92.Enabled = False
+                    ComboBox89.Text = ""
+                    ComboBox90.Text = ""
+                    ComboBox91.Text = ""
+                    ComboBox92.Text = ""
                 ElseIf ComboBox88.Text = "No" Then
                     ComboBox89.Enabled = False
                     ComboBox90.Enabled = False
                     ComboBox91.Enabled = True
                     ComboBox92.Enabled = True
+                    ComboBox89.Text = ""
+                    ComboBox90.Text = ""
+                    ComboBox108.Text = ""
                     If ComboBox91.Text = "Yes" Then
                         ComboBox108.Text = "LOW SUSCEPTIBILITY"
                         ComboBox92.Enabled = False
+                        ComboBox92.Text = ""
                     ElseIf ComboBox91.Text = "No" Then
                         ComboBox92.Enabled = True
+                        ComboBox108.Text = ""
                         If ComboBox92.Text = "Yes" Then
                             ComboBox108.Text = "LOW SUSCEPTIBILITY"
                         ElseIf ComboBox92.Text = "No" Then
@@ -12668,17 +13019,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'High Temperature Hydrogen Attack Coding perhitungan ------------------------------------------------------------------
     Public Sub hthadf()
-        If TextBox45.Text = "Damage Observed" Then
-            Label376.Text = 5000
-        ElseIf TextBox45.Text = "High Susceptibility" Then
-            Label376.Text = 5000
-        ElseIf TextBox45.Text = "Medium Susceptibility" Then
-            Label376.Text = 2000
-        ElseIf TextBox45.Text = "Low Susceptibility" Then
-            Label376.Text = 100
-        ElseIf TextBox45.Text = "No Susceptibility" Then
-            Label376.Text = 0
+        Dim df As Double
+        If TextBox45.Text = "DAMAGE OBSERVED" Then
+            df = 5000
+        ElseIf TextBox45.Text = "HIGH SUSCEPTIBILITY" Then
+            df = 5000
+        ElseIf TextBox45.Text = "MEDIUM SUSCEPTIBILITY" Then
+            df = 2000
+        ElseIf TextBox45.Text = "LOW SUSCEPTIBILITY" Then
+            df = 100
+        ElseIf TextBox45.Text = "NONE SUSCEPTIBILITY" Then
+            df = 0
         End If
+
+        Label376.Text = df
     End Sub
 
     'Brittle Fracture Coding perhitungan ----------------------------------------------------------------------------------
@@ -17599,7 +17953,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim fse As Double
 
-        fse = Val(ComboBox159.Text)
+        fse = ComboBox159.Text
 
         Dim df As Double
         df = basedf * fse
@@ -22571,6 +22925,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             df = 0
         End If
 
+        Label365.Text = df
     End Sub
 
     '885°F Embrittlement Coding perhitungan -------------------------------------------------------------------------------
@@ -22734,6 +23089,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
             Next
 
+        End If
+
+        If TextBox46.Text = "" Then
+            df = 0
         End If
 
         Label366.Text = df
@@ -23283,6 +23642,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             End If
         End If
 
+        If df < 0 Then
+            df = 0
+        End If
+
         Label367.Text = df
     End Sub
 
@@ -23327,23 +23690,35 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             step4 = 1
         End If
 
-        Dim step2_3 As Double
+        Dim step2kali3 As Double
 
-        step2_3 = step2 * step3
+        step2kali3 = step2 * step3
 
         Dim basedf As Double
 
-        If step1 > step2_3 AndAlso step1 > step4 Then
+        If step1 > step2kali3 AndAlso step1 > step4 Then
             basedf = step1
         End If
-        If step2_3 > step1 AndAlso step2_3 > step4 Then
-            basedf = step2_3
+        If step2kali3 > step1 AndAlso step2kali3 > step4 Then
+            basedf = step2kali3
         End If
-        If step4 > step1 AndAlso step4 > step2_3 Then
+        If step4 > step1 AndAlso step4 > step2kali3 Then
             basedf = step4
         End If
-        If step1 = 1 AndAlso step2_3 = 1 AndAlso step4 = 1 Then
+        If step1 = 1 AndAlso step2kali3 = 1 AndAlso step4 = 1 Then
             basedf = 1
+        End If
+        If step1 = step2kali3 AndAlso step1 > step4 Then
+            basedf = step1
+        End If
+        If step2kali3 = step4 AndAlso step2kali3 > step1 Then
+            basedf = step2kali3
+        End If
+        If step4 = step1 AndAlso step4 > step2kali3 Then
+            basedf = step4
+        End If
+        If step1 = step2kali3 = step4 Then
+            basedf = step1
         End If
 
         Dim adj1 As Double

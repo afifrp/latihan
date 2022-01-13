@@ -817,7 +817,7 @@ Public Class Home
 
         TabControl1.SelectedTab = TabPage2
 
-        'df1.Show()
+        df1.Show()
         'df2.Show()
         'df3.Show()
         'df4.Show()
@@ -828,11 +828,11 @@ Public Class Home
         'df9.Show()
         'df10.Show()
         'df11.Show()
-        'df12.Show()
+        df12.Show()
         df13.Show()
-        df14.Show()
-        df15.Show()
-        df16.Show()
+        'df14.Show()
+        'df15.Show()
+        'df16.Show()
         'df17.Show()
         'df18.Show()
         'df19.Show()
@@ -2431,8 +2431,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             ComboBox128.Enabled = True
             ComboBox127.Enabled = True
             NumericUpDown10.Enabled = True
-        ElseIf ComboBox100.Text = "No" Then
-            ComboBox120.Text = "PLEASE DETERMINE BY FFS"
+        ElseIf ComboBox31.Text = "No" Then
+            TextBox39.Text = "PLEASE DETERMINE BY FFS"
             DateTimePicker4.Enabled = False
             ComboBox108.Enabled = False
             ComboBox127.Enabled = False
@@ -2440,11 +2440,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Else
             Call susceptibilityexternalsccaustenitic()
             DateTimePicker4.Enabled = True
-            CheckBox108.Enabled = True
-            ComboBox119.Enabled = True
-            NumericUpDown7.Enabled = True
+            ComboBox108.Enabled = True
+            ComboBox127.Enabled = True
+            NumericUpDown11.Enabled = True
         End If
     End Sub
+
+
+    'External Chloride Stress Corrosion Cracking Under Insulation Damage Factor – Austenitic Component ---------
 
     Private Sub CheckBox136_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox136.CheckedChanged
         If CheckBox136.Checked = True Then
@@ -2538,8 +2541,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
     End Sub
 
-    'External Chloride Stress Corrosion Cracking Under Insulation Damage Factor – Austenitic Component ---------
-
     Private Sub ComboBox32_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox32.SelectedIndexChanged
         If ComboBox32.Text = "Yes" Then
             Label190.Visible = True
@@ -2548,7 +2549,68 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         ElseIf ComboBox32.Text = "No" Then
             Label190.Visible = False
             ComboBox129.Visible = False
-            TextBox40.Text = ""
+
+            If CheckBox136.Checked = True Then
+                ComboBox131.Enabled = True
+            Else
+                ComboBox131.Enabled = False
+                If ComboBox132.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call insulationcondition()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+                ComboBox131.Text = ""
+                If CheckBox140.Checked = False AndAlso CheckBox144.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+            End If
+
+            If CheckBox140.Checked = True Then
+                ComboBox132.Enabled = True
+            Else
+                ComboBox132.Enabled = False
+                If ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+                ComboBox132.Text = ""
+                If CheckBox136.Checked = False AndAlso CheckBox144.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+            End If
+
+            If CheckBox144.Checked = True Then
+                If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                    TextBox40.Text = "NONE SUSCEPTIBILITY"
+                ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                    TextBox40.Text = "LOW SUSCEPTIBILITY"
+                ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+                    TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+                End If
+            Else
+                If ComboBox132.Text IsNot "" AndAlso ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                    Call insulationcondition()
+                ElseIf ComboBox132.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call insulationcondition()
+                ElseIf ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+
+                If CheckBox136.Checked = False AndAlso CheckBox140.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+
+            End If
+
         Else
             Label156.Visible = False
             ComboBox121.Visible = False
@@ -2558,6 +2620,83 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Sub TextBox39_TextChanged(sender As Object, e As EventArgs) Handles TextBox39.TextChanged
         TextBox40.Text = TextBox39.Text
+    End Sub
+
+    Private Sub ComboBox129_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox129.SelectedIndexChanged
+        If ComboBox129.Text = "Yes" Then
+
+            DateTimePicker4.Enabled = True
+            ComboBox130.Enabled = True
+            NumericUpDown11.Enabled = True
+
+            If CheckBox136.Checked = True Then
+                ComboBox131.Enabled = True
+            Else
+                ComboBox131.Enabled = False
+                If ComboBox132.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call insulationcondition()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+                ComboBox131.Text = ""
+                If CheckBox140.Checked = False AndAlso CheckBox144.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+            End If
+
+            If CheckBox140.Checked = True Then
+                ComboBox132.Enabled = True
+            Else
+                ComboBox132.Enabled = False
+                If ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+                ComboBox132.Text = ""
+                If CheckBox136.Checked = False AndAlso CheckBox144.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+            End If
+
+            If CheckBox144.Checked = True Then
+                If TextBox40.Text = "LOW SUSCEPTIBILITY" Then
+                    TextBox40.Text = "NONE SUSCEPTIBILITY"
+                ElseIf TextBox40.Text = "MEDIUM SUSCEPTIBILITY" Then
+                    TextBox40.Text = "LOW SUSCEPTIBILITY"
+                ElseIf TextBox40.Text = "HIGH SUSCEPTIBILITY" Then
+                    TextBox40.Text = "MEDIUM SUSCEPTIBILITY"
+                End If
+            Else
+                If ComboBox132.Text IsNot "" AndAlso ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                    Call insulationcondition()
+                ElseIf ComboBox132.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call insulationcondition()
+                ElseIf ComboBox131.Text IsNot "" Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                    Call pipingcomplexity()
+                Else
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+
+                If CheckBox136.Checked = False AndAlso CheckBox140.Checked = False Then
+                    Call susceptibilityexternalscccuiaustenitic()
+                End If
+
+            End If
+        ElseIf ComboBox129.Text = "No" Then
+            TextBox39.Text = "PLEASE DETERMINE BY FFS"
+            ComboBox130.Enabled = False
+            NumericUpDown11.Enabled = False
+        Else
+            ComboBox130.Enabled = True
+            NumericUpDown11.Enabled = True
+        End If
     End Sub
 
     'High Temperature Hydrogen Attack Damage Factor ------------------------------------------------------------
@@ -9521,7 +9660,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
             temp = Val(TextBox5.Text)
 
-
             If ComboBox138.Text = "Marine / Cooling Tower Drift Area" Then
                 If temp < -12 Then
                     For r As Integer = 0 To chart2.GetUpperBound(0) - 1
@@ -10467,11 +10605,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         If agetk < agecoat Then
 
-            If ComboBox120.Text = "No Coating or Poor – No coating or primer only" Then
+            If ComboBox140.Text = "No Coating or Poor – No coating or primer only" Then
                 coatadj = "0"
             End If
 
-            If ComboBox120.Text = "Medium – Single coat epoxy" Then
+            If ComboBox140.Text = "Medium – Single coat epoxy" Then
                 If 5 < agecoat Then
                     If 5 < (agecoat - agetk) Then
                         coatadj = 5 - 5
@@ -10496,7 +10634,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
             End If
 
-            If ComboBox120.Text = "High – Multi coat epoxy or filled epoxy" Then
+            If ComboBox140.Text = "High – Multi coat epoxy or filled epoxy" Then
                 If 15 < agecoat Then
                     If 15 < (agecoat - agetk) Then
                         coatadj = 15 - 15
@@ -10523,11 +10661,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
 
         If agetk >= agecoat Then
-            If ComboBox120.Text = "No Coating or Poor – No coating or primer only" Then
+
+            If ComboBox140.Text = "No Coating or Poor – No coating or primer only" Then
                 coatadj = "0"
             End If
 
-            If ComboBox120.Text = "Medium – Single coat epoxy" Then
+            If ComboBox140.Text = "Medium – Single coat epoxy" Then
                 If 5 < agecoat Then
                     coatadj = "5"
                 Else
@@ -10535,7 +10674,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
             End If
 
-            If ComboBox120.Text = "High – Multi coat epoxy or filled epoxy" Then
+            If ComboBox140.Text = "High – Multi coat epoxy or filled epoxy" Then
                 If 15 < agecoat Then
                     coatadj = "15"
                 Else
@@ -10638,31 +10777,31 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Dim nd As Double
         Dim ne As Double
 
-        If ComboBox136.Text = "A" Then
+        If ComboBox141.Text = "A" Then
             na = NumericUpDown14.Value
             nb = 0
             nc = 0
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "B" Then
+        ElseIf ComboBox141.Text = "B" Then
             na = 0
             nb = NumericUpDown14.Value
             nc = 0
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "C" Then
+        ElseIf ComboBox141.Text = "C" Then
             na = 0
             nb = 0
             nc = NumericUpDown14.Value
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "D" Then
+        ElseIf ComboBox141.Text = "D" Then
             na = 0
             nb = 0
             nc = 0
             nd = NumericUpDown14.Value
             ne = 0
-        ElseIf ComboBox136.Text = "E" Then
+        ElseIf ComboBox141.Text = "E" Then
             na = 0
             nb = 0
             nc = 0
@@ -12126,64 +12265,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim coatadj As Double
 
-        Dim coatadj1 As Double
-        Dim coatadj2 As Double
-
-        If coat < 5 Then
-            coatadj1 = coat
-        ElseIf coat > 5 Then
-            coatadj1 = 5
-        End If
-
-        If coat < 15 Then
-            coatadj2 = coat
-        ElseIf coat > 15 Then
-            coatadj2 = 15
-        End If
-
         If crack >= coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
             coatadj = "0"
         ElseIf crack >= coat And ComboBox128.Text = "Medium Coating Quality" Then
-            coatadj = coatadj1
+            coatadj = Math.Min(5, coat)
         ElseIf crack >= coat And ComboBox128.Text = "High Coating Quality" Then
-            coatadj = coatadj2
-        End If
-
-        Dim min1 As Double
-        Dim min2 As Double
-        Dim min3 As Double
-        Dim min4 As Double
-
-        If coat < 15 Then
-            min3 = coat
-        ElseIf coat > 15 Then
-            min3 = 15
-        End If
-
-        If (coat - crack) < 15 Then
-            min4 = (coat - crack)
-        ElseIf (coat - crack) > 15 Then
-            min4 = 15
-        End If
-
-        If coat < 5 Then
-            min1 = coat
-        ElseIf coat > 5 Then
-            min1 = 5
-        End If
-
-        If (coat - crack) < 5 Then
-            min2 = (coat - crack)
-        ElseIf (coat - crack) > 5 Then
-            min2 = 5
+            coatadj = Math.Min(15, coat)
         End If
 
         If crack < coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
             coatadj = "0"
         ElseIf crack < coat And ComboBox128.Text = "Medium Coating Quality" Then
-            coatadj = min1 - min2
+            coatadj = (Math.Min(5, coat)) - (Math.Min(5, (coat - crack)))
         ElseIf crack < coat And ComboBox128.Text = "High Coating Quality" Then
-            coatadj = min3 - min4
+            coatadj = (Math.Min(15, coat)) - (Math.Min(15, (coat - crack)))
         End If
 
         Dim age As Double
@@ -12468,19 +12563,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             basedf = “50”
         End If
 
-        Dim maxage1 As Double
-        Dim maxage2 As Double
+        Dim maxage As Double
+
         Dim df As Double
 
         If age > 1 Then
-            maxage1 = age
-            df = basedf * (maxage1 ^ 1.1)
-            Label362.Text = df
+            maxage = age
+
         ElseIf age <= 1 Then
-            maxage2 = 1
-            df = basedf * (maxage2 ^ 1.1)
-            Label362.Text = df
+            maxage = 1
+
         End If
+
+        df = basedf * (maxage ^ 1.1)
+        Label362.Text = df
 
     End Sub
 
@@ -12659,64 +12755,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim coatadj As Double
 
-        Dim coatadj1 As Double
-        Dim coatadj2 As Double
-
-        If coat < 5 Then
-            coatadj1 = coat
-        ElseIf coat > 5 Then
-            coatadj1 = 5
-        End If
-
-        If coat < 15 Then
-            coatadj2 = coat
-        ElseIf coat > 15 Then
-            coatadj2 = 15
-        End If
-
         If crack >= coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
             coatadj = "0"
         ElseIf crack >= coat And ComboBox128.Text = "Medium Coating Quality" Then
-            coatadj = coatadj1
+            coatadj = Math.Min(5, coat)
         ElseIf crack >= coat And ComboBox128.Text = "High Coating Quality" Then
-            coatadj = coatadj2
-        End If
-
-        Dim min1 As Double
-        Dim min2 As Double
-        Dim min3 As Double
-        Dim min4 As Double
-
-        If coat < 15 Then
-            min3 = coat
-        ElseIf coat > 15 Then
-            min3 = 15
-        End If
-
-        If (coat - crack) < 15 Then
-            min4 = (coat - crack)
-        ElseIf (coat - crack) > 15 Then
-            min4 = 15
-        End If
-
-        If coat < 5 Then
-            min1 = coat
-        ElseIf coat > 5 Then
-            min1 = 5
-        End If
-
-        If (coat - crack) < 5 Then
-            min2 = (coat - crack)
-        ElseIf (coat - crack) > 5 Then
-            min2 = 5
+            coatadj = Math.Min(15, coat)
         End If
 
         If crack < coat And ComboBox128.Text = "No Coating or Poor Coating Quality" Then
             coatadj = "0"
         ElseIf crack < coat And ComboBox128.Text = "Medium Coating Quality" Then
-            coatadj = min1 - min2
+            coatadj = (Math.Min(5, coat)) - (Math.Min(5, (coat - crack)))
         ElseIf crack < coat And ComboBox128.Text = "High Coating Quality" Then
-            coatadj = min3 - min4
+            coatadj = (Math.Min(15, coat)) - (Math.Min(15, (coat - crack)))
         End If
 
         Dim age As Double
@@ -13001,19 +13053,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             basedf = “50”
         End If
 
-        Dim maxage1 As Double
-        Dim maxage2 As Double
+        Dim maxage As Double
+
         Dim df As Double
 
         If age > 1 Then
-            maxage1 = age
-            df = basedf * (maxage1 ^ 1.1)
-            Label363.Text = df
+            maxage = age
+
         ElseIf age <= 1 Then
-            maxage2 = 1
-            df = basedf * (maxage2 ^ 1.1)
-            Label363.Text = df
+            maxage = 1
+
         End If
+
+        df = basedf * (maxage ^ 1.1)
+        Label363.Text = df
 
     End Sub
 

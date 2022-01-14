@@ -92,3 +92,4 @@ C:\Users\WD's\Documents\Visual Studio 2017\Projects\Risk Based Inspection (RAFAO
 C:\Users\WD's\Documents\Visual Studio 2017\Projects\Risk Based Inspection (RAFAOLEC)\RAFAOLEC\Risk Based Inspection\obj\Debug\Risk Based Inspection.xml
 C:\Users\WD's\Documents\Visual Studio 2017\Projects\Risk Based Inspection (RAFAOLEC)\RAFAOLEC\Risk Based Inspection\obj\Debug\Risk Based Inspection.pdb
 C:\Users\WD's\Documents\Visual Studio 2017\Projects\Risk Based Inspection (RAFAOLEC)\RAFAOLEC\Risk Based Inspection\obj\Debug\Risk_Based_Inspection.Login.resources
+C:\Users\WD's\Documents\Visual Studio 2017\Projects\Risk Based Inspection (RAFAOLEC)\RAFAOLEC\Risk Based Inspection\obj\Debug\Risk_Based_Inspection.Corrosion_Rate.resources

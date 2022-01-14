@@ -818,26 +818,26 @@ Public Class Home
         TabControl1.SelectedTab = TabPage2
 
         df1.Show()
-        'df2.Show()
-        'df3.Show()
-        'df4.Show()
-        'df5.Show()
-        'df6.Show()
-        'df7.Show()
-        'df8.Show()
-        'df9.Show()
-        'df10.Show()
-        'df11.Show()
+        df2.Show()
+        df3.Show()
+        df4.Show()
+        df5.Show()
+        df6.Show()
+        df7.Show()
+        df8.Show()
+        df9.Show()
+        df10.Show()
+        df11.Show()
         df12.Show()
         df13.Show()
-        'df14.Show()
-        'df15.Show()
-        'df16.Show()
-        'df17.Show()
-        'df18.Show()
-        'df19.Show()
-        'df20.Show()
-        'df21.Show()
+        df14.Show()
+        df15.Show()
+        df16.Show()
+        df17.Show()
+        df18.Show()
+        df19.Show()
+        df20.Show()
+        df21.Show()
 
         Call panggilpanel()
     End Sub
@@ -917,8 +917,8 @@ Public Class Home
         Call cuiferriticdf()
         Call externalsccausteniticdf()
         Call externalscccuiausteniticdf()
-        'Call brittledf()
-        'Call lowalloydf()
+        Call brittledf()
+        Call lowalloydf()
         Call delapandelapanlimafembrittlementdf()
         Call sigmaphasedf()
         Call hthadf()
@@ -1096,29 +1096,263 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     'Thinning DF ------------------------------------------------------------------------------------------------
 
+    Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
+        Corrosion_Rate.ShowDialog()
+    End Sub
+
+    Private Sub ComboBox64_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox64.SelectedIndexChanged
+        If ComboBox64.Text = "Yes" Then
+            Label327.Visible = True
+            TextBox84.Visible = True
+            TextBox84.Text = ""
+        ElseIf ComboBox64.Text = "No" Then
+            Label327.Visible = False
+            TextBox84.Visible = False
+            TextBox84.Text = ""
+        Else
+            Label327.Visible = False
+            TextBox84.Visible = False
+            TextBox84.Text = ""
+        End If
+    End Sub
+
     Private Sub ComboBox79_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox79.SelectedIndexChanged
         If ComboBox79.Text = "Cylindrical, Spherical, Head, or Other Common Components" Then
-            Panel89.Visible = True
+            Panel90.Visible = True
             Label103.Visible = True
             ComboBox135.Visible = True
             Label16.Visible = False
             TextBox104.Visible = False
             TextBox104.Text = ""
         ElseIf ComboBox79.Text = "Components are constructed of uncommon shapes (or component's minimum structural thickness may govern)" Then
-            Panel89.Visible = True
+            Panel90.Visible = True
             Label103.Visible = False
             ComboBox135.Visible = False
             Label16.Visible = True
             TextBox104.Visible = True
             ComboBox135.Text = ""
         Else
-            Panel89.Visible = False
+            Panel90.Visible = False
             Label103.Visible = False
             ComboBox135.Visible = False
             Label16.Visible = False
             TextBox104.Visible = False
             TextBox104.Text = ""
             ComboBox135.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox177_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox177.SelectedIndexChanged
+        If ComboBox177.Text = "Hydrochloric Acid (HCI) Corrosion" Then
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes (In conjunction with probes)")
+            ComboBox179.Items.Add("Yes (In conjunction without probes)")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "High Temperature Sulfidic/Naphthenic Acid Corrosion" Then
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "High Temperature H2S/H2 Corrosion" Then
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            If ComboBox178.Text = "High Velocity" Then
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes (In conjunction with probes)")
+                ComboBox179.Items.Add("Yes (In conjunction without probes)")
+                ComboBox179.Items.Add("No")
+            ElseIf ComboBox178.Text = "Low Velocity" Then
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            End If
+        ElseIf ComboBox177.Text = "Sulfuric Acid (H2S/H2) Corrosion" Then
+            ComboBox178.Visible = True
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "Hydrofluoric Acid (HF) Corrosion" Then
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "Sour Water Corrosion" Then
+            ComboBox178.Visible = True
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "Amine" Then
+            ComboBox178.Visible = True
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        ElseIf ComboBox177.Text = "Other Corrosion Mechanism" Then
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        Else
+            ComboBox178.Visible = False
+            Label417.Visible = False
+            Label417.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Items.Clear()
+            ComboBox179.Items.Add("Yes")
+            ComboBox179.Items.Add("No")
+        End If
+    End Sub
+
+    Private Sub ComboBox178_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox178.SelectedIndexChanged
+        If ComboBox177.Text = "Sulfuric Acid (H2S/H2) Corrosion" Then
+            If ComboBox178.Text = "Low Velocity" Then
+                Label417.Visible = True
+                Label417.Text = "≤ 3 ft/s for CS,
+≤ 5 ft/s for SS,
+≤ 7 ft/s for higher alloys"
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            ElseIf ComboBox178.Text = "High Velocity" Then
+                Label417.Visible = True
+                Label417.Text = "> 3 ft/s for CS,
+> 5 ft/s for SS,
+> 7 ft/s for higher alloys"
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes (In conjunction with probes)")
+                ComboBox179.Items.Add("Yes (In conjunction without probes)")
+                ComboBox179.Items.Add("No")
+            Else
+                Label417.Visible = False
+                Label417.Text = ""
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            End If
+
+        ElseIf ComboBox177.Text = "Sour Water Corrosion" Then
+            If ComboBox178.Text = "Low Velocity" Then
+                Label417.Visible = True
+                Label417.Text = "≤ 20 ft/s"
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            ElseIf ComboBox178.Text = "High Velocity" Then
+                Label417.Visible = True
+                Label417.Text = "> 20 ft/s"
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            Else
+                Label417.Visible = False
+                Label417.Text = ""
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            End If
+
+        ElseIf ComboBox177.Text = "Amine" Then
+            If ComboBox178.Text = "Low Velocity" Then
+                Label417.Visible = False
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            ElseIf ComboBox178.Text = "High Velocity" Then
+                Label417.Visible = False
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            Else
+                Label417.Visible = False
+                Label417.Text = ""
+                ComboBox179.Items.Clear()
+                ComboBox179.Items.Add("Yes")
+                ComboBox179.Items.Add("No")
+            End If
+        End If
+    End Sub
+
+    Private Sub ComboBox176_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox176.SelectedIndexChanged
+        If ComboBox176.Text = "Yes" Then
+            Panel91.Visible = True
+            ComboBox177.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Text = ""
+            ComboBox180.Text = ""
+            ComboBox181.Text = ""
+            Label417.Text = ""
+        ElseIf ComboBox176.Text = "No" Then
+            Panel91.Visible = False
+            ComboBox177.Text = ""
+            ComboBox178.Text = ""
+            ComboBox179.Text = ""
+            ComboBox180.Text = ""
+            ComboBox181.Text = ""
+            Label417.Text = ""
+        End If
+    End Sub
+
+    Private Sub ComboBox179_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox179.SelectedIndexChanged
+        If ComboBox179.Text = "Yes" Then
+            ComboBox180.Text = "No"
+            ComboBox181.Text = "No"
+            ComboBox180.Enabled = False
+            ComboBox181.Enabled = False
+        Else
+            ComboBox180.Text = ""
+            ComboBox181.Text = ""
+            ComboBox180.Enabled = True
+            ComboBox181.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ComboBox180_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox180.SelectedIndexChanged
+        If ComboBox180.Text = "Yes" Then
+            ComboBox179.Text = "No"
+            ComboBox181.Text = "No"
+            ComboBox179.Enabled = False
+            ComboBox181.Enabled = False
+        Else
+            ComboBox179.Text = ""
+            ComboBox181.Text = ""
+            ComboBox179.Enabled = True
+            ComboBox181.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ComboBox181_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox181.SelectedIndexChanged
+        If ComboBox181.Text = "Yes" Then
+            ComboBox179.Text = "No"
+            ComboBox180.Text = "No"
+            ComboBox179.Enabled = False
+            ComboBox180.Enabled = False
+        Else
+            ComboBox179.Text = ""
+            ComboBox180.Text = ""
+            ComboBox179.Enabled = True
+            ComboBox180.Enabled = True
         End If
     End Sub
 
@@ -3994,25 +4228,25 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     'Panel thinning
     Private Sub panggilpanel()
         If Label391.Text = "Atmospheric Storage Tank - Bottom Plates" Then
-            Panel90.Visible = False
+            Panel89.Visible = False
             Panel92.Visible = False
             Panel104.Visible = True
             Panel103.Visible = False
         ElseIf Label391.Text = "Atmospheric Storage Tank - Shell Courses" Then
-            Panel90.Visible = True
+            Panel89.Visible = True
             Panel92.Visible = False
             Panel103.Visible = True
             Panel104.Visible = False
         ElseIf Label391.Text = "Pipes and Tubes" Then
-            Panel90.Visible = True
+            Panel89.Visible = True
             Panel92.Visible = True
             Panel103.Visible = False
             Panel104.Visible = False
         Else
-            Panel90.Visible = True
-            Panel92.Visible = True
-            Panel103.Visible = True
-            Panel104.Visible = True
+            Panel89.Visible = True
+            Panel92.Visible = False
+            Panel103.Visible = False
+            Panel104.Visible = False
         End If
     End Sub
 
@@ -4081,12 +4315,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text)
-        R1 = Val(TextBox11.Text)
-        s = Val(TextBox6.Text)
-        ejo = Val(TextBox8.Text)
+        p = Val(TextBox15.Text) * 0.0980665
+        R1 = Val(TextBox10.Text)
+        s = Val(TextBox8.Text)
+        ejo = Val(TextBox7.Text)
         ca = Val(TextBox6.Text)
-        d = Val(TextBox10.Text)
+        d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 
         Dim tmin As Double
@@ -4488,7 +4722,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         ys = Val(TextBox13.Text)
         ts = Val(TextBox14.Text)
-        wje = Val(TextBox8.Text)
+        wje = Val(TextBox7.Text)
 
         fs = ((ys + ts) / 2) * wje * 1.1
 
@@ -4981,6 +5215,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                     End If
                 Next
             End If
+
         Else
             basedf = ((po1 * norm4) + (po2 * norm5) + (po3 * norm6)) / 0.000156
         End If
@@ -4994,6 +5229,172 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Dim fsm As Double
 
         If ComboBox176.Text = "Yes" Then
+            If ComboBox177.Text = "Hydrochloric Acid (HCI) Corrosion" Then
+                If ComboBox179.Text = "Yes (In conjunction with probes)" Then
+                    fom = 20
+                ElseIf ComboBox179.Text = "Yes (In conjunction without probes)" Then
+                    fom = 10
+                ElseIf ComboBox179.Text = "No" Then
+
+                ElseIf ComboBox180.Text = "Yes" Then
+                    fom = 10
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox181.Text = "Yes" Then
+                    fom = 2
+                ElseIf ComboBox181.Text = "No" Then
+
+                End If
+            ElseIf ComboBox177.Text = "High Temperature Sulfidic/Naphthenic Acid Corrosion" Then
+                If ComboBox179.Text = "Yes" Then
+                    fom = 10
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox180.Text = "Yes" Then
+                    fom = 10
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox181.Text = "Yes" Then
+                    fom = 2
+                ElseIf ComboBox181.Text = "No" Then
+
+                End If
+            ElseIf ComboBox177.Text = "High Temperature H2S/H2 Corrosion" Then
+                If ComboBox179.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox179.Text = "No" Then
+
+                ElseIf ComboBox180.Text = "Yes" Then
+                    fom = 10
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox181.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox181.Text = "No" Then
+
+                End If
+            ElseIf ComboBox177.Text = "Sulfuric Acid (H2S/H2) Corrosion" Then
+                If ComboBox178.Text = "High Velocity" Then
+                    If ComboBox179.Text = "Yes (In conjunction with probes)" Then
+                        fom = 20
+                    ElseIf ComboBox179.Text = "Yes (In conjunction without probes)" Then
+                        fom = 10
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 1
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                ElseIf ComboBox178.Text = "Low Velocity" Then
+                    If ComboBox179.Text = "Yes" Then
+                        fom = 20
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 2
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                End If
+            ElseIf ComboBox177.Text = "Hydrofluoric Acid (HF) Corrosion" Then
+                If ComboBox179.Text = "Yes" Then
+                    fom = 10
+                ElseIf ComboBox179.Text = "No" Then
+
+                ElseIf ComboBox180.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox181.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox181.Text = "No" Then
+
+                End If
+            ElseIf ComboBox177.Text = "Sour Water Corrosion" Then
+                If ComboBox178.Text = "High Velocity" Then
+                    If ComboBox179.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 2
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 2
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                ElseIf ComboBox178.Text = "Low Velocity" Then
+                    If ComboBox179.Text = "Yes" Then
+                        fom = 20
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 2
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                End If
+            ElseIf ComboBox177.Text = "Amine" Then
+                If ComboBox178.Text = "High Velocity" Then
+                    If ComboBox179.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 1
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                ElseIf ComboBox178.Text = "Low Velocity" Then
+                    If ComboBox179.Text = "Yes" Then
+                        fom = 20
+                    ElseIf ComboBox179.Text = "No" Then
+
+                    ElseIf ComboBox180.Text = "Yes" Then
+                        fom = 10
+                    ElseIf ComboBox180.Text = "No" Then
+
+                    ElseIf ComboBox181.Text = "Yes" Then
+                        fom = 2
+                    ElseIf ComboBox181.Text = "No" Then
+
+                    End If
+                End If
+            ElseIf ComboBox177.Text = "Other Corrosion Mechanism" Then
+                If ComboBox179.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox179.Text = "No" Then
+
+                ElseIf ComboBox180.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox180.Text = "No" Then
+
+                ElseIf ComboBox181.Text = "Yes" Then
+                    fom = 1
+                ElseIf ComboBox181.Text = "No" Then
+
+                End If
+
+            End If
 
         ElseIf ComboBox176.Text = "No" Then
             fom = 1
@@ -5003,11 +5404,15 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             fip = 3
         ElseIf ComboBox174.Text = "No" Then
             fip = 1
+        Else
+            fip = 1
         End If
 
         If ComboBox153.Text = "Yes" Then
             fdl = 3
         ElseIf ComboBox153.Text = "No" Then
+            fdl = 1
+        Else
             fdl = 1
         End If
 
@@ -5015,12 +5420,16 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             fwd = 1
         ElseIf ComboBox154.Text = "Riveted" Then
             fwd = 10
+        Else
+            fwd = 1
         End If
 
         If ComboBox155.Text = "Yes" Then
             fam = 1
         ElseIf ComboBox155.Text = "No" Then
             fam = 5
+        Else
+            fam = 1
         End If
 
         If ComboBox156.Text = "Recorded settlement exceeds API STD 653 criteria" Then
@@ -5050,6 +5459,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
 
         Label359.Text = df
+
     End Sub
 
     'Lining Coding perhitungan --------------------------------------------------------------------------------------------
@@ -10204,12 +10614,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text)
-        R1 = Val(TextBox11.Text)
-        s = Val(TextBox6.Text)
-        ejo = Val(TextBox8.Text)
+        p = Val(TextBox15.Text) * 0.0980665
+        R1 = Val(TextBox10.Text)
+        s = Val(TextBox8.Text)
+        ejo = Val(TextBox7.Text)
         ca = Val(TextBox6.Text)
-        d = Val(TextBox10.Text)
+        d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 
         Dim tmin As Double
@@ -10563,7 +10973,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         End If
 
-        Dim trde As Double
+        Dim trdi As Double
 
         Dim date1 As Double
         Dim date2 As Double
@@ -10578,13 +10988,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
             datelastforgood = date1 / 365
 
-            trde = Val(TextBox3.Text)
+            trdi = Val(TextBox3.Text)
         Else
 
             date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
             datestartforpoor = date2 / 365
 
-            trde = Val(TextBox2.Text)
+            trdi = Val(TextBox2.Text)
         End If
 
         If datelastforgood > 0 Then
@@ -10689,7 +11099,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim Art As Double
 
-        Art = (cr * age) / trde
+        Art = (cr * age) / trdi
 
         Dim fs As Double
 
@@ -10699,7 +11109,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         ys = Val(TextBox13.Text)
         ts = Val(TextBox14.Text)
-        wje = Val(TextBox8.Text)
+        wje = Val(TextBox7.Text)
 
         fs = ((ys + ts) / 2) * wje * 1.1
 
@@ -10713,22 +11123,22 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox151.Text = "Yes" Then
             'SRP method 1
             If CheckBox1.Checked = False Then
-                srp = ((s * wje) / fs) * (tmin / trde)
+                srp = ((s * wje) / fs) * (tmin / trdi)
 
             ElseIf CheckBox1.Checked = True Then
-                srp = ((s * wje) / fs) * (tc / trde)
+                srp = ((s * wje) / fs) * (tc / trdi)
 
             End If
         ElseIf ComboBox151.Text = "No" Then
             'SRP method 2
             If ComboBox135.Text = "Cylinder" Then
-                srp = (p * d) / (2 * fs * trde)
+                srp = (p * d) / (2 * fs * trdi)
 
             ElseIf ComboBox135.Text = "Sphere" Then
-                srp = (p * d) / (4 * fs * trde)
+                srp = (p * d) / (4 * fs * trdi)
 
             ElseIf ComboBox135.Text = "Head" Then
-                srp = (p * d) / (1.13 * fs * trde)
+                srp = (p * d) / (1.13 * fs * trdi)
 
             End If
         End If
@@ -10863,6 +11273,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         df = ((po1 * norm4) + (po2 * norm5) + (po3 * norm6)) / 0.000156
 
         Label360.Text = df
+
     End Sub
 
     'CUI – Ferritic Component Coding perhitungan --------------------------------------------------------------------------
@@ -10871,12 +11282,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         If Units.ComboBox1.Text = "SI" Then
             Dim chart2(,) As Double = {{-12, 0, 0, 0, 0},
-            {-8, 0.025, 0, 0, 0},
-            {6, 0.127, 0.076, 0.025, 0.254},
-            {32, 0.127, 0.076, 0.025, 0.254},
-            {71, 0.127, 0.051, 0.025, 0.254},
-            {107, 0.025, 0, 0, 0.051},
-            {121, 0, 0, 0, 0}}
+               {-8, 0.025, 0, 0, 0.076},
+               {6, 0.127, 0.076, 0.025, 0.254},
+               {32, 0.127, 0.076, 0.025, 0.254},
+               {71, 0.254, 0.127, 0.051, 0.508},
+               {107, 0.127, 0.025, 0.025, 0.254},
+               {135, 0.051, 0.025, 0, 0.254},
+               {162, 0.025, 0, 0, 0.127},
+               {176, 0, 0, 0, 0}}
 
             Dim UpNum2(4) As Double
             Dim LowNum2(4) As Double
@@ -11134,12 +11547,14 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         ElseIf Units.ComboBox1.Text = "US Customary" Then
             Dim chart2(,) As Double = {{10, 0, 0, 0, 0},
-            {18, 1, 0, 0, 3},
-            {43, 5, 3, 1, 10},
-            {90, 5, 3, 1, 10},
-            {160, 5, 2, 1, 10},
-            {225, 1, 0, 0, 2},
-            {250, 0, 0, 0, 0}}
+                {18, 1, 0, 0, 3},
+                {43, 5, 3, 1, 10},
+                {90, 5, 3, 1, 10},
+                {160, 10, 5, 2, 20},
+                {225, 5, 1, 1, 10},
+                {275, 2, 1, 0, 10},
+                {325, 1, 0, 0, 5},
+                {350, 0, 0, 0, 0}}
 
             Dim UpNum2(4) As Double
             Dim LowNum2(4) As Double
@@ -11394,6 +11809,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                     End If
                 Next
             End If
+
         End If
 
         Dim fins As Double
@@ -11432,16 +11848,16 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         End If
 
         Dim feq As Double
-        If ComboBox142.Text = "Yes" Then
+        If ComboBox147.Text = "Yes" Then
             feq = 2
-        ElseIf ComboBox142.Text = "No" Then
+        ElseIf ComboBox147.Text = "No" Then
             feq = 1
         End If
 
         Dim fif As Double
-        If ComboBox139.Text = "Yes" Then
+        If ComboBox148.Text = "Yes" Then
             fif = 2
-        ElseIf ComboBox139.Text = "No" Then
+        ElseIf ComboBox148.Text = "No" Then
             fif = 1
         End If
 
@@ -11475,12 +11891,12 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text)
-        R1 = Val(TextBox11.Text)
-        s = Val(TextBox6.Text)
-        ejo = Val(TextBox8.Text)
+        p = Val(TextBox15.Text) * 0.0980665
+        R1 = Val(TextBox10.Text)
+        s = Val(TextBox8.Text)
+        ejo = Val(TextBox7.Text)
         ca = Val(TextBox6.Text)
-        d = Val(TextBox10.Text)
+        d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 
         Dim tmin As Double
@@ -11834,7 +12250,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         End If
 
-        Dim trde As Double
+        Dim trdi As Double
 
         Dim date1 As Double
         Dim date2 As Double
@@ -11849,13 +12265,13 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             date1 = DateDiff(DateInterval.DayOfYear, DateTimePicker1.Value, DateTimePicker13.Value)
             datelastforgood = date1 / 365
 
-            trde = Val(TextBox3.Text)
+            trdi = Val(TextBox3.Text)
         Else
 
             date2 = DateDiff(DateInterval.DayOfYear, DateTimePicker2.Value, DateTimePicker13.Value)
             datestartforpoor = date2 / 365
 
-            trde = Val(TextBox2.Text)
+            trdi = Val(TextBox2.Text)
         End If
 
         If datelastforgood > 0 Then
@@ -11959,7 +12375,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Dim Art As Double
 
-        Art = (cr * age) / trde
+        Art = (cr * age) / trdi
 
         Dim fs As Double
 
@@ -11969,7 +12385,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         ys = Val(TextBox13.Text)
         ts = Val(TextBox14.Text)
-        wje = Val(TextBox8.Text)
+        wje = Val(TextBox7.Text)
 
         fs = ((ys + ts) / 2) * wje * 1.1
 
@@ -11982,22 +12398,22 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         If ComboBox151.Text = "Yes" Then
             'SRP method 1
             If CheckBox1.Checked = False Then
-                srp = ((s * wje) / fs) * (tmin / trde)
+                srp = ((s * wje) / fs) * (tmin / trdi)
 
             ElseIf CheckBox1.Checked = True Then
-                srp = ((s * wje) / fs) * (tc / trde)
+                srp = ((s * wje) / fs) * (tc / trdi)
 
             End If
         ElseIf ComboBox151.Text = "No" Then
             'SRP method 2
             If ComboBox135.Text = "Cylinder" Then
-                srp = (p * d) / (2 * fs * trde)
+                srp = (p * d) / (2 * fs * trdi)
 
             ElseIf ComboBox135.Text = "Sphere" Then
-                srp = (p * d) / (4 * fs * trde)
+                srp = (p * d) / (4 * fs * trdi)
 
             ElseIf ComboBox135.Text = "Head" Then
-                srp = (p * d) / (1.13 * fs * trde)
+                srp = (p * d) / (1.13 * fs * trdi)
 
             End If
         End If
@@ -12046,31 +12462,31 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Dim nd As Double
         Dim ne As Double
 
-        If ComboBox136.Text = "A" Then
+        If ComboBox150.Text = "A" Then
             na = NumericUpDown15.Value
             nb = 0
             nc = 0
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "B" Then
+        ElseIf ComboBox150.Text = "B" Then
             na = 0
             nb = NumericUpDown15.Value
             nc = 0
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "C" Then
+        ElseIf ComboBox150.Text = "C" Then
             na = 0
             nb = 0
             nc = NumericUpDown15.Value
             nd = 0
             ne = 0
-        ElseIf ComboBox136.Text = "D" Then
+        ElseIf ComboBox150.Text = "D" Then
             na = 0
             nb = 0
             nc = 0
             nd = NumericUpDown15.Value
             ne = 0
-        ElseIf ComboBox136.Text = "E" Then
+        ElseIf ComboBox150.Text = "E" Then
             na = 0
             nb = 0
             nc = 0
@@ -12132,6 +12548,20 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         df = ((po1 * norm4) + (po2 * norm5) + (po3 * norm6)) / 0.000156
 
         Label361.Text = df
+
+        Label362.Text = basecr
+        Label363.Text = cr
+        Label364.Text = tmin
+        Label365.Text = tpipe
+        Label366.Text = ttanksi
+        Label367.Text = ttankus
+        Label368.Text = age
+        Label369.Text = Art
+        Label370.Text = fs
+        Label371.Text = srp
+        Label372.Text = reliabilityindices1
+        Label373.Text = reliabilityindices2
+        Label374.Text = reliabilityindices3
     End Sub
 
     'External Chloride Stress Corrosion Cracking – Austenitic Component Coding perhitungan --------------------------------

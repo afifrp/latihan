@@ -113,6 +113,12 @@
     <Compile Include="FMS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Corrosion_Rate.Designer.vb">
+      <DependentUpon>Corrosion_Rate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Corrosion_Rate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMS.resx">
       <DependentUpon>FMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corrosion_Rate.resx">
+      <DependentUpon>Corrosion_Rate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

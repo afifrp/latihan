@@ -48,8 +48,15 @@ Partial Class Insert_Material
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -58,6 +65,13 @@ Partial Class Insert_Material
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label18)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.Label14)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.TextBox9)
         Me.Panel1.Controls.Add(Me.TextBox8)
@@ -187,18 +201,18 @@ Partial Class Insert_Material
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(20, 286)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(130, 13)
+        Me.Label9.Size = New System.Drawing.Size(103, 13)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Design Temperature (m/s)"
+        Me.Label9.Text = "Design Temperature"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(20, 257)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(142, 13)
+        Me.Label8.Size = New System.Drawing.Size(123, 13)
         Me.Label8.TabIndex = 9
-        Me.Label8.Text = "Max. Operating Pressure (⁰C)"
+        Me.Label8.Text = "Max. Operating Pressure"
         '
         'Label7
         '
@@ -214,18 +228,18 @@ Partial Class Insert_Material
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(20, 203)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 13)
+        Me.Label6.Size = New System.Drawing.Size(84, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Tensile Strength (⁰C)"
+        Me.Label6.Text = "Tensile Strength"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(20, 174)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(113, 13)
+        Me.Label5.Size = New System.Drawing.Size(73, 13)
         Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Yield Strength (kg/m3)"
+        Me.Label5.Text = "Yield Strength"
         '
         'Label4
         '
@@ -301,6 +315,21 @@ Partial Class Insert_Material
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Material Properties"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(188, 380)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(114, 30)
+        Me.Button2.TabIndex = 25
+        Me.Button2.Text = "  UPDATE"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -316,20 +345,68 @@ Partial Class Insert_Material
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button2
+        'Label11
         '
-        Me.Button2.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(188, 380)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(114, 30)
-        Me.Button2.TabIndex = 25
-        Me.Button2.Text = "  UPDATE"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(92, 174)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.TabIndex = 29
+        Me.Label11.Text = "Label11"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(103, 203)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 29
+        Me.Label12.Text = "Label12"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(103, 229)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(45, 13)
+        Me.Label14.TabIndex = 29
+        Me.Label14.Text = "Label13"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(142, 257)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 29
+        Me.Label15.Text = "Label14"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(122, 286)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(45, 13)
+        Me.Label16.TabIndex = 29
+        Me.Label16.Text = "Label15"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(149, 315)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(45, 13)
+        Me.Label17.TabIndex = 29
+        Me.Label17.Text = "Label16"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(82, 346)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(45, 13)
+        Me.Label18.TabIndex = 29
+        Me.Label18.Text = "Label17"
         '
         'Insert_Material
         '
@@ -377,4 +454,11 @@ Partial Class Insert_Material
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
 End Class

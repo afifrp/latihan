@@ -129,4 +129,32 @@ Public Class Insert_Material
 
         Me.Close()
     End Sub
+
+    Private Sub Insert_Material_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Units.ComboBox1.Text = "SI" Then
+            Label11.Text = "(MPa)"
+            Label12.Text = "(MPa)"
+            Label13.Text = "(Mpa)"
+            Label14.Text = "(Mpa)"
+            Label15.Text = "(°C)"
+            Label16.Text = "(°C)"
+            Label17.Text = "($)"
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            Label11.Text = "(ksi)"
+            Label12.Text = "(ksi)"
+            Label13.Text = "(ksi)"
+            Label14.Text = "(ksi)"
+            Label15.Text = "(°F)"
+            Label16.Text = "(°F)"
+            Label17.Text = "($)"
+        Else
+            Label11.Text = ""
+            Label12.Text = ""
+            Label13.Text = ""
+            Label14.Text = ""
+            Label15.Text = ""
+            Label16.Text = ""
+            Label17.Text = ""
+        End If
+    End Sub
 End Class

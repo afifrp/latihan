@@ -667,6 +667,8 @@ Public Class Home
 
         Call tampildatamaterialcombobox()
         Call tampildatafluidacombobox()
+
+        Call satuan()
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
@@ -950,7 +952,7 @@ Public Class Home
 
 
         TabControl1.SelectedTab = TabPage4
-
+        Call pof()
     End Sub
 
     Private Sub Button19_Click_1(sender As Object, e As EventArgs) Handles Button19.Click
@@ -4247,6 +4249,41 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Panel92.Visible = False
             Panel103.Visible = False
             Panel104.Visible = False
+        End If
+    End Sub
+
+    'panggil satuan
+    Private Sub satuan()
+        If Units.ComboBox1.Text = "SI" Then
+            Label442.Text = "(mm)"
+            Label443.Text = "(mm)"
+            Label444.Text = "(mm)"
+            Label445.Text = "(Mpa)"
+            Label446.Text = "(°C)"
+            Label447.Text = "(mm)"
+            Label448.Text = "(MPa)"
+            Label449.Text = "(mm)"
+            Label450.Text = "(mm)"
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            Label442.Text = "(inch)"
+            Label443.Text = "(inch)"
+            Label444.Text = "(inch)"
+            Label445.Text = "(Mpa)"
+            Label446.Text = "(°C)"
+            Label447.Text = "(inch)"
+            Label448.Text = "(psi)"
+            Label449.Text = "(inch)"
+            Label450.Text = "(inch)"
+        Else
+            Label442.Text = ""
+            Label443.Text = ""
+            Label444.Text = ""
+            Label445.Text = ""
+            Label446.Text = ""
+            Label447.Text = ""
+            Label448.Text = ""
+            Label449.Text = ""
+            Label450.Text = ""
         End If
     End Sub
 
@@ -24256,6 +24293,1716 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         Label378.Text = dfmechanicalfatigue
 
+    End Sub
+
+    'Final POF ------------------------------------------------------------------------------------------------------------
+    Public Sub pof()
+        'gff
+        Dim gff As Double
+        gff = totalfms.Text
+        'fms
+        Dim fms As Double
+        fms = TextBox80.Text
+
+        'df
+        Dim thinning As Double
+
+        If Label325.Text = 0 Then
+            thinning = Label359.Text
+        Else
+            thinning = Math.Min(Val(Label359.Text), Val(Label325.Text))
+        End If
+
+        Dim external As Double
+
+        If Val(Label360.Text) > Val(Label361.Text) And Val(Label360.Text) > Val(Label362.Text) And Val(Label360.Text) > Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) > Val(Label360.Text) And Val(Label361.Text) > Val(Label362.Text) And Val(Label361.Text) > Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) > Val(Label360.Text) And Val(Label362.Text) > Val(Label361.Text) And Val(Label362.Text) > Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) > Val(Label360.Text) And Val(Label363.Text) > Val(Label361.Text) And Val(Label363.Text) > Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) = Val(Label361.Text) And Val(Label360.Text) > Val(Label362.Text) And Val(Label360.Text) > Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) = Val(Label360.Text) And Val(Label361.Text) > Val(Label362.Text) And Val(Label361.Text) > Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) = Val(Label360.Text) And Val(Label362.Text) > Val(Label361.Text) And Val(Label362.Text) > Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) = Val(Label360.Text) And Val(Label363.Text) > Val(Label361.Text) And Val(Label363.Text) > Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) > Val(Label361.Text) And Val(Label360.Text) = Val(Label362.Text) And Val(Label360.Text) > Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) > Val(Label360.Text) And Val(Label361.Text) = Val(Label362.Text) And Val(Label361.Text) > Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) > Val(Label360.Text) And Val(Label362.Text) = Val(Label361.Text) And Val(Label362.Text) > Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) > Val(Label360.Text) And Val(Label363.Text) = Val(Label361.Text) And Val(Label363.Text) > Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) > Val(Label361.Text) And Val(Label360.Text) > Val(Label362.Text) And Val(Label360.Text) = Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) > Val(Label360.Text) And Val(Label361.Text) > Val(Label362.Text) And Val(Label361.Text) = Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) > Val(Label360.Text) And Val(Label362.Text) > Val(Label361.Text) And Val(Label362.Text) = Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) > Val(Label360.Text) And Val(Label363.Text) > Val(Label361.Text) And Val(Label363.Text) = Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) = Val(Label361.Text) And Val(Label360.Text) = Val(Label362.Text) And Val(Label360.Text) > Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) = Val(Label360.Text) And Val(Label361.Text) = Val(Label362.Text) And Val(Label361.Text) > Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) = Val(Label360.Text) And Val(Label362.Text) = Val(Label361.Text) And Val(Label362.Text) > Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) = Val(Label360.Text) And Val(Label363.Text) = Val(Label361.Text) And Val(Label363.Text) > Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) > Val(Label361.Text) And Val(Label360.Text) = Val(Label362.Text) And Val(Label360.Text) = Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) > Val(Label360.Text) And Val(Label361.Text) = Val(Label362.Text) And Val(Label361.Text) = Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) > Val(Label360.Text) And Val(Label362.Text) = Val(Label361.Text) And Val(Label362.Text) = Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) > Val(Label360.Text) And Val(Label363.Text) = Val(Label361.Text) And Val(Label363.Text) = Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Val(Label360.Text) = Val(Label361.Text) And Val(Label360.Text) = Val(Label362.Text) And Val(Label360.Text) = Val(Label363.Text) Then
+            external = Label360.Text
+        End If
+        If Val(Label361.Text) = Val(Label360.Text) And Val(Label361.Text) = Val(Label362.Text) And Val(Label361.Text) = Val(Label363.Text) Then
+            external = Label361.Text
+        End If
+        If Val(Label362.Text) = Val(Label360.Text) And Val(Label362.Text) = Val(Label361.Text) And Val(Label362.Text) = Val(Label363.Text) Then
+            external = Label362.Text
+        End If
+        If Val(Label363.Text) = Val(Label360.Text) And Val(Label363.Text) = Val(Label361.Text) And Val(Label363.Text) = Val(Label362.Text) Then
+            external = Label363.Text
+        End If
+
+        If Label360.Text = "0" And Label361.Text = "0" And Label362.Text = "0" And Label363.Text = "0" Then
+            external = "0"
+        End If
+
+        '------------------------------- brittle ---------------------------------
+
+        Dim brittle As Double
+
+        Dim sum As String
+        Dim coy As Double
+        Dim bro As Double
+
+        coy = Val(Label364.Text)
+        bro = Val(Label365.Text)
+        sum = coy + bro
+
+        If sum > Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum > Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) > sum And Val(Label366.Text) > Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) > sum And Val(Label367.Text) > Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum > Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum > Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) > sum And Val(Label366.Text) > Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) > sum And Val(Label367.Text) > Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum = Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum = Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) = sum And Val(Label366.Text) > Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) = sum And Val(Label367.Text) > Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum > Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum > Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) > sum And Val(Label366.Text) > sum And Val(Label366.Text) = Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) > sum And Val(Label367.Text) > sum And Val(Label367.Text) = Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum = Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum = Val(Label366.Text) And sum > Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) = sum And Val(Label366.Text) = sum And Val(Label366.Text) > Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) = sum And Val(Label367.Text) = sum And Val(Label367.Text) > Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum = Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum = Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) > sum And Val(Label366.Text) = sum And Val(Label366.Text) = Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) > sum And Val(Label367.Text) = sum And Val(Label367.Text) = Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+        If sum = Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If sum = Val(Label366.Text) And sum = Val(Label367.Text) Then
+            brittle = sum
+        End If
+        If Val(Label366.Text) = sum And Val(Label366.Text) = sum And Val(Label366.Text) = Val(Label367.Text) Then
+            brittle = Label366.Text
+        End If
+        If Val(Label367.Text) = sum And Val(Label367.Text) = sum And Val(Label367.Text) = Val(Label366.Text) Then
+            brittle = Label367.Text
+        End If
+
+
+        If Label364.Text = "0" And Label365.Text = "0" And Label366.Text = "0" And Label367.Text = "0" Then
+            brittle = "0"
+        End If
+
+        '----------------------- scc ------------------------------------------------
+        Dim scc As Double
+
+        Dim sc1 As Double
+        Dim sc2 As Double
+        Dim sc3 As Double
+        Dim sc4 As Double
+        Dim sc5 As Double
+        Dim sc6 As Double
+        Dim sc7 As Double
+        Dim sc8 As Double
+        Dim sc9 As Double
+
+        sc1 = Val(Label377.Text)
+        sc2 = Val(Label368.Text)
+        sc3 = Val(Label369.Text)
+        sc4 = Val(Label370.Text)
+        sc5 = Val(Label371.Text)
+        sc6 = Val(Label372.Text)
+        sc7 = Val(Label373.Text)
+        sc8 = Val(Label374.Text)
+        sc9 = Val(Label375.Text)
+
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 = sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 = sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 = sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 = sc5 And sc1 = sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 = sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 > sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 > sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 > sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 > sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 > sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 > sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 > sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 > sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 > sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 > sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+        If sc1 = sc2 And sc1 = sc3 And sc1 = sc4 And sc1 = sc5 And sc1 = sc6 And sc1 = sc7 And sc1 = sc8 And sc1 = sc9 Then
+            scc = sc1
+        End If
+
+
+
+
+
+
+
+
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 = sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 = sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 = sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 = sc5 And sc2 = sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 = sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 > sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 > sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 > sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 > sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 > sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 > sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 > sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 > sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 > sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 > sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+        If sc2 = sc1 And sc2 = sc3 And sc2 = sc4 And sc2 = sc5 And sc2 = sc6 And sc2 = sc7 And sc2 = sc8 And sc2 = sc9 Then
+            scc = sc2
+        End If
+
+
+
+
+
+
+
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 = sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 = sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 = sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 = sc5 And sc3 = sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 = sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 > sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 > sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 > sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 > sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 > sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 > sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 > sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 > sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 > sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 > sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+        If sc3 = sc2 And sc3 = sc1 And sc3 = sc4 And sc3 = sc5 And sc3 = sc6 And sc3 = sc7 And sc3 = sc8 And sc3 = sc9 Then
+            scc = sc3
+        End If
+
+
+
+
+
+
+
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 = sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 = sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 = sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 = sc5 And sc4 = sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 = sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 > sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 > sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 > sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 > sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 > sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 > sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 > sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 > sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 > sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 > sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+        If sc4 = sc2 And sc4 = sc3 And sc4 = sc1 And sc4 = sc5 And sc4 = sc6 And sc4 = sc7 And sc4 = sc8 And sc4 = sc9 Then
+            scc = sc4
+        End If
+
+
+
+
+
+
+
+
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 = sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 = sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 = sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 = sc1 And sc5 = sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 = sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 > sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 > sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 > sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 > sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 > sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 > sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 > sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 > sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 > sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 > sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+        If sc5 = sc2 And sc5 = sc3 And sc5 = sc4 And sc5 = sc1 And sc5 = sc6 And sc5 = sc7 And sc5 = sc8 And sc5 = sc9 Then
+            scc = sc5
+        End If
+
+
+
+
+
+
+
+
+
+
+
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 = sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 = sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 = sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 = sc5 And sc6 = sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 = sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 > sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 > sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 > sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 > sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 > sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 > sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 > sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 > sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 > sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 > sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+        If sc6 = sc2 And sc6 = sc3 And sc6 = sc4 And sc6 = sc5 And sc6 = sc1 And sc6 = sc7 And sc6 = sc8 And sc6 = sc9 Then
+            scc = sc6
+        End If
+
+
+
+
+
+
+
+
+
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 = sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 = sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 = sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 = sc5 And sc7 = sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 = sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 > sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 > sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 > sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 > sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 > sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 > sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 > sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 > sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 > sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 > sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+        If sc7 = sc2 And sc7 = sc3 And sc7 = sc4 And sc7 = sc5 And sc7 = sc6 And sc7 = sc1 And sc7 = sc8 And sc7 = sc9 Then
+            scc = sc7
+        End If
+
+
+
+
+
+
+
+
+
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 = sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 = sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 = sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 = sc5 And sc8 = sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 = sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 > sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 > sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 > sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 > sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 > sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 > sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 > sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 > sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 > sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 > sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+        If sc8 = sc2 And sc8 = sc3 And sc8 = sc4 And sc8 = sc5 And sc8 = sc6 And sc8 = sc7 And sc8 = sc1 And sc8 = sc9 Then
+            scc = sc8
+        End If
+
+
+
+
+
+
+
+
+
+
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 = sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 = sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 = sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 = sc5 And sc9 = sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 = sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 > sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 > sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 > sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 > sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 > sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 > sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 > sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 > sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 > sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 > sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+        If sc9 = sc2 And sc9 = sc3 And sc9 = sc4 And sc9 = sc5 And sc9 = sc6 And sc9 = sc7 And sc9 = sc8 And sc9 = sc1 Then
+            scc = sc9
+        End If
+
+
+
+
+
+
+        If Label377.Text = "0" And Label368.Text = "0" And Label369.Text = "0" And Label370.Text = "0" And Label371.Text = "0" And Label372.Text = "0" And Label373.Text = "0" And Label374.Text = "0" And Label375.Text = "0" Then
+            scc = "0"
+        End If
+
+        '---------------------- htha ----------------------------------
+        Dim htha As Double
+
+        htha = Val(Label376.Text)
+
+        '---------------------- mechanical fatigue --------------------
+        Dim mechanicalfatigue As Double
+
+        mechanicalfatigue = Val(Label378.Text)
+
+        '---------------------- total df ------------------------------
+        Dim totaldf As Double
+
+        'local
+        If RadioButton1.Checked = True Then
+            totaldf = (Math.Max(thinning, external)) + scc + htha + brittle + mechanicalfatigue
+
+            'general
+        ElseIf RadioButton2.Checked = True Then
+            totaldf = thinning + external + scc + htha + brittle + mechanicalfatigue
+        End If
+
+        ' ---------------------- final pof ----------------------------
+        Dim pof As Double
+        Dim pofcategory As Double
+
+        pof = gff * totaldf * fms
+
+        If pof <= 0.0000306 Then
+            pofcategory = "1"
+        ElseIf pof > 0.0000306 AndAlso pof <= 0.000306 Then
+            pofcategory = "2"
+        ElseIf pof > 0.000306 AndAlso pof <= 0.00306 Then
+            pofcategory = "3"
+        ElseIf pof > 0.00306 AndAlso pof <= 0.0306 Then
+            pofcategory = "4"
+        Else
+            pofcategory = "5"
+        End If
+
+        Label421.Text = gff
+        Label422.Text = fms
+        Label423.Text = thinning
+        Label424.Text = external
+        Label425.Text = brittle
+        Label426.Text = scc
+        Label427.Text = htha
+        Label428.Text = mechanicalfatigue
+        Label429.Text = totaldf
+        Label430.Text = pof
+        Label431.Text = pofcategory
     End Sub
 
 

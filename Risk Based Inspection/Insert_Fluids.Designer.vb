@@ -24,6 +24,12 @@ Partial Class Insert_Fluids
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Insert_Fluids))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -58,8 +64,9 @@ Partial Class Insert_Fluids
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -68,6 +75,13 @@ Partial Class Insert_Fluids
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label18)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.TextBox14)
         Me.Panel1.Controls.Add(Me.ComboBox2)
@@ -105,6 +119,60 @@ Partial Class Insert_Fluids
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(473, 510)
         Me.Panel1.TabIndex = 0
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(111, 315)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(45, 13)
+        Me.Label20.TabIndex = 35
+        Me.Label20.Text = "Label20"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(120, 287)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(45, 13)
+        Me.Label19.TabIndex = 34
+        Me.Label19.Text = "Label19"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(148, 257)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(45, 13)
+        Me.Label18.TabIndex = 33
+        Me.Label18.Text = "Label18"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(109, 229)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(45, 13)
+        Me.Label17.TabIndex = 32
+        Me.Label17.Text = "Label17"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(121, 203)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(45, 13)
+        Me.Label16.TabIndex = 31
+        Me.Label16.Text = "Label16"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(62, 175)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 30
+        Me.Label15.Text = "Label15"
         '
         'Button3
         '
@@ -260,9 +328,9 @@ Partial Class Insert_Fluids
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(21, 435)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(167, 13)
+        Me.Label14.Size = New System.Drawing.Size(123, 13)
         Me.Label14.TabIndex = 3
-        Me.Label14.Text = "Liquid Dynamic Viscosity (N-s/m2)"
+        Me.Label14.Text = "Liquid Dynamic Viscosity"
         '
         'Label11
         '
@@ -287,18 +355,18 @@ Partial Class Insert_Fluids
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(20, 286)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(127, 13)
+        Me.Label9.Size = New System.Drawing.Size(100, 13)
         Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Liquid Flow Velocity (m/s)"
+        Me.Label9.Text = "Liquid Flow Velocity"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(20, 257)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(148, 13)
+        Me.Label8.Size = New System.Drawing.Size(129, 13)
         Me.Label8.TabIndex = 3
-        Me.Label8.Text = "Auto Ignition Temperature (⁰C)"
+        Me.Label8.Text = "Auto Ignition Temperature"
         '
         'Label7
         '
@@ -314,18 +382,18 @@ Partial Class Insert_Fluids
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(20, 203)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(120, 13)
+        Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Normal Boiling Point (⁰C)"
+        Me.Label6.Text = "Normal Boiling Point"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(20, 174)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 13)
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Density (kg/m3)"
+        Me.Label5.Text = "Density"
         '
         'Label4
         '
@@ -374,7 +442,7 @@ Partial Class Insert_Fluids
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Image = CType(resources.GetObject("Button11.Image"), System.Drawing.Image)
-        Me.Button11.Location = New System.Drawing.Point(432, 0)
+        Me.Button11.Location = New System.Drawing.Point(432, 1)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(38, 31)
         Me.Button11.TabIndex = 5
@@ -401,6 +469,21 @@ Partial Class Insert_Fluids
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Fluid Properties"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(201, 467)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(114, 30)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "  SAVE"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -416,20 +499,14 @@ Partial Class Insert_Fluids
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Button1
+        'Label21
         '
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(201, 467)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 30)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "  SAVE"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(144, 436)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(45, 13)
+        Me.Label21.TabIndex = 36
+        Me.Label21.Text = "Label21"
         '
         'Insert_Fluids
         '
@@ -487,4 +564,11 @@ Partial Class Insert_Fluids
     Friend WithEvents Button2 As Button
     Friend WithEvents TextBox14 As TextBox
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label21 As Label
 End Class

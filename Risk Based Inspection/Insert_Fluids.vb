@@ -147,4 +147,32 @@ Public Class Insert_Fluids
 
         Me.Close()
     End Sub
+
+    Private Sub Insert_Fluids_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Units.ComboBox1.Text = "SI" Then
+            Label15.Text = "(kg/m³)"
+            Label16.Text = "(°C)"
+            Label17.Text = "(kg/kg-mol)"
+            Label18.Text = "(K)"
+            Label19.Text = "(m/s)"
+            Label20.Text = "(Pa.s)"
+            Label21.Text = "(N-s/m²)"
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            Label15.Text = "(lb/ft³)"
+            Label16.Text = "(°F)"
+            Label17.Text = "(lb/lb-mol)"
+            Label18.Text = "(°R)"
+            Label19.Text = "(ft/s)"
+            Label20.Text = "(Pa.s)"
+            Label21.Text = "(N-s/m²)"
+        Else
+            Label15.Text = ""
+            Label16.Text = ""
+            Label17.Text = ""
+            Label18.Text = ""
+            Label19.Text = ""
+            Label20.Text = ""
+            Label21.Text = ""
+        End If
+    End Sub
 End Class

@@ -24,158 +24,21 @@ Partial Class Home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
-        Dim TreeNode131 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
-        Dim TreeNode132 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
-        Dim TreeNode133 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
-        Dim TreeNode134 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
-        Dim TreeNode135 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
-        Dim TreeNode136 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK I", New System.Windows.Forms.TreeNode() {TreeNode131, TreeNode132, TreeNode133, TreeNode134, TreeNode135})
-        Dim TreeNode137 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
-        Dim TreeNode138 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
-        Dim TreeNode139 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
-        Dim TreeNode140 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK II", New System.Windows.Forms.TreeNode() {TreeNode137, TreeNode138, TreeNode139})
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK I", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5})
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK II", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9})
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Panelgeneraldata = New System.Windows.Forms.Panel()
-        Me.DateTimePicker13 = New System.Windows.Forms.DateTimePicker()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Panel105 = New System.Windows.Forms.Panel()
-        Me.RadioButton35 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton34 = New System.Windows.Forms.RadioButton()
-        Me.Panel106 = New System.Windows.Forms.Panel()
-        Me.Label416 = New System.Windows.Forms.Label()
-        Me.Panel59 = New System.Windows.Forms.Panel()
-        Me.RadioButton21 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton20 = New System.Windows.Forms.RadioButton()
-        Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
-        Me.Panel58 = New System.Windows.Forms.Panel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.Label76 = New System.Windows.Forms.Label()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Panel56 = New System.Windows.Forms.Panel()
-        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
-        Me.Panel57 = New System.Windows.Forms.Panel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.Label75 = New System.Windows.Forms.Label()
-        Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton12 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Panel35 = New System.Windows.Forms.Panel()
-        Me.Panel40 = New System.Windows.Forms.Panel()
-        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton25 = New System.Windows.Forms.RadioButton()
-        Me.Label90 = New System.Windows.Forms.Label()
-        Me.RadioButton15 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
-        Me.Panel36 = New System.Windows.Forms.Panel()
-        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton23 = New System.Windows.Forms.RadioButton()
-        Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.TextBox33 = New System.Windows.Forms.TextBox()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label83 = New System.Windows.Forms.Label()
-        Me.Label82 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label329 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.PanelgeneraldataHE = New System.Windows.Forms.Panel()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.ComboBox61 = New System.Windows.Forms.ComboBox()
@@ -369,6 +232,152 @@ Partial Class Home
         Me.TextBox51 = New System.Windows.Forms.TextBox()
         Me.Label216 = New System.Windows.Forms.Label()
         Me.PanelgeneraldataPRD = New System.Windows.Forms.Panel()
+        Me.Panelgeneraldata = New System.Windows.Forms.Panel()
+        Me.Label450 = New System.Windows.Forms.Label()
+        Me.Label449 = New System.Windows.Forms.Label()
+        Me.Label448 = New System.Windows.Forms.Label()
+        Me.Label447 = New System.Windows.Forms.Label()
+        Me.Label446 = New System.Windows.Forms.Label()
+        Me.Label445 = New System.Windows.Forms.Label()
+        Me.Label444 = New System.Windows.Forms.Label()
+        Me.Label443 = New System.Windows.Forms.Label()
+        Me.Label442 = New System.Windows.Forms.Label()
+        Me.DateTimePicker13 = New System.Windows.Forms.DateTimePicker()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Panel105 = New System.Windows.Forms.Panel()
+        Me.RadioButton35 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton34 = New System.Windows.Forms.RadioButton()
+        Me.Panel106 = New System.Windows.Forms.Panel()
+        Me.Label416 = New System.Windows.Forms.Label()
+        Me.Panel59 = New System.Windows.Forms.Panel()
+        Me.RadioButton21 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton20 = New System.Windows.Forms.RadioButton()
+        Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
+        Me.Panel58 = New System.Windows.Forms.Panel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Panel56 = New System.Windows.Forms.Panel()
+        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
+        Me.Panel57 = New System.Windows.Forms.Panel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton12 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton25 = New System.Windows.Forms.RadioButton()
+        Me.Label90 = New System.Windows.Forms.Label()
+        Me.RadioButton15 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton23 = New System.Windows.Forms.RadioButton()
+        Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.TextBox33 = New System.Windows.Forms.TextBox()
+        Me.TextBox32 = New System.Windows.Forms.TextBox()
+        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.Label82 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label329 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panelnewanalysis = New System.Windows.Forms.Panel()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.ComboBox63 = New System.Windows.Forms.ComboBox()
@@ -401,6 +410,18 @@ Partial Class Home
         Me.Label391 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.PanelPOFHE = New System.Windows.Forms.Panel()
+        Me.Panelhistory = New System.Windows.Forms.Panel()
+        Me.Panelmttf = New System.Windows.Forms.Panel()
+        Me.Panelweibull = New System.Windows.Forms.Panel()
+        Me.Panelreliabilitylibrary = New System.Windows.Forms.Panel()
+        Me.Panel85 = New System.Windows.Forms.Panel()
+        Me.Label302 = New System.Windows.Forms.Label()
+        Me.RadioButton47 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton46 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton45 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton44 = New System.Windows.Forms.RadioButton()
+        Me.PanelPOFPRD = New System.Windows.Forms.Panel()
         Me.PanelPOF = New System.Windows.Forms.Panel()
         Me.Panel64 = New System.Windows.Forms.Panel()
         Me.Button17 = New System.Windows.Forms.Button()
@@ -934,45 +955,8 @@ Partial Class Home
         Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
         Me.Label326 = New System.Windows.Forms.Label()
         Me.TextBox83 = New System.Windows.Forms.TextBox()
-        Me.PanelPOFHE = New System.Windows.Forms.Panel()
-        Me.Panelhistory = New System.Windows.Forms.Panel()
-        Me.Panelmttf = New System.Windows.Forms.Panel()
-        Me.Panelweibull = New System.Windows.Forms.Panel()
-        Me.Panelreliabilitylibrary = New System.Windows.Forms.Panel()
-        Me.Panel85 = New System.Windows.Forms.Panel()
-        Me.Label302 = New System.Windows.Forms.Label()
-        Me.RadioButton47 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton46 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton45 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton44 = New System.Windows.Forms.RadioButton()
-        Me.PanelPOFPRD = New System.Windows.Forms.Panel()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel37 = New System.Windows.Forms.Panel()
-        Me.PanelCOF = New System.Windows.Forms.Panel()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.ComboBox75 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox74 = New System.Windows.Forms.ComboBox()
-        Me.TextBox87 = New System.Windows.Forms.TextBox()
-        Me.TextBox86 = New System.Windows.Forms.TextBox()
-        Me.Panel84 = New System.Windows.Forms.Panel()
-        Me.RadioButton33 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton32 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton31 = New System.Windows.Forms.RadioButton()
-        Me.Panel83 = New System.Windows.Forms.Panel()
-        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
-        Me.Panel82 = New System.Windows.Forms.Panel()
-        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
-        Me.Label311 = New System.Windows.Forms.Label()
-        Me.Label89 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.Label86 = New System.Windows.Forms.Label()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.Label84 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
         Me.PanelCOFPRD = New System.Windows.Forms.Panel()
         Me.PanelCOFHE = New System.Windows.Forms.Panel()
         Me.Button19 = New System.Windows.Forms.Button()
@@ -1003,10 +987,56 @@ Partial Class Home
         Me.Label290 = New System.Windows.Forms.Label()
         Me.PanelCOFlevel2 = New System.Windows.Forms.Panel()
         Me.PanelCOFAST = New System.Windows.Forms.Panel()
+        Me.PanelCOF = New System.Windows.Forms.Panel()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.ComboBox75 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox74 = New System.Windows.Forms.ComboBox()
+        Me.TextBox87 = New System.Windows.Forms.TextBox()
+        Me.TextBox86 = New System.Windows.Forms.TextBox()
+        Me.Panel84 = New System.Windows.Forms.Panel()
+        Me.RadioButton33 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton32 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton31 = New System.Windows.Forms.RadioButton()
+        Me.Panel83 = New System.Windows.Forms.Panel()
+        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
+        Me.Panel82 = New System.Windows.Forms.Panel()
+        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
+        Me.Label311 = New System.Windows.Forms.Label()
+        Me.Label89 = New System.Windows.Forms.Label()
+        Me.Label88 = New System.Windows.Forms.Label()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panelresultmetodegff = New System.Windows.Forms.Panel()
         Me.TextBox89 = New System.Windows.Forms.TextBox()
         Me.Panel94 = New System.Windows.Forms.Panel()
+        Me.Label441 = New System.Windows.Forms.Label()
+        Me.Label440 = New System.Windows.Forms.Label()
+        Me.Label439 = New System.Windows.Forms.Label()
+        Me.Label438 = New System.Windows.Forms.Label()
+        Me.Label437 = New System.Windows.Forms.Label()
+        Me.Label436 = New System.Windows.Forms.Label()
+        Me.Label435 = New System.Windows.Forms.Label()
+        Me.Label434 = New System.Windows.Forms.Label()
+        Me.Label433 = New System.Windows.Forms.Label()
+        Me.Label432 = New System.Windows.Forms.Label()
+        Me.Label431 = New System.Windows.Forms.Label()
+        Me.Label430 = New System.Windows.Forms.Label()
+        Me.Label429 = New System.Windows.Forms.Label()
+        Me.Label428 = New System.Windows.Forms.Label()
+        Me.Label427 = New System.Windows.Forms.Label()
+        Me.Label426 = New System.Windows.Forms.Label()
+        Me.Label425 = New System.Windows.Forms.Label()
+        Me.Label424 = New System.Windows.Forms.Label()
+        Me.Label423 = New System.Windows.Forms.Label()
+        Me.Label422 = New System.Windows.Forms.Label()
+        Me.Label421 = New System.Windows.Forms.Label()
         Me.Label358 = New System.Windows.Forms.Label()
         Me.Label356 = New System.Windows.Forms.Label()
         Me.Label357 = New System.Windows.Forms.Label()
@@ -1106,41 +1136,14 @@ Partial Class Home
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label421 = New System.Windows.Forms.Label()
-        Me.Label422 = New System.Windows.Forms.Label()
-        Me.Label423 = New System.Windows.Forms.Label()
-        Me.Label424 = New System.Windows.Forms.Label()
-        Me.Label425 = New System.Windows.Forms.Label()
-        Me.Label426 = New System.Windows.Forms.Label()
-        Me.Label427 = New System.Windows.Forms.Label()
-        Me.Label428 = New System.Windows.Forms.Label()
-        Me.Label429 = New System.Windows.Forms.Label()
-        Me.Label430 = New System.Windows.Forms.Label()
-        Me.Label431 = New System.Windows.Forms.Label()
-        Me.Label432 = New System.Windows.Forms.Label()
-        Me.Label433 = New System.Windows.Forms.Label()
-        Me.Label434 = New System.Windows.Forms.Label()
-        Me.Label435 = New System.Windows.Forms.Label()
-        Me.Label436 = New System.Windows.Forms.Label()
-        Me.Label437 = New System.Windows.Forms.Label()
-        Me.Label438 = New System.Windows.Forms.Label()
-        Me.Label439 = New System.Windows.Forms.Label()
-        Me.Label440 = New System.Windows.Forms.Label()
-        Me.Label441 = New System.Windows.Forms.Label()
-        Me.Label442 = New System.Windows.Forms.Label()
-        Me.Label443 = New System.Windows.Forms.Label()
-        Me.Label444 = New System.Windows.Forms.Label()
-        Me.Label445 = New System.Windows.Forms.Label()
-        Me.Label446 = New System.Windows.Forms.Label()
-        Me.Label447 = New System.Windows.Forms.Label()
-        Me.Label448 = New System.Windows.Forms.Label()
-        Me.Label449 = New System.Windows.Forms.Label()
-        Me.Label450 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel18.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.PanelgeneraldataHE.SuspendLayout()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel61.SuspendLayout()
         Me.Panelgeneraldata.SuspendLayout()
         Me.Panel105.SuspendLayout()
         Me.Panel106.SuspendLayout()
@@ -1163,9 +1166,6 @@ Partial Class Home
         Me.Panel36.SuspendLayout()
         Me.Panel31.SuspendLayout()
         Me.Panel24.SuspendLayout()
-        Me.PanelgeneraldataHE.SuspendLayout()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel61.SuspendLayout()
         Me.Panelnewanalysis.SuspendLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1179,6 +1179,8 @@ Partial Class Home
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel33.SuspendLayout()
+        Me.PanelPOFHE.SuspendLayout()
+        Me.Panel85.SuspendLayout()
         Me.PanelPOF.SuspendLayout()
         Me.Panel64.SuspendLayout()
         Me.Panel81.SuspendLayout()
@@ -1273,15 +1275,13 @@ Partial Class Home
         Me.Panel21.SuspendLayout()
         Me.Panel89.SuspendLayout()
         Me.Panel60.SuspendLayout()
-        Me.PanelPOFHE.SuspendLayout()
-        Me.Panel85.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel37.SuspendLayout()
+        Me.PanelCOFHE.SuspendLayout()
         Me.PanelCOF.SuspendLayout()
         Me.Panel84.SuspendLayout()
         Me.Panel83.SuspendLayout()
         Me.Panel82.SuspendLayout()
-        Me.PanelCOFHE.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.Panelresultmetodegff.SuspendLayout()
         Me.Panel94.SuspendLayout()
@@ -1373,1530 +1373,6 @@ Partial Class Home
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General Data"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Panelgeneraldata
-        '
-        Me.Panelgeneraldata.Controls.Add(Me.Label450)
-        Me.Panelgeneraldata.Controls.Add(Me.Label449)
-        Me.Panelgeneraldata.Controls.Add(Me.Label448)
-        Me.Panelgeneraldata.Controls.Add(Me.Label447)
-        Me.Panelgeneraldata.Controls.Add(Me.Label446)
-        Me.Panelgeneraldata.Controls.Add(Me.Label445)
-        Me.Panelgeneraldata.Controls.Add(Me.Label444)
-        Me.Panelgeneraldata.Controls.Add(Me.Label443)
-        Me.Panelgeneraldata.Controls.Add(Me.Label442)
-        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker13)
-        Me.Panelgeneraldata.Controls.Add(Me.Button10)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel105)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel106)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel59)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel32)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel26)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel58)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel23)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel28)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel56)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel57)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel25)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel22)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel27)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel16)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel30)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel29)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel35)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel36)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel31)
-        Me.Panelgeneraldata.Controls.Add(Me.Panel24)
-        Me.Panelgeneraldata.Controls.Add(Me.Label45)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox28)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox27)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox26)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox33)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox32)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox31)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox30)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox29)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox25)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox24)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox23)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox22)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox21)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox20)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox19)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox18)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox17)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox16)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox15)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox14)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox13)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox12)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox11)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox10)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox9)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox8)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox7)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox6)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox5)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox4)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox3)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox2)
-        Me.Panelgeneraldata.Controls.Add(Me.TextBox1)
-        Me.Panelgeneraldata.Controls.Add(Me.ComboBox4)
-        Me.Panelgeneraldata.Controls.Add(Me.Label37)
-        Me.Panelgeneraldata.Controls.Add(Me.Label36)
-        Me.Panelgeneraldata.Controls.Add(Me.Label35)
-        Me.Panelgeneraldata.Controls.Add(Me.Label34)
-        Me.Panelgeneraldata.Controls.Add(Me.Label33)
-        Me.Panelgeneraldata.Controls.Add(Me.Label32)
-        Me.Panelgeneraldata.Controls.Add(Me.Label31)
-        Me.Panelgeneraldata.Controls.Add(Me.Label83)
-        Me.Panelgeneraldata.Controls.Add(Me.Label82)
-        Me.Panelgeneraldata.Controls.Add(Me.Label21)
-        Me.Panelgeneraldata.Controls.Add(Me.Label38)
-        Me.Panelgeneraldata.Controls.Add(Me.Label30)
-        Me.Panelgeneraldata.Controls.Add(Me.Label29)
-        Me.Panelgeneraldata.Controls.Add(Me.Label28)
-        Me.Panelgeneraldata.Controls.Add(Me.Label27)
-        Me.Panelgeneraldata.Controls.Add(Me.Label26)
-        Me.Panelgeneraldata.Controls.Add(Me.Label25)
-        Me.Panelgeneraldata.Controls.Add(Me.Label24)
-        Me.Panelgeneraldata.Controls.Add(Me.Label23)
-        Me.Panelgeneraldata.Controls.Add(Me.ComboBox3)
-        Me.Panelgeneraldata.Controls.Add(Me.ComboBox1)
-        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker2)
-        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker1)
-        Me.Panelgeneraldata.Controls.Add(Me.Label13)
-        Me.Panelgeneraldata.Controls.Add(Me.Label12)
-        Me.Panelgeneraldata.Controls.Add(Me.Label18)
-        Me.Panelgeneraldata.Controls.Add(Me.Label17)
-        Me.Panelgeneraldata.Controls.Add(Me.Label19)
-        Me.Panelgeneraldata.Controls.Add(Me.Label15)
-        Me.Panelgeneraldata.Controls.Add(Me.Label14)
-        Me.Panelgeneraldata.Controls.Add(Me.Label11)
-        Me.Panelgeneraldata.Controls.Add(Me.Label10)
-        Me.Panelgeneraldata.Controls.Add(Me.Label9)
-        Me.Panelgeneraldata.Controls.Add(Me.Label8)
-        Me.Panelgeneraldata.Controls.Add(Me.Label22)
-        Me.Panelgeneraldata.Controls.Add(Me.Label7)
-        Me.Panelgeneraldata.Controls.Add(Me.Label329)
-        Me.Panelgeneraldata.Controls.Add(Me.Label6)
-        Me.Panelgeneraldata.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panelgeneraldata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panelgeneraldata.Location = New System.Drawing.Point(3, 583)
-        Me.Panelgeneraldata.Name = "Panelgeneraldata"
-        Me.Panelgeneraldata.Size = New System.Drawing.Size(751, 1347)
-        Me.Panelgeneraldata.TabIndex = 1
-        '
-        'DateTimePicker13
-        '
-        Me.DateTimePicker13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker13.Location = New System.Drawing.Point(228, 48)
-        Me.DateTimePicker13.Name = "DateTimePicker13"
-        Me.DateTimePicker13.Size = New System.Drawing.Size(149, 20)
-        Me.DateTimePicker13.TabIndex = 235
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button10.Location = New System.Drawing.Point(601, 1299)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(102, 25)
-        Me.Button10.TabIndex = 233
-        Me.Button10.Text = "Next"
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'Panel105
-        '
-        Me.Panel105.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel105.Controls.Add(Me.RadioButton35)
-        Me.Panel105.Controls.Add(Me.RadioButton34)
-        Me.Panel105.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel105.Location = New System.Drawing.Point(380, 1207)
-        Me.Panel105.Name = "Panel105"
-        Me.Panel105.Size = New System.Drawing.Size(323, 55)
-        Me.Panel105.TabIndex = 234
-        '
-        'RadioButton35
-        '
-        Me.RadioButton35.AutoSize = True
-        Me.RadioButton35.Location = New System.Drawing.Point(7, 27)
-        Me.RadioButton35.Name = "RadioButton35"
-        Me.RadioButton35.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton35.TabIndex = 2
-        Me.RadioButton35.TabStop = True
-        Me.RadioButton35.Text = "No"
-        Me.RadioButton35.UseVisualStyleBackColor = True
-        '
-        'RadioButton34
-        '
-        Me.RadioButton34.AutoSize = True
-        Me.RadioButton34.Location = New System.Drawing.Point(7, 5)
-        Me.RadioButton34.Name = "RadioButton34"
-        Me.RadioButton34.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton34.TabIndex = 1
-        Me.RadioButton34.TabStop = True
-        Me.RadioButton34.Text = "Yes"
-        Me.RadioButton34.UseVisualStyleBackColor = True
-        '
-        'Panel106
-        '
-        Me.Panel106.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel106.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel106.Controls.Add(Me.Label416)
-        Me.Panel106.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel106.Location = New System.Drawing.Point(55, 1207)
-        Me.Panel106.Name = "Panel106"
-        Me.Panel106.Size = New System.Drawing.Size(326, 55)
-        Me.Panel106.TabIndex = 233
-        '
-        'Label416
-        '
-        Me.Label416.AutoSize = True
-        Me.Label416.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label416.Location = New System.Drawing.Point(13, 19)
-        Me.Label416.Name = "Label416"
-        Me.Label416.Size = New System.Drawing.Size(81, 15)
-        Me.Label416.TabIndex = 18
-        Me.Label416.Text = "Heat Traced?"
-        '
-        'Panel59
-        '
-        Me.Panel59.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel59.Controls.Add(Me.RadioButton21)
-        Me.Panel59.Controls.Add(Me.RadioButton20)
-        Me.Panel59.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel59.Location = New System.Drawing.Point(380, 1153)
-        Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(323, 55)
-        Me.Panel59.TabIndex = 232
-        '
-        'RadioButton21
-        '
-        Me.RadioButton21.AutoSize = True
-        Me.RadioButton21.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton21.Name = "RadioButton21"
-        Me.RadioButton21.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton21.TabIndex = 1
-        Me.RadioButton21.TabStop = True
-        Me.RadioButton21.Text = "No"
-        Me.RadioButton21.UseVisualStyleBackColor = True
-        '
-        'RadioButton20
-        '
-        Me.RadioButton20.AutoSize = True
-        Me.RadioButton20.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton20.Name = "RadioButton20"
-        Me.RadioButton20.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton20.TabIndex = 0
-        Me.RadioButton20.TabStop = True
-        Me.RadioButton20.Text = "Yes"
-        Me.RadioButton20.UseVisualStyleBackColor = True
-        '
-        'Panel32
-        '
-        Me.Panel32.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel32.Controls.Add(Me.Label44)
-        Me.Panel32.Location = New System.Drawing.Point(55, 1045)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(326, 55)
-        Me.Panel32.TabIndex = 223
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label44.Location = New System.Drawing.Point(9, 11)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(185, 30)
-        Me.Label44.TabIndex = 18
-        Me.Label44.Text = "Is operating hydrogen partial " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "pressure > 0.345 Mpa (50 psia)?"
-        '
-        'Panel26
-        '
-        Me.Panel26.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel26.Controls.Add(Me.RadioButton17)
-        Me.Panel26.Controls.Add(Me.RadioButton16)
-        Me.Panel26.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel26.Location = New System.Drawing.Point(380, 1045)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(323, 55)
-        Me.Panel26.TabIndex = 222
-        '
-        'RadioButton17
-        '
-        Me.RadioButton17.AutoSize = True
-        Me.RadioButton17.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton17.TabIndex = 1
-        Me.RadioButton17.TabStop = True
-        Me.RadioButton17.Text = "No"
-        Me.RadioButton17.UseVisualStyleBackColor = True
-        '
-        'RadioButton16
-        '
-        Me.RadioButton16.AutoSize = True
-        Me.RadioButton16.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton16.TabIndex = 0
-        Me.RadioButton16.TabStop = True
-        Me.RadioButton16.Text = "Yes"
-        Me.RadioButton16.UseVisualStyleBackColor = True
-        '
-        'Panel58
-        '
-        Me.Panel58.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel58.Controls.Add(Me.LinkLabel3)
-        Me.Panel58.Controls.Add(Me.Label76)
-        Me.Panel58.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel58.Location = New System.Drawing.Point(55, 1153)
-        Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(326, 55)
-        Me.Panel58.TabIndex = 231
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(13, 19)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(104, 15)
-        Me.LinkLabel3.TabIndex = 0
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Detail Information"
-        '
-        'Label76
-        '
-        Me.Label76.AutoSize = True
-        Me.Label76.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label76.Location = New System.Drawing.Point(102, 19)
-        Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(126, 15)
-        Me.Label76.TabIndex = 18
-        Me.Label76.Text = "Is this statement true?"
-        '
-        'Panel23
-        '
-        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel23.Controls.Add(Me.RadioButton4)
-        Me.Panel23.Controls.Add(Me.RadioButton3)
-        Me.Panel23.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel23.Location = New System.Drawing.Point(380, 646)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(323, 55)
-        Me.Panel23.TabIndex = 213
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton4.TabIndex = 1
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "No"
-        Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton3.TabIndex = 0
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Yes"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'Panel28
-        '
-        Me.Panel28.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel28.Controls.Add(Me.Label41)
-        Me.Panel28.Location = New System.Drawing.Point(55, 700)
-        Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(326, 125)
-        Me.Panel28.TabIndex = 215
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label41.Location = New System.Drawing.Point(5, 54)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(232, 15)
-        Me.Label41.TabIndex = 18
-        Me.Label41.Text = "What does process environment contain?"
-        '
-        'Panel56
-        '
-        Me.Panel56.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel56.Controls.Add(Me.RadioButton19)
-        Me.Panel56.Controls.Add(Me.RadioButton18)
-        Me.Panel56.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel56.Location = New System.Drawing.Point(380, 1099)
-        Me.Panel56.Name = "Panel56"
-        Me.Panel56.Size = New System.Drawing.Size(323, 55)
-        Me.Panel56.TabIndex = 230
-        '
-        'RadioButton19
-        '
-        Me.RadioButton19.AutoSize = True
-        Me.RadioButton19.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton19.Name = "RadioButton19"
-        Me.RadioButton19.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton19.TabIndex = 1
-        Me.RadioButton19.TabStop = True
-        Me.RadioButton19.Text = "No"
-        Me.RadioButton19.UseVisualStyleBackColor = True
-        '
-        'RadioButton18
-        '
-        Me.RadioButton18.AutoSize = True
-        Me.RadioButton18.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton18.Name = "RadioButton18"
-        Me.RadioButton18.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton18.TabIndex = 0
-        Me.RadioButton18.TabStop = True
-        Me.RadioButton18.Text = "Yes"
-        Me.RadioButton18.UseVisualStyleBackColor = True
-        '
-        'Panel57
-        '
-        Me.Panel57.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel57.Controls.Add(Me.LinkLabel2)
-        Me.Panel57.Controls.Add(Me.Label75)
-        Me.Panel57.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel57.Location = New System.Drawing.Point(55, 1099)
-        Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(326, 55)
-        Me.Panel57.TabIndex = 225
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(12, 18)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(104, 15)
-        Me.LinkLabel2.TabIndex = 19
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Detail Information"
-        '
-        'Label75
-        '
-        Me.Label75.AutoSize = True
-        Me.Label75.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label75.Location = New System.Drawing.Point(102, 19)
-        Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(126, 15)
-        Me.Label75.TabIndex = 18
-        Me.Label75.Text = "Is this statement true?"
-        '
-        'Panel25
-        '
-        Me.Panel25.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel25.Controls.Add(Me.RadioButton7)
-        Me.Panel25.Controls.Add(Me.RadioButton6)
-        Me.Panel25.Controls.Add(Me.RadioButton5)
-        Me.Panel25.Controls.Add(Me.RadioButton12)
-        Me.Panel25.Controls.Add(Me.RadioButton13)
-        Me.Panel25.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel25.Location = New System.Drawing.Point(380, 700)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(323, 125)
-        Me.Panel25.TabIndex = 214
-        '
-        'RadioButton7
-        '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Location = New System.Drawing.Point(7, 96)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(55, 19)
-        Me.RadioButton7.TabIndex = 4
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "None"
-        Me.RadioButton7.UseVisualStyleBackColor = True
-        '
-        'RadioButton6
-        '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(7, 74)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(157, 19)
-        Me.RadioButton6.TabIndex = 3
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "Alkaline water at pH>7.5"
-        Me.RadioButton6.UseVisualStyleBackColor = True
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(7, 52)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(108, 19)
-        Me.RadioButton5.TabIndex = 2
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Water and H2S"
-        Me.RadioButton5.UseVisualStyleBackColor = True
-        '
-        'RadioButton12
-        '
-        Me.RadioButton12.AutoSize = True
-        Me.RadioButton12.Location = New System.Drawing.Point(7, 30)
-        Me.RadioButton12.Name = "RadioButton12"
-        Me.RadioButton12.Size = New System.Drawing.Size(300, 19)
-        Me.RadioButton12.TabIndex = 1
-        Me.RadioButton12.TabStop = True
-        Me.RadioButton12.Text = "Acid gas treating amines (MEA, DEA, DIPA, MDEA)"
-        Me.RadioButton12.UseVisualStyleBackColor = True
-        '
-        'RadioButton13
-        '
-        Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Location = New System.Drawing.Point(7, 8)
-        Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(65, 19)
-        Me.RadioButton13.TabIndex = 0
-        Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "Caustic"
-        Me.RadioButton13.UseVisualStyleBackColor = True
-        '
-        'Panel22
-        '
-        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel22.Controls.Add(Me.Label20)
-        Me.Panel22.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel22.Location = New System.Drawing.Point(55, 646)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(326, 55)
-        Me.Panel22.TabIndex = 212
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label20.Location = New System.Drawing.Point(5, 19)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(190, 15)
-        Me.Label20.TabIndex = 18
-        Me.Label20.Text = "Does the component have lining?"
-        '
-        'Panel27
-        '
-        Me.Panel27.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel27.Controls.Add(Me.Label2)
-        Me.Panel27.Location = New System.Drawing.Point(55, 592)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(326, 55)
-        Me.Panel27.TabIndex = 211
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(4, 19)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(186, 15)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Thinning type on the equipment?"
-        '
-        'Panel16
-        '
-        Me.Panel16.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel16.Controls.Add(Me.RadioButton2)
-        Me.Panel16.Controls.Add(Me.RadioButton1)
-        Me.Panel16.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel16.Location = New System.Drawing.Point(380, 592)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(323, 55)
-        Me.Panel16.TabIndex = 210
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(69, 19)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "General"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 19)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Local"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'Panel30
-        '
-        Me.Panel30.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel30.Controls.Add(Me.Label4)
-        Me.Panel30.Location = New System.Drawing.Point(55, 927)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(326, 55)
-        Me.Panel30.TabIndex = 219
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(8, 19)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(141, 15)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Is component insulated?"
-        '
-        'Panel29
-        '
-        Me.Panel29.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel29.Controls.Add(Me.Label42)
-        Me.Panel29.Location = New System.Drawing.Point(55, 824)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(326, 105)
-        Me.Panel29.TabIndex = 217
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label42.Location = New System.Drawing.Point(8, 44)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(202, 15)
-        Me.Label42.TabIndex = 18
-        Me.Label42.Text = "What is the component exposed to?"
-        '
-        'Panel35
-        '
-        Me.Panel35.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel35.Controls.Add(Me.Panel40)
-        Me.Panel35.Controls.Add(Me.Label90)
-        Me.Panel35.Controls.Add(Me.RadioButton15)
-        Me.Panel35.Controls.Add(Me.RadioButton14)
-        Me.Panel35.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel35.Location = New System.Drawing.Point(380, 981)
-        Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(323, 65)
-        Me.Panel35.TabIndex = 220
-        '
-        'Panel40
-        '
-        Me.Panel40.Controls.Add(Me.RadioButton24)
-        Me.Panel40.Controls.Add(Me.RadioButton25)
-        Me.Panel40.Location = New System.Drawing.Point(72, 36)
-        Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(109, 22)
-        Me.Panel40.TabIndex = 21
-        '
-        'RadioButton24
-        '
-        Me.RadioButton24.AutoSize = True
-        Me.RadioButton24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton24.Location = New System.Drawing.Point(3, 2)
-        Me.RadioButton24.Name = "RadioButton24"
-        Me.RadioButton24.Size = New System.Drawing.Size(43, 17)
-        Me.RadioButton24.TabIndex = 19
-        Me.RadioButton24.TabStop = True
-        Me.RadioButton24.Text = "Yes"
-        Me.RadioButton24.UseVisualStyleBackColor = True
-        Me.RadioButton24.Visible = False
-        '
-        'RadioButton25
-        '
-        Me.RadioButton25.AutoSize = True
-        Me.RadioButton25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton25.Location = New System.Drawing.Point(52, 2)
-        Me.RadioButton25.Name = "RadioButton25"
-        Me.RadioButton25.Size = New System.Drawing.Size(39, 17)
-        Me.RadioButton25.TabIndex = 20
-        Me.RadioButton25.TabStop = True
-        Me.RadioButton25.Text = "No"
-        Me.RadioButton25.UseVisualStyleBackColor = True
-        Me.RadioButton25.Visible = False
-        '
-        'Label90
-        '
-        Me.Label90.AutoSize = True
-        Me.Label90.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label90.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label90.Location = New System.Drawing.Point(72, 8)
-        Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(240, 26)
-        Me.Label90.TabIndex = 18
-        Me.Label90.Text = "is  component known to operate at or below the " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MDMT or MAT under normal or upse" &
-    "t conditions?"
-        Me.Label90.Visible = False
-        '
-        'RadioButton15
-        '
-        Me.RadioButton15.AutoSize = True
-        Me.RadioButton15.Location = New System.Drawing.Point(7, 34)
-        Me.RadioButton15.Name = "RadioButton15"
-        Me.RadioButton15.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton15.TabIndex = 1
-        Me.RadioButton15.TabStop = True
-        Me.RadioButton15.Text = "No"
-        Me.RadioButton15.UseVisualStyleBackColor = True
-        '
-        'RadioButton14
-        '
-        Me.RadioButton14.AutoSize = True
-        Me.RadioButton14.Location = New System.Drawing.Point(7, 12)
-        Me.RadioButton14.Name = "RadioButton14"
-        Me.RadioButton14.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton14.TabIndex = 0
-        Me.RadioButton14.TabStop = True
-        Me.RadioButton14.Text = "Yes"
-        Me.RadioButton14.UseVisualStyleBackColor = True
-        '
-        'Panel36
-        '
-        Me.Panel36.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel36.Controls.Add(Me.RadioButton22)
-        Me.Panel36.Controls.Add(Me.RadioButton23)
-        Me.Panel36.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel36.Location = New System.Drawing.Point(380, 927)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(323, 55)
-        Me.Panel36.TabIndex = 218
-        '
-        'RadioButton22
-        '
-        Me.RadioButton22.AutoSize = True
-        Me.RadioButton22.Location = New System.Drawing.Point(7, 28)
-        Me.RadioButton22.Name = "RadioButton22"
-        Me.RadioButton22.Size = New System.Drawing.Size(41, 19)
-        Me.RadioButton22.TabIndex = 1
-        Me.RadioButton22.TabStop = True
-        Me.RadioButton22.Text = "No"
-        Me.RadioButton22.UseVisualStyleBackColor = True
-        '
-        'RadioButton23
-        '
-        Me.RadioButton23.AutoSize = True
-        Me.RadioButton23.Location = New System.Drawing.Point(7, 6)
-        Me.RadioButton23.Name = "RadioButton23"
-        Me.RadioButton23.Size = New System.Drawing.Size(45, 19)
-        Me.RadioButton23.TabIndex = 0
-        Me.RadioButton23.TabStop = True
-        Me.RadioButton23.Text = "Yes"
-        Me.RadioButton23.UseVisualStyleBackColor = True
-        '
-        'Panel31
-        '
-        Me.Panel31.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel31.Controls.Add(Me.Label43)
-        Me.Panel31.Location = New System.Drawing.Point(55, 981)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(326, 65)
-        Me.Panel31.TabIndex = 221
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label43.Location = New System.Drawing.Point(9, 9)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(288, 45)
-        Me.Label43.TabIndex = 18
-        Me.Label43.Text = "Is Minimum Design Metal Temperature (MDMT) or " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Minimum Allowable Temperature (MA" &
-    "T) known?" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "* if one of them is unknown, then select ""No"""
-        '
-        'Panel24
-        '
-        Me.Panel24.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel24.Controls.Add(Me.RadioButton11)
-        Me.Panel24.Controls.Add(Me.RadioButton10)
-        Me.Panel24.Controls.Add(Me.RadioButton9)
-        Me.Panel24.Controls.Add(Me.RadioButton8)
-        Me.Panel24.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel24.Location = New System.Drawing.Point(380, 824)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(323, 105)
-        Me.Panel24.TabIndex = 216
-        '
-        'RadioButton11
-        '
-        Me.RadioButton11.AutoSize = True
-        Me.RadioButton11.Location = New System.Drawing.Point(7, 75)
-        Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(55, 19)
-        Me.RadioButton11.TabIndex = 3
-        Me.RadioButton11.TabStop = True
-        Me.RadioButton11.Text = "None"
-        Me.RadioButton11.UseVisualStyleBackColor = True
-        '
-        'RadioButton10
-        '
-        Me.RadioButton10.AutoSize = True
-        Me.RadioButton10.Location = New System.Drawing.Point(7, 53)
-        Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(77, 19)
-        Me.RadioButton10.TabIndex = 2
-        Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "Chlorides"
-        Me.RadioButton10.UseVisualStyleBackColor = True
-        '
-        'RadioButton9
-        '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(7, 31)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(170, 19)
-        Me.RadioButton9.TabIndex = 1
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "Sulfur bearing compounds"
-        Me.RadioButton9.UseVisualStyleBackColor = True
-        '
-        'RadioButton8
-        '
-        Me.RadioButton8.AutoSize = True
-        Me.RadioButton8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.RadioButton8.Location = New System.Drawing.Point(7, 9)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(116, 19)
-        Me.RadioButton8.TabIndex = 0
-        Me.RadioButton8.TabStop = True
-        Me.RadioButton8.Text = "Hydroflouric Acid"
-        Me.RadioButton8.UseVisualStyleBackColor = True
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label45.Location = New System.Drawing.Point(270, 550)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(203, 20)
-        Me.Label45.TabIndex = 209
-        Me.Label45.Text = "SCREENING CRITERIA"
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox28.Location = New System.Drawing.Point(559, 501)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.ReadOnly = True
-        Me.TextBox28.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox28.TabIndex = 208
-        '
-        'TextBox27
-        '
-        Me.TextBox27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox27.Location = New System.Drawing.Point(559, 473)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.ReadOnly = True
-        Me.TextBox27.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox27.TabIndex = 207
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox26.Location = New System.Drawing.Point(559, 445)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.ReadOnly = True
-        Me.TextBox26.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox26.TabIndex = 206
-        '
-        'TextBox33
-        '
-        Me.TextBox33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox33.Location = New System.Drawing.Point(683, 417)
-        Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.ReadOnly = True
-        Me.TextBox33.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox33.TabIndex = 205
-        '
-        'TextBox32
-        '
-        Me.TextBox32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox32.Location = New System.Drawing.Point(651, 417)
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.ReadOnly = True
-        Me.TextBox32.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox32.TabIndex = 204
-        '
-        'TextBox31
-        '
-        Me.TextBox31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox31.Location = New System.Drawing.Point(621, 417)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.ReadOnly = True
-        Me.TextBox31.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox31.TabIndex = 203
-        '
-        'TextBox30
-        '
-        Me.TextBox30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox30.Location = New System.Drawing.Point(590, 417)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.ReadOnly = True
-        Me.TextBox30.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox30.TabIndex = 202
-        '
-        'TextBox29
-        '
-        Me.TextBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox29.Location = New System.Drawing.Point(559, 417)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.ReadOnly = True
-        Me.TextBox29.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox29.TabIndex = 201
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox25.Location = New System.Drawing.Point(559, 389)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox25.TabIndex = 197
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox24.Location = New System.Drawing.Point(559, 359)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.ReadOnly = True
-        Me.TextBox24.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox24.TabIndex = 196
-        '
-        'TextBox23
-        '
-        Me.TextBox23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox23.Location = New System.Drawing.Point(559, 331)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox23.TabIndex = 195
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox22.Location = New System.Drawing.Point(559, 302)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox22.TabIndex = 194
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox21.Location = New System.Drawing.Point(559, 274)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.ReadOnly = True
-        Me.TextBox21.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox21.TabIndex = 193
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox20.Location = New System.Drawing.Point(559, 243)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.ReadOnly = True
-        Me.TextBox20.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox20.TabIndex = 192
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox19.Location = New System.Drawing.Point(559, 216)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox19.TabIndex = 191
-        '
-        'TextBox18
-        '
-        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox18.Location = New System.Drawing.Point(559, 189)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.ReadOnly = True
-        Me.TextBox18.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox18.TabIndex = 190
-        '
-        'TextBox17
-        '
-        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.Location = New System.Drawing.Point(559, 162)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.ReadOnly = True
-        Me.TextBox17.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox17.TabIndex = 189
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.Location = New System.Drawing.Point(559, 134)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.ReadOnly = True
-        Me.TextBox16.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox16.TabIndex = 188
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.Location = New System.Drawing.Point(559, 106)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.ReadOnly = True
-        Me.TextBox15.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox15.TabIndex = 187
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(559, 79)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.ReadOnly = True
-        Me.TextBox14.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox14.TabIndex = 186
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(559, 53)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.ReadOnly = True
-        Me.TextBox13.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox13.TabIndex = 185
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(228, 526)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox12.TabIndex = 184
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(228, 498)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox11.TabIndex = 183
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(228, 470)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox10.TabIndex = 182
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(228, 441)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox9.TabIndex = 181
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(228, 411)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox8.TabIndex = 180
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(228, 383)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox7.TabIndex = 179
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(228, 354)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox6.TabIndex = 178
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(228, 326)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox5.TabIndex = 177
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(228, 298)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox4.TabIndex = 176
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(228, 271)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox3.TabIndex = 175
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(228, 244)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox2.TabIndex = 174
-        Me.ToolTip1.SetToolTip(Me.TextBox2, "last inspection thickness")
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(228, 215)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox1.TabIndex = 173
-        Me.ToolTip1.SetToolTip(Me.TextBox1, "installation thickness (base material + cladding if available)")
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(228, 184)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBox4.TabIndex = 83
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label37.Location = New System.Drawing.Point(37, 186)
-        Me.Label37.Name = "Label37"
-        Me.Label37.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label37.Size = New System.Drawing.Size(40, 15)
-        Me.Label37.TabIndex = 60
-        Me.Label37.Text = "Fluid :"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label36.Location = New System.Drawing.Point(396, 218)
-        Me.Label36.Name = "Label36"
-        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label36.Size = New System.Drawing.Size(74, 15)
-        Me.Label36.TabIndex = 61
-        Me.Label36.Text = "Cost Factor :"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label35.Location = New System.Drawing.Point(395, 135)
-        Me.Label35.Name = "Label35"
-        Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label35.Size = New System.Drawing.Size(149, 15)
-        Me.Label35.TabIndex = 62
-        Me.Label35.Text = "Max. Operating Pressure :"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label34.Location = New System.Drawing.Point(396, 190)
-        Me.Label34.Name = "Label34"
-        Me.Label34.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label34.Size = New System.Drawing.Size(156, 15)
-        Me.Label34.TabIndex = 63
-        Me.Label34.Text = "Max. Design Temperature :"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label33.Location = New System.Drawing.Point(397, 360)
-        Me.Label33.Name = "Label33"
-        Me.Label33.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label33.Size = New System.Drawing.Size(89, 15)
-        Me.Label33.TabIndex = 64
-        Me.Label33.Text = "Ambient State :"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label32.Location = New System.Drawing.Point(397, 331)
-        Me.Label32.Name = "Label32"
-        Me.Label32.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label32.Size = New System.Drawing.Size(154, 15)
-        Me.Label32.TabIndex = 66
-        Me.Label32.Text = "Auto Ignition Temperature :"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label31.Location = New System.Drawing.Point(397, 303)
-        Me.Label31.Name = "Label31"
-        Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label31.Size = New System.Drawing.Size(109, 15)
-        Me.Label31.TabIndex = 65
-        Me.Label31.Text = "Molecular Weight :"
-        '
-        'Label83
-        '
-        Me.Label83.AutoSize = True
-        Me.Label83.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label83.Location = New System.Drawing.Point(398, 502)
-        Me.Label83.Name = "Label83"
-        Me.Label83.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label83.Size = New System.Drawing.Size(147, 15)
-        Me.Label83.TabIndex = 73
-        Me.Label83.Text = "Liquid Dynamic Viscosity :"
-        '
-        'Label82
-        '
-        Me.Label82.AutoSize = True
-        Me.Label82.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label82.Location = New System.Drawing.Point(398, 474)
-        Me.Label82.Name = "Label82"
-        Me.Label82.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label82.Size = New System.Drawing.Size(102, 15)
-        Me.Label82.TabIndex = 73
-        Me.Label82.Text = "Viscosity of Fluid :"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label21.Location = New System.Drawing.Point(398, 445)
-        Me.Label21.Name = "Label21"
-        Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label21.Size = New System.Drawing.Size(120, 15)
-        Me.Label21.TabIndex = 73
-        Me.Label21.Text = "Liquid Flow Velocity :"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label38.Location = New System.Drawing.Point(397, 417)
-        Me.Label38.Name = "Label38"
-        Me.Label38.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label38.Size = New System.Drawing.Size(116, 15)
-        Me.Label38.TabIndex = 73
-        Me.Label38.Text = "Ideal Gas Constant :"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label30.Location = New System.Drawing.Point(397, 388)
-        Me.Label30.Name = "Label30"
-        Me.Label30.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label30.Size = New System.Drawing.Size(69, 15)
-        Me.Label30.TabIndex = 67
-        Me.Label30.Text = "Fluid Type :"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label29.Location = New System.Drawing.Point(396, 274)
-        Me.Label29.Name = "Label29"
-        Me.Label29.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label29.Size = New System.Drawing.Size(126, 15)
-        Me.Label29.TabIndex = 68
-        Me.Label29.Text = "Normal Boiling Point :"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label28.Location = New System.Drawing.Point(396, 245)
-        Me.Label28.Name = "Label28"
-        Me.Label28.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label28.Size = New System.Drawing.Size(53, 15)
-        Me.Label28.TabIndex = 69
-        Me.Label28.Text = "Density :"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label27.Location = New System.Drawing.Point(396, 163)
-        Me.Label27.Name = "Label27"
-        Me.Label27.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label27.Size = New System.Drawing.Size(126, 15)
-        Me.Label27.TabIndex = 70
-        Me.Label27.Text = "Design Temperature :"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label26.Location = New System.Drawing.Point(396, 106)
-        Me.Label26.Name = "Label26"
-        Me.Label26.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label26.Size = New System.Drawing.Size(104, 15)
-        Me.Label26.TabIndex = 71
-        Me.Label26.Text = "Design Pressure :"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label25.Location = New System.Drawing.Point(396, 79)
-        Me.Label25.Name = "Label25"
-        Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label25.Size = New System.Drawing.Size(102, 15)
-        Me.Label25.TabIndex = 72
-        Me.Label25.Text = "Tensile Strength :"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label24.Location = New System.Drawing.Point(396, 52)
-        Me.Label24.Name = "Label24"
-        Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label24.Size = New System.Drawing.Size(89, 15)
-        Me.Label24.TabIndex = 74
-        Me.Label24.Text = "Yield Strength :"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label23.Location = New System.Drawing.Point(36, 130)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(87, 15)
-        Me.Label23.TabIndex = 59
-        Me.Label23.Text = "Material Type :"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(228, 157)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBox3.TabIndex = 36
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Carbon Steel", "Low Alloy Steel", "Austenitic Stainless Steel", "( <42% ) Nickel Based Alloys", "Cr-1/2 Mo Low Alloy Steel", "Cr-Mo Low Alloy Steel", "High Chromium ( >12% Cp ) Ferritic Steel", "C-1/2 Mo Alloy Steel"})
-        Me.ComboBox1.Location = New System.Drawing.Point(228, 130)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBox1.TabIndex = 35
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(228, 75)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(149, 20)
-        Me.DateTimePicker2.TabIndex = 2
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(228, 103)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(149, 20)
-        Me.DateTimePicker1.TabIndex = 2
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label13.Location = New System.Drawing.Point(37, 356)
-        Me.Label13.Name = "Label13"
-        Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label13.Size = New System.Drawing.Size(125, 15)
-        Me.Label13.TabIndex = 0
-        Me.Label13.Text = "Corrosion Allowance :"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label12.Location = New System.Drawing.Point(36, 471)
-        Me.Label12.Name = "Label12"
-        Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label12.Size = New System.Drawing.Size(139, 15)
-        Me.Label12.TabIndex = 0
-        Me.Label12.Text = "Inside Radius of Sheell :"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label18.Location = New System.Drawing.Point(36, 299)
-        Me.Label18.Name = "Label18"
-        Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label18.Size = New System.Drawing.Size(119, 15)
-        Me.Label18.TabIndex = 0
-        Me.Label18.Text = "Operating Pressure :"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label17.Location = New System.Drawing.Point(36, 443)
-        Me.Label17.Name = "Label17"
-        Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label17.Size = New System.Drawing.Size(131, 15)
-        Me.Label17.TabIndex = 0
-        Me.Label17.Text = "Component Diameter :"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label19.Location = New System.Drawing.Point(37, 414)
-        Me.Label19.Name = "Label19"
-        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label19.Size = New System.Drawing.Size(103, 15)
-        Me.Label19.TabIndex = 0
-        Me.Label19.Text = "Allowable Stress :"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label15.Location = New System.Drawing.Point(36, 386)
-        Me.Label15.Name = "Label15"
-        Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label15.Size = New System.Drawing.Size(124, 15)
-        Me.Label15.TabIndex = 0
-        Me.Label15.Text = "Weld Joint Efficiency :"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label14.Location = New System.Drawing.Point(36, 500)
-        Me.Label14.Name = "Label14"
-        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label14.Size = New System.Drawing.Size(38, 15)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "NPS :"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label11.Location = New System.Drawing.Point(37, 326)
-        Me.Label11.Name = "Label11"
-        Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label11.Size = New System.Drawing.Size(141, 15)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Operating Temperature :"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label10.Location = New System.Drawing.Point(36, 216)
-        Me.Label10.Name = "Label10"
-        Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label10.Size = New System.Drawing.Size(164, 15)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Thickness for Base Material :"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label9.Location = New System.Drawing.Point(36, 272)
-        Me.Label9.Name = "Label9"
-        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label9.Size = New System.Drawing.Size(127, 15)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Measured Thickness :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label8.Location = New System.Drawing.Point(36, 245)
-        Me.Label8.Name = "Label8"
-        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label8.Size = New System.Drawing.Size(126, 15)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Furnished Thickness :"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label22.Location = New System.Drawing.Point(37, 158)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(58, 15)
-        Me.Label22.TabIndex = 0
-        Me.Label22.Text = "Material :"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label7.Location = New System.Drawing.Point(36, 104)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 15)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Last Inspection Date :"
-        '
-        'Label329
-        '
-        Me.Label329.AutoSize = True
-        Me.Label329.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label329.Location = New System.Drawing.Point(36, 50)
-        Me.Label329.Name = "Label329"
-        Me.Label329.Size = New System.Drawing.Size(126, 15)
-        Me.Label329.TabIndex = 0
-        Me.Label329.Text = "RBI Calculation Date :"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label6.Location = New System.Drawing.Point(36, 77)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(101, 15)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Installation Date :"
         '
         'PanelgeneraldataHE
         '
@@ -4906,6 +3382,1620 @@ Partial Class Home
         Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(751, 655)
         Me.PanelgeneraldataPRD.TabIndex = 6
         '
+        'Panelgeneraldata
+        '
+        Me.Panelgeneraldata.Controls.Add(Me.Label450)
+        Me.Panelgeneraldata.Controls.Add(Me.Label449)
+        Me.Panelgeneraldata.Controls.Add(Me.Label448)
+        Me.Panelgeneraldata.Controls.Add(Me.Label447)
+        Me.Panelgeneraldata.Controls.Add(Me.Label446)
+        Me.Panelgeneraldata.Controls.Add(Me.Label445)
+        Me.Panelgeneraldata.Controls.Add(Me.Label444)
+        Me.Panelgeneraldata.Controls.Add(Me.Label443)
+        Me.Panelgeneraldata.Controls.Add(Me.Label442)
+        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker13)
+        Me.Panelgeneraldata.Controls.Add(Me.Button10)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel105)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel106)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel59)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel32)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel26)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel58)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel23)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel28)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel56)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel57)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel25)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel22)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel27)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel16)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel30)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel29)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel35)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel36)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel31)
+        Me.Panelgeneraldata.Controls.Add(Me.Panel24)
+        Me.Panelgeneraldata.Controls.Add(Me.Label45)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox28)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox27)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox26)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox33)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox32)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox31)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox30)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox29)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox25)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox24)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox23)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox22)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox21)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox20)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox19)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox18)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox17)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox16)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox15)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox14)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox13)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox12)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox11)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox10)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox9)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox8)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox7)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox6)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox5)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox4)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox3)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox2)
+        Me.Panelgeneraldata.Controls.Add(Me.TextBox1)
+        Me.Panelgeneraldata.Controls.Add(Me.ComboBox4)
+        Me.Panelgeneraldata.Controls.Add(Me.Label37)
+        Me.Panelgeneraldata.Controls.Add(Me.Label36)
+        Me.Panelgeneraldata.Controls.Add(Me.Label35)
+        Me.Panelgeneraldata.Controls.Add(Me.Label34)
+        Me.Panelgeneraldata.Controls.Add(Me.Label33)
+        Me.Panelgeneraldata.Controls.Add(Me.Label32)
+        Me.Panelgeneraldata.Controls.Add(Me.Label31)
+        Me.Panelgeneraldata.Controls.Add(Me.Label83)
+        Me.Panelgeneraldata.Controls.Add(Me.Label82)
+        Me.Panelgeneraldata.Controls.Add(Me.Label21)
+        Me.Panelgeneraldata.Controls.Add(Me.Label38)
+        Me.Panelgeneraldata.Controls.Add(Me.Label30)
+        Me.Panelgeneraldata.Controls.Add(Me.Label29)
+        Me.Panelgeneraldata.Controls.Add(Me.Label28)
+        Me.Panelgeneraldata.Controls.Add(Me.Label27)
+        Me.Panelgeneraldata.Controls.Add(Me.Label26)
+        Me.Panelgeneraldata.Controls.Add(Me.Label25)
+        Me.Panelgeneraldata.Controls.Add(Me.Label24)
+        Me.Panelgeneraldata.Controls.Add(Me.Label23)
+        Me.Panelgeneraldata.Controls.Add(Me.ComboBox3)
+        Me.Panelgeneraldata.Controls.Add(Me.ComboBox1)
+        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker2)
+        Me.Panelgeneraldata.Controls.Add(Me.DateTimePicker1)
+        Me.Panelgeneraldata.Controls.Add(Me.Label13)
+        Me.Panelgeneraldata.Controls.Add(Me.Label12)
+        Me.Panelgeneraldata.Controls.Add(Me.Label18)
+        Me.Panelgeneraldata.Controls.Add(Me.Label17)
+        Me.Panelgeneraldata.Controls.Add(Me.Label19)
+        Me.Panelgeneraldata.Controls.Add(Me.Label15)
+        Me.Panelgeneraldata.Controls.Add(Me.Label14)
+        Me.Panelgeneraldata.Controls.Add(Me.Label11)
+        Me.Panelgeneraldata.Controls.Add(Me.Label10)
+        Me.Panelgeneraldata.Controls.Add(Me.Label9)
+        Me.Panelgeneraldata.Controls.Add(Me.Label8)
+        Me.Panelgeneraldata.Controls.Add(Me.Label22)
+        Me.Panelgeneraldata.Controls.Add(Me.Label7)
+        Me.Panelgeneraldata.Controls.Add(Me.Label329)
+        Me.Panelgeneraldata.Controls.Add(Me.Label6)
+        Me.Panelgeneraldata.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panelgeneraldata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panelgeneraldata.Location = New System.Drawing.Point(3, 583)
+        Me.Panelgeneraldata.Name = "Panelgeneraldata"
+        Me.Panelgeneraldata.Size = New System.Drawing.Size(751, 1347)
+        Me.Panelgeneraldata.TabIndex = 1
+        '
+        'Label450
+        '
+        Me.Label450.AutoSize = True
+        Me.Label450.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label450.Location = New System.Drawing.Point(167, 471)
+        Me.Label450.Name = "Label450"
+        Me.Label450.Size = New System.Drawing.Size(59, 15)
+        Me.Label450.TabIndex = 236
+        Me.Label450.Text = "Label450"
+        '
+        'Label449
+        '
+        Me.Label449.AutoSize = True
+        Me.Label449.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label449.Location = New System.Drawing.Point(159, 444)
+        Me.Label449.Name = "Label449"
+        Me.Label449.Size = New System.Drawing.Size(59, 15)
+        Me.Label449.TabIndex = 236
+        Me.Label449.Text = "Label449"
+        '
+        'Label448
+        '
+        Me.Label448.AutoSize = True
+        Me.Label448.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label448.Location = New System.Drawing.Point(132, 414)
+        Me.Label448.Name = "Label448"
+        Me.Label448.Size = New System.Drawing.Size(59, 15)
+        Me.Label448.TabIndex = 236
+        Me.Label448.Text = "Label448"
+        '
+        'Label447
+        '
+        Me.Label447.AutoSize = True
+        Me.Label447.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label447.Location = New System.Drawing.Point(155, 356)
+        Me.Label447.Name = "Label447"
+        Me.Label447.Size = New System.Drawing.Size(59, 15)
+        Me.Label447.TabIndex = 236
+        Me.Label447.Text = "Label447"
+        '
+        'Label446
+        '
+        Me.Label446.AutoSize = True
+        Me.Label446.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label446.Location = New System.Drawing.Point(170, 327)
+        Me.Label446.Name = "Label446"
+        Me.Label446.Size = New System.Drawing.Size(59, 15)
+        Me.Label446.TabIndex = 236
+        Me.Label446.Text = "Label446"
+        '
+        'Label445
+        '
+        Me.Label445.AutoSize = True
+        Me.Label445.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label445.Location = New System.Drawing.Point(147, 300)
+        Me.Label445.Name = "Label445"
+        Me.Label445.Size = New System.Drawing.Size(59, 15)
+        Me.Label445.TabIndex = 236
+        Me.Label445.Text = "Label445"
+        '
+        'Label444
+        '
+        Me.Label444.AutoSize = True
+        Me.Label444.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label444.Location = New System.Drawing.Point(155, 273)
+        Me.Label444.Name = "Label444"
+        Me.Label444.Size = New System.Drawing.Size(59, 15)
+        Me.Label444.TabIndex = 236
+        Me.Label444.Text = "Label444"
+        '
+        'Label443
+        '
+        Me.Label443.AutoSize = True
+        Me.Label443.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label443.Location = New System.Drawing.Point(154, 245)
+        Me.Label443.Name = "Label443"
+        Me.Label443.Size = New System.Drawing.Size(59, 15)
+        Me.Label443.TabIndex = 236
+        Me.Label443.Text = "Label443"
+        '
+        'Label442
+        '
+        Me.Label442.AutoSize = True
+        Me.Label442.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label442.Location = New System.Drawing.Point(193, 216)
+        Me.Label442.Name = "Label442"
+        Me.Label442.Size = New System.Drawing.Size(59, 15)
+        Me.Label442.TabIndex = 236
+        Me.Label442.Text = "Label442"
+        '
+        'DateTimePicker13
+        '
+        Me.DateTimePicker13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker13.Location = New System.Drawing.Point(228, 48)
+        Me.DateTimePicker13.Name = "DateTimePicker13"
+        Me.DateTimePicker13.Size = New System.Drawing.Size(149, 20)
+        Me.DateTimePicker13.TabIndex = 235
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button10.FlatAppearance.BorderSize = 0
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button10.Location = New System.Drawing.Point(601, 1299)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(102, 25)
+        Me.Button10.TabIndex = 233
+        Me.Button10.Text = "Next"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Panel105
+        '
+        Me.Panel105.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel105.Controls.Add(Me.RadioButton35)
+        Me.Panel105.Controls.Add(Me.RadioButton34)
+        Me.Panel105.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel105.Location = New System.Drawing.Point(380, 1207)
+        Me.Panel105.Name = "Panel105"
+        Me.Panel105.Size = New System.Drawing.Size(323, 55)
+        Me.Panel105.TabIndex = 234
+        '
+        'RadioButton35
+        '
+        Me.RadioButton35.AutoSize = True
+        Me.RadioButton35.Location = New System.Drawing.Point(7, 27)
+        Me.RadioButton35.Name = "RadioButton35"
+        Me.RadioButton35.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton35.TabIndex = 2
+        Me.RadioButton35.TabStop = True
+        Me.RadioButton35.Text = "No"
+        Me.RadioButton35.UseVisualStyleBackColor = True
+        '
+        'RadioButton34
+        '
+        Me.RadioButton34.AutoSize = True
+        Me.RadioButton34.Location = New System.Drawing.Point(7, 5)
+        Me.RadioButton34.Name = "RadioButton34"
+        Me.RadioButton34.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton34.TabIndex = 1
+        Me.RadioButton34.TabStop = True
+        Me.RadioButton34.Text = "Yes"
+        Me.RadioButton34.UseVisualStyleBackColor = True
+        '
+        'Panel106
+        '
+        Me.Panel106.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel106.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel106.Controls.Add(Me.Label416)
+        Me.Panel106.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel106.Location = New System.Drawing.Point(55, 1207)
+        Me.Panel106.Name = "Panel106"
+        Me.Panel106.Size = New System.Drawing.Size(326, 55)
+        Me.Panel106.TabIndex = 233
+        '
+        'Label416
+        '
+        Me.Label416.AutoSize = True
+        Me.Label416.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label416.Location = New System.Drawing.Point(13, 19)
+        Me.Label416.Name = "Label416"
+        Me.Label416.Size = New System.Drawing.Size(81, 15)
+        Me.Label416.TabIndex = 18
+        Me.Label416.Text = "Heat Traced?"
+        '
+        'Panel59
+        '
+        Me.Panel59.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel59.Controls.Add(Me.RadioButton21)
+        Me.Panel59.Controls.Add(Me.RadioButton20)
+        Me.Panel59.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel59.Location = New System.Drawing.Point(380, 1153)
+        Me.Panel59.Name = "Panel59"
+        Me.Panel59.Size = New System.Drawing.Size(323, 55)
+        Me.Panel59.TabIndex = 232
+        '
+        'RadioButton21
+        '
+        Me.RadioButton21.AutoSize = True
+        Me.RadioButton21.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton21.Name = "RadioButton21"
+        Me.RadioButton21.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton21.TabIndex = 1
+        Me.RadioButton21.TabStop = True
+        Me.RadioButton21.Text = "No"
+        Me.RadioButton21.UseVisualStyleBackColor = True
+        '
+        'RadioButton20
+        '
+        Me.RadioButton20.AutoSize = True
+        Me.RadioButton20.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton20.Name = "RadioButton20"
+        Me.RadioButton20.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton20.TabIndex = 0
+        Me.RadioButton20.TabStop = True
+        Me.RadioButton20.Text = "Yes"
+        Me.RadioButton20.UseVisualStyleBackColor = True
+        '
+        'Panel32
+        '
+        Me.Panel32.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel32.Controls.Add(Me.Label44)
+        Me.Panel32.Location = New System.Drawing.Point(55, 1045)
+        Me.Panel32.Name = "Panel32"
+        Me.Panel32.Size = New System.Drawing.Size(326, 55)
+        Me.Panel32.TabIndex = 223
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label44.Location = New System.Drawing.Point(9, 11)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(185, 30)
+        Me.Label44.TabIndex = 18
+        Me.Label44.Text = "Is operating hydrogen partial " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "pressure > 0.345 Mpa (50 psia)?"
+        '
+        'Panel26
+        '
+        Me.Panel26.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel26.Controls.Add(Me.RadioButton17)
+        Me.Panel26.Controls.Add(Me.RadioButton16)
+        Me.Panel26.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel26.Location = New System.Drawing.Point(380, 1045)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(323, 55)
+        Me.Panel26.TabIndex = 222
+        '
+        'RadioButton17
+        '
+        Me.RadioButton17.AutoSize = True
+        Me.RadioButton17.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton17.Name = "RadioButton17"
+        Me.RadioButton17.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton17.TabIndex = 1
+        Me.RadioButton17.TabStop = True
+        Me.RadioButton17.Text = "No"
+        Me.RadioButton17.UseVisualStyleBackColor = True
+        '
+        'RadioButton16
+        '
+        Me.RadioButton16.AutoSize = True
+        Me.RadioButton16.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton16.Name = "RadioButton16"
+        Me.RadioButton16.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton16.TabIndex = 0
+        Me.RadioButton16.TabStop = True
+        Me.RadioButton16.Text = "Yes"
+        Me.RadioButton16.UseVisualStyleBackColor = True
+        '
+        'Panel58
+        '
+        Me.Panel58.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel58.Controls.Add(Me.LinkLabel3)
+        Me.Panel58.Controls.Add(Me.Label76)
+        Me.Panel58.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel58.Location = New System.Drawing.Point(55, 1153)
+        Me.Panel58.Name = "Panel58"
+        Me.Panel58.Size = New System.Drawing.Size(326, 55)
+        Me.Panel58.TabIndex = 231
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Location = New System.Drawing.Point(13, 19)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(104, 15)
+        Me.LinkLabel3.TabIndex = 0
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Detail Information"
+        '
+        'Label76
+        '
+        Me.Label76.AutoSize = True
+        Me.Label76.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label76.Location = New System.Drawing.Point(102, 19)
+        Me.Label76.Name = "Label76"
+        Me.Label76.Size = New System.Drawing.Size(126, 15)
+        Me.Label76.TabIndex = 18
+        Me.Label76.Text = "Is this statement true?"
+        '
+        'Panel23
+        '
+        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel23.Controls.Add(Me.RadioButton4)
+        Me.Panel23.Controls.Add(Me.RadioButton3)
+        Me.Panel23.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel23.Location = New System.Drawing.Point(380, 646)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(323, 55)
+        Me.Panel23.TabIndex = 213
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton4.TabIndex = 1
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "No"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton3.TabIndex = 0
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Yes"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'Panel28
+        '
+        Me.Panel28.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel28.Controls.Add(Me.Label41)
+        Me.Panel28.Location = New System.Drawing.Point(55, 700)
+        Me.Panel28.Name = "Panel28"
+        Me.Panel28.Size = New System.Drawing.Size(326, 125)
+        Me.Panel28.TabIndex = 215
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label41.Location = New System.Drawing.Point(5, 54)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(232, 15)
+        Me.Label41.TabIndex = 18
+        Me.Label41.Text = "What does process environment contain?"
+        '
+        'Panel56
+        '
+        Me.Panel56.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel56.Controls.Add(Me.RadioButton19)
+        Me.Panel56.Controls.Add(Me.RadioButton18)
+        Me.Panel56.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel56.Location = New System.Drawing.Point(380, 1099)
+        Me.Panel56.Name = "Panel56"
+        Me.Panel56.Size = New System.Drawing.Size(323, 55)
+        Me.Panel56.TabIndex = 230
+        '
+        'RadioButton19
+        '
+        Me.RadioButton19.AutoSize = True
+        Me.RadioButton19.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton19.Name = "RadioButton19"
+        Me.RadioButton19.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton19.TabIndex = 1
+        Me.RadioButton19.TabStop = True
+        Me.RadioButton19.Text = "No"
+        Me.RadioButton19.UseVisualStyleBackColor = True
+        '
+        'RadioButton18
+        '
+        Me.RadioButton18.AutoSize = True
+        Me.RadioButton18.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton18.Name = "RadioButton18"
+        Me.RadioButton18.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton18.TabIndex = 0
+        Me.RadioButton18.TabStop = True
+        Me.RadioButton18.Text = "Yes"
+        Me.RadioButton18.UseVisualStyleBackColor = True
+        '
+        'Panel57
+        '
+        Me.Panel57.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel57.Controls.Add(Me.LinkLabel2)
+        Me.Panel57.Controls.Add(Me.Label75)
+        Me.Panel57.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel57.Location = New System.Drawing.Point(55, 1099)
+        Me.Panel57.Name = "Panel57"
+        Me.Panel57.Size = New System.Drawing.Size(326, 55)
+        Me.Panel57.TabIndex = 225
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(12, 18)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(104, 15)
+        Me.LinkLabel2.TabIndex = 19
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Detail Information"
+        '
+        'Label75
+        '
+        Me.Label75.AutoSize = True
+        Me.Label75.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label75.Location = New System.Drawing.Point(102, 19)
+        Me.Label75.Name = "Label75"
+        Me.Label75.Size = New System.Drawing.Size(126, 15)
+        Me.Label75.TabIndex = 18
+        Me.Label75.Text = "Is this statement true?"
+        '
+        'Panel25
+        '
+        Me.Panel25.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel25.Controls.Add(Me.RadioButton7)
+        Me.Panel25.Controls.Add(Me.RadioButton6)
+        Me.Panel25.Controls.Add(Me.RadioButton5)
+        Me.Panel25.Controls.Add(Me.RadioButton12)
+        Me.Panel25.Controls.Add(Me.RadioButton13)
+        Me.Panel25.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel25.Location = New System.Drawing.Point(380, 700)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(323, 125)
+        Me.Panel25.TabIndex = 214
+        '
+        'RadioButton7
+        '
+        Me.RadioButton7.AutoSize = True
+        Me.RadioButton7.Location = New System.Drawing.Point(7, 96)
+        Me.RadioButton7.Name = "RadioButton7"
+        Me.RadioButton7.Size = New System.Drawing.Size(55, 19)
+        Me.RadioButton7.TabIndex = 4
+        Me.RadioButton7.TabStop = True
+        Me.RadioButton7.Text = "None"
+        Me.RadioButton7.UseVisualStyleBackColor = True
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(7, 74)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(157, 19)
+        Me.RadioButton6.TabIndex = 3
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "Alkaline water at pH>7.5"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(7, 52)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(108, 19)
+        Me.RadioButton5.TabIndex = 2
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "Water and H2S"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'RadioButton12
+        '
+        Me.RadioButton12.AutoSize = True
+        Me.RadioButton12.Location = New System.Drawing.Point(7, 30)
+        Me.RadioButton12.Name = "RadioButton12"
+        Me.RadioButton12.Size = New System.Drawing.Size(300, 19)
+        Me.RadioButton12.TabIndex = 1
+        Me.RadioButton12.TabStop = True
+        Me.RadioButton12.Text = "Acid gas treating amines (MEA, DEA, DIPA, MDEA)"
+        Me.RadioButton12.UseVisualStyleBackColor = True
+        '
+        'RadioButton13
+        '
+        Me.RadioButton13.AutoSize = True
+        Me.RadioButton13.Location = New System.Drawing.Point(7, 8)
+        Me.RadioButton13.Name = "RadioButton13"
+        Me.RadioButton13.Size = New System.Drawing.Size(65, 19)
+        Me.RadioButton13.TabIndex = 0
+        Me.RadioButton13.TabStop = True
+        Me.RadioButton13.Text = "Caustic"
+        Me.RadioButton13.UseVisualStyleBackColor = True
+        '
+        'Panel22
+        '
+        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel22.Controls.Add(Me.Label20)
+        Me.Panel22.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel22.Location = New System.Drawing.Point(55, 646)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(326, 55)
+        Me.Panel22.TabIndex = 212
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label20.Location = New System.Drawing.Point(5, 19)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(190, 15)
+        Me.Label20.TabIndex = 18
+        Me.Label20.Text = "Does the component have lining?"
+        '
+        'Panel27
+        '
+        Me.Panel27.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel27.Controls.Add(Me.Label2)
+        Me.Panel27.Location = New System.Drawing.Point(55, 592)
+        Me.Panel27.Name = "Panel27"
+        Me.Panel27.Size = New System.Drawing.Size(326, 55)
+        Me.Panel27.TabIndex = 211
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(4, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(186, 15)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Thinning type on the equipment?"
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel16.Controls.Add(Me.RadioButton2)
+        Me.Panel16.Controls.Add(Me.RadioButton1)
+        Me.Panel16.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel16.Location = New System.Drawing.Point(380, 592)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(323, 55)
+        Me.Panel16.TabIndex = 210
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(69, 19)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "General"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(55, 19)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Local"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'Panel30
+        '
+        Me.Panel30.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel30.Controls.Add(Me.Label4)
+        Me.Panel30.Location = New System.Drawing.Point(55, 927)
+        Me.Panel30.Name = "Panel30"
+        Me.Panel30.Size = New System.Drawing.Size(326, 55)
+        Me.Panel30.TabIndex = 219
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label4.Location = New System.Drawing.Point(8, 19)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(141, 15)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Is component insulated?"
+        '
+        'Panel29
+        '
+        Me.Panel29.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel29.Controls.Add(Me.Label42)
+        Me.Panel29.Location = New System.Drawing.Point(55, 824)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(326, 105)
+        Me.Panel29.TabIndex = 217
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label42.Location = New System.Drawing.Point(8, 44)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(202, 15)
+        Me.Label42.TabIndex = 18
+        Me.Label42.Text = "What is the component exposed to?"
+        '
+        'Panel35
+        '
+        Me.Panel35.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel35.Controls.Add(Me.Panel40)
+        Me.Panel35.Controls.Add(Me.Label90)
+        Me.Panel35.Controls.Add(Me.RadioButton15)
+        Me.Panel35.Controls.Add(Me.RadioButton14)
+        Me.Panel35.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel35.Location = New System.Drawing.Point(380, 981)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(323, 65)
+        Me.Panel35.TabIndex = 220
+        '
+        'Panel40
+        '
+        Me.Panel40.Controls.Add(Me.RadioButton24)
+        Me.Panel40.Controls.Add(Me.RadioButton25)
+        Me.Panel40.Location = New System.Drawing.Point(72, 36)
+        Me.Panel40.Name = "Panel40"
+        Me.Panel40.Size = New System.Drawing.Size(109, 22)
+        Me.Panel40.TabIndex = 21
+        '
+        'RadioButton24
+        '
+        Me.RadioButton24.AutoSize = True
+        Me.RadioButton24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton24.Location = New System.Drawing.Point(3, 2)
+        Me.RadioButton24.Name = "RadioButton24"
+        Me.RadioButton24.Size = New System.Drawing.Size(43, 17)
+        Me.RadioButton24.TabIndex = 19
+        Me.RadioButton24.TabStop = True
+        Me.RadioButton24.Text = "Yes"
+        Me.RadioButton24.UseVisualStyleBackColor = True
+        Me.RadioButton24.Visible = False
+        '
+        'RadioButton25
+        '
+        Me.RadioButton25.AutoSize = True
+        Me.RadioButton25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton25.Location = New System.Drawing.Point(52, 2)
+        Me.RadioButton25.Name = "RadioButton25"
+        Me.RadioButton25.Size = New System.Drawing.Size(39, 17)
+        Me.RadioButton25.TabIndex = 20
+        Me.RadioButton25.TabStop = True
+        Me.RadioButton25.Text = "No"
+        Me.RadioButton25.UseVisualStyleBackColor = True
+        Me.RadioButton25.Visible = False
+        '
+        'Label90
+        '
+        Me.Label90.AutoSize = True
+        Me.Label90.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label90.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label90.Location = New System.Drawing.Point(72, 8)
+        Me.Label90.Name = "Label90"
+        Me.Label90.Size = New System.Drawing.Size(240, 26)
+        Me.Label90.TabIndex = 18
+        Me.Label90.Text = "is  component known to operate at or below the " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MDMT or MAT under normal or upse" &
+    "t conditions?"
+        Me.Label90.Visible = False
+        '
+        'RadioButton15
+        '
+        Me.RadioButton15.AutoSize = True
+        Me.RadioButton15.Location = New System.Drawing.Point(7, 34)
+        Me.RadioButton15.Name = "RadioButton15"
+        Me.RadioButton15.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton15.TabIndex = 1
+        Me.RadioButton15.TabStop = True
+        Me.RadioButton15.Text = "No"
+        Me.RadioButton15.UseVisualStyleBackColor = True
+        '
+        'RadioButton14
+        '
+        Me.RadioButton14.AutoSize = True
+        Me.RadioButton14.Location = New System.Drawing.Point(7, 12)
+        Me.RadioButton14.Name = "RadioButton14"
+        Me.RadioButton14.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton14.TabIndex = 0
+        Me.RadioButton14.TabStop = True
+        Me.RadioButton14.Text = "Yes"
+        Me.RadioButton14.UseVisualStyleBackColor = True
+        '
+        'Panel36
+        '
+        Me.Panel36.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel36.Controls.Add(Me.RadioButton22)
+        Me.Panel36.Controls.Add(Me.RadioButton23)
+        Me.Panel36.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel36.Location = New System.Drawing.Point(380, 927)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(323, 55)
+        Me.Panel36.TabIndex = 218
+        '
+        'RadioButton22
+        '
+        Me.RadioButton22.AutoSize = True
+        Me.RadioButton22.Location = New System.Drawing.Point(7, 28)
+        Me.RadioButton22.Name = "RadioButton22"
+        Me.RadioButton22.Size = New System.Drawing.Size(41, 19)
+        Me.RadioButton22.TabIndex = 1
+        Me.RadioButton22.TabStop = True
+        Me.RadioButton22.Text = "No"
+        Me.RadioButton22.UseVisualStyleBackColor = True
+        '
+        'RadioButton23
+        '
+        Me.RadioButton23.AutoSize = True
+        Me.RadioButton23.Location = New System.Drawing.Point(7, 6)
+        Me.RadioButton23.Name = "RadioButton23"
+        Me.RadioButton23.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton23.TabIndex = 0
+        Me.RadioButton23.TabStop = True
+        Me.RadioButton23.Text = "Yes"
+        Me.RadioButton23.UseVisualStyleBackColor = True
+        '
+        'Panel31
+        '
+        Me.Panel31.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel31.Controls.Add(Me.Label43)
+        Me.Panel31.Location = New System.Drawing.Point(55, 981)
+        Me.Panel31.Name = "Panel31"
+        Me.Panel31.Size = New System.Drawing.Size(326, 65)
+        Me.Panel31.TabIndex = 221
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label43.Location = New System.Drawing.Point(9, 9)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(288, 45)
+        Me.Label43.TabIndex = 18
+        Me.Label43.Text = "Is Minimum Design Metal Temperature (MDMT) or " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Minimum Allowable Temperature (MA" &
+    "T) known?" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "* if one of them is unknown, then select ""No"""
+        '
+        'Panel24
+        '
+        Me.Panel24.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel24.Controls.Add(Me.RadioButton11)
+        Me.Panel24.Controls.Add(Me.RadioButton10)
+        Me.Panel24.Controls.Add(Me.RadioButton9)
+        Me.Panel24.Controls.Add(Me.RadioButton8)
+        Me.Panel24.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel24.Location = New System.Drawing.Point(380, 824)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(323, 105)
+        Me.Panel24.TabIndex = 216
+        '
+        'RadioButton11
+        '
+        Me.RadioButton11.AutoSize = True
+        Me.RadioButton11.Location = New System.Drawing.Point(7, 75)
+        Me.RadioButton11.Name = "RadioButton11"
+        Me.RadioButton11.Size = New System.Drawing.Size(55, 19)
+        Me.RadioButton11.TabIndex = 3
+        Me.RadioButton11.TabStop = True
+        Me.RadioButton11.Text = "None"
+        Me.RadioButton11.UseVisualStyleBackColor = True
+        '
+        'RadioButton10
+        '
+        Me.RadioButton10.AutoSize = True
+        Me.RadioButton10.Location = New System.Drawing.Point(7, 53)
+        Me.RadioButton10.Name = "RadioButton10"
+        Me.RadioButton10.Size = New System.Drawing.Size(77, 19)
+        Me.RadioButton10.TabIndex = 2
+        Me.RadioButton10.TabStop = True
+        Me.RadioButton10.Text = "Chlorides"
+        Me.RadioButton10.UseVisualStyleBackColor = True
+        '
+        'RadioButton9
+        '
+        Me.RadioButton9.AutoSize = True
+        Me.RadioButton9.Location = New System.Drawing.Point(7, 31)
+        Me.RadioButton9.Name = "RadioButton9"
+        Me.RadioButton9.Size = New System.Drawing.Size(170, 19)
+        Me.RadioButton9.TabIndex = 1
+        Me.RadioButton9.TabStop = True
+        Me.RadioButton9.Text = "Sulfur bearing compounds"
+        Me.RadioButton9.UseVisualStyleBackColor = True
+        '
+        'RadioButton8
+        '
+        Me.RadioButton8.AutoSize = True
+        Me.RadioButton8.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RadioButton8.Location = New System.Drawing.Point(7, 9)
+        Me.RadioButton8.Name = "RadioButton8"
+        Me.RadioButton8.Size = New System.Drawing.Size(116, 19)
+        Me.RadioButton8.TabIndex = 0
+        Me.RadioButton8.TabStop = True
+        Me.RadioButton8.Text = "Hydroflouric Acid"
+        Me.RadioButton8.UseVisualStyleBackColor = True
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label45.Location = New System.Drawing.Point(270, 550)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(203, 20)
+        Me.Label45.TabIndex = 209
+        Me.Label45.Text = "SCREENING CRITERIA"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox28.Location = New System.Drawing.Point(559, 501)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.ReadOnly = True
+        Me.TextBox28.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox28.TabIndex = 208
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox27.Location = New System.Drawing.Point(559, 473)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.ReadOnly = True
+        Me.TextBox27.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox27.TabIndex = 207
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox26.Location = New System.Drawing.Point(559, 445)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.ReadOnly = True
+        Me.TextBox26.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox26.TabIndex = 206
+        '
+        'TextBox33
+        '
+        Me.TextBox33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox33.Location = New System.Drawing.Point(683, 417)
+        Me.TextBox33.Name = "TextBox33"
+        Me.TextBox33.ReadOnly = True
+        Me.TextBox33.Size = New System.Drawing.Size(25, 20)
+        Me.TextBox33.TabIndex = 205
+        '
+        'TextBox32
+        '
+        Me.TextBox32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox32.Location = New System.Drawing.Point(651, 417)
+        Me.TextBox32.Name = "TextBox32"
+        Me.TextBox32.ReadOnly = True
+        Me.TextBox32.Size = New System.Drawing.Size(25, 20)
+        Me.TextBox32.TabIndex = 204
+        '
+        'TextBox31
+        '
+        Me.TextBox31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox31.Location = New System.Drawing.Point(621, 417)
+        Me.TextBox31.Name = "TextBox31"
+        Me.TextBox31.ReadOnly = True
+        Me.TextBox31.Size = New System.Drawing.Size(25, 20)
+        Me.TextBox31.TabIndex = 203
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox30.Location = New System.Drawing.Point(590, 417)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.ReadOnly = True
+        Me.TextBox30.Size = New System.Drawing.Size(25, 20)
+        Me.TextBox30.TabIndex = 202
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox29.Location = New System.Drawing.Point(559, 417)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.ReadOnly = True
+        Me.TextBox29.Size = New System.Drawing.Size(25, 20)
+        Me.TextBox29.TabIndex = 201
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox25.Location = New System.Drawing.Point(559, 389)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.ReadOnly = True
+        Me.TextBox25.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox25.TabIndex = 197
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox24.Location = New System.Drawing.Point(559, 359)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.ReadOnly = True
+        Me.TextBox24.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox24.TabIndex = 196
+        '
+        'TextBox23
+        '
+        Me.TextBox23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox23.Location = New System.Drawing.Point(559, 331)
+        Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.ReadOnly = True
+        Me.TextBox23.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox23.TabIndex = 195
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox22.Location = New System.Drawing.Point(559, 302)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.ReadOnly = True
+        Me.TextBox22.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox22.TabIndex = 194
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox21.Location = New System.Drawing.Point(559, 274)
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.ReadOnly = True
+        Me.TextBox21.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox21.TabIndex = 193
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox20.Location = New System.Drawing.Point(559, 243)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.ReadOnly = True
+        Me.TextBox20.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox20.TabIndex = 192
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox19.Location = New System.Drawing.Point(559, 216)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.ReadOnly = True
+        Me.TextBox19.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox19.TabIndex = 191
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox18.Location = New System.Drawing.Point(559, 189)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.ReadOnly = True
+        Me.TextBox18.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox18.TabIndex = 190
+        '
+        'TextBox17
+        '
+        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.Location = New System.Drawing.Point(559, 162)
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.ReadOnly = True
+        Me.TextBox17.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox17.TabIndex = 189
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox16.Location = New System.Drawing.Point(559, 134)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.ReadOnly = True
+        Me.TextBox16.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox16.TabIndex = 188
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.Location = New System.Drawing.Point(559, 106)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.ReadOnly = True
+        Me.TextBox15.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox15.TabIndex = 187
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.Location = New System.Drawing.Point(559, 79)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.ReadOnly = True
+        Me.TextBox14.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox14.TabIndex = 186
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.Location = New System.Drawing.Point(559, 53)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.ReadOnly = True
+        Me.TextBox13.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox13.TabIndex = 185
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(228, 526)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox12.TabIndex = 184
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(228, 498)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox11.TabIndex = 183
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.Location = New System.Drawing.Point(228, 470)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox10.TabIndex = 182
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(228, 441)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox9.TabIndex = 181
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(228, 411)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox8.TabIndex = 180
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(228, 383)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox7.TabIndex = 179
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(228, 354)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox6.TabIndex = 178
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(228, 326)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox5.TabIndex = 177
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(228, 298)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox4.TabIndex = 176
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(228, 271)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox3.TabIndex = 175
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(228, 244)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox2.TabIndex = 174
+        Me.ToolTip1.SetToolTip(Me.TextBox2, "last inspection thickness")
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(228, 215)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox1.TabIndex = 173
+        Me.ToolTip1.SetToolTip(Me.TextBox1, "installation thickness (base material + cladding if available)")
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(228, 184)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(149, 21)
+        Me.ComboBox4.TabIndex = 83
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label37.Location = New System.Drawing.Point(37, 186)
+        Me.Label37.Name = "Label37"
+        Me.Label37.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label37.Size = New System.Drawing.Size(40, 15)
+        Me.Label37.TabIndex = 60
+        Me.Label37.Text = "Fluid :"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label36.Location = New System.Drawing.Point(396, 218)
+        Me.Label36.Name = "Label36"
+        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label36.Size = New System.Drawing.Size(74, 15)
+        Me.Label36.TabIndex = 61
+        Me.Label36.Text = "Cost Factor :"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label35.Location = New System.Drawing.Point(395, 135)
+        Me.Label35.Name = "Label35"
+        Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label35.Size = New System.Drawing.Size(149, 15)
+        Me.Label35.TabIndex = 62
+        Me.Label35.Text = "Max. Operating Pressure :"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label34.Location = New System.Drawing.Point(396, 190)
+        Me.Label34.Name = "Label34"
+        Me.Label34.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label34.Size = New System.Drawing.Size(161, 15)
+        Me.Label34.TabIndex = 63
+        Me.Label34.Text = "Max. Process Temperature :"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label33.Location = New System.Drawing.Point(397, 360)
+        Me.Label33.Name = "Label33"
+        Me.Label33.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label33.Size = New System.Drawing.Size(89, 15)
+        Me.Label33.TabIndex = 64
+        Me.Label33.Text = "Ambient State :"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label32.Location = New System.Drawing.Point(397, 331)
+        Me.Label32.Name = "Label32"
+        Me.Label32.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label32.Size = New System.Drawing.Size(154, 15)
+        Me.Label32.TabIndex = 66
+        Me.Label32.Text = "Auto Ignition Temperature :"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label31.Location = New System.Drawing.Point(397, 303)
+        Me.Label31.Name = "Label31"
+        Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label31.Size = New System.Drawing.Size(109, 15)
+        Me.Label31.TabIndex = 65
+        Me.Label31.Text = "Molecular Weight :"
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label83.Location = New System.Drawing.Point(398, 502)
+        Me.Label83.Name = "Label83"
+        Me.Label83.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label83.Size = New System.Drawing.Size(147, 15)
+        Me.Label83.TabIndex = 73
+        Me.Label83.Text = "Liquid Dynamic Viscosity :"
+        '
+        'Label82
+        '
+        Me.Label82.AutoSize = True
+        Me.Label82.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label82.Location = New System.Drawing.Point(398, 474)
+        Me.Label82.Name = "Label82"
+        Me.Label82.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label82.Size = New System.Drawing.Size(102, 15)
+        Me.Label82.TabIndex = 73
+        Me.Label82.Text = "Viscosity of Fluid :"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label21.Location = New System.Drawing.Point(398, 445)
+        Me.Label21.Name = "Label21"
+        Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label21.Size = New System.Drawing.Size(120, 15)
+        Me.Label21.TabIndex = 73
+        Me.Label21.Text = "Liquid Flow Velocity :"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label38.Location = New System.Drawing.Point(397, 417)
+        Me.Label38.Name = "Label38"
+        Me.Label38.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label38.Size = New System.Drawing.Size(116, 15)
+        Me.Label38.TabIndex = 73
+        Me.Label38.Text = "Ideal Gas Constant :"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label30.Location = New System.Drawing.Point(397, 388)
+        Me.Label30.Name = "Label30"
+        Me.Label30.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label30.Size = New System.Drawing.Size(69, 15)
+        Me.Label30.TabIndex = 67
+        Me.Label30.Text = "Fluid Type :"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label29.Location = New System.Drawing.Point(396, 274)
+        Me.Label29.Name = "Label29"
+        Me.Label29.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label29.Size = New System.Drawing.Size(126, 15)
+        Me.Label29.TabIndex = 68
+        Me.Label29.Text = "Normal Boiling Point :"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label28.Location = New System.Drawing.Point(396, 245)
+        Me.Label28.Name = "Label28"
+        Me.Label28.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label28.Size = New System.Drawing.Size(53, 15)
+        Me.Label28.TabIndex = 69
+        Me.Label28.Text = "Density :"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label27.Location = New System.Drawing.Point(396, 163)
+        Me.Label27.Name = "Label27"
+        Me.Label27.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label27.Size = New System.Drawing.Size(126, 15)
+        Me.Label27.TabIndex = 70
+        Me.Label27.Text = "Design Temperature :"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label26.Location = New System.Drawing.Point(396, 106)
+        Me.Label26.Name = "Label26"
+        Me.Label26.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label26.Size = New System.Drawing.Size(104, 15)
+        Me.Label26.TabIndex = 71
+        Me.Label26.Text = "Design Pressure :"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label25.Location = New System.Drawing.Point(396, 79)
+        Me.Label25.Name = "Label25"
+        Me.Label25.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label25.Size = New System.Drawing.Size(102, 15)
+        Me.Label25.TabIndex = 72
+        Me.Label25.Text = "Tensile Strength :"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label24.Location = New System.Drawing.Point(396, 52)
+        Me.Label24.Name = "Label24"
+        Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label24.Size = New System.Drawing.Size(89, 15)
+        Me.Label24.TabIndex = 74
+        Me.Label24.Text = "Yield Strength :"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label23.Location = New System.Drawing.Point(36, 130)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(87, 15)
+        Me.Label23.TabIndex = 59
+        Me.Label23.Text = "Material Type :"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(228, 157)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(149, 21)
+        Me.ComboBox3.TabIndex = 36
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Carbon Steel", "Low Alloy Steel", "Austenitic Stainless Steel", "( <42% ) Nickel Based Alloys", "Cr-1/2 Mo Low Alloy Steel", "Cr-Mo Low Alloy Steel", "High Chromium ( >12% Cp ) Ferritic Steel", "C-1/2 Mo Alloy Steel"})
+        Me.ComboBox1.Location = New System.Drawing.Point(228, 130)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(149, 21)
+        Me.ComboBox1.TabIndex = 35
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker2.Location = New System.Drawing.Point(228, 75)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(149, 20)
+        Me.DateTimePicker2.TabIndex = 2
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(228, 103)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(149, 20)
+        Me.DateTimePicker1.TabIndex = 2
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label13.Location = New System.Drawing.Point(37, 356)
+        Me.Label13.Name = "Label13"
+        Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label13.Size = New System.Drawing.Size(125, 15)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Corrosion Allowance :"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label12.Location = New System.Drawing.Point(36, 471)
+        Me.Label12.Name = "Label12"
+        Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label12.Size = New System.Drawing.Size(139, 15)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Inside Radius of Sheell :"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label18.Location = New System.Drawing.Point(36, 299)
+        Me.Label18.Name = "Label18"
+        Me.Label18.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label18.Size = New System.Drawing.Size(119, 15)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "Operating Pressure :"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label17.Location = New System.Drawing.Point(36, 443)
+        Me.Label17.Name = "Label17"
+        Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label17.Size = New System.Drawing.Size(131, 15)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "Component Diameter :"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label19.Location = New System.Drawing.Point(37, 414)
+        Me.Label19.Name = "Label19"
+        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label19.Size = New System.Drawing.Size(103, 15)
+        Me.Label19.TabIndex = 0
+        Me.Label19.Text = "Allowable Stress :"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label15.Location = New System.Drawing.Point(36, 386)
+        Me.Label15.Name = "Label15"
+        Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label15.Size = New System.Drawing.Size(124, 15)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "Weld Joint Efficiency :"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label14.Location = New System.Drawing.Point(36, 500)
+        Me.Label14.Name = "Label14"
+        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label14.Size = New System.Drawing.Size(38, 15)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "NPS :"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label11.Location = New System.Drawing.Point(37, 326)
+        Me.Label11.Name = "Label11"
+        Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label11.Size = New System.Drawing.Size(141, 15)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Operating Temperature :"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label10.Location = New System.Drawing.Point(36, 216)
+        Me.Label10.Name = "Label10"
+        Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label10.Size = New System.Drawing.Size(164, 15)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Thickness for Base Material :"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label9.Location = New System.Drawing.Point(36, 272)
+        Me.Label9.Name = "Label9"
+        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label9.Size = New System.Drawing.Size(127, 15)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Measured Thickness :"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label8.Location = New System.Drawing.Point(36, 245)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(126, 15)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Furnished Thickness :"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label22.Location = New System.Drawing.Point(37, 158)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(58, 15)
+        Me.Label22.TabIndex = 0
+        Me.Label22.Text = "Material :"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label7.Location = New System.Drawing.Point(36, 104)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(124, 15)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Last Inspection Date :"
+        '
+        'Label329
+        '
+        Me.Label329.AutoSize = True
+        Me.Label329.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label329.Location = New System.Drawing.Point(36, 50)
+        Me.Label329.Name = "Label329"
+        Me.Label329.Size = New System.Drawing.Size(126, 15)
+        Me.Label329.TabIndex = 0
+        Me.Label329.Text = "RBI Calculation Date :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label6.Location = New System.Drawing.Point(36, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(101, 15)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Installation Date :"
+        '
         'Panelnewanalysis
         '
         Me.Panelnewanalysis.Controls.Add(Me.Button30)
@@ -5329,6 +5419,124 @@ Partial Class Home
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(768, 583)
         Me.Panel33.TabIndex = 0
+        '
+        'PanelPOFHE
+        '
+        Me.PanelPOFHE.Controls.Add(Me.Panelhistory)
+        Me.PanelPOFHE.Controls.Add(Me.Panelmttf)
+        Me.PanelPOFHE.Controls.Add(Me.Panelweibull)
+        Me.PanelPOFHE.Controls.Add(Me.Panelreliabilitylibrary)
+        Me.PanelPOFHE.Controls.Add(Me.Panel85)
+        Me.PanelPOFHE.Controls.Add(Me.RadioButton47)
+        Me.PanelPOFHE.Controls.Add(Me.RadioButton46)
+        Me.PanelPOFHE.Controls.Add(Me.RadioButton45)
+        Me.PanelPOFHE.Controls.Add(Me.RadioButton44)
+        Me.PanelPOFHE.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelPOFHE.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.PanelPOFHE.Location = New System.Drawing.Point(0, 6764)
+        Me.PanelPOFHE.Name = "PanelPOFHE"
+        Me.PanelPOFHE.Size = New System.Drawing.Size(751, 744)
+        Me.PanelPOFHE.TabIndex = 1
+        '
+        'Panelhistory
+        '
+        Me.Panelhistory.Location = New System.Drawing.Point(1, 145)
+        Me.Panelhistory.Name = "Panelhistory"
+        Me.Panelhistory.Size = New System.Drawing.Size(743, 161)
+        Me.Panelhistory.TabIndex = 10
+        '
+        'Panelmttf
+        '
+        Me.Panelmttf.Location = New System.Drawing.Point(2, 145)
+        Me.Panelmttf.Name = "Panelmttf"
+        Me.Panelmttf.Size = New System.Drawing.Size(742, 184)
+        Me.Panelmttf.TabIndex = 9
+        '
+        'Panelweibull
+        '
+        Me.Panelweibull.Location = New System.Drawing.Point(1, 145)
+        Me.Panelweibull.Name = "Panelweibull"
+        Me.Panelweibull.Size = New System.Drawing.Size(743, 214)
+        Me.Panelweibull.TabIndex = 8
+        '
+        'Panelreliabilitylibrary
+        '
+        Me.Panelreliabilitylibrary.Location = New System.Drawing.Point(2, 145)
+        Me.Panelreliabilitylibrary.Name = "Panelreliabilitylibrary"
+        Me.Panelreliabilitylibrary.Size = New System.Drawing.Size(742, 243)
+        Me.Panelreliabilitylibrary.TabIndex = 7
+        '
+        'Panel85
+        '
+        Me.Panel85.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel85.Controls.Add(Me.Label302)
+        Me.Panel85.Location = New System.Drawing.Point(2, 15)
+        Me.Panel85.Name = "Panel85"
+        Me.Panel85.Size = New System.Drawing.Size(742, 32)
+        Me.Panel85.TabIndex = 6
+        '
+        'Label302
+        '
+        Me.Label302.AutoSize = True
+        Me.Label302.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label302.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label302.Location = New System.Drawing.Point(199, 7)
+        Me.Label302.Name = "Label302"
+        Me.Label302.Size = New System.Drawing.Size(344, 18)
+        Me.Label302.TabIndex = 0
+        Me.Label302.Text = "Please Select One of Methods Shown Below"
+        '
+        'RadioButton47
+        '
+        Me.RadioButton47.AutoSize = True
+        Me.RadioButton47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton47.Location = New System.Drawing.Point(465, 101)
+        Me.RadioButton47.Name = "RadioButton47"
+        Me.RadioButton47.Size = New System.Drawing.Size(209, 19)
+        Me.RadioButton47.TabIndex = 4
+        Me.RadioButton47.Text = "Specific Bundle Inspection History"
+        Me.RadioButton47.UseVisualStyleBackColor = True
+        '
+        'RadioButton46
+        '
+        Me.RadioButton46.AutoSize = True
+        Me.RadioButton46.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton46.Location = New System.Drawing.Point(464, 67)
+        Me.RadioButton46.Name = "RadioButton46"
+        Me.RadioButton46.Size = New System.Drawing.Size(178, 19)
+        Me.RadioButton46.TabIndex = 3
+        Me.RadioButton46.Text = "Owner-User Supplied MTTF"
+        Me.RadioButton46.UseVisualStyleBackColor = True
+        '
+        'RadioButton45
+        '
+        Me.RadioButton45.AutoSize = True
+        Me.RadioButton45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton45.Location = New System.Drawing.Point(37, 98)
+        Me.RadioButton45.Name = "RadioButton45"
+        Me.RadioButton45.Size = New System.Drawing.Size(254, 19)
+        Me.RadioButton45.TabIndex = 2
+        Me.RadioButton45.Text = "Owner-User Supplied Weibull Parameters"
+        Me.RadioButton45.UseVisualStyleBackColor = True
+        '
+        'RadioButton44
+        '
+        Me.RadioButton44.AutoSize = True
+        Me.RadioButton44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton44.Location = New System.Drawing.Point(37, 66)
+        Me.RadioButton44.Name = "RadioButton44"
+        Me.RadioButton44.Size = New System.Drawing.Size(333, 19)
+        Me.RadioButton44.TabIndex = 1
+        Me.RadioButton44.Text = "Using Matching Criteria to Filter on The Reliability Library"
+        Me.RadioButton44.UseVisualStyleBackColor = True
+        '
+        'PanelPOFPRD
+        '
+        Me.PanelPOFPRD.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelPOFPRD.Location = New System.Drawing.Point(0, 6512)
+        Me.PanelPOFPRD.Name = "PanelPOFPRD"
+        Me.PanelPOFPRD.Size = New System.Drawing.Size(751, 252)
+        Me.PanelPOFPRD.TabIndex = 2
         '
         'PanelPOF
         '
@@ -10746,124 +10954,6 @@ Partial Class Home
         Me.TextBox83.Size = New System.Drawing.Size(100, 20)
         Me.TextBox83.TabIndex = 1
         '
-        'PanelPOFHE
-        '
-        Me.PanelPOFHE.Controls.Add(Me.Panelhistory)
-        Me.PanelPOFHE.Controls.Add(Me.Panelmttf)
-        Me.PanelPOFHE.Controls.Add(Me.Panelweibull)
-        Me.PanelPOFHE.Controls.Add(Me.Panelreliabilitylibrary)
-        Me.PanelPOFHE.Controls.Add(Me.Panel85)
-        Me.PanelPOFHE.Controls.Add(Me.RadioButton47)
-        Me.PanelPOFHE.Controls.Add(Me.RadioButton46)
-        Me.PanelPOFHE.Controls.Add(Me.RadioButton45)
-        Me.PanelPOFHE.Controls.Add(Me.RadioButton44)
-        Me.PanelPOFHE.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelPOFHE.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.PanelPOFHE.Location = New System.Drawing.Point(0, 6764)
-        Me.PanelPOFHE.Name = "PanelPOFHE"
-        Me.PanelPOFHE.Size = New System.Drawing.Size(751, 744)
-        Me.PanelPOFHE.TabIndex = 1
-        '
-        'Panelhistory
-        '
-        Me.Panelhistory.Location = New System.Drawing.Point(1, 145)
-        Me.Panelhistory.Name = "Panelhistory"
-        Me.Panelhistory.Size = New System.Drawing.Size(743, 161)
-        Me.Panelhistory.TabIndex = 10
-        '
-        'Panelmttf
-        '
-        Me.Panelmttf.Location = New System.Drawing.Point(2, 145)
-        Me.Panelmttf.Name = "Panelmttf"
-        Me.Panelmttf.Size = New System.Drawing.Size(742, 184)
-        Me.Panelmttf.TabIndex = 9
-        '
-        'Panelweibull
-        '
-        Me.Panelweibull.Location = New System.Drawing.Point(1, 145)
-        Me.Panelweibull.Name = "Panelweibull"
-        Me.Panelweibull.Size = New System.Drawing.Size(743, 214)
-        Me.Panelweibull.TabIndex = 8
-        '
-        'Panelreliabilitylibrary
-        '
-        Me.Panelreliabilitylibrary.Location = New System.Drawing.Point(2, 145)
-        Me.Panelreliabilitylibrary.Name = "Panelreliabilitylibrary"
-        Me.Panelreliabilitylibrary.Size = New System.Drawing.Size(742, 243)
-        Me.Panelreliabilitylibrary.TabIndex = 7
-        '
-        'Panel85
-        '
-        Me.Panel85.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Panel85.Controls.Add(Me.Label302)
-        Me.Panel85.Location = New System.Drawing.Point(2, 15)
-        Me.Panel85.Name = "Panel85"
-        Me.Panel85.Size = New System.Drawing.Size(742, 32)
-        Me.Panel85.TabIndex = 6
-        '
-        'Label302
-        '
-        Me.Label302.AutoSize = True
-        Me.Label302.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label302.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label302.Location = New System.Drawing.Point(199, 7)
-        Me.Label302.Name = "Label302"
-        Me.Label302.Size = New System.Drawing.Size(344, 18)
-        Me.Label302.TabIndex = 0
-        Me.Label302.Text = "Please Select One of Methods Shown Below"
-        '
-        'RadioButton47
-        '
-        Me.RadioButton47.AutoSize = True
-        Me.RadioButton47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton47.Location = New System.Drawing.Point(465, 101)
-        Me.RadioButton47.Name = "RadioButton47"
-        Me.RadioButton47.Size = New System.Drawing.Size(209, 19)
-        Me.RadioButton47.TabIndex = 4
-        Me.RadioButton47.Text = "Specific Bundle Inspection History"
-        Me.RadioButton47.UseVisualStyleBackColor = True
-        '
-        'RadioButton46
-        '
-        Me.RadioButton46.AutoSize = True
-        Me.RadioButton46.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton46.Location = New System.Drawing.Point(464, 67)
-        Me.RadioButton46.Name = "RadioButton46"
-        Me.RadioButton46.Size = New System.Drawing.Size(178, 19)
-        Me.RadioButton46.TabIndex = 3
-        Me.RadioButton46.Text = "Owner-User Supplied MTTF"
-        Me.RadioButton46.UseVisualStyleBackColor = True
-        '
-        'RadioButton45
-        '
-        Me.RadioButton45.AutoSize = True
-        Me.RadioButton45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton45.Location = New System.Drawing.Point(37, 98)
-        Me.RadioButton45.Name = "RadioButton45"
-        Me.RadioButton45.Size = New System.Drawing.Size(254, 19)
-        Me.RadioButton45.TabIndex = 2
-        Me.RadioButton45.Text = "Owner-User Supplied Weibull Parameters"
-        Me.RadioButton45.UseVisualStyleBackColor = True
-        '
-        'RadioButton44
-        '
-        Me.RadioButton44.AutoSize = True
-        Me.RadioButton44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton44.Location = New System.Drawing.Point(37, 66)
-        Me.RadioButton44.Name = "RadioButton44"
-        Me.RadioButton44.Size = New System.Drawing.Size(333, 19)
-        Me.RadioButton44.TabIndex = 1
-        Me.RadioButton44.Text = "Using Matching Criteria to Filter on The Reliability Library"
-        Me.RadioButton44.UseVisualStyleBackColor = True
-        '
-        'PanelPOFPRD
-        '
-        Me.PanelPOFPRD.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelPOFPRD.Location = New System.Drawing.Point(0, 6512)
-        Me.PanelPOFPRD.Name = "PanelPOFPRD"
-        Me.PanelPOFPRD.Size = New System.Drawing.Size(751, 252)
-        Me.PanelPOFPRD.TabIndex = 2
-        '
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
@@ -10890,264 +10980,6 @@ Partial Class Home
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(774, 589)
         Me.Panel37.TabIndex = 0
-        '
-        'PanelCOF
-        '
-        Me.PanelCOF.Controls.Add(Me.Button18)
-        Me.PanelCOF.Controls.Add(Me.ComboBox75)
-        Me.PanelCOF.Controls.Add(Me.ComboBox74)
-        Me.PanelCOF.Controls.Add(Me.TextBox87)
-        Me.PanelCOF.Controls.Add(Me.TextBox86)
-        Me.PanelCOF.Controls.Add(Me.Panel84)
-        Me.PanelCOF.Controls.Add(Me.Panel83)
-        Me.PanelCOF.Controls.Add(Me.Panel82)
-        Me.PanelCOF.Controls.Add(Me.Label311)
-        Me.PanelCOF.Controls.Add(Me.Label89)
-        Me.PanelCOF.Controls.Add(Me.Label88)
-        Me.PanelCOF.Controls.Add(Me.Label87)
-        Me.PanelCOF.Controls.Add(Me.Label86)
-        Me.PanelCOF.Controls.Add(Me.Label85)
-        Me.PanelCOF.Controls.Add(Me.Label84)
-        Me.PanelCOF.Controls.Add(Me.Label39)
-        Me.PanelCOF.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelCOF.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.PanelCOF.Location = New System.Drawing.Point(0, 0)
-        Me.PanelCOF.Name = "PanelCOF"
-        Me.PanelCOF.Size = New System.Drawing.Size(757, 333)
-        Me.PanelCOF.TabIndex = 0
-        '
-        'Button18
-        '
-        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Button18.FlatAppearance.BorderSize = 0
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button18.Location = New System.Drawing.Point(606, 287)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(102, 25)
-        Me.Button18.TabIndex = 235
-        Me.Button18.Text = "Next"
-        Me.Button18.UseVisualStyleBackColor = False
-        '
-        'ComboBox75
-        '
-        Me.ComboBox75.FormattingEnabled = True
-        Me.ComboBox75.Location = New System.Drawing.Point(277, 236)
-        Me.ComboBox75.Name = "ComboBox75"
-        Me.ComboBox75.Size = New System.Drawing.Size(431, 21)
-        Me.ComboBox75.TabIndex = 13
-        '
-        'ComboBox74
-        '
-        Me.ComboBox74.FormattingEnabled = True
-        Me.ComboBox74.Location = New System.Drawing.Point(277, 206)
-        Me.ComboBox74.Name = "ComboBox74"
-        Me.ComboBox74.Size = New System.Drawing.Size(431, 21)
-        Me.ComboBox74.TabIndex = 12
-        '
-        'TextBox87
-        '
-        Me.TextBox87.Location = New System.Drawing.Point(277, 177)
-        Me.TextBox87.Name = "TextBox87"
-        Me.TextBox87.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox87.TabIndex = 11
-        '
-        'TextBox86
-        '
-        Me.TextBox86.Location = New System.Drawing.Point(277, 149)
-        Me.TextBox86.Name = "TextBox86"
-        Me.TextBox86.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox86.TabIndex = 10
-        '
-        'Panel84
-        '
-        Me.Panel84.Controls.Add(Me.RadioButton33)
-        Me.Panel84.Controls.Add(Me.RadioButton32)
-        Me.Panel84.Controls.Add(Me.RadioButton31)
-        Me.Panel84.Location = New System.Drawing.Point(277, 118)
-        Me.Panel84.Name = "Panel84"
-        Me.Panel84.Size = New System.Drawing.Size(346, 25)
-        Me.Panel84.TabIndex = 6
-        '
-        'RadioButton33
-        '
-        Me.RadioButton33.AutoSize = True
-        Me.RadioButton33.Location = New System.Drawing.Point(182, 4)
-        Me.RadioButton33.Name = "RadioButton33"
-        Me.RadioButton33.Size = New System.Drawing.Size(156, 17)
-        Me.RadioButton33.TabIndex = 2
-        Me.RadioButton33.TabStop = True
-        Me.RadioButton33.Text = "Non-Flammable , Non-Toxic"
-        Me.RadioButton33.UseVisualStyleBackColor = True
-        '
-        'RadioButton32
-        '
-        Me.RadioButton32.AutoSize = True
-        Me.RadioButton32.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton32.Name = "RadioButton32"
-        Me.RadioButton32.Size = New System.Drawing.Size(75, 17)
-        Me.RadioButton32.TabIndex = 1
-        Me.RadioButton32.TabStop = True
-        Me.RadioButton32.Text = "Flammable"
-        Me.RadioButton32.UseVisualStyleBackColor = True
-        '
-        'RadioButton31
-        '
-        Me.RadioButton31.AutoSize = True
-        Me.RadioButton31.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton31.Name = "RadioButton31"
-        Me.RadioButton31.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton31.TabIndex = 0
-        Me.RadioButton31.TabStop = True
-        Me.RadioButton31.Text = "Toxic"
-        Me.RadioButton31.UseVisualStyleBackColor = True
-        '
-        'Panel83
-        '
-        Me.Panel83.Controls.Add(Me.RadioButton30)
-        Me.Panel83.Controls.Add(Me.RadioButton29)
-        Me.Panel83.Location = New System.Drawing.Point(277, 89)
-        Me.Panel83.Name = "Panel83"
-        Me.Panel83.Size = New System.Drawing.Size(142, 25)
-        Me.Panel83.TabIndex = 5
-        '
-        'RadioButton30
-        '
-        Me.RadioButton30.AutoSize = True
-        Me.RadioButton30.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton30.Name = "RadioButton30"
-        Me.RadioButton30.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton30.TabIndex = 1
-        Me.RadioButton30.TabStop = True
-        Me.RadioButton30.Text = "Liquid"
-        Me.RadioButton30.UseVisualStyleBackColor = True
-        '
-        'RadioButton29
-        '
-        Me.RadioButton29.AutoSize = True
-        Me.RadioButton29.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton29.Name = "RadioButton29"
-        Me.RadioButton29.Size = New System.Drawing.Size(44, 17)
-        Me.RadioButton29.TabIndex = 0
-        Me.RadioButton29.TabStop = True
-        Me.RadioButton29.Text = "Gas"
-        Me.RadioButton29.UseVisualStyleBackColor = True
-        '
-        'Panel82
-        '
-        Me.Panel82.Controls.Add(Me.RadioButton28)
-        Me.Panel82.Controls.Add(Me.RadioButton27)
-        Me.Panel82.Controls.Add(Me.RadioButton26)
-        Me.Panel82.Location = New System.Drawing.Point(277, 61)
-        Me.Panel82.Name = "Panel82"
-        Me.Panel82.Size = New System.Drawing.Size(276, 25)
-        Me.Panel82.TabIndex = 4
-        '
-        'RadioButton28
-        '
-        Me.RadioButton28.AutoSize = True
-        Me.RadioButton28.Location = New System.Drawing.Point(181, 4)
-        Me.RadioButton28.Name = "RadioButton28"
-        Me.RadioButton28.Size = New System.Drawing.Size(82, 17)
-        Me.RadioButton28.TabIndex = 7
-        Me.RadioButton28.TabStop = True
-        Me.RadioButton28.Text = "Two=Phase"
-        Me.RadioButton28.UseVisualStyleBackColor = True
-        '
-        'RadioButton27
-        '
-        Me.RadioButton27.AutoSize = True
-        Me.RadioButton27.Location = New System.Drawing.Point(76, 4)
-        Me.RadioButton27.Name = "RadioButton27"
-        Me.RadioButton27.Size = New System.Drawing.Size(87, 17)
-        Me.RadioButton27.TabIndex = 6
-        Me.RadioButton27.TabStop = True
-        Me.RadioButton27.Text = "Vapor or Gas"
-        Me.RadioButton27.UseVisualStyleBackColor = True
-        '
-        'RadioButton26
-        '
-        Me.RadioButton26.AutoSize = True
-        Me.RadioButton26.Location = New System.Drawing.Point(4, 4)
-        Me.RadioButton26.Name = "RadioButton26"
-        Me.RadioButton26.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton26.TabIndex = 5
-        Me.RadioButton26.TabStop = True
-        Me.RadioButton26.Text = "Liquid"
-        Me.RadioButton26.UseVisualStyleBackColor = True
-        '
-        'Label311
-        '
-        Me.Label311.AutoSize = True
-        Me.Label311.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label311.Location = New System.Drawing.Point(277, 28)
-        Me.Label311.Name = "Label311"
-        Me.Label311.Size = New System.Drawing.Size(197, 18)
-        Me.Label311.TabIndex = 3
-        Me.Label311.Text = "Fill Data to Analysis COF"
-        '
-        'Label89
-        '
-        Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(37, 124)
-        Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(98, 13)
-        Me.Label89.TabIndex = 2
-        Me.Label89.Text = "Consequence Area"
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(37, 243)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(122, 13)
-        Me.Label88.TabIndex = 2
-        Me.Label88.Text = "Type of Isolation System"
-        '
-        'Label87
-        '
-        Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(37, 213)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(129, 13)
-        Me.Label87.TabIndex = 1
-        Me.Label87.Text = "Type of Detection System"
-        '
-        'Label86
-        '
-        Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(37, 182)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(136, 13)
-        Me.Label86.TabIndex = 0
-        Me.Label86.Text = "Inventory Group Fluid Mass"
-        '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(37, 153)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(205, 13)
-        Me.Label85.TabIndex = 0
-        Me.Label85.Text = "Fluid Mass in Component being Evaluated"
-        '
-        'Label84
-        '
-        Me.Label84.AutoSize = True
-        Me.Label84.Location = New System.Drawing.Point(37, 96)
-        Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(215, 13)
-        Me.Label84.TabIndex = 0
-        Me.Label84.Text = "Phase of Fluid at Normal (Storage) Condition"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(37, 68)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(82, 13)
-        Me.Label39.TabIndex = 0
-        Me.Label39.Text = "Store Properties"
         '
         'PanelCOFPRD
         '
@@ -11448,6 +11280,264 @@ Partial Class Home
         Me.PanelCOFAST.Size = New System.Drawing.Size(757, 333)
         Me.PanelCOFAST.TabIndex = 4
         '
+        'PanelCOF
+        '
+        Me.PanelCOF.Controls.Add(Me.Button18)
+        Me.PanelCOF.Controls.Add(Me.ComboBox75)
+        Me.PanelCOF.Controls.Add(Me.ComboBox74)
+        Me.PanelCOF.Controls.Add(Me.TextBox87)
+        Me.PanelCOF.Controls.Add(Me.TextBox86)
+        Me.PanelCOF.Controls.Add(Me.Panel84)
+        Me.PanelCOF.Controls.Add(Me.Panel83)
+        Me.PanelCOF.Controls.Add(Me.Panel82)
+        Me.PanelCOF.Controls.Add(Me.Label311)
+        Me.PanelCOF.Controls.Add(Me.Label89)
+        Me.PanelCOF.Controls.Add(Me.Label88)
+        Me.PanelCOF.Controls.Add(Me.Label87)
+        Me.PanelCOF.Controls.Add(Me.Label86)
+        Me.PanelCOF.Controls.Add(Me.Label85)
+        Me.PanelCOF.Controls.Add(Me.Label84)
+        Me.PanelCOF.Controls.Add(Me.Label39)
+        Me.PanelCOF.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelCOF.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.PanelCOF.Location = New System.Drawing.Point(0, 0)
+        Me.PanelCOF.Name = "PanelCOF"
+        Me.PanelCOF.Size = New System.Drawing.Size(757, 333)
+        Me.PanelCOF.TabIndex = 0
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button18.Location = New System.Drawing.Point(606, 287)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(102, 25)
+        Me.Button18.TabIndex = 235
+        Me.Button18.Text = "Next"
+        Me.Button18.UseVisualStyleBackColor = False
+        '
+        'ComboBox75
+        '
+        Me.ComboBox75.FormattingEnabled = True
+        Me.ComboBox75.Location = New System.Drawing.Point(277, 236)
+        Me.ComboBox75.Name = "ComboBox75"
+        Me.ComboBox75.Size = New System.Drawing.Size(431, 21)
+        Me.ComboBox75.TabIndex = 13
+        '
+        'ComboBox74
+        '
+        Me.ComboBox74.FormattingEnabled = True
+        Me.ComboBox74.Location = New System.Drawing.Point(277, 206)
+        Me.ComboBox74.Name = "ComboBox74"
+        Me.ComboBox74.Size = New System.Drawing.Size(431, 21)
+        Me.ComboBox74.TabIndex = 12
+        '
+        'TextBox87
+        '
+        Me.TextBox87.Location = New System.Drawing.Point(277, 177)
+        Me.TextBox87.Name = "TextBox87"
+        Me.TextBox87.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox87.TabIndex = 11
+        '
+        'TextBox86
+        '
+        Me.TextBox86.Location = New System.Drawing.Point(277, 149)
+        Me.TextBox86.Name = "TextBox86"
+        Me.TextBox86.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox86.TabIndex = 10
+        '
+        'Panel84
+        '
+        Me.Panel84.Controls.Add(Me.RadioButton33)
+        Me.Panel84.Controls.Add(Me.RadioButton32)
+        Me.Panel84.Controls.Add(Me.RadioButton31)
+        Me.Panel84.Location = New System.Drawing.Point(277, 118)
+        Me.Panel84.Name = "Panel84"
+        Me.Panel84.Size = New System.Drawing.Size(346, 25)
+        Me.Panel84.TabIndex = 6
+        '
+        'RadioButton33
+        '
+        Me.RadioButton33.AutoSize = True
+        Me.RadioButton33.Location = New System.Drawing.Point(182, 4)
+        Me.RadioButton33.Name = "RadioButton33"
+        Me.RadioButton33.Size = New System.Drawing.Size(156, 17)
+        Me.RadioButton33.TabIndex = 2
+        Me.RadioButton33.TabStop = True
+        Me.RadioButton33.Text = "Non-Flammable , Non-Toxic"
+        Me.RadioButton33.UseVisualStyleBackColor = True
+        '
+        'RadioButton32
+        '
+        Me.RadioButton32.AutoSize = True
+        Me.RadioButton32.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton32.Name = "RadioButton32"
+        Me.RadioButton32.Size = New System.Drawing.Size(75, 17)
+        Me.RadioButton32.TabIndex = 1
+        Me.RadioButton32.TabStop = True
+        Me.RadioButton32.Text = "Flammable"
+        Me.RadioButton32.UseVisualStyleBackColor = True
+        '
+        'RadioButton31
+        '
+        Me.RadioButton31.AutoSize = True
+        Me.RadioButton31.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton31.Name = "RadioButton31"
+        Me.RadioButton31.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton31.TabIndex = 0
+        Me.RadioButton31.TabStop = True
+        Me.RadioButton31.Text = "Toxic"
+        Me.RadioButton31.UseVisualStyleBackColor = True
+        '
+        'Panel83
+        '
+        Me.Panel83.Controls.Add(Me.RadioButton30)
+        Me.Panel83.Controls.Add(Me.RadioButton29)
+        Me.Panel83.Location = New System.Drawing.Point(277, 89)
+        Me.Panel83.Name = "Panel83"
+        Me.Panel83.Size = New System.Drawing.Size(142, 25)
+        Me.Panel83.TabIndex = 5
+        '
+        'RadioButton30
+        '
+        Me.RadioButton30.AutoSize = True
+        Me.RadioButton30.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton30.Name = "RadioButton30"
+        Me.RadioButton30.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton30.TabIndex = 1
+        Me.RadioButton30.TabStop = True
+        Me.RadioButton30.Text = "Liquid"
+        Me.RadioButton30.UseVisualStyleBackColor = True
+        '
+        'RadioButton29
+        '
+        Me.RadioButton29.AutoSize = True
+        Me.RadioButton29.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton29.Name = "RadioButton29"
+        Me.RadioButton29.Size = New System.Drawing.Size(44, 17)
+        Me.RadioButton29.TabIndex = 0
+        Me.RadioButton29.TabStop = True
+        Me.RadioButton29.Text = "Gas"
+        Me.RadioButton29.UseVisualStyleBackColor = True
+        '
+        'Panel82
+        '
+        Me.Panel82.Controls.Add(Me.RadioButton28)
+        Me.Panel82.Controls.Add(Me.RadioButton27)
+        Me.Panel82.Controls.Add(Me.RadioButton26)
+        Me.Panel82.Location = New System.Drawing.Point(277, 61)
+        Me.Panel82.Name = "Panel82"
+        Me.Panel82.Size = New System.Drawing.Size(276, 25)
+        Me.Panel82.TabIndex = 4
+        '
+        'RadioButton28
+        '
+        Me.RadioButton28.AutoSize = True
+        Me.RadioButton28.Location = New System.Drawing.Point(181, 4)
+        Me.RadioButton28.Name = "RadioButton28"
+        Me.RadioButton28.Size = New System.Drawing.Size(82, 17)
+        Me.RadioButton28.TabIndex = 7
+        Me.RadioButton28.TabStop = True
+        Me.RadioButton28.Text = "Two=Phase"
+        Me.RadioButton28.UseVisualStyleBackColor = True
+        '
+        'RadioButton27
+        '
+        Me.RadioButton27.AutoSize = True
+        Me.RadioButton27.Location = New System.Drawing.Point(76, 4)
+        Me.RadioButton27.Name = "RadioButton27"
+        Me.RadioButton27.Size = New System.Drawing.Size(87, 17)
+        Me.RadioButton27.TabIndex = 6
+        Me.RadioButton27.TabStop = True
+        Me.RadioButton27.Text = "Vapor or Gas"
+        Me.RadioButton27.UseVisualStyleBackColor = True
+        '
+        'RadioButton26
+        '
+        Me.RadioButton26.AutoSize = True
+        Me.RadioButton26.Location = New System.Drawing.Point(4, 4)
+        Me.RadioButton26.Name = "RadioButton26"
+        Me.RadioButton26.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton26.TabIndex = 5
+        Me.RadioButton26.TabStop = True
+        Me.RadioButton26.Text = "Liquid"
+        Me.RadioButton26.UseVisualStyleBackColor = True
+        '
+        'Label311
+        '
+        Me.Label311.AutoSize = True
+        Me.Label311.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label311.Location = New System.Drawing.Point(277, 28)
+        Me.Label311.Name = "Label311"
+        Me.Label311.Size = New System.Drawing.Size(197, 18)
+        Me.Label311.TabIndex = 3
+        Me.Label311.Text = "Fill Data to Analysis COF"
+        '
+        'Label89
+        '
+        Me.Label89.AutoSize = True
+        Me.Label89.Location = New System.Drawing.Point(37, 124)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(98, 13)
+        Me.Label89.TabIndex = 2
+        Me.Label89.Text = "Consequence Area"
+        '
+        'Label88
+        '
+        Me.Label88.AutoSize = True
+        Me.Label88.Location = New System.Drawing.Point(37, 243)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(122, 13)
+        Me.Label88.TabIndex = 2
+        Me.Label88.Text = "Type of Isolation System"
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.Location = New System.Drawing.Point(37, 213)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(129, 13)
+        Me.Label87.TabIndex = 1
+        Me.Label87.Text = "Type of Detection System"
+        '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Location = New System.Drawing.Point(37, 182)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(136, 13)
+        Me.Label86.TabIndex = 0
+        Me.Label86.Text = "Inventory Group Fluid Mass"
+        '
+        'Label85
+        '
+        Me.Label85.AutoSize = True
+        Me.Label85.Location = New System.Drawing.Point(37, 153)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(205, 13)
+        Me.Label85.TabIndex = 0
+        Me.Label85.Text = "Fluid Mass in Component being Evaluated"
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Location = New System.Drawing.Point(37, 96)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(215, 13)
+        Me.Label84.TabIndex = 0
+        Me.Label84.Text = "Phase of Fluid at Normal (Storage) Condition"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(37, 68)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(82, 13)
+        Me.Label39.TabIndex = 0
+        Me.Label39.Text = "Store Properties"
+        '
         'TabPage4
         '
         Me.TabPage4.AutoScroll = True
@@ -11540,6 +11630,195 @@ Partial Class Home
         Me.Panel94.Name = "Panel94"
         Me.Panel94.Size = New System.Drawing.Size(755, 291)
         Me.Panel94.TabIndex = 8
+        '
+        'Label441
+        '
+        Me.Label441.AutoSize = True
+        Me.Label441.Location = New System.Drawing.Point(622, 242)
+        Me.Label441.Name = "Label441"
+        Me.Label441.Size = New System.Drawing.Size(51, 13)
+        Me.Label441.TabIndex = 29
+        Me.Label441.Text = "Label441"
+        '
+        'Label440
+        '
+        Me.Label440.AutoSize = True
+        Me.Label440.Location = New System.Drawing.Point(622, 216)
+        Me.Label440.Name = "Label440"
+        Me.Label440.Size = New System.Drawing.Size(51, 13)
+        Me.Label440.TabIndex = 28
+        Me.Label440.Text = "Label440"
+        '
+        'Label439
+        '
+        Me.Label439.AutoSize = True
+        Me.Label439.Location = New System.Drawing.Point(622, 190)
+        Me.Label439.Name = "Label439"
+        Me.Label439.Size = New System.Drawing.Size(51, 13)
+        Me.Label439.TabIndex = 27
+        Me.Label439.Text = "Label439"
+        '
+        'Label438
+        '
+        Me.Label438.AutoSize = True
+        Me.Label438.Location = New System.Drawing.Point(622, 164)
+        Me.Label438.Name = "Label438"
+        Me.Label438.Size = New System.Drawing.Size(51, 13)
+        Me.Label438.TabIndex = 26
+        Me.Label438.Text = "Label438"
+        '
+        'Label437
+        '
+        Me.Label437.AutoSize = True
+        Me.Label437.Location = New System.Drawing.Point(622, 138)
+        Me.Label437.Name = "Label437"
+        Me.Label437.Size = New System.Drawing.Size(51, 13)
+        Me.Label437.TabIndex = 25
+        Me.Label437.Text = "Label437"
+        '
+        'Label436
+        '
+        Me.Label436.AutoSize = True
+        Me.Label436.Location = New System.Drawing.Point(622, 112)
+        Me.Label436.Name = "Label436"
+        Me.Label436.Size = New System.Drawing.Size(51, 13)
+        Me.Label436.TabIndex = 24
+        Me.Label436.Text = "Label436"
+        '
+        'Label435
+        '
+        Me.Label435.AutoSize = True
+        Me.Label435.Location = New System.Drawing.Point(622, 86)
+        Me.Label435.Name = "Label435"
+        Me.Label435.Size = New System.Drawing.Size(51, 13)
+        Me.Label435.TabIndex = 23
+        Me.Label435.Text = "Label435"
+        '
+        'Label434
+        '
+        Me.Label434.AutoSize = True
+        Me.Label434.Location = New System.Drawing.Point(622, 60)
+        Me.Label434.Name = "Label434"
+        Me.Label434.Size = New System.Drawing.Size(51, 13)
+        Me.Label434.TabIndex = 22
+        Me.Label434.Text = "Label434"
+        '
+        'Label433
+        '
+        Me.Label433.AutoSize = True
+        Me.Label433.Location = New System.Drawing.Point(622, 34)
+        Me.Label433.Name = "Label433"
+        Me.Label433.Size = New System.Drawing.Size(51, 13)
+        Me.Label433.TabIndex = 21
+        Me.Label433.Text = "Label433"
+        '
+        'Label432
+        '
+        Me.Label432.AutoSize = True
+        Me.Label432.Location = New System.Drawing.Point(622, 8)
+        Me.Label432.Name = "Label432"
+        Me.Label432.Size = New System.Drawing.Size(51, 13)
+        Me.Label432.TabIndex = 20
+        Me.Label432.Text = "Label432"
+        '
+        'Label431
+        '
+        Me.Label431.AutoSize = True
+        Me.Label431.Location = New System.Drawing.Point(244, 267)
+        Me.Label431.Name = "Label431"
+        Me.Label431.Size = New System.Drawing.Size(51, 13)
+        Me.Label431.TabIndex = 19
+        Me.Label431.Text = "Label431"
+        '
+        'Label430
+        '
+        Me.Label430.AutoSize = True
+        Me.Label430.Location = New System.Drawing.Point(244, 241)
+        Me.Label430.Name = "Label430"
+        Me.Label430.Size = New System.Drawing.Size(51, 13)
+        Me.Label430.TabIndex = 18
+        Me.Label430.Text = "Label430"
+        '
+        'Label429
+        '
+        Me.Label429.AutoSize = True
+        Me.Label429.Location = New System.Drawing.Point(244, 215)
+        Me.Label429.Name = "Label429"
+        Me.Label429.Size = New System.Drawing.Size(51, 13)
+        Me.Label429.TabIndex = 17
+        Me.Label429.Text = "Label429"
+        '
+        'Label428
+        '
+        Me.Label428.AutoSize = True
+        Me.Label428.Location = New System.Drawing.Point(244, 189)
+        Me.Label428.Name = "Label428"
+        Me.Label428.Size = New System.Drawing.Size(51, 13)
+        Me.Label428.TabIndex = 16
+        Me.Label428.Text = "Label428"
+        '
+        'Label427
+        '
+        Me.Label427.AutoSize = True
+        Me.Label427.Location = New System.Drawing.Point(244, 163)
+        Me.Label427.Name = "Label427"
+        Me.Label427.Size = New System.Drawing.Size(51, 13)
+        Me.Label427.TabIndex = 15
+        Me.Label427.Text = "Label427"
+        '
+        'Label426
+        '
+        Me.Label426.AutoSize = True
+        Me.Label426.Location = New System.Drawing.Point(244, 137)
+        Me.Label426.Name = "Label426"
+        Me.Label426.Size = New System.Drawing.Size(51, 13)
+        Me.Label426.TabIndex = 14
+        Me.Label426.Text = "Label426"
+        '
+        'Label425
+        '
+        Me.Label425.AutoSize = True
+        Me.Label425.Location = New System.Drawing.Point(244, 111)
+        Me.Label425.Name = "Label425"
+        Me.Label425.Size = New System.Drawing.Size(51, 13)
+        Me.Label425.TabIndex = 13
+        Me.Label425.Text = "Label425"
+        '
+        'Label424
+        '
+        Me.Label424.AutoSize = True
+        Me.Label424.Location = New System.Drawing.Point(243, 85)
+        Me.Label424.Name = "Label424"
+        Me.Label424.Size = New System.Drawing.Size(51, 13)
+        Me.Label424.TabIndex = 12
+        Me.Label424.Text = "Label424"
+        '
+        'Label423
+        '
+        Me.Label423.AutoSize = True
+        Me.Label423.Location = New System.Drawing.Point(243, 59)
+        Me.Label423.Name = "Label423"
+        Me.Label423.Size = New System.Drawing.Size(51, 13)
+        Me.Label423.TabIndex = 11
+        Me.Label423.Text = "Label423"
+        '
+        'Label422
+        '
+        Me.Label422.AutoSize = True
+        Me.Label422.Location = New System.Drawing.Point(243, 33)
+        Me.Label422.Name = "Label422"
+        Me.Label422.Size = New System.Drawing.Size(51, 13)
+        Me.Label422.TabIndex = 10
+        Me.Label422.Text = "Label422"
+        '
+        'Label421
+        '
+        Me.Label421.AutoSize = True
+        Me.Label421.Location = New System.Drawing.Point(243, 7)
+        Me.Label421.Name = "Label421"
+        Me.Label421.Size = New System.Drawing.Size(51, 13)
+        Me.Label421.TabIndex = 9
+        Me.Label421.Text = "Label421"
         '
         'Label358
         '
@@ -12318,27 +12597,27 @@ Partial Class Home
         Me.TreeView1.BackColor = System.Drawing.SystemColors.Control
         Me.TreeView1.Location = New System.Drawing.Point(0, -3)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode131.Name = "Node1"
-        TreeNode131.Text = "F5A-1002"
-        TreeNode132.Name = "Node2"
-        TreeNode132.Text = "F5A-PG200"
-        TreeNode133.Name = "Node3"
-        TreeNode133.Text = "F5A-OL20"
-        TreeNode134.Name = "Node4"
-        TreeNode134.Text = "F5A-LOS00"
-        TreeNode135.Name = "Node5"
-        TreeNode135.Text = "F5A-DY728"
-        TreeNode136.Name = "Node0"
-        TreeNode136.Text = "PABRIK I"
-        TreeNode137.Name = "Node7"
-        TreeNode137.Text = "F1N-100D"
-        TreeNode138.Name = "Node8"
-        TreeNode138.Text = "F1N-899L"
-        TreeNode139.Name = "Node0"
-        TreeNode139.Text = "F1N-200D"
-        TreeNode140.Name = "Node6"
-        TreeNode140.Text = "PABRIK II"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode136, TreeNode140})
+        TreeNode1.Name = "Node1"
+        TreeNode1.Text = "F5A-1002"
+        TreeNode2.Name = "Node2"
+        TreeNode2.Text = "F5A-PG200"
+        TreeNode3.Name = "Node3"
+        TreeNode3.Text = "F5A-OL20"
+        TreeNode4.Name = "Node4"
+        TreeNode4.Text = "F5A-LOS00"
+        TreeNode5.Name = "Node5"
+        TreeNode5.Text = "F5A-DY728"
+        TreeNode6.Name = "Node0"
+        TreeNode6.Text = "PABRIK I"
+        TreeNode7.Name = "Node7"
+        TreeNode7.Text = "F1N-100D"
+        TreeNode8.Name = "Node8"
+        TreeNode8.Text = "F1N-899L"
+        TreeNode9.Name = "Node0"
+        TreeNode9.Text = "F1N-200D"
+        TreeNode10.Name = "Node6"
+        TreeNode10.Text = "PABRIK II"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode6, TreeNode10})
         Me.TreeView1.Size = New System.Drawing.Size(215, 803)
         Me.TreeView1.TabIndex = 1
         '
@@ -12669,285 +12948,6 @@ Partial Class Home
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Rafaolec"
         '
-        'Label421
-        '
-        Me.Label421.AutoSize = True
-        Me.Label421.Location = New System.Drawing.Point(243, 7)
-        Me.Label421.Name = "Label421"
-        Me.Label421.Size = New System.Drawing.Size(51, 13)
-        Me.Label421.TabIndex = 9
-        Me.Label421.Text = "Label421"
-        '
-        'Label422
-        '
-        Me.Label422.AutoSize = True
-        Me.Label422.Location = New System.Drawing.Point(243, 33)
-        Me.Label422.Name = "Label422"
-        Me.Label422.Size = New System.Drawing.Size(51, 13)
-        Me.Label422.TabIndex = 10
-        Me.Label422.Text = "Label422"
-        '
-        'Label423
-        '
-        Me.Label423.AutoSize = True
-        Me.Label423.Location = New System.Drawing.Point(243, 59)
-        Me.Label423.Name = "Label423"
-        Me.Label423.Size = New System.Drawing.Size(51, 13)
-        Me.Label423.TabIndex = 11
-        Me.Label423.Text = "Label423"
-        '
-        'Label424
-        '
-        Me.Label424.AutoSize = True
-        Me.Label424.Location = New System.Drawing.Point(243, 85)
-        Me.Label424.Name = "Label424"
-        Me.Label424.Size = New System.Drawing.Size(51, 13)
-        Me.Label424.TabIndex = 12
-        Me.Label424.Text = "Label424"
-        '
-        'Label425
-        '
-        Me.Label425.AutoSize = True
-        Me.Label425.Location = New System.Drawing.Point(244, 111)
-        Me.Label425.Name = "Label425"
-        Me.Label425.Size = New System.Drawing.Size(51, 13)
-        Me.Label425.TabIndex = 13
-        Me.Label425.Text = "Label425"
-        '
-        'Label426
-        '
-        Me.Label426.AutoSize = True
-        Me.Label426.Location = New System.Drawing.Point(244, 137)
-        Me.Label426.Name = "Label426"
-        Me.Label426.Size = New System.Drawing.Size(51, 13)
-        Me.Label426.TabIndex = 14
-        Me.Label426.Text = "Label426"
-        '
-        'Label427
-        '
-        Me.Label427.AutoSize = True
-        Me.Label427.Location = New System.Drawing.Point(244, 163)
-        Me.Label427.Name = "Label427"
-        Me.Label427.Size = New System.Drawing.Size(51, 13)
-        Me.Label427.TabIndex = 15
-        Me.Label427.Text = "Label427"
-        '
-        'Label428
-        '
-        Me.Label428.AutoSize = True
-        Me.Label428.Location = New System.Drawing.Point(244, 189)
-        Me.Label428.Name = "Label428"
-        Me.Label428.Size = New System.Drawing.Size(51, 13)
-        Me.Label428.TabIndex = 16
-        Me.Label428.Text = "Label428"
-        '
-        'Label429
-        '
-        Me.Label429.AutoSize = True
-        Me.Label429.Location = New System.Drawing.Point(244, 215)
-        Me.Label429.Name = "Label429"
-        Me.Label429.Size = New System.Drawing.Size(51, 13)
-        Me.Label429.TabIndex = 17
-        Me.Label429.Text = "Label429"
-        '
-        'Label430
-        '
-        Me.Label430.AutoSize = True
-        Me.Label430.Location = New System.Drawing.Point(244, 241)
-        Me.Label430.Name = "Label430"
-        Me.Label430.Size = New System.Drawing.Size(51, 13)
-        Me.Label430.TabIndex = 18
-        Me.Label430.Text = "Label430"
-        '
-        'Label431
-        '
-        Me.Label431.AutoSize = True
-        Me.Label431.Location = New System.Drawing.Point(244, 267)
-        Me.Label431.Name = "Label431"
-        Me.Label431.Size = New System.Drawing.Size(51, 13)
-        Me.Label431.TabIndex = 19
-        Me.Label431.Text = "Label431"
-        '
-        'Label432
-        '
-        Me.Label432.AutoSize = True
-        Me.Label432.Location = New System.Drawing.Point(622, 8)
-        Me.Label432.Name = "Label432"
-        Me.Label432.Size = New System.Drawing.Size(51, 13)
-        Me.Label432.TabIndex = 20
-        Me.Label432.Text = "Label432"
-        '
-        'Label433
-        '
-        Me.Label433.AutoSize = True
-        Me.Label433.Location = New System.Drawing.Point(622, 34)
-        Me.Label433.Name = "Label433"
-        Me.Label433.Size = New System.Drawing.Size(51, 13)
-        Me.Label433.TabIndex = 21
-        Me.Label433.Text = "Label433"
-        '
-        'Label434
-        '
-        Me.Label434.AutoSize = True
-        Me.Label434.Location = New System.Drawing.Point(622, 60)
-        Me.Label434.Name = "Label434"
-        Me.Label434.Size = New System.Drawing.Size(51, 13)
-        Me.Label434.TabIndex = 22
-        Me.Label434.Text = "Label434"
-        '
-        'Label435
-        '
-        Me.Label435.AutoSize = True
-        Me.Label435.Location = New System.Drawing.Point(622, 86)
-        Me.Label435.Name = "Label435"
-        Me.Label435.Size = New System.Drawing.Size(51, 13)
-        Me.Label435.TabIndex = 23
-        Me.Label435.Text = "Label435"
-        '
-        'Label436
-        '
-        Me.Label436.AutoSize = True
-        Me.Label436.Location = New System.Drawing.Point(622, 112)
-        Me.Label436.Name = "Label436"
-        Me.Label436.Size = New System.Drawing.Size(51, 13)
-        Me.Label436.TabIndex = 24
-        Me.Label436.Text = "Label436"
-        '
-        'Label437
-        '
-        Me.Label437.AutoSize = True
-        Me.Label437.Location = New System.Drawing.Point(622, 138)
-        Me.Label437.Name = "Label437"
-        Me.Label437.Size = New System.Drawing.Size(51, 13)
-        Me.Label437.TabIndex = 25
-        Me.Label437.Text = "Label437"
-        '
-        'Label438
-        '
-        Me.Label438.AutoSize = True
-        Me.Label438.Location = New System.Drawing.Point(622, 164)
-        Me.Label438.Name = "Label438"
-        Me.Label438.Size = New System.Drawing.Size(51, 13)
-        Me.Label438.TabIndex = 26
-        Me.Label438.Text = "Label438"
-        '
-        'Label439
-        '
-        Me.Label439.AutoSize = True
-        Me.Label439.Location = New System.Drawing.Point(622, 190)
-        Me.Label439.Name = "Label439"
-        Me.Label439.Size = New System.Drawing.Size(51, 13)
-        Me.Label439.TabIndex = 27
-        Me.Label439.Text = "Label439"
-        '
-        'Label440
-        '
-        Me.Label440.AutoSize = True
-        Me.Label440.Location = New System.Drawing.Point(622, 216)
-        Me.Label440.Name = "Label440"
-        Me.Label440.Size = New System.Drawing.Size(51, 13)
-        Me.Label440.TabIndex = 28
-        Me.Label440.Text = "Label440"
-        '
-        'Label441
-        '
-        Me.Label441.AutoSize = True
-        Me.Label441.Location = New System.Drawing.Point(622, 242)
-        Me.Label441.Name = "Label441"
-        Me.Label441.Size = New System.Drawing.Size(51, 13)
-        Me.Label441.TabIndex = 29
-        Me.Label441.Text = "Label441"
-        '
-        'Label442
-        '
-        Me.Label442.AutoSize = True
-        Me.Label442.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label442.Location = New System.Drawing.Point(193, 216)
-        Me.Label442.Name = "Label442"
-        Me.Label442.Size = New System.Drawing.Size(59, 15)
-        Me.Label442.TabIndex = 236
-        Me.Label442.Text = "Label442"
-        '
-        'Label443
-        '
-        Me.Label443.AutoSize = True
-        Me.Label443.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label443.Location = New System.Drawing.Point(154, 245)
-        Me.Label443.Name = "Label443"
-        Me.Label443.Size = New System.Drawing.Size(59, 15)
-        Me.Label443.TabIndex = 236
-        Me.Label443.Text = "Label443"
-        '
-        'Label444
-        '
-        Me.Label444.AutoSize = True
-        Me.Label444.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label444.Location = New System.Drawing.Point(155, 273)
-        Me.Label444.Name = "Label444"
-        Me.Label444.Size = New System.Drawing.Size(59, 15)
-        Me.Label444.TabIndex = 236
-        Me.Label444.Text = "Label444"
-        '
-        'Label445
-        '
-        Me.Label445.AutoSize = True
-        Me.Label445.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label445.Location = New System.Drawing.Point(147, 300)
-        Me.Label445.Name = "Label445"
-        Me.Label445.Size = New System.Drawing.Size(59, 15)
-        Me.Label445.TabIndex = 236
-        Me.Label445.Text = "Label445"
-        '
-        'Label446
-        '
-        Me.Label446.AutoSize = True
-        Me.Label446.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label446.Location = New System.Drawing.Point(170, 327)
-        Me.Label446.Name = "Label446"
-        Me.Label446.Size = New System.Drawing.Size(59, 15)
-        Me.Label446.TabIndex = 236
-        Me.Label446.Text = "Label446"
-        '
-        'Label447
-        '
-        Me.Label447.AutoSize = True
-        Me.Label447.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label447.Location = New System.Drawing.Point(155, 356)
-        Me.Label447.Name = "Label447"
-        Me.Label447.Size = New System.Drawing.Size(59, 15)
-        Me.Label447.TabIndex = 236
-        Me.Label447.Text = "Label447"
-        '
-        'Label448
-        '
-        Me.Label448.AutoSize = True
-        Me.Label448.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label448.Location = New System.Drawing.Point(132, 414)
-        Me.Label448.Name = "Label448"
-        Me.Label448.Size = New System.Drawing.Size(59, 15)
-        Me.Label448.TabIndex = 236
-        Me.Label448.Text = "Label448"
-        '
-        'Label449
-        '
-        Me.Label449.AutoSize = True
-        Me.Label449.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label449.Location = New System.Drawing.Point(159, 444)
-        Me.Label449.Name = "Label449"
-        Me.Label449.Size = New System.Drawing.Size(59, 15)
-        Me.Label449.TabIndex = 236
-        Me.Label449.Text = "Label449"
-        '
-        'Label450
-        '
-        Me.Label450.AutoSize = True
-        Me.Label450.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label450.Location = New System.Drawing.Point(167, 471)
-        Me.Label450.Name = "Label450"
-        Me.Label450.Size = New System.Drawing.Size(59, 15)
-        Me.Label450.TabIndex = 236
-        Me.Label450.Text = "Label450"
-        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -12965,6 +12965,11 @@ Partial Class Home
         Me.Panel18.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.PanelgeneraldataHE.ResumeLayout(False)
+        Me.PanelgeneraldataHE.PerformLayout()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel61.ResumeLayout(False)
+        Me.Panel61.PerformLayout()
         Me.Panelgeneraldata.ResumeLayout(False)
         Me.Panelgeneraldata.PerformLayout()
         Me.Panel105.ResumeLayout(False)
@@ -13009,11 +13014,6 @@ Partial Class Home
         Me.Panel31.PerformLayout()
         Me.Panel24.ResumeLayout(False)
         Me.Panel24.PerformLayout()
-        Me.PanelgeneraldataHE.ResumeLayout(False)
-        Me.PanelgeneraldataHE.PerformLayout()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel61.ResumeLayout(False)
-        Me.Panel61.PerformLayout()
         Me.Panelnewanalysis.ResumeLayout(False)
         Me.Panelnewanalysis.PerformLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
@@ -13030,6 +13030,10 @@ Partial Class Home
         Me.TabPage2.PerformLayout()
         Me.Panel33.ResumeLayout(False)
         Me.Panel33.PerformLayout()
+        Me.PanelPOFHE.ResumeLayout(False)
+        Me.PanelPOFHE.PerformLayout()
+        Me.Panel85.ResumeLayout(False)
+        Me.Panel85.PerformLayout()
         Me.PanelPOF.ResumeLayout(False)
         Me.PanelPOF.PerformLayout()
         Me.Panel64.ResumeLayout(False)
@@ -13196,13 +13200,11 @@ Partial Class Home
         Me.Panel89.PerformLayout()
         Me.Panel60.ResumeLayout(False)
         Me.Panel60.PerformLayout()
-        Me.PanelPOFHE.ResumeLayout(False)
-        Me.PanelPOFHE.PerformLayout()
-        Me.Panel85.ResumeLayout(False)
-        Me.Panel85.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.Panel37.ResumeLayout(False)
+        Me.PanelCOFHE.ResumeLayout(False)
+        Me.PanelCOFHE.PerformLayout()
         Me.PanelCOF.ResumeLayout(False)
         Me.PanelCOF.PerformLayout()
         Me.Panel84.ResumeLayout(False)
@@ -13211,8 +13213,6 @@ Partial Class Home
         Me.Panel83.PerformLayout()
         Me.Panel82.ResumeLayout(False)
         Me.Panel82.PerformLayout()
-        Me.PanelCOFHE.ResumeLayout(False)
-        Me.PanelCOFHE.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.Panelresultmetodegff.ResumeLayout(False)
         Me.Panelresultmetodegff.PerformLayout()

@@ -119,6 +119,12 @@
     <Compile Include="Corrosion_Rate.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Infromation.Designer.vb">
+      <DependentUpon>Infromation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Infromation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Corrosion_Rate.resx">
       <DependentUpon>Corrosion_Rate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Infromation.resx">
+      <DependentUpon>Infromation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

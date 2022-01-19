@@ -904,27 +904,27 @@ Public Class Home
         PanelCOFHE.Hide()
         PanelCOFPRD.Hide()
 
-        Call thinningdf()
-        Call liningdf()
-        Call scccausticdf()
-        Call sccaminedf()
-        Call sccsulfidedf()
-        Call scchicsohich2s()
-        Call sccalkalinecarbonatedf()
-        Call sccpolythionicaciddf()
-        Call sccclsccdf()
-        Call scchydrogenschfdf()
-        Call scchicsohichfdf()
-        Call externalcorrosionferriticdf()
-        Call cuiferriticdf()
-        Call externalsccausteniticdf()
-        Call externalscccuiausteniticdf()
-        Call brittledf()
-        Call lowalloydf()
-        Call delapandelapanlimafembrittlementdf()
-        Call sigmaphasedf()
-        Call hthadf()
-        Call mechanicalfatiguedf()
+        'Call thinningdf()
+        'Call liningdf()
+        'Call scccausticdf()
+        ' Call sccaminedf()
+        'Call sccsulfidedf()
+        ' Call scchicsohich2s()
+        ' Call sccalkalinecarbonatedf()
+        ' Call sccpolythionicaciddf()
+        ' Call sccclsccdf()
+        ' Call scchydrogenschfdf()
+        ' Call scchicsohichfdf()
+        ' Call externalcorrosionferriticdf()
+        ' Call cuiferriticdf()
+        ' Call externalsccausteniticdf()
+        ' Call externalscccuiausteniticdf()
+        ' Call brittledf()
+        ' Call lowalloydf()
+        '  Call delapandelapanlimafembrittlementdf()
+        'Call sigmaphasedf()
+        ' Call hthadf()
+        ' Call mechanicalfatiguedf()
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
@@ -952,7 +952,7 @@ Public Class Home
 
 
         TabControl1.SelectedTab = TabPage4
-        Call pof()
+        'Call pof()
     End Sub
 
     Private Sub Button19_Click_1(sender As Object, e As EventArgs) Handles Button19.Click
@@ -26005,5 +26005,305 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Label431.Text = pofcategory
     End Sub
 
+    '======================================================================================================================
+    '                                          BUTTON COF LEVEL 1
 
+    Private Sub ComboBox75_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox75.SelectedIndexChanged
+        If ComboBox75.Text = "Toxic" Then
+            Panel83.Visible = True
+            Label452.Visible = False
+            Label39.Visible = True
+            ComboBox184.Visible = False
+            TextBox105.Visible = True
+            ComboBox184.Text = ""
+        ElseIf ComboBox75.Text = "Flammable" Then
+            Panel83.Visible = True
+            Label452.Visible = True
+            Label39.Visible = False
+            ComboBox184.Visible = True
+            TextBox105.Visible = False
+            TextBox105.Text = ""
+        ElseIf ComboBox75.Text = "Non Flammable. Non Toxic" Then
+            Panel83.Visible = False
+            Label452.Visible = False
+            Label39.Visible = False
+            ComboBox184.Visible = False
+            TextBox105.Visible = False
+            TextBox105.Text = ""
+            ComboBox184.Text = ""
+        End If
+    End Sub
+
+    '======================================================================================================================
+    '                                   CODING PERHITUNGAN COF LEVEL 1
+    Public Sub coflevel1()
+        Dim density As Double = Val(TextBox20.Text)
+        Dim nbp As Double = Val(TextBox21.Text)
+        Dim mw As Double = Val(TextBox22.Text)
+        Dim ait As Double = Val(TextBox23.Text)
+        Dim lfv As Double = Val(TextBox24.Text)
+        Dim viscosity As Double = Val(TextBox25.Text)
+        Dim dynamicv As Double = Val(TextBox28.Text)
+        Dim atm As Double = 101.325
+        Dim operatingpressure As Double
+        Dim operatingtemp As Double
+        Dim phase As String
+        Dim fluidmasscomponent As Double = Val(TextBox86.Text)
+        Dim invgroupmass As Double = Val(TextBox87.Text)
+
+        operatingpressure = Val(TextBox4.Text) * 1000
+
+        If Units.ComboBox1.Text = "SI" Then
+            operatingtemp = Val(TextBox5.Text) + 273.15
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            operatingtemp = Val(TextBox5.Text) + 459.67
+        End If
+
+        Dim d1 As Double = Val(TextBox111.Text)
+        Dim d2 As Double = Val(TextBox112.Text)
+        Dim d3 As Double = Val(TextBox113.Text)
+        Dim d4 As Double = Val(TextBox114.Text)
+
+        If RadioButton27.Checked = True And TextBox27.Text = "Gas" Then
+            phase = "Gas"
+        ElseIf RadioButton26.Checked = True And textbox27.Text = "Gas" Then
+            phase = "Gas"
+        ElseIf RadioButton27.Checked = True And textbox27.Text = "Liquid" Then
+            phase = "Gas"
+        ElseIf RadioButton26.Checked = True And textbox27.Text = "Liquid" Then
+            phase = "Liquid"
+        End If
+
+        'phase liquid
+        Dim re1 As Double
+        Dim re2 As Double
+        Dim re3 As Double
+        Dim re4 As Double
+
+        re1 = (d1 * density * lfv) / viscosity
+        re2 = (d2 * density * lfv) / viscosity
+        re3 = (d3 * density * lfv) / viscosity
+        re4 = (d4 * density * lfv) / viscosity
+
+        Dim Kv1 As Double
+        Dim Kv2 As Double
+        Dim Kv3 As Double
+        Dim Kv4 As Double
+
+        Kv1 = (0.9935 + (2.878 / (re1 ^ 0.5)) + (342.75 / (re1 ^ 1.5))) ^ -1
+        Kv2 = (0.9935 + (2.878 / (re2 ^ 0.5)) + (342.75 / (re2 ^ 1.5))) ^ -1
+        Kv3 = (0.9935 + (2.878 / (re3 ^ 0.5)) + (342.75 / (re3 ^ 1.5))) ^ -1
+        Kv4 = (0.9935 + (2.878 / (re4 ^ 0.5)) + (342.75 / (re4 ^ 1.5))) ^ -1
+
+        'phase vapor
+        Dim a As Double
+        Dim b As Double
+        Dim c As Double
+        Dim d As Double
+        Dim f As Double
+
+        a = Val(TextBox29.Text)
+        b = Val(TextBox30.Text)
+        c = Val(TextBox31.Text)
+        d = Val(TextBox32.Text)
+        f = Val(TextBox33.Text)
+
+        Dim Cp As Double
+
+        If TextBox33.Text = "N/A" Then
+            Cp = a + (b * operatingtemp) + (c * (operatingtemp ^ 2)) + (d * (operatingtemp ^ 3))
+        ElseIf TextBox23.Text = "N/A" Then
+            Cp = a + (b * operatingtemp) + (c * (operatingtemp ^ 2)) + (d * (operatingtemp ^ 3)) + (f * (operatingtemp ^ 4))
+        Else
+            Cp = a + (b * (((c / operatingtemp) / Math.Sinh(c / operatingtemp)) ^ 2)) + (d * (((f / operatingtemp) / Math.Cosh(f / operatingtemp)) ^ 2))
+        End If
+
+        Dim k As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            k = Cp / (Cp - 8.314)
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            k = Cp / (Cp - 1.545)
+        End If
+
+        Dim ptrans As Double
+
+        ptrans = atm * (((k + 1) / 2) ^ (k / (k - 1)))
+
+        'release hole size
+        Dim a1 As Double
+        Dim a2 As Double
+        Dim a3 As Double
+        Dim a4 As Double
+
+        a1 = (Math.PI * (d1 ^ 2)) / 4
+        a2 = (Math.PI * (d2 ^ 2)) / 4
+        a3 = (Math.PI * (d3 ^ 2)) / 4
+        a4 = (Math.PI * (d4 ^ 2)) / 4
+
+        'release rate Wn
+        Dim wn1 As Double
+        Dim wn2 As Double
+        Dim wn3 As Double
+        Dim wn4 As Double
+
+        If RadioButton26.Checked = True Then
+
+            Dim cd As Double = 0.61
+            Dim c1si As Double = 31623
+            Dim c1us As Double = 12
+            Dim gcsi As Double = 1
+            Dim gcus As Double = 32.2
+
+            If Units.ComboBox1.Text = "SI" Then
+
+                wn1 = cd * Kv1 * density * (a1 / c1si) * (((2 * gcsi * (operatingpressure - atm)) / density) ^ 0.5)
+                wn2 = cd * Kv2 * density * (a2 / c1si) * (((2 * gcsi * (operatingpressure - atm)) / density) ^ 0.5)
+                wn3 = cd * Kv3 * density * (a3 / c1si) * (((2 * gcsi * (operatingpressure - atm)) / density) ^ 0.5)
+                wn4 = cd * Kv4 * density * (a4 / c1si) * (((2 * gcsi * (operatingpressure - atm)) / density) ^ 0.5)
+
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+
+                wn1 = cd * Kv1 * density * (a1 / c1us) * (((2 * gcus * (operatingpressure - atm)) / density) ^ 0.5)
+                wn2 = cd * Kv2 * density * (a2 / c1us) * (((2 * gcus * (operatingpressure - atm)) / density) ^ 0.5)
+                wn3 = cd * Kv3 * density * (a3 / c1us) * (((2 * gcus * (operatingpressure - atm)) / density) ^ 0.5)
+                wn4 = cd * Kv4 * density * (a4 / c1us) * (((2 * gcus * (operatingpressure - atm)) / density) ^ 0.5)
+
+            End If
+        End If
+
+        If RadioButton27.Checked = True Then
+
+            If operatingpressure <= ptrans Then
+
+                Dim cd As Double = 0.9
+                Dim c2si As Double = 1000
+                Dim c2us As Double = 1
+                Dim gcsi As Double = 1
+                Dim gcus As Double = 32.2
+                Dim rsi As Double = 8.314
+                Dim rus As Double = 1.545
+
+                If Units.ComboBox1.Text = "SI" Then
+
+                    wn1 = (cd / c2si) * a1 * operatingpressure * ((((mw * gcsi) / (rsi * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn2 = (cd / c2si) * a2 * operatingpressure * ((((mw * gcsi) / (rsi * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn3 = (cd / c2si) * a3 * operatingpressure * ((((mw * gcsi) / (rsi * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn4 = (cd / c2si) * a4 * operatingpressure * ((((mw * gcsi) / (rsi * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+
+                    wn1 = (cd / c2us) * a1 * operatingpressure * ((((mw * gcus) / (rus * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn2 = (cd / c2us) * a2 * operatingpressure * ((((mw * gcus) / (rus * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn3 = (cd / c2us) * a3 * operatingpressure * ((((mw * gcus) / (rus * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+                    wn4 = (cd / c2us) * a4 * operatingpressure * ((((mw * gcus) / (rus * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * ((1 - (atm / operatingpressure)) ^ ((k - 1) / k))) ^ 0.5)
+
+                End If
+            End If
+
+            If operatingpressure > ptrans Then
+
+                Dim cd As Double = 0.9
+                Dim c2si As Double = 1000
+                Dim c2us As Double = 1
+                Dim gcsi As Double = 1
+                Dim gcus As Double = 32.2
+                Dim rsi As Double = 8.314
+                Dim rus As Double = 1.545
+
+                If Units.ComboBox1.Text = "SI" Then
+
+                    wn1 = (cd / c2si) * a1 * operatingpressure * ((((k * mw * gcsi) / (rsi * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn2 = (cd / c2si) * a2 * operatingpressure * ((((k * mw * gcsi) / (rsi * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn3 = (cd / c2si) * a3 * operatingpressure * ((((k * mw * gcsi) / (rsi * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn4 = (cd / c2si) * a4 * operatingpressure * ((((k * mw * gcsi) / (rsi * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+
+                    wn1 = (cd / c2us) * a1 * operatingpressure * ((((k * mw * gcus) / (rus * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn2 = (cd / c2us) * a2 * operatingpressure * ((((k * mw * gcus) / (rus * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn3 = (cd / c2us) * a3 * operatingpressure * ((((k * mw * gcus) / (rus * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                    wn4 = (cd / c2us) * a4 * operatingpressure * ((((k * mw * gcus) / (rus * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+
+                End If
+            End If
+
+        End If
+
+        'flow rate
+
+        Dim remax As Double
+        Dim dmaxsi As Double
+        Dim dmaxus As Double
+
+        dmaxsi = 203
+        dmaxus = 8
+
+        If Units.ComboBox1.Text = "SI" Then
+            remax = (dmaxsi * density * lfv) / viscosity
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            remax = (dmaxus * density * lfv) / viscosity
+        End If
+
+        Dim Kvmax As Double
+
+        Kvmax = (0.9935 + (2.878 / (remax ^ 0.5)) + (342.75 / (remax ^ 1.5))) ^ -1
+
+        Dim wnmax As Double
+
+        If RadioButton26.Checked = True Then
+            If Units.ComboBox1.Text = "SI" Then
+                wnmax = 0.61 * Kvmax * density * (32450 / 31.623) * ((2 * 1 * (operatingpressure - atm) / density) ^ 0.5)
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                wnmax = 0.61 * Kvmax * density * (50.3 / 12) * ((2 * 32.2 * (operatingpressure - atm) / density) ^ 0.5)
+            End If
+        End If
+
+        If RadioButton27.Checked = True Then
+
+            If operatingpressure > ptrans Then
+
+                If Units.ComboBox1.Text = "SI" Then
+                    wnmax = (0.9 / 1000) * 32450 * operatingpressure * ((((k * mw * 1) / (8.314 * operatingtemp)) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    wnmax = (0.9 / 1) * 50.3 * operatingpressure * (((k * mw * 32.2) / (1.545 * operatingtemp) * ((2 / (k + 1)) ^ ((k + 1) / (k - 1)))) ^ 0.5)
+                End If
+
+            ElseIf operatingpressure <= ptrans Then
+
+                If Units.ComboBox1.Text = "SI" Then
+                    wnmax = (0.9 / 1000) * 32450 * operatingpressure * ((((mw * 1) / (8.314 * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * (1 - ((atm / operatingpressure) ^ ((k - 1) / k)))) ^ 0.5)
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    wnmax = (0.9 / 1) * 50.3 * operatingpressure * ((((mw * 32.2) / (1.545 * operatingtemp)) * ((2 * k) / (k - 1)) * ((atm / operatingpressure) ^ (2 / k)) * (1 - ((atm / operatingpressure) ^ ((k - 1) / k)))) ^ 0.5)
+
+                End If
+            End If
+        End If
+
+        'additional mass
+        Dim addmass1 As Double
+        Dim addmass2 As Double
+        Dim addmass3 As Double
+        Dim addmass4 As Double
+
+        addmass1 = 180 * Math.Min(wn1, wnmax)
+        addmass2 = 180 * Math.Min(wn2, wnmax)
+        addmass3 = 180 * Math.Min(wn3, wnmax)
+        addmass4 = 180 * Math.Min(wn4, wnmax)
+
+        'max fluid available for release
+        Dim maxfluidmass1 As Double
+        Dim maxfluidmass2 As Double
+        Dim maxfluidmass3 As Double
+        Dim maxfluidmass4 As Double
+
+        maxfluidmass1 = Math.Min((fluidmasscomponent + addmass1), invgroupmass)
+        maxfluidmass2 = Math.Min((fluidmasscomponent + addmass2), invgroupmass)
+        maxfluidmass3 = Math.Min((fluidmasscomponent + addmass3), invgroupmass)
+        maxfluidmass4 = Math.Min((fluidmasscomponent + addmass4), invgroupmass)
+
+        'release type
+
+    End Sub
 End Class

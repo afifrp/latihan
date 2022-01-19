@@ -26,10 +26,7 @@ Partial Class Insert_Equipment
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Insert_Equipment))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -43,6 +40,9 @@ Partial Class Insert_Equipment
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -87,36 +87,6 @@ Partial Class Insert_Equipment
         Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button9.UseVisualStyleBackColor = False
         '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(189, 281)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(114, 30)
-        Me.Button7.TabIndex = 51
-        Me.Button7.Text = "  SAVE"
-        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(189, 281)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(114, 30)
-        Me.Button8.TabIndex = 52
-        Me.Button8.Text = "  UPDATE"
-        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button8.UseVisualStyleBackColor = False
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -125,15 +95,6 @@ Partial Class Insert_Equipment
         Me.Label7.Size = New System.Drawing.Size(94, 13)
         Me.Label7.TabIndex = 45
         Me.Label7.Text = "Componnent Type"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"COMPC", "COMPR", "KODRUM", "DRUM", "FINFAN", "FILTER", "REACTOR", "COLTOP", "COLMID", "COLBTM"})
-        Me.ComboBox2.Location = New System.Drawing.Point(189, 243)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(242, 21)
-        Me.ComboBox2.TabIndex = 46
         '
         'ComboBox6
         '
@@ -258,6 +219,45 @@ Partial Class Insert_Equipment
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Equipment"
         '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
+        Me.Button8.Location = New System.Drawing.Point(189, 281)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(114, 30)
+        Me.Button8.TabIndex = 52
+        Me.Button8.Text = "  UPDATE"
+        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"COMPC", "COMPR", "KODRUM", "DRUM", "FINFAN", "FILTER", "REACTOR", "COLTOP", "COLMID", "COLBTM"})
+        Me.ComboBox2.Location = New System.Drawing.Point(189, 243)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(242, 21)
+        Me.ComboBox2.TabIndex = 46
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
+        Me.Button7.Location = New System.Drawing.Point(189, 281)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(114, 30)
+        Me.Button7.TabIndex = 51
+        Me.Button7.Text = "  SAVE"
+        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button7.UseVisualStyleBackColor = False
+        '
         'Insert_Equipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,6 +265,7 @@ Partial Class Insert_Equipment
         Me.ClientSize = New System.Drawing.Size(457, 330)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Insert_Equipment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

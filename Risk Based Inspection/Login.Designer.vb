@@ -52,12 +52,12 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -418,6 +418,15 @@ Partial Class Login
         Me.Panel2.Size = New System.Drawing.Size(717, 572)
         Me.Panel2.TabIndex = 197
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 43)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(380, 28)
+        Me.Panel4.TabIndex = 197
+        '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.CornflowerBlue
@@ -460,15 +469,6 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 198
         Me.PictureBox1.TabStop = False
         '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 43)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(380, 28)
-        Me.Panel4.TabIndex = 197
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,6 +476,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(717, 572)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

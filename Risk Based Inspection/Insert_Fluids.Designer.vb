@@ -24,6 +24,7 @@ Partial Class Insert_Fluids
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Insert_Fluids))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -66,7 +67,6 @@ Partial Class Insert_Fluids
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -119,6 +119,15 @@ Partial Class Insert_Fluids
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(473, 510)
         Me.Panel1.TabIndex = 0
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(144, 436)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(45, 13)
+        Me.Label21.TabIndex = 36
+        Me.Label21.Text = "Label21"
         '
         'Label20
         '
@@ -499,15 +508,6 @@ Partial Class Insert_Fluids
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(144, 436)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(45, 13)
-        Me.Label21.TabIndex = 36
-        Me.Label21.Text = "Label21"
-        '
         'Insert_Fluids
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -515,6 +515,7 @@ Partial Class Insert_Fluids
         Me.ClientSize = New System.Drawing.Size(473, 510)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Insert_Fluids"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Fluid Properties"

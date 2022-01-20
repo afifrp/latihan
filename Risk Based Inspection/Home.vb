@@ -26304,6 +26304,2155 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         maxfluidmass4 = Math.Min((fluidmasscomponent + addmass4), invgroupmass)
 
         'release type
+        Dim c3si As Double = 4536
+        Dim c3us As Double = 10000
+
+        Dim releasetype1 As String
+        Dim releasetype2 As String
+        Dim releasetype3 As String
+        Dim releasetype4 As String
+
+        Dim t1 As Double
+        Dim t2 As Double
+        Dim t3 As Double
+        Dim t4 As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+
+            t1 = c3si / wn1
+            t2 = c3si / wn2
+            t3 = c3si / wn3
+            t4 = c3si / wn4
+
+            If d1 <= 6.4 Then
+                If t1 > 180 Then
+                    If maxfluidmass1 <= 4536 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 4536 Then
+                        releasetype1 = "Continuous"
+                    End If
+                End If
+                If t1 <= 180 Then
+                    If maxfluidmass1 <= 4536 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 4536 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d1 > 6.4 Then
+                If t1 > 180 Then
+                    If maxfluidmass1 <= 4536 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 4536 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+                If t1 <= 180 Then
+                    If maxfluidmass1 <= 4536 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                    If maxfluidmass1 > 4536 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d2 <= 6.4 Then
+                If t2 > 180 Then
+                    If maxfluidmass2 <= 4536 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 4536 Then
+                        releasetype2 = "Continuous"
+                    End If
+
+                End If
+                If t2 <= 180 Then
+                    If maxfluidmass2 <= 4536 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 4536 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d2 > 6.4 Then
+                If t2 > 180 Then
+                    If maxfluidmass2 <= 4536 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 4536 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+                If t2 <= 180 Then
+                    If maxfluidmass2 <= 4536 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                    If maxfluidmass2 > 4536 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d3 <= 6.4 Then
+                If t3 > 180 Then
+                    If maxfluidmass3 <= 4536 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 4536 Then
+                        releasetype3 = "Continuous"
+                    End If
+                End If
+                If t3 <= 180 Then
+                    If maxfluidmass3 <= 4536 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 4536 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d3 > 6.4 Then
+                If t3 > 180 Then
+                    If maxfluidmass3 <= 4536 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 4536 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+                If t3 <= 180 Then
+                    If maxfluidmass3 <= 4536 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                    If maxfluidmass3 > 4536 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d4 <= 6.4 Then
+                If t4 > 180 Then
+                    If maxfluidmass4 <= 4536 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 4536 Then
+                        releasetype4 = "Continuous"
+                    End If
+                End If
+                If t4 <= 180 Then
+                    If maxfluidmass4 <= 4536 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 4536 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d4 > 6.4 Then
+                If t4 > 180 Then
+                    If maxfluidmass4 <= 4536 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 4536 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+                If t4 <= 180 Then
+                    If maxfluidmass4 <= 4536 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                    If maxfluidmass4 > 4536 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+            End If
+        End If
+
+        If Units.ComboBox1.Text = "US Customary" Then
+
+            t1 = c3us / wn1
+            t2 = c3us / wn2
+            t3 = c3us / wn3
+            t4 = c3us / wn4
+
+            If d1 <= 0.25 Then
+                If t1 > 180 Then
+                    If maxfluidmass1 <= 10000 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 10000 Then
+                        releasetype1 = "Continuous"
+                    End If
+                End If
+                If t1 <= 180 Then
+                    If maxfluidmass1 <= 10000 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 10000 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d1 > 0.25 Then
+                If t1 > 180 Then
+                    If maxfluidmass1 <= 10000 Then
+                        releasetype1 = "Continuous"
+                    End If
+                    If maxfluidmass1 > 10000 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+                If t1 <= 180 Then
+                    If maxfluidmass1 <= 10000 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                    If maxfluidmass1 > 10000 Then
+                        releasetype1 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d2 <= 0.25 Then
+                If t2 > 180 Then
+                    If maxfluidmass2 <= 10000 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 10000 Then
+                        releasetype2 = "Continuous"
+                    End If
+                End If
+                If t2 <= 180 Then
+                    If maxfluidmass2 <= 10000 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 10000 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d2 > 0.25 Then
+                If t2 > 180 Then
+                    If maxfluidmass2 <= 10000 Then
+                        releasetype2 = "Continuous"
+                    End If
+                    If maxfluidmass2 > 10000 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+                If t2 <= 180 Then
+                    If maxfluidmass2 <= 10000 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                    If maxfluidmass2 > 10000 Then
+                        releasetype2 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d3 <= 0.25 Then
+                If t3 > 180 Then
+                    If maxfluidmass3 <= 10000 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 10000 Then
+                        releasetype3 = "Continuous"
+                    End If
+                End If
+                If t3 <= 180 Then
+                    If maxfluidmass3 <= 10000 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 10000 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d3 > 0.25 Then
+                If t3 > 180 Then
+                    If maxfluidmass3 <= 10000 Then
+                        releasetype3 = "Continuous"
+                    End If
+                    If maxfluidmass3 > 10000 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+                If t3 <= 180 Then
+                    If maxfluidmass3 <= 10000 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                    If maxfluidmass3 > 10000 Then
+                        releasetype3 = "Instantaneous"
+                    End If
+                End If
+            End If
+
+            If d4 <= 0.25 Then
+                If t4 > 180 Then
+                    If maxfluidmass4 <= 10000 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 10000 Then
+                        releasetype4 = "Continuous"
+                    End If
+                End If
+                If t4 <= 180 Then
+                    If maxfluidmass4 <= 10000 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 10000 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+            ElseIf d4 > 0.25 Then
+                If t4 > 180 Then
+                    If maxfluidmass4 <= 10000 Then
+                        releasetype4 = "Continuous"
+                    End If
+                    If maxfluidmass4 > 10000 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+                If t4 <= 180 Then
+                    If maxfluidmass4 <= 10000 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                    If maxfluidmass4 > 10000 Then
+                        releasetype4 = "Instantaneous"
+                    End If
+                End If
+            End If
+        End If
+
+        'reduction factor
+        Dim reductionfactor As Double
+
+        'detection system
+        Dim detection As String
+
+        If ComboBox183.Text = "Instrumentation designed specifically to detect material losses by changes in operating conditions (i.e., loss of pressure or flow) in the system" Then
+            detection = "A"
+        ElseIf ComboBox183.Text = "Suitably located detectors to determine when the material is present outside the pressure-containing envelope" Then
+            detection = "B"
+        ElseIf ComboBox183.Text = "Visual detection, cameras, or detectors with marginal coverage" Then
+            detection = "C"
+        End If
+
+        'isolation system
+        Dim isolation As String
+
+        If ComboBox182.Text = "Isolation or shutdown systems activated directly from process instrumentation or detectors, with no operator intervention" Then
+            isolation = "A"
+        ElseIf ComboBox182.Text = "Isolation or shutdown systems activated by operators in the control room or other suitable locations remote from the leak" Then
+            isolation = "B"
+        ElseIf ComboBox182.Text = "Isolation dependent on manually-operated valves" Then
+            isolation = "C"
+        End If
+
+        'max leak duration
+        Dim leak1 As Double
+        Dim leak2 As Double
+        Dim leak3 As Double
+        Dim leak4 As Double
+
+        If detection = "A" And isolation = "A" Then
+            reductionfactor = 0.25
+            leak1 = "1200"
+            leak2 = "600"
+            leak3 = "300"
+            leak4 = "0"
+        ElseIf detection = "A" And isolation = "B" Then
+            reductionfactor = 0.2
+            leak1 = "1800"
+            leak2 = "1200"
+            leak3 = "600"
+            leak4 = "0"
+        ElseIf detection = "A" And isolation = "C" Then
+            reductionfactor = 0.1
+            leak1 = "2400"
+            leak2 = "1800"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "B" And isolation = "A" Then
+            reductionfactor = 0.15
+            leak1 = "2400"
+            leak2 = "1800"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "B" And isolation = "B" Then
+            reductionfactor = 0.15
+            leak1 = "2400"
+            leak2 = "1800"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "B" And isolation = "C" Then
+            reductionfactor = 0.1
+            leak1 = "3600"
+            leak2 = "1800"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "C" And isolation = "A" Then
+            reductionfactor = 0
+            leak1 = "3600"
+            leak2 = "2400"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "C" And isolation = "B" Then
+            reductionfactor = 0
+            leak1 = "3600"
+            leak2 = "2400"
+            leak3 = "1200"
+            leak4 = "0"
+        ElseIf detection = "C" And isolation = "C" Then
+            reductionfactor = 0
+            leak1 = "3600"
+            leak2 = "2400"
+            leak3 = "1200"
+            leak4 = "0"
+        End If
+
+        'release rate
+        Dim rr1 As Double
+        Dim rr2 As Double
+        Dim rr3 As Double
+        Dim rr4 As Double
+
+        rr1 = wn1 * (1 - reductionfactor)
+        rr2 = wn2 * (1 - reductionfactor)
+        rr3 = wn3 * (1 - reductionfactor)
+        rr4 = wn4 * (1 - reductionfactor)
+
+        'release mass
+        '--------leak duration
+        Dim ld1 As Double
+        Dim ld2 As Double
+        Dim ld3 As Double
+        Dim ld4 As Double
+
+        ld1 = Math.Min((maxfluidmass1 / rr1), (leak1))
+        ld2 = Math.Min((maxfluidmass2 / rr2), (leak2))
+        ld3 = Math.Min((maxfluidmass3 / rr3), (leak3))
+        ld4 = Math.Min((maxfluidmass4 / rr4), (leak4))
+
+        '--------release mass
+        Dim rm1 As Double
+        Dim rm2 As Double
+        Dim rm3 As Double
+        Dim rm4 As Double
+
+        rm1 = Math.Min((rr1 * ld1), maxfluidmass1)
+        rm2 = Math.Min((rr2 * ld2), maxfluidmass2)
+        rm3 = Math.Min((rr3 * ld3), maxfluidmass3)
+        rm4 = Math.Min((rr4 * ld4), maxfluidmass4)
+
+        'ca flammable
+
+
+        If ComboBox75.Text = "Flammable" Then
+
+            Dim mitigation As Double
+
+            If ComboBox184.Text = "Inventory blowdown, coupled with isolation system classification B or higher" Then
+                mitigation = 0.25
+            ElseIf ComboBox184.Text = "Fire water deluge system and monitors" Then
+                mitigation = 0.2
+            ElseIf ComboBox184.Text = "Fire water monitors only" Then
+                mitigation = 0.05
+            ElseIf ComboBox184.Text = "Foam spray system" Then
+                mitigation = 0.15
+            End If
+
+            Dim eefc1 As Double
+            Dim eefc2 As Double
+            Dim eefc3 As Double
+            Dim eefc4 As Double
+            Dim C4si As Double = 2205
+            Dim C4us As Double = 1
+
+            If Units.ComboBox1.Text = "SI" Then
+                eefc1 = (4 * Math.Log10(C4si * rm1)) - 15
+                eefc2 = (4 * Math.Log10(C4si * rm2)) - 15
+                eefc3 = (4 * Math.Log10(C4si * rm3)) - 15
+                eefc4 = (4 * Math.Log10(C4si * rm4)) - 15
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                eefc1 = (4 * Math.Log10(C4us * rm1)) - 15
+                eefc2 = (4 * Math.Log10(C4us * rm2)) - 15
+                eefc3 = (4 * Math.Log10(C4us * rm3)) - 15
+                eefc4 = (4 * Math.Log10(C4us * rm4)) - 15
+            End If
+
+            'component damage
+
+            Dim conainla As Double
+            Dim conainlb As Double
+            Dim conaila As Double
+            Dim conailb As Double
+            Dim instainla As Double
+            Dim instainlb As Double
+            Dim instaila As Double
+            Dim instailb As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                If phase = "Gas" And ComboBox4.Text = "C1 – C2" Then
+                    conainla = 8.669
+                    conainlb = 0.98
+                    conaila = 55.13
+                    conailb = 0.95
+                    instainla = 6.469
+                    instainlb = 0.67
+                    instaila = 163.7
+                    instailb = 0.62
+                ElseIf phase = "Gas" And ComboBox4.Text = "C3 – C4" Then
+                    conainla = 10.13
+                    conainlb = 1.0
+                    conaila = 64.23
+                    conailb = 1.0
+                    instainla = 4.59
+                    instainlb = 0.72
+                    instaila = 79.94
+                    instailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C5" Then
+                    conainla = 5.115
+                    conainlb = 0.99
+                    conaila = 62.41
+                    conailb = 1.0
+                    instainla = 2.214
+                    instainlb = 0.73
+                    instaila = 41.38
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C6 – C8" Then
+                    conainla = 5.846
+                    conainlb = 0.98
+                    conaila = 63.98
+                    conailb = 1.0
+                    instainla = 2.188
+                    instainlb = 0.66
+                    instaila = 41.49
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C9 – C12" Then
+                    conainla = 2.419
+                    conainlb = 0.98
+                    conaila = 76.98
+                    conailb = 0.95
+                    instainla = 1.111
+                    instainlb = 0.66
+                    instaila = 42.28
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C13 – C16" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C17 – C25" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C25+" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2" Then
+                    conainla = 13.13
+                    conainlb = 0.992
+                    conaila = 86.02
+                    conailb = 1.0
+                    instainla = 9.605
+                    instainlb = 0.657
+                    instaila = 216.5
+                    instailb = 0.618
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2S" Then
+                    conainla = 6.554
+                    conainlb = 1.0
+                    conaila = 38.11
+                    conailb = 0.89
+                    instainla = 22.63
+                    instainlb = 0.63
+                    instaila = 53.72
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "HF" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Aromatics" Then
+                    conainla = 3.952
+                    conainlb = 1.097
+                    conaila = 80.11
+                    conailb = 1.055
+                    instainla = 1.804
+                    instainlb = 0.667
+                    instaila = 83.68
+                    instailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "Styrene" Then
+                    conainla = 3.952
+                    conainlb = 1.097
+                    conaila = 80.11
+                    conailb = 1.055
+                    instainla = 1.804
+                    instainlb = 0.667
+                    instaila = 83.68
+                    instailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "CO" Then
+                    conainla = 0.04
+                    conainlb = 1.752
+                    conaila = ""
+                    conailb = ""
+                    instainla = 10.97
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "DEE" Then
+                    conainla = 9.072
+                    conainlb = 1.134
+                    conaila = 67.42
+                    conailb = 1.033
+                    instainla = 24.51
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Methanol" Then
+                    conainla = 0.005
+                    conainlb = 0.909
+                    conaila = ""
+                    conailb = ""
+                    instainla = 4.425
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "PO" Then
+                    conainla = 3.277
+                    conainlb = 1.114
+                    conaila = ""
+                    conailb = ""
+                    instainla = 10.32
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EEA" Then
+                    conainla = 0
+                    conainlb = 1.035
+                    conaila = ""
+                    conailb = ""
+                    instainla = 1.261
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EE" Then
+                    conainla = 2.595
+                    conainlb = 1.005
+                    conaila = ""
+                    conailb = ""
+                    instainla = 6.119
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EG" Then
+                    conainla = 1.548
+                    conainlb = 0.937
+                    conaila = ""
+                    conailb = ""
+                    instainla = 1.027
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EO" Then
+                    conainla = 6.712
+                    conainlb = 1.069
+                    conaila = ""
+                    conailb = ""
+                    instainla = 21.46
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Pyrophoric" Then
+                    conainla = 2.419
+                    conainlb = 0.98
+                    conaila = 76.98
+                    conailb = 0.95
+                    instainla = 1.111
+                    instainlb = 0.66
+                    instaila = 42.28
+                    instailb = 0.61
+                End If
+
+                If phase = "Liquid" And ComboBox4.Text = "C1 – C2" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C3 – C4" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C5" Then
+                    conainla = 100.6
+                    conainlb = 0.89
+                    conaila = ""
+                    conailb = ""
+                    instainla = 0.271
+                    instainlb = 0.85
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C6 – C8" Then
+                    conainla = 34.17
+                    conainlb = 0.89
+                    conaila = 103.4
+                    conailb = 0.95
+                    instainla = 0.749
+                    instainlb = 0.78
+                    instaila = 8.18
+                    instailb = 0.55
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C9 – C12" Then
+                    conainla = 24.6
+                    conainlb = 0.9
+                    conaila = 110.3
+                    conailb = 0.95
+                    instainla = 0.559
+                    instainlb = 0.76
+                    instaila = 0.848
+                    instailb = 0.53
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C13 – C16" Then
+                    conainla = 12.11
+                    conainlb = 0.9
+                    conaila = 196.7
+                    conailb = 0.92
+                    instainla = 0.086
+                    instainlb = 0.88
+                    instaila = 1.714
+                    instailb = 0.88
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C17 – C25" Then
+                    conainla = 3.785
+                    conainlb = 0.9
+                    conaila = 165.5
+                    conailb = 0.92
+                    instainla = 0.021
+                    instainlb = 0.91
+                    instaila = 1.068
+                    instailb = 0.91
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C25+" Then
+                    conainla = 2.098
+                    conainlb = 0.91
+                    conaila = 103.0
+                    conailb = 0.9
+                    instainla = 0.006
+                    instainlb = 0.99
+                    instaila = 0.284
+                    instailb = 0.99
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2S" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "HF" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Aromatics" Then
+                    conainla = 21.1
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 14.36
+                    instainlb = 1.0
+                    instaila = 143.6
+                    instailb = 1.0
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Styrene" Then
+                    conainla = 21.1
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 14.36
+                    instainlb = 1.0
+                    instaila = 143.6
+                    instailb = 1.0
+                ElseIf phase = "Liquid" And ComboBox4.Text = "CO" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "DEE" Then
+                    conainla = 164.2
+                    conainlb = 1.106
+                    conaila = 976.0
+                    conailb = 0.649
+                    instainla = 0.981
+                    instainlb = 0.919
+                    instaila = 1.09
+                    instailb = 0.919
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Methanol" Then
+                    conainla = 340.4
+                    conainlb = 0.934
+                    conaila = ""
+                    conailb = ""
+                    instainla = 0.363
+                    instainlb = 0.9
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "PO" Then
+                    conainla = 257.0
+                    conainlb = 0.96
+                    conaila = ""
+                    conailb = ""
+                    instainla = 0.629
+                    instainlb = 0.869
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EEA" Then
+                    conainla = 23.96
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 14.13
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EE" Then
+                    conainla = 35.45
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 14.79
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EG" Then
+                    conainla = 22.12
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 14.13
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EO" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Pyrophoric" Then
+                    conainla = 24.6
+                    conainlb = 0.9
+                    conaila = 110.3
+                    conailb = 0.95
+                    instainla = 0.559
+                    instainlb = 0.76
+                    instaila = 0.848
+                    instailb = 0.53
+                End If
+
+            End If
+
+            If Units.ComboBox1.Text = "US Customary" Then
+                If phase = "Gas" And ComboBox4.Text = "C1 – C2" Then
+                    conainla = 43.0
+                    conainlb = 0.98
+                    conaila = 280.0
+                    conailb = 0.95
+                    instainla = 41.0
+                    instainlb = 0.67
+                    instaila = 1079
+                    instailb = 0.62
+                ElseIf phase = "Gas" And ComboBox4.Text = "C3 – C4" Then
+                    conainla = 49.48
+                    conainlb = 1.0
+                    conaila = 313.6
+                    conailb = 1.0
+                    instainla = 27.96
+                    instainlb = 0.72
+                    instaila = 522.9
+                    instailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C5" Then
+                    conainla = 25.17
+                    conainlb = 0.99
+                    conaila = 304.7
+                    conailb = 1.0
+                    instainla = 13.38
+                    instainlb = 0.73
+                    instaila = 275.0
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C6 – C8" Then
+                    conainla = 29.0
+                    conainlb = 0.98
+                    conaila = 312.4
+                    conailb = 1.0
+                    instainla = 13.98
+                    instainlb = 0.66
+                    instaila = 275.7
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C9 – C12" Then
+                    conainla = 12.0
+                    conainlb = 0.98
+                    conaila = 391.0
+                    conailb = 0.95
+                    instainla = 7.1
+                    instainlb = 0.66
+                    instaila = 281.0
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "C13 – C16" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C17 – C25" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C25+" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2" Then
+                    conainla = 64.5
+                    conainlb = 0.992
+                    conaila = 420.0
+                    conailb = 1.0
+                    instainla = 61.5
+                    instainlb = 0.657
+                    instaila = 1430
+                    instailb = 0.618
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2S" Then
+                    conainla = 32.0
+                    conainlb = 1.0
+                    conaila = 203.0
+                    conailb = 0.89
+                    instainla = 148.0
+                    instainlb = 0.63
+                    instaila = 357.0
+                    instailb = 0.61
+                ElseIf phase = "Gas" And ComboBox4.Text = "HF" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Aromatics" Then
+                    conainla = 17.87
+                    conainlb = 1.097
+                    conaila = 374.5
+                    conailb = 1.055
+                    instainla = 11.46
+                    instainlb = 0.667
+                    instaila = 512.6
+                    instailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "Styrene" Then
+                    conainla = 17.87
+                    conainlb = 1.097
+                    conaila = 374.5
+                    conailb = 1.055
+                    instainla = 11.46
+                    instainlb = 0.667
+                    instaila = 512.6
+                    instailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "CO" Then
+                    conainla = 0.107
+                    conainlb = 1.752
+                    conaila = ""
+                    conailb = ""
+                    instainla = 69.68
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "DEE" Then
+                    conainla = 39.84
+                    conainlb = 1.134
+                    conaila = 320.7
+                    conailb = 1.033
+                    instainla = 155.7
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Methanol" Then
+                    conainla = 0.026
+                    conainlb = 0.909
+                    conaila = ""
+                    conailb = ""
+                    instainla = 28.11
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "PO" Then
+                    conainla = 14.62
+                    conainlb = 1.114
+                    conaila = ""
+                    conailb = ""
+                    instainla = 65.58
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EEA" Then
+                    conainla = 0.002
+                    conainlb = 1.035
+                    conaila = ""
+                    conailb = ""
+                    instainla = 8.014
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EE" Then
+                    conainla = 12.62
+                    conainlb = 1.005
+                    conaila = ""
+                    conailb = ""
+                    instainla = 38.87
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EG" Then
+                    conainla = 7.721
+                    conainlb = 0.937
+                    conaila = ""
+                    conailb = ""
+                    instainla = 6.525
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EO" Then
+                    conainla = 31.03
+                    conainlb = 1.069
+                    conaila = ""
+                    conailb = ""
+                    instainla = 136.3
+                    instainlb = 0.667
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Pyrophoric" Then
+                    conainla = 12.0
+                    conainlb = 0.98
+                    conaila = 391.0
+                    conailb = 0.95
+                    instainla = 7.1
+                    instainlb = 0.66
+                    instaila = 281.0
+                    instailb = 0.61
+                End If
+
+                If phase = "Liquid" And ComboBox4.Text = "C1 – C2" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C3 – C4" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C5" Then
+                    conainla = 536.0
+                    conainlb = 0.89
+                    conaila = ""
+                    conailb = ""
+                    instainla = 1.49
+                    instainlb = 0.85
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C6 – C8" Then
+                    conainla = 182.0
+                    conainlb = 0.89
+                    conaila = 525.0
+                    conailb = 0.95
+                    instainla = 4.35
+                    instainlb = 0.78
+                    instaila = 57.0
+                    instailb = 0.55
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C9 – C12" Then
+                    conainla = 130.0
+                    conainlb = 0.9
+                    conaila = 560.0
+                    conailb = 0.95
+                    instainla = 3.3
+                    instainlb = 0.76
+                    instaila = 6.0
+                    instailb = 0.53
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C13 – C16" Then
+                    conainla = 64.0
+                    conainlb = 0.9
+                    conaila = 1023
+                    conailb = 0.92
+                    instainla = 0.46
+                    instainlb = 0.88
+                    instaila = 9.2
+                    instailb = 0.88
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C17 – C25" Then
+                    conainla = 20.0
+                    conainlb = 0.9
+                    conaila = 861.9
+                    conailb = 0.92
+                    instainla = 0.11
+                    instainlb = 0.91
+                    instaila = 5.6
+                    instailb = 0.91
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C25+" Then
+                    conainla = 11.0
+                    conainlb = 0.91
+                    conaila = 544.0
+                    conailb = 0.9
+                    instainla = 0.03
+                    instainlb = 0.99
+                    instaila = 1.4
+                    instailb = 0.99
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2S" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "HF" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Aromatics" Then
+                    conainla = 103.0
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 70.12
+                    instainlb = 1.0
+                    instaila = 701.2
+                    instailb = 1.0
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Styrene" Then
+                    conainla = 103.0
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 70.12
+                    instainlb = 1.0
+                    instaila = 701.2
+                    instailb = 1.0
+                ElseIf phase = "Liquid" And ComboBox4.Text = "CO" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "DEE" Then
+                    conainla = 737.4
+                    conainlb = 1.106
+                    conaila = 6289
+                    conailb = 0.649
+                    instainla = 5.105
+                    instainlb = 0.919
+                    instaila = 5.672
+                    instailb = 0.919
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Methanol" Then
+                    conainla = 1751
+                    conainlb = 0.934
+                    conaila = ""
+                    conailb = ""
+                    instainla = 1.919
+                    instainlb = 0.9
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "PO" Then
+                    conainla = 1295
+                    conainlb = 0.96
+                    conaila = ""
+                    conailb = ""
+                    instainla = 3.404
+                    instainlb = 0.869
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EEA" Then
+                    conainla = 117.0
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 69.0
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EE" Then
+                    conainla = 173.1
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 72.21
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EG" Then
+                    conainla = 108.0
+                    conainlb = 1.0
+                    conaila = ""
+                    conailb = ""
+                    instainla = 69.0
+                    instainlb = 1.0
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EO" Then
+                    conainla = ""
+                    conainlb = ""
+                    conaila = ""
+                    conailb = ""
+                    instainla = ""
+                    instainlb = ""
+                    instaila = ""
+                    instailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Pyrophoric" Then
+                    conainla = 130.0
+                    conainlb = 0.9
+                    conaila = 560.0
+                    conailb = 0.95
+                    instainla = 3.3
+                    instainlb = 0.76
+                    instaila = 6.0
+                    instailb = 0.53
+                End If
+
+            End If
+
+
+            Dim cdconainl1 As Double
+            Dim cdconainl2 As Double
+            Dim cdconainl3 As Double
+            Dim cdconainl4 As Double
+
+            cdconainl1 = (conainla * (rr1 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl2 = (conainla * (rr2 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl3 = (conainla * (rr3 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl4 = (conainla * (rr4 ^ conainlb)) * (1 - reductionfactor)
+
+            Dim cdconail1 As Double
+            Dim cdconail2 As Double
+            Dim cdconail3 As Double
+            Dim cdconail4 As Double
+
+            cdconail1 = (conaila * (rr1 ^ conailb)) * (1 - reductionfactor)
+            cdconail2 = (conaila * (rr2 ^ conailb)) * (1 - reductionfactor)
+            cdconail3 = (conaila * (rr3 ^ conailb)) * (1 - reductionfactor)
+            cdconail4 = (conaila * (rr4 ^ conailb)) * (1 - reductionfactor)
+
+            Dim cdinstainl1 As Double
+            Dim cdinstainl2 As Double
+            Dim cdinstainl3 As Double
+            Dim cdinstainl4 As Double
+
+            cdinstainl1 = (instainla * (rm1 ^ instainlb)) * ((1 - reductionfactor) / eefc1)
+            cdinstainl2 = (instainla * (rm2 ^ instainlb)) * ((1 - reductionfactor) / eefc2)
+            cdinstainl3 = (instainla * (rm3 ^ instainlb)) * ((1 - reductionfactor) / eefc3)
+            cdinstainl4 = (instainla * (rm4 ^ instainlb)) * ((1 - reductionfactor) / eefc4)
+
+            Dim cdinstail1 As Double
+            Dim cdinstail2 As Double
+            Dim cdinstail3 As Double
+            Dim cdinstail4 As Double
+
+            cdinstail1 = (instaila * (rm1 ^ instailb)) * ((1 - reductionfactor) / eefc1)
+            cdinstail2 = (instaila * (rm2 ^ instailb)) * ((1 - reductionfactor) / eefc2)
+            cdinstail3 = (instaila * (rm3 ^ instailb)) * ((1 - reductionfactor) / eefc3)
+            cdinstail4 = (instaila * (rm4 ^ instailb)) * ((1 - reductionfactor) / eefc4)
+
+            'personel injury
+            Dim piconainla As Double
+            Dim piconainlb As Double
+            Dim piconaila As Double
+            Dim piconailb As Double
+            Dim piinstainla As Double
+            Dim piinstainlb As Double
+            Dim piinstaila As Double
+            Dim piinstailb As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                If phase = "Gas" And ComboBox4.Text = "C1 – C2" Then
+                    piconainla = 21.83
+                    piconainlb = 0.96
+                    piconaila = 143.2
+                    piconailb = 0.92
+                    piinstainla = 12.46
+                    piinstainlb = 0.67
+                    piinstaila = 473.9
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C3 – C4" Then
+                    piconainla = 25.64
+                    piconainlb = 1.0
+                    piconaila = 171.4
+                    piconailb = 1.0
+                    piinstainla = 9.702
+                    piinstainlb = 0.75
+                    piinstaila = 270.4
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C5" Then
+                    piconainla = 12.71
+                    piconainlb = 1.0
+                    piconaila = 166.1
+                    piconailb = 1.0
+                    piinstainla = 4.82
+                    piinstainlb = 0.76
+                    piinstaila = 146.7
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 13.49
+                    piconainlb = 0.96
+                    piconaila = 169.7
+                    piconailb = 1.0
+                    piinstainla = 4.216
+                    piinstainlb = 0.67
+                    piinstaila = 147.2
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 5.755
+                    piconainlb = 0.96
+                    piconaila = 188.6
+                    piconailb = 0.92
+                    piinstainla = 2.035
+                    piinstainlb = 0.66
+                    piinstaila = 151.0
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C13 – C16" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C17 – C25" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C25+" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2" Then
+                    piconainla = 32.05
+                    piconainlb = 0.933
+                    piconaila = 288.8
+                    piconailb = 1.0
+                    piinstainla = 18.43
+                    piinstainlb = 0.652
+                    piinstaila = 636.5
+                    piinstailb = 0.621
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2S" Then
+                    piconainla = 10.65
+                    piconainlb = 1.0
+                    piconaila = 73.25
+                    piconailb = 0.94
+                    piinstainla = 41.43
+                    piinstainlb = 0.63
+                    piinstaila = 191.5
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "HF" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Aromatics" Then
+                    piconainla = 12.76
+                    piconainlb = 0.963
+                    piconaila = 261.9
+                    piconailb = 0.937
+                    piinstainla = 2.889
+                    piinstainlb = 0.686
+                    piinstaila = 83.68
+                    piinstailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "Styrene" Then
+                    piconainla = 12.76
+                    piconainlb = 0.963
+                    piconaila = 261.9
+                    piconailb = 0.937
+                    piinstainla = 2.889
+                    piinstainlb = 0.686
+                    piinstaila = 83.68
+                    piinstailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "CO" Then
+                    piconainla = 5.491
+                    piconainlb = 0.991
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 16.91
+                    piinstainlb = 0.692
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "DEE" Then
+                    piconainla = 26.76
+                    piconainlb = 1.025
+                    piconaila = 241.5
+                    piconailb = 0.997
+                    piinstainla = 31.71
+                    piinstainlb = 0.682
+                    piinstaila = 128.3
+                    piinstailb = 0.657
+                ElseIf phase = "Gas" And ComboBox4.Text = "Methanol" Then
+                    piconainla = 0
+                    piconainlb = 1.008
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 6.035
+                    piinstainlb = 0.688
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "PO" Then
+                    piconainla = 8.239
+                    piconainlb = 1.047
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 13.33
+                    piinstainlb = 0.682
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EEA" Then
+                    piconainla = 0
+                    piconainlb = 0.946
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 1.825
+                    piinstainlb = 0.687
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EE" Then
+                    piconainla = 7.107
+                    piconainlb = 0.969
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 25.36
+                    piinstainlb = 0.66
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EG" Then
+                    piconainla = 5.042
+                    piconainlb = 0.947
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 1.435
+                    piinstainlb = 0.687
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EO" Then
+                    piconainla = 11
+                    piconainlb = 1.105
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 34.7
+                    piinstainlb = 0.665
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Pyrophoric" Then
+                    piconainla = 5.755
+                    piconainlb = 0.96
+                    piconaila = 188.6
+                    piconailb = 0.92
+                    piinstainla = 2.035
+                    piinstainlb = 0.66
+                    piinstaila = 151.0
+                    piinstailb = 0.63
+                End If
+
+                If phase = "Liquid" And ComboBox4.Text = "C1 – C2" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C3 – C4" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C5" Then
+                    piconainla = 290.1
+                    piconainlb = 0.89
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.79
+                    piinstainlb = 0.85
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 96.88
+                    piconainlb = 0.89
+                    piconaila = 252.8
+                    piconailb = 0.92
+                    piinstainla = 2.186
+                    piinstainlb = 0.78
+                    piinstaila = 31.89
+                    piinstailb = 0.54
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 70.03
+                    piconainlb = 0.89
+                    piconaila = 269.4
+                    piconailb = 0.92
+                    piinstainla = 1.609
+                    piinstainlb = 0.76
+                    piinstaila = 2.847
+                    piinstailb = 0.54
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C13 – C16" Then
+                    piconainla = 34.36
+                    piconainlb = 0.89
+                    piconaila = 539.4
+                    piconailb = 0.9
+                    piinstainla = 0.242
+                    piinstainlb = 0.88
+                    piinstaila = 4.843
+                    piinstailb = 0.88
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C17 – C25" Then
+                    piconainla = 10.7
+                    piconainlb = 0.89
+                    piconaila = 458.0
+                    piconailb = 0.9
+                    piinstainla = 0.061
+                    piinstainlb = 0.91
+                    piinstaila = 3.052
+                    piinstailb = 0.91
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C25+" Then
+                    piconainla = 6.196
+                    piconainlb = 0.89
+                    piconaila = 303.6
+                    piconailb = 0.9
+                    piinstainla = 0.016
+                    piinstainlb = 0.99
+                    piinstaila = 0.833
+                    piinstailb = 0.99
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2S" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "HF" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Aromatics" Then
+                    piconainla = 66.01
+                    piconainlb = 0.883
+                    piconaila = 56.0
+                    piconailb = 0.268
+                    piinstainla = 0.027
+                    piinstainlb = 0.935
+                    piinstaila = 0.273
+                    piinstailb = 0.935
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Styrene" Then
+                    piconainla = 66.01
+                    piconainlb = 0.883
+                    piconaila = 56.0
+                    piconailb = 0.268
+                    piinstainla = 0.027
+                    piinstainlb = 0.935
+                    piinstaila = 0.273
+                    piinstailb = 0.935
+                ElseIf phase = "Liquid" And ComboBox4.Text = "CO" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "DEE" Then
+                    piconainla = 236.7
+                    piconainlb = 1.219
+                    piconaila = 488.9
+                    piconailb = 0.864
+                    piinstainla = 8.333
+                    piinstainlb = 0.814
+                    piinstaila = 9.258
+                    piinstailb = 0.814
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Methanol" Then
+                    piconainla = 849.9
+                    piconainlb = 0.902
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 1.157
+                    piinstainlb = 0.871
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "PO" Then
+                    piconainla = 352.8
+                    piconainlb = 0.84
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 2.732
+                    piinstainlb = 0.834
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EEA" Then
+                    piconainla = 79.66
+                    piconainlb = 0.835
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.03
+                    piinstainlb = 0.924
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EE" Then
+                    piconainla = 8.142
+                    piconainlb = 0.8
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.029
+                    piinstainlb = 0.927
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EG" Then
+                    piconainla = 59.96
+                    piconainlb = 0.869
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.027
+                    piinstainlb = 0.922
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EO" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Pyrophoric" Then
+                    piconainla = 70.03
+                    piconainlb = 0.89
+                    piconaila = 269.4
+                    piconailb = 0.92
+                    piinstainla = 1.609
+                    piinstainlb = 0.76
+                    piinstaila = 2.847
+                    piinstailb = 0.54
+                End If
+
+            End If
+
+            If Units.ComboBox1.Text = "US Customary" Then
+                If phase = "Gas" And ComboBox4.Text = "C1 – C2" Then
+                    piconainla = 110.0
+                    piconainlb = 0.96
+                    piconaila = 745.0
+                    piconailb = 0.92
+                    piinstainla = 79.0
+                    piinstainlb = 0.67
+                    piinstaila = 3100
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C3 – C4" Then
+                    piconainla = 125.2
+                    piconainlb = 1.0
+                    piconaila = 836.7
+                    piconailb = 1.0
+                    piinstainla = 57.72
+                    piinstainlb = 0.75
+                    piinstaila = 1769
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C5" Then
+                    piconainla = 62.05
+                    piconainlb = 1.0
+                    piconaila = 811.0
+                    piconailb = 1.0
+                    piinstainla = 28.45
+                    piinstainlb = 0.76
+                    piinstaila = 959.6
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 68.0
+                    piconainlb = 0.96
+                    piconaila = 828.7
+                    piconailb = 1.0
+                    piinstainla = 26.72
+                    piinstainlb = 0.67
+                    piinstaila = 962.8
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 29.0
+                    piconainlb = 0.96
+                    piconaila = 981.0
+                    piconailb = 0.92
+                    piinstainla = 13.0
+                    piinstainlb = 0.66
+                    piinstaila = 988.0
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "C13 – C16" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C17 – C25" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "C25+" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2" Then
+                    piconainla = 165.0
+                    piconainlb = 0.933
+                    piconaila = 1117
+                    piconailb = 1.0
+                    piinstainla = 118.5
+                    piinstainlb = 0.652
+                    piinstaila = 4193
+                    piinstailb = 0.621
+                ElseIf phase = "Gas" And ComboBox4.Text = "H2S" Then
+                    piconainla = 52.0
+                    piconainlb = 1.0
+                    piconaila = 375.0
+                    piconailb = 0.94
+                    piinstainla = 271.0
+                    piinstainlb = 0.63
+                    piinstaila = 1253
+                    piinstailb = 0.63
+                ElseIf phase = "Gas" And ComboBox4.Text = "HF" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Aromatics" Then
+                    piconainla = 64.14
+                    piconainlb = 0.963
+                    piconaila = 1344
+                    piconailb = 0.937
+                    piinstainla = 18.08
+                    piinstainlb = 0.686
+                    piinstaila = 512.6
+                    piinstailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "Styrene" Then
+                    piconainla = 64.14
+                    piconainlb = 0.963
+                    piconaila = 1344
+                    piconailb = 0.937
+                    piinstainla = 18.08
+                    piinstainlb = 0.686
+                    piinstaila = 512.6
+                    piinstailb = 0.713
+                ElseIf phase = "Gas" And ComboBox4.Text = "CO" Then
+                    piconainla = 27.0
+                    piconainlb = 0.991
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 105.3
+                    piinstainlb = 0.692
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "DEE" Then
+                    piconainla = 128.1
+                    piconainlb = 1.025
+                    piconaila = 1182
+                    piconailb = 0.997
+                    piinstainla = 199.1
+                    piinstainlb = 0.682
+                    piinstaila = 821.7
+                    piinstailb = 0.657
+                ElseIf phase = "Gas" And ComboBox4.Text = "Methanol" Then
+                    piconainla = 0.016
+                    piconainlb = 1.008
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 37.71
+                    piinstainlb = 0.688
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "PO" Then
+                    piconainla = 38.76
+                    piconainlb = 1.047
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 83.68
+                    piinstainlb = 0.682
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EEA" Then
+                    piconainla = 0.017
+                    piconainlb = 0.946
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 11.41
+                    piinstainlb = 0.687
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EE" Then
+                    piconainla = 35.56
+                    piconainlb = 0.969
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 162.0
+                    piinstainlb = 0.66
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EG" Then
+                    piconainla = 25.67
+                    piconainlb = 0.947
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 8.971
+                    piinstainlb = 0.687
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "EO" Then
+                    piconainla = 49.43
+                    piconainlb = 1.105
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 220.8
+                    piinstainlb = 0.665
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Gas" And ComboBox4.Text = "Pyrophoric" Then
+                    piconainla = 29.0
+                    piconainlb = 0.96
+                    piconaila = 981.0
+                    piconailb = 0.92
+                    piinstainla = 13.0
+                    piinstainlb = 0.66
+                    piinstaila = 988.0
+                    piinstailb = 0.63
+                End If
+
+                If phase = "Liquid" And ComboBox4.Text = "C1 – C2" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C3 – C4" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C5" Then
+                    piconainla = 1545
+                    piconainlb = 0.89
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 4.34
+                    piinstainlb = 0.85
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 516.0
+                    piconainlb = 0.89
+                    piconaila = 1315
+                    piconailb = 0.92
+                    piinstainla = 12.7
+                    piinstainlb = 0.78
+                    piinstaila = 224.0
+                    piinstailb = 0.54
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 373.0
+                    piconainlb = 0.89
+                    piconaila = 1401
+                    piconailb = 0.92
+                    piinstainla = 9.5
+                    piinstainlb = 0.76
+                    piinstaila = 20.0
+                    piinstailb = 0.54
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C13 – C16" Then
+                    piconainla = 183.0
+                    piconainlb = 0.89
+                    piconaila = 2850
+                    piconailb = 0.9
+                    piinstainla = 1.3
+                    piinstainlb = 0.88
+                    piinstaila = 26.0
+                    piinstailb = 0.88
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C17 – C25" Then
+                    piconainla = 57.0
+                    piconainlb = 0.89
+                    piconaila = 2420
+                    piconailb = 0.9
+                    piinstainla = 0.32
+                    piinstainlb = 0.91
+                    piinstaila = 16.0
+                    piinstailb = 0.91
+                ElseIf phase = "Liquid" And ComboBox4.Text = "C25+" Then
+                    piconainla = 33.0
+                    piconainlb = 0.89
+                    piconaila = 1604
+                    piconailb = 0.9
+                    piinstainla = 0.081
+                    piinstainlb = 0.99
+                    piinstaila = 4.1
+                    piinstailb = 0.99
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "H2S" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "HF" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Aromatics" Then
+                    piconainla = 353.5
+                    piconainlb = 0.883
+                    piconaila = 487.7
+                    piconailb = 0.268
+                    piinstainla = 0.14
+                    piinstainlb = 0.935
+                    piinstaila = 1.404
+                    piinstailb = 0.935
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Styrene" Then
+                    piconainla = 353.5
+                    piconainlb = 0.883
+                    piconaila = 487.7
+                    piconailb = 0.268
+                    piinstainla = 0.14
+                    piinstainlb = 0.935
+                    piinstaila = 1.404
+                    piinstailb = 0.935
+                ElseIf phase = "Liquid" And ComboBox4.Text = "CO" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "DEE" Then
+                    piconainla = 971.9
+                    piconainlb = 1.219
+                    piconaila = 2658
+                    piconailb = 0.864
+                    piinstainla = 47.13
+                    piinstainlb = 0.814
+                    piinstaila = 52.36
+                    piinstailb = 0.814
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Methanol" Then
+                    piconainla = 4484
+                    piconainlb = 0.902
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 6.255
+                    piinstainlb = 0.871
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "PO" Then
+                    piconainla = 1955
+                    piconainlb = 0.84
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 15.21
+                    piinstainlb = 0.834
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EEA" Then
+                    piconainla = 443.1
+                    piconainlb = 0.835
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.153
+                    piinstainlb = 0.924
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EE" Then
+                    piconainla = 46.56
+                    piconainlb = 0.8
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.152
+                    piinstainlb = 0.927
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EG" Then
+                    piconainla = 324.7
+                    piconainlb = 0.869
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = 0.138
+                    piinstainlb = 0.922
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "EO" Then
+                    piconainla = ""
+                    piconainlb = ""
+                    piconaila = ""
+                    piconailb = ""
+                    piinstainla = ""
+                    piinstainlb = ""
+                    piinstaila = ""
+                    piinstailb = ""
+                ElseIf phase = "Liquid" And ComboBox4.Text = "Pyrophoric" Then
+                    piconainla = 373.0
+                    piconainlb = 0.89
+                    piconaila = 1401
+                    piconailb = 0.92
+                    piinstainla = 9.5
+                    piinstainlb = 0.76
+                    piinstaila = 20.0
+                    piinstailb = 0.54
+                End If
+
+            End If
+        End If
 
     End Sub
 End Class

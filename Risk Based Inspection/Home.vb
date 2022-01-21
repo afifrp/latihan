@@ -26037,6 +26037,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     '======================================================================================================================
     '                                   CODING PERHITUNGAN COF LEVEL 1
     Public Sub coflevel1()
+        Dim gff1 As Double = Val(small.Text)
+        Dim gff2 As Double = Val(medium.Text)
+        Dim gff3 As Double = Val(large.Text)
+        Dim gff4 As Double = Val(rupture.Text)
+        Dim gfftotal As Double = Val(totalfms.Text)
         Dim density As Double = Val(TextBox20.Text)
         Dim nbp As Double = Val(TextBox21.Text)
         Dim mw As Double = Val(TextBox22.Text)
@@ -26066,11 +26071,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         If RadioButton27.Checked = True And TextBox27.Text = "Gas" Then
             phase = "Gas"
-        ElseIf RadioButton26.Checked = True And textbox27.Text = "Gas" Then
+        ElseIf RadioButton26.Checked = True And TextBox27.Text = "Gas" Then
             phase = "Gas"
-        ElseIf RadioButton27.Checked = True And textbox27.Text = "Liquid" Then
+        ElseIf RadioButton27.Checked = True And TextBox27.Text = "Liquid" Then
             phase = "Gas"
-        ElseIf RadioButton26.Checked = True And textbox27.Text = "Liquid" Then
+        ElseIf RadioButton26.Checked = True And TextBox27.Text = "Liquid" Then
             phase = "Liquid"
         End If
 
@@ -26096,26 +26101,26 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Kv4 = (0.9935 + (2.878 / (re4 ^ 0.5)) + (342.75 / (re4 ^ 1.5))) ^ -1
 
         'phase vapor
-        Dim a As Double
-        Dim b As Double
-        Dim c As Double
-        Dim d As Double
-        Dim f As Double
+        Dim idealgasa As Double
+        Dim idealgasb As Double
+        Dim idealgasc As Double
+        Dim idealgasd As Double
+        Dim idealgase As Double
 
-        a = Val(TextBox29.Text)
-        b = Val(TextBox30.Text)
-        c = Val(TextBox31.Text)
-        d = Val(TextBox32.Text)
-        f = Val(TextBox33.Text)
+        idealgasa = Val(TextBox29.Text)
+        idealgasb = Val(TextBox30.Text)
+        idealgasc = Val(TextBox31.Text)
+        idealgasd = Val(TextBox32.Text)
+        idealgase = Val(TextBox33.Text)
 
         Dim Cp As Double
 
         If TextBox33.Text = "N/A" Then
-            Cp = a + (b * operatingtemp) + (c * (operatingtemp ^ 2)) + (d * (operatingtemp ^ 3))
+            Cp = idealgasa + (idealgasb * operatingtemp) + (idealgasc * (operatingtemp ^ 2)) + (idealgasd * (operatingtemp ^ 3))
         ElseIf TextBox23.Text = "N/A" Then
-            Cp = a + (b * operatingtemp) + (c * (operatingtemp ^ 2)) + (d * (operatingtemp ^ 3)) + (f * (operatingtemp ^ 4))
+            Cp = idealgasa + (idealgasb * operatingtemp) + (idealgasc * (operatingtemp ^ 2)) + (idealgasd * (operatingtemp ^ 3)) + (idealgase * (operatingtemp ^ 4))
         Else
-            Cp = a + (b * (((c / operatingtemp) / Math.Sinh(c / operatingtemp)) ^ 2)) + (d * (((f / operatingtemp) / Math.Cosh(f / operatingtemp)) ^ 2))
+            Cp = idealgasa + (idealgasb * (((idealgasc / operatingtemp) / Math.Sinh(idealgasc / operatingtemp)) ^ 2)) + (idealgasd * (((idealgase / operatingtemp) / Math.Cosh(idealgase / operatingtemp)) ^ 2))
         End If
 
         Dim k As Double
@@ -26743,8 +26748,9 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         rm3 = Math.Min((rr3 * ld3), maxfluidmass3)
         rm4 = Math.Min((rr4 * ld4), maxfluidmass4)
 
-        'ca flammable
-
+        Dim finalcd As Double
+        Dim finalpi As Double
+        'CA flammable
 
         If ComboBox75.Text = "Flammable" Then
 
@@ -27595,7 +27601,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
 
             End If
-
 
             Dim cdconainl1 As Double
             Dim cdconainl2 As Double
@@ -28452,7 +28457,4111 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
                 End If
 
             End If
+
+            Dim piconainl1 As Double
+            Dim piconainl2 As Double
+            Dim piconainl3 As Double
+            Dim piconainl4 As Double
+
+            piconainl1 = (piconainla * (rr1 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl2 = (piconainla * (rr2 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl3 = (piconainla * (rr3 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl4 = (piconainla * (rr4 ^ piconainlb)) * (1 - reductionfactor)
+
+            Dim piconail1 As Double
+            Dim piconail2 As Double
+            Dim piconail3 As Double
+            Dim piconail4 As Double
+
+            piconail1 = (piconaila * (rr1 ^ piconailb)) * (1 - reductionfactor)
+            piconail2 = (piconaila * (rr2 ^ piconailb)) * (1 - reductionfactor)
+            piconail3 = (piconaila * (rr3 ^ piconailb)) * (1 - reductionfactor)
+            piconail4 = (piconaila * (rr4 ^ piconailb)) * (1 - reductionfactor)
+
+            Dim piinstainl1 As Double
+            Dim piinstainl2 As Double
+            Dim piinstainl3 As Double
+            Dim piinstainl4 As Double
+
+            piinstainl1 = (piinstainla * (rm1 ^ piinstainlb)) * ((1 - reductionfactor) / eefc1)
+            piinstainl2 = (piinstainla * (rm2 ^ piinstainlb)) * ((1 - reductionfactor) / eefc2)
+            piinstainl3 = (piinstainla * (rm3 ^ piinstainlb)) * ((1 - reductionfactor) / eefc3)
+            piinstainl4 = (piinstainla * (rm4 ^ piinstainlb)) * ((1 - reductionfactor) / eefc4)
+
+            Dim piinstail1 As Double
+            Dim piinstail2 As Double
+            Dim piinstail3 As Double
+            Dim piinstail4 As Double
+
+            piinstail1 = (piinstaila * (rm1 ^ piinstailb)) * ((1 - reductionfactor) / eefc1)
+            piinstail2 = (piinstaila * (rm2 ^ piinstailb)) * ((1 - reductionfactor) / eefc2)
+            piinstail3 = (piinstaila * (rm3 ^ piinstailb)) * ((1 - reductionfactor) / eefc3)
+            piinstail4 = (piinstaila * (rm4 ^ piinstailb)) * ((1 - reductionfactor) / eefc4)
+
+
+            'blending factor
+            Dim C5si As Double = 25.2
+            Dim C5us As Double = 55.6
+            Dim blendfact1 As Double
+            Dim blendfact2 As Double
+            Dim blendfact3 As Double
+            Dim blendfact4 As Double
+            Dim fact1 As Double
+            Dim fact2 As Double
+            Dim fact3 As Double
+            Dim fact4 As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                fact1 = Math.Min((rr1 / C5si), 1.0)
+                fact2 = Math.Min((rr2 / C5si), 1.0)
+                fact3 = Math.Min((rr3 / C5si), 1.0)
+                fact4 = Math.Min((rr4 / C5si), 1.0)
+
+                If releasetype1 = "Continuous" Then
+                    blendfact1 = fact1
+                ElseIf releasetype1 = "Instantaneous" Then
+                    blendfact1 = 1.0
+                End If
+                If releasetype2 = "Continuous" Then
+                    blendfact2 = fact2
+                ElseIf releasetype2 = "Instantaneous" Then
+                    blendfact2 = 1.0
+                End If
+                If releasetype3 = "Continuous" Then
+                    blendfact3 = fact3
+                ElseIf releasetype3 = "Instantaneous" Then
+                    blendfact3 = 1.0
+                End If
+                If releasetype4 = "Continuous" Then
+                    blendfact4 = fact4
+                ElseIf releasetype4 = "Instantaneous" Then
+                    blendfact4 = 1.0
+                End If
+
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                fact1 = Math.Min((rr1 / C5us), 1.0)
+                fact2 = Math.Min((rr2 / C5us), 1.0)
+                fact3 = Math.Min((rr3 / C5us), 1.0)
+                fact4 = Math.Min((rr4 / C5us), 1.0)
+
+                If releasetype1 = "Continuous" Then
+                    blendfact1 = fact1
+                ElseIf releasetype1 = "Instantaneous" Then
+                    blendfact1 = 1.0
+                End If
+                If releasetype2 = "Continuous" Then
+                    blendfact2 = fact2
+                ElseIf releasetype2 = "Instantaneous" Then
+                    blendfact2 = 1.0
+                End If
+                If releasetype3 = "Continuous" Then
+                    blendfact3 = fact3
+                ElseIf releasetype3 = "Instantaneous" Then
+                    blendfact3 = 1.0
+                End If
+                If releasetype4 = "Continuous" Then
+                    blendfact4 = fact4
+                ElseIf releasetype4 = "Instantaneous" Then
+                    blendfact4 = 1.0
+                End If
+            End If
+
+            'AIT blend Factor
+            Dim aitfact As Double
+            Dim c6si As Double = 55.6
+            Dim c6us As Double = 100
+            Dim asi As Double
+            Dim bsi As Double
+            Dim aus As Double
+            Dim bus As Double
+            Dim csi As Double
+            Dim cus As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                asi = Val(TextBox38.Text) + c6si
+                bsi = Val(TextBox38.Text) - c6si
+                csi = (operatingtemp - ait + c6si) / (2 * c6si)
+
+                If asi <= ait Then
+                    aitfact = 0
+                ElseIf ait < asi And ait > bsi Then
+                    aitfact = csi
+                ElseIf bsi >= ait Then
+                    aitfact = 1
+                End If
+
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                aus = Val(TextBox38.Text) + c6us
+                bus = Val(TextBox38.Text) - c6us
+                cus = (operatingtemp - ait + c6us) / (2 * c6us)
+
+                If aus <= ait Then
+                    aitfact = 0
+                ElseIf ait < aus And ait > bus Then
+                    aitfact = cus
+                ElseIf bus >= ait Then
+                    aitfact = 1
+                End If
+            End If
+
+            'blended CA
+            Dim cdblendainl1 As Double
+            Dim cdblendainl2 As Double
+            Dim cdblendainl3 As Double
+            Dim cdblendainl4 As Double
+
+            Dim cdblendail1 As Double
+            Dim cdblendail2 As Double
+            Dim cdblendail3 As Double
+            Dim cdblendail4 As Double
+
+            cdblendainl1 = (cdinstainl1 * blendfact1) + (cdconainl1 * (1 - blendfact1))
+            cdblendainl2 = (cdinstainl2 * blendfact2) + (cdconainl2 * (1 - blendfact2))
+            cdblendainl3 = (cdinstainl3 * blendfact3) + (cdconainl3 * (1 - blendfact3))
+            cdblendainl4 = (cdinstainl4 * blendfact4) + (cdconainl4 * (1 - blendfact4))
+
+            cdblendail1 = (cdinstail1 * blendfact1) + (cdconail1 * (1 - blendfact1))
+            cdblendail2 = (cdinstail2 * blendfact2) + (cdconail2 * (1 - blendfact2))
+            cdblendail3 = (cdinstail3 * blendfact3) + (cdconail3 * (1 - blendfact3))
+            cdblendail4 = (cdinstail4 * blendfact4) + (cdconail4 * (1 - blendfact4))
+
+
+            Dim piblendainl1 As Double
+            Dim piblendainl2 As Double
+            Dim piblendainl3 As Double
+            Dim piblendainl4 As Double
+
+            Dim piblendail1 As Double
+            Dim piblendail2 As Double
+            Dim piblendail3 As Double
+            Dim piblendail4 As Double
+
+            piblendainl1 = (piinstainl1 * fact1) + (piconainl1 * (1 - blendfact1))
+            piblendainl2 = (piinstainl2 * fact2) + (piconainl2 * (1 - blendfact2))
+            piblendainl3 = (piinstainl3 * fact3) + (piconainl3 * (1 - blendfact3))
+            piblendainl4 = (piinstainl4 * fact4) + (piconainl4 * (1 - blendfact4))
+
+            piblendail1 = (piinstail1 * blendfact1) + (piconail1 * (1 - blendfact1))
+            piblendail2 = (piinstail2 * blendfact2) + (piconail2 * (1 - blendfact2))
+            piblendail3 = (piinstail3 * blendfact3) + (piconail3 * (1 - blendfact3))
+            piblendail4 = (piinstail4 * blendfact4) + (piconail4 * (1 - blendfact4))
+
+            'ait blended CA
+            Dim cdaitblend1 As Double
+            Dim cdaitblend2 As Double
+            Dim cdaitblend3 As Double
+            Dim cdaitblend4 As Double
+
+            Dim piaitblend1 As Double
+            Dim piaitblend2 As Double
+            Dim piaitblend3 As Double
+            Dim piaitblend4 As Double
+
+            cdaitblend1 = (cdblendail1 * aitfact) + (cdblendainl1 * (1 - aitfact))
+            cdaitblend2 = (cdblendail2 * aitfact) + (cdblendainl2 * (1 - aitfact))
+            cdaitblend3 = (cdblendail3 * aitfact) + (cdblendainl3 * (1 - aitfact))
+            cdaitblend4 = (cdblendail4 * aitfact) + (cdblendainl4 * (1 - aitfact))
+
+            piaitblend1 = (piblendail1 * aitfact) + (piblendainl1 * (1 - aitfact))
+            piaitblend2 = (piblendail2 * aitfact) + (piblendainl2 * (1 - aitfact))
+            piaitblend3 = (piblendail3 * aitfact) + (piblendainl3 * (1 - aitfact))
+            piaitblend4 = (piblendail4 * aitfact) + (piblendainl4 * (1 - aitfact))
+
+            'CD Flammable
+            finalcd = ((gff1 * cdaitblend1) + (gff2 * cdaitblend2) + (gff3 * cdaitblend3) + (gff4 * cdaitblend4)) / gfftotal
+
+            'PI Flammable
+            finalpi = ((gff1 * piaitblend1) + (gff2 * piaitblend2) + (gff3 * piaitblend3) + (gff4 * piaitblend4)) / gfftotal
         End If
 
+        'CA toxic
+
+        If ComboBox75.Text = "Toxic" Then
+            Dim toxicprecentage As Double = Val(TextBox105.Text)
+
+            Dim effecdur1 As Double
+            Dim effecdur2 As Double
+            Dim effecdur3 As Double
+            Dim effecdur4 As Double
+
+            Dim massbagiwn1 As Double
+            Dim massbagiwn2 As Double
+            Dim massbagiwn3 As Double
+            Dim massbagiwn4 As Double
+
+            massbagiwn1 = rm1 / wn1
+            massbagiwn2 = rm2 / wn2
+            massbagiwn3 = rm3 / wn3
+            massbagiwn4 = rm4 / wn4
+
+            If 3600 <= massbagiwn1 AndAlso 3600 <= leak1 Then
+                effecdur1 = 3600
+
+            ElseIf massbagiwn1 <= 3600 AndAlso massbagiwn1 <= leak1 Then
+                effecdur1 = massbagiwn1
+
+            ElseIf leak1 <= 3600 AndAlso leak1 <= massbagiwn1 Then
+                effecdur1 = leak1
+            End If
+
+
+            If 3600 <= massbagiwn2 AndAlso 3600 <= leak2 Then
+                effecdur2 = 3600
+            ElseIf massbagiwn2 <= 3600 AndAlso massbagiwn2 <= leak2 Then
+                effecdur2 = massbagiwn2
+            ElseIf leak2 <= 3600 AndAlso leak2 <= massbagiwn2 Then
+                effecdur2 = leak2
+            End If
+
+
+            If 3600 <= massbagiwn3 AndAlso 3600 <= leak3 Then
+                effecdur3 = 3600
+            ElseIf massbagiwn3 <= 3600 AndAlso massbagiwn3 <= leak3 Then
+                effecdur3 = massbagiwn3
+            ElseIf leak3 <= 3600 AndAlso leak3 <= massbagiwn3 Then
+                effecdur3 = leak3
+            End If
+
+            effecdur4 = 0
+
+            'toxic release rate
+            Dim toxicrr1 As Double
+            Dim toxicrr2 As Double
+            Dim toxicrr3 As Double
+            Dim toxicrr4 As Double
+
+            toxicrr1 = toxicprecentage * rr1
+            toxicrr2 = toxicprecentage * rr2
+            toxicrr3 = toxicprecentage * rr3
+            toxicrr4 = toxicprecentage * rr4
+
+            'toxic release mass
+            Dim toxicrm1 As Double
+            Dim toxicrm2 As Double
+            Dim toxicrm3 As Double
+            Dim toxicrm4 As Double
+
+            toxicrm1 = toxicprecentage / rm1
+            toxicrm2 = toxicprecentage / rm2
+            toxicrm3 = toxicprecentage / rm3
+            toxicrm4 = toxicprecentage / rm4
+
+            'release duration
+            Dim rd1 As Double
+            Dim rd2 As Double
+            Dim rd3 As Double
+            Dim rd4 As Double
+
+            rd1 = effecdur1 / 60
+            rd2 = effecdur2 / 60
+            rd3 = effecdur3 / 60
+            rd4 = 0
+
+            'toxic fluids contanta
+            Dim smallc As Double
+            Dim smalld As Double
+            Dim mediumc As Double
+            Dim mediumd As Double
+            Dim largec As Double
+            Dim larged As Double
+            Dim rupturec As Double
+            Dim ruptured As Double
+
+            'small
+            If releasetype1 = "Continuous" Then
+                'contanta c
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 1.1401},
+                    {10, 1.1031},
+                    {20, 1.0816},
+                    {40, 1.0942},
+                    {60, 1.1031}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+                    rd = rd1
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    smallc = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    smallc = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 1.2411},
+                    {10, 1.241},
+                    {20, 1.237},
+                    {40, 1.2297},
+                    {60, 1.2266}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+                    rd = rd1
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    smallc = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    smallc = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                'constanta d
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 3.5683},
+                    {10, 3.8431},
+                    {20, 4.104},
+                    {40, 4.3925},
+                    {60, 4.4576}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd1
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    smalld = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    smalld = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 3.9686},
+                    {10, 4.0948},
+                    {20, 4.238},
+                    {40, 4.3626},
+                    {60, 4.4365}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd1
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    smalld = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    smalld = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 636.7},
+                            {10, 846.3},
+                            {15, 1053},
+                            {20, 1256},
+                            {25, 1455},
+                            {30, 1650},
+                            {35, 1842},
+                            {40, 2029},
+                            {45, 2213},
+                            {50, 2389},
+                            {55, 2558},
+                            {60, 2714}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smallc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smallc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 3350},
+                            {10, 3518},
+                            {15, 3798},
+                            {20, 4191},
+                            {25, 4694},
+                            {30, 5312},
+                            {35, 6032},
+                            {40, 6860},
+                            {45, 7788},
+                            {50, 8798},
+                            {55, 9890},
+                            {60, 10994}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smallc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smallc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                                {10, 1.181},
+                                {15, 1.18},
+                                {20, 1.178},
+                                {25, 1.176},
+                                {30, 1.174},
+                                {35, 1.172},
+                                {40, 1.169},
+                                {45, 1.166},
+                                {50, 1.161},
+                                {55, 1.155},
+                                {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smalld = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smalld = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                                {10, 1.095},
+                                {15, 1.092},
+                                {20, 1.089},
+                                {25, 1.085},
+                                {30, 1.082},
+                                {35, 1.077},
+                                {40, 1.072},
+                                {45, 1.066},
+                                {50, 1.057},
+                                {55, 1.046},
+                                {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smalld = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smalld = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 2690},
+                            {10, 3581},
+                            {15, 4459},
+                            {20, 5326},
+                            {25, 6180},
+                            {30, 7022},
+                            {35, 7825},
+                            {40, 8669},
+                            {45, 9475},
+                            {50, 10268},
+                            {55, 11049},
+                            {60, 11817}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smallc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smallc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 15150},
+                            {10, 15934},
+                            {15, 17242},
+                            {20, 19074},
+                            {25, 21430},
+                            {30, 24309},
+                            {35, 27712},
+                            {40, 31640},
+                            {45, 36090},
+                            {50, 41065},
+                            {55, 46564},
+                            {60, 52586}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smallc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smallc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smallc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                                {10, 1.181},
+                                {15, 1.18},
+                                {20, 1.178},
+                                {25, 1.176},
+                                {30, 1.174},
+                                {35, 1.172},
+                                {40, 1.169},
+                                {45, 1.166},
+                                {50, 1.161},
+                                {55, 1.155},
+                                {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smalld = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smalld = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                            {10, 1.095},
+                            {15, 1.092},
+                            {20, 1.089},
+                            {25, 1.085},
+                            {30, 1.082},
+                            {35, 1.077},
+                            {40, 1.072},
+                            {45, 1.066},
+                            {50, 1.057},
+                            {55, 1.046},
+                            {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd1
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        smalld = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        smalld = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    smalld = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                End If
+
+            End If
+
+            'medium
+            If releasetype2 = "Continuous" Then
+                'constanta c
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 1.1401},
+                    {10, 1.1031},
+                    {20, 1.0816},
+                    {40, 1.0942},
+                    {60, 1.1031}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd2
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 3.9686},
+                    {10, 4.0948},
+                    {20, 4.238},
+                    {40, 4.3626},
+                    {60, 4.4365}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd2
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                'constanta d
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 3.5683},
+                    {10, 3.8431},
+                    {20, 4.104},
+                    {40, 4.3925},
+                    {60, 4.4576}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd2
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 1.2411},
+                    {10, 1.241},
+                    {20, 1.237},
+                    {40, 1.2297},
+                    {60, 1.2266}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd2
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 636.7},
+                            {10, 846.3},
+                            {15, 1053},
+                            {20, 1256},
+                            {25, 1455},
+                            {30, 1650},
+                            {35, 1842},
+                            {40, 2029},
+                            {45, 2213},
+                            {50, 2389},
+                            {55, 2558},
+                            {60, 2714}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 3350},
+                        {10, 3518},
+                        {15, 3798},
+                        {20, 4191},
+                        {25, 4694},
+                        {30, 5312},
+                        {35, 6032},
+                        {40, 6860},
+                        {45, 7788},
+                        {50, 8798},
+                        {55, 9890},
+                        {60, 10994}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                                {10, 1.181},
+                                {15, 1.18},
+                                {20, 1.178},
+                                {25, 1.176},
+                                {30, 1.174},
+                                {35, 1.172},
+                                {40, 1.169},
+                                {45, 1.166},
+                                {50, 1.161},
+                                {55, 1.155},
+                                {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                            {10, 1.095},
+                            {15, 1.092},
+                            {20, 1.089},
+                            {25, 1.085},
+                            {30, 1.082},
+                            {35, 1.077},
+                            {40, 1.072},
+                            {45, 1.066},
+                            {50, 1.057},
+                            {55, 1.046},
+                            {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 2690},
+                        {10, 3581},
+                        {15, 4459},
+                        {20, 5326},
+                        {25, 6180},
+                        {30, 7022},
+                        {35, 7825},
+                        {40, 8669},
+                        {45, 9475},
+                        {50, 10268},
+                        {55, 11049},
+                        {60, 11817}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 15150},
+                        {10, 15934},
+                        {15, 17242},
+                        {20, 19074},
+                        {25, 21430},
+                        {30, 24309},
+                        {35, 27712},
+                        {40, 31640},
+                        {45, 36090},
+                        {50, 41065},
+                        {55, 46564},
+                        {60, 52586}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumc = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumc = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumc = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                            {10, 1.181},
+                            {15, 1.18},
+                            {20, 1.178},
+                            {25, 1.176},
+                            {30, 1.174},
+                            {35, 1.172},
+                            {40, 1.169},
+                            {45, 1.166},
+                            {50, 1.161},
+                            {55, 1.155},
+                            {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                            {10, 1.095},
+                            {15, 1.092},
+                            {20, 1.089},
+                            {25, 1.085},
+                            {30, 1.082},
+                            {35, 1.077},
+                            {40, 1.072},
+                            {45, 1.066},
+                            {50, 1.057},
+                            {55, 1.046},
+                            {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd2
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        mediumd = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        mediumd = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    mediumd = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+                End If
+
+            ElseIf releasetype2 = "Instantaneous" Then
+
+                If ComboBox4.Text = "HF" Then
+                    mediumc = 1.4056
+                    mediumd = 33606
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    mediumc = 0.9674
+                    mediumd = 2.784
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        mediumc = 2.684
+                        mediumd = 0.9011
+                    ElseIf combobox4.Text = "Chlorine" Then
+                        mediumc = 3.528
+                        mediumd = 1.177
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        mediumc = 14.171
+                        mediumd = 0.9011
+                    ElseIf combobox4.Text = "Chlorine" Then
+                        mediumc = 14.976
+                        mediumd = 1.177
+                    End If
+
+                End If
+
+            End If
+
+            'large
+            If releasetype3 = "Continuous" Then
+                'constanta c
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 1.1401},
+                    {10, 1.1031},
+                    {20, 1.0816},
+                    {40, 1.0942},
+                    {60, 1.1031}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd3
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    largec = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    largec = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                largec = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 1.2411},
+                    {10, 1.241},
+                    {20, 1.237},
+                    {40, 1.2297},
+                    {60, 1.2266}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd3
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    largec = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    largec = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                largec = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                'constanta d
+                If ComboBox4.Text = "HF" Then
+                    Dim chart1(,) As Double = {{5, 3.5683},
+                    {10, 3.8431},
+                    {20, 4.104},
+                    {40, 4.3925},
+                    {60, 4.4576}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd3
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    larged = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    larged = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                larged = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    Dim chart1(,) As Double = {{5, 3.9686},
+                    {10, 4.0948},
+                    {20, 4.238},
+                    {40, 4.3626},
+                    {60, 4.4365}}
+
+                    Dim UpNum2(1) As Double
+                    Dim LowNum2(1) As Double
+
+                    Dim Lo1 As Double
+                    Dim Lo2 As Double
+                    Dim up1 As Double
+                    Dim up2 As Double
+
+                    Dim rd As Double
+                    Dim upt As Double
+                    Dim lot As Double
+                    Dim x As Double
+                    Dim z As Double
+
+
+                    rd = rd3
+
+                    If rd < 5 Then
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 10
+                                    lot = 5
+
+                                    larged = Inter3b(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    ElseIf rd > 60 Then
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= 40 AndAlso chart1(r + 1, 0) >= 60 Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+                                    x = LowNum2(1)
+                                    z = UpNum2(1)
+                                    upt = 60
+                                    lot = 40
+
+                                    larged = Inter3c(upt, lot, rd, x, z)
+
+                                Next
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                        If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                            For c As Integer = 0 To 1
+                                LowNum2(c) = chart1(r, c)
+                                UpNum2(c) = chart1(r + 1, c)
+
+                                up1 = UpNum2(0)
+                                up2 = UpNum2(1)
+
+                                Lo1 = LowNum2(0)
+                                Lo2 = LowNum2(1)
+
+                                larged = Inter(rd, up1, up2, Lo1, Lo2)
+                            Next
+                            Exit For
+                        End If
+                    Next
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 636.7},
+                        {10, 846.3},
+                        {15, 1053},
+                        {20, 1256},
+                        {25, 1455},
+                        {30, 1650},
+                        {35, 1842},
+                        {40, 2029},
+                        {45, 2213},
+                        {50, 2389},
+                        {55, 2558},
+                        {60, 2714}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        largec = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        largec = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    largec = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 3350},
+                        {10, 3518},
+                        {15, 3798},
+                        {20, 4191},
+                        {25, 4694},
+                        {30, 5312},
+                        {35, 6032},
+                        {40, 6860},
+                        {45, 7788},
+                        {50, 8798},
+                        {55, 9890},
+                        {60, 10994}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        largec = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        largec = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    largec = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                            {10, 1.181},
+                            {15, 1.18},
+                            {20, 1.178},
+                            {25, 1.176},
+                            {30, 1.174},
+                            {35, 1.172},
+                            {40, 1.169},
+                            {45, 1.166},
+                            {50, 1.161},
+                            {55, 1.155},
+                            {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        larged = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        larged = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    larged = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                            {10, 1.095},
+                            {15, 1.092},
+                            {20, 1.089},
+                            {25, 1.085},
+                            {30, 1.082},
+                            {35, 1.077},
+                            {40, 1.072},
+                            {45, 1.066},
+                            {50, 1.057},
+                            {55, 1.046},
+                            {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        larged = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        larged = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    larged = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    'constanta c
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 2690},
+                        {10, 3581},
+                        {15, 4459},
+                        {20, 5326},
+                        {25, 6180},
+                        {30, 7022},
+                        {35, 7825},
+                        {40, 8669},
+                        {45, 9475},
+                        {50, 10268},
+                        {55, 11049},
+                        {60, 11817}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        largec = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        largec = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    largec = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 15150},
+                        {10, 15934},
+                        {15, 17242},
+                        {20, 19074},
+                        {25, 21430},
+                        {30, 24309},
+                        {35, 27712},
+                        {40, 31640},
+                        {45, 36090},
+                        {50, 41065},
+                        {55, 46564},
+                        {60, 52586}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        largec = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        largec = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    largec = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    'constanta d
+                    If ComboBox4.Text = "Ammonia" Then
+                        Dim chart1(,) As Double = {{5, 1.183},
+                            {10, 1.181},
+                            {15, 1.18},
+                            {20, 1.178},
+                            {25, 1.176},
+                            {30, 1.174},
+                            {35, 1.172},
+                            {40, 1.169},
+                            {45, 1.166},
+                            {50, 1.161},
+                            {55, 1.155},
+                            {60, 1.145}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        larged = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        larged = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    larged = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+
+                    If ComboBox4.Text = "Chlorine" Then
+                        Dim chart1(,) As Double = {{5, 1.097},
+                                {10, 1.095},
+                                {15, 1.092},
+                                {20, 1.089},
+                                {25, 1.085},
+                                {30, 1.082},
+                                {35, 1.077},
+                                {40, 1.072},
+                                {45, 1.066},
+                                {50, 1.057},
+                                {55, 1.046},
+                                {60, 1.026}}
+
+                        Dim UpNum2(1) As Double
+                        Dim LowNum2(1) As Double
+
+                        Dim Lo1 As Double
+                        Dim Lo2 As Double
+                        Dim up1 As Double
+                        Dim up2 As Double
+
+                        Dim rd As Double
+                        Dim upt As Double
+                        Dim lot As Double
+                        Dim x As Double
+                        Dim z As Double
+
+
+                        rd = rd3
+
+                        If rd < 5 Then
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 10 AndAlso chart1(r + 1, 0) >= 5 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 10
+                                        lot = 5
+
+                                        larged = Inter3b(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        ElseIf rd > 60 Then
+
+                            For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                                If chart1(r, 0) <= 55 AndAlso chart1(r + 1, 0) >= 60 Then
+                                    For c As Integer = 0 To 1
+                                        LowNum2(c) = chart1(r, c)
+                                        UpNum2(c) = chart1(r + 1, c)
+                                        x = LowNum2(1)
+                                        z = UpNum2(1)
+                                        upt = 60
+                                        lot = 55
+
+                                        larged = Inter3c(upt, lot, rd, x, z)
+
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
+                        For r As Integer = 0 To chart1.GetUpperBound(0) - 1
+                            If chart1(r, 0) <= rd AndAlso chart1(r + 1, 0) >= rd Then
+                                For c As Integer = 0 To 1
+                                    LowNum2(c) = chart1(r, c)
+                                    UpNum2(c) = chart1(r + 1, c)
+
+                                    up1 = UpNum2(0)
+                                    up2 = UpNum2(1)
+
+                                    Lo1 = LowNum2(0)
+                                    Lo2 = LowNum2(1)
+
+                                    larged = Inter(rd, up1, up2, Lo1, Lo2)
+                                Next
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+                End If
+
+            ElseIf releasetype3 = "Instantaneous" Then
+
+                If ComboBox4.Text = "HF" Then
+                    largec = 1.4056
+                    larged = 33606
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    largec = 0.9674
+                    larged = 2.784
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        largec = 2.684
+                        larged = 0.9011
+                    ElseIf ComboBox4.Text = "Chlorine" Then
+                        largec = 3.528
+                        larged = 1.177
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        largec = 14.171
+                        larged = 0.9011
+                    ElseIf ComboBox4.Text = "Chlorine" Then
+                        largec = 14.976
+                        larged = 1.177
+                    End If
+
+                End If
+            End If
+
+            'rupture
+            If releasetype4 = "Instantaneous" Then
+
+                If ComboBox4.Text = "HF" Then
+                    rupturec = 1.4056
+                    ruptured = 33606
+                End If
+
+                If ComboBox4.Text = "H2S" Then
+                    rupturec = 0.9674
+                    ruptured = 2.784
+                End If
+
+                If Units.ComboBox1.Text = "SI" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        rupturec = 2.684
+                        ruptured = 0.9011
+                    ElseIf ComboBox4.Text = "Chlorine" Then
+                        rupturec = 3.528
+                        ruptured = 1.177
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    If ComboBox4.Text = "Ammonia" Then
+                        rupturec = 14.171
+                        ruptured = 0.9011
+                    ElseIf ComboBox4.Text = "Chlorine" Then
+                        rupturec = 14.976
+                        ruptured = 1.177
+                    End If
+
+                End If
+            End If
+
+            'consequence area
+
+            Dim ca1 As Double
+            Dim ca2 As Double
+            Dim ca3 As Double
+            Dim ca4 As Double
+
+            If ComboBox4.Text = "HF" Or ComboBox4.Text = "H2S" Then
+                Dim C8si As Double = 0.0929
+                Dim C8us As Double = 1
+                Dim C4bsi As Double = 2.205
+                Dim C4bus As Double = 1
+
+                If Units.ComboBox1.Text = "SI" Then
+                    If releasetype1 = "Continuous" Then
+                        ca1 = C8si * (10 ^ ((smallc * Math.Log(C4bsi * toxicrr1)) + smalld))
+                    ElseIf releasetype1 = "Instantaneous" Then
+                        ca1 = C8si * (10 ^ ((smallc * Math.Log(C4bsi * toxicrm1)) + smalld))
+                    End If
+
+                    If releasetype2 = "Continuous" Then
+                        ca2 = C8si * (10 ^ ((mediumc * Math.Log(C4bsi * toxicrr2)) + mediumd))
+                    ElseIf releasetype2 = "Instantaneous" Then
+                        ca2 = C8si * (10 ^ ((mediumc * Math.Log(C4bsi * toxicrm2)) + mediumd))
+                    End If
+
+                    If releasetype3 = "Continuous" Then
+                        ca3 = C8si * (10 ^ ((largec * Math.Log(C4bsi * toxicrr3)) + larged))
+                    ElseIf releasetype3 = "Instantaneous" Then
+                        ca3 = C8si * (10 ^ ((largec * Math.Log(C4bsi * toxicrm3)) + larged))
+                    End If
+
+                    If releasetype4 = "Continuous" Then
+                        ca4 = C8si * (10 ^ ((rupturec * Math.Log(C4bsi * toxicrr4)) + ruptured))
+                    ElseIf releasetype4 = "Instantaneous" Then
+                        ca4 = C8si * (10 ^ ((rupturec * Math.Log(C4bsi * toxicrm4)) + ruptured))
+                    End If
+
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    If releasetype1 = "Continuous" Then
+                        ca1 = C8us * (10 ^ ((smallc * Math.Log(C4bus * toxicrr1)) + smalld))
+                    ElseIf releasetype1 = "Instantaneous" Then
+                        ca1 = C8us * (10 ^ ((smallc * Math.Log(C4bus * toxicrm1)) + smalld))
+                    End If
+
+                    If releasetype2 = "Continuous" Then
+                        ca2 = C8us * (10 ^ ((mediumc * Math.Log(C4bus * toxicrr2)) + mediumd))
+                    ElseIf releasetype2 = "Instantaneous" Then
+                        ca2 = C8us * (10 ^ ((mediumc * Math.Log(C4bus * toxicrm2)) + mediumd))
+                    End If
+
+                    If releasetype3 = "Continuous" Then
+                        ca3 = C8us * (10 ^ ((largec * Math.Log(C4bus * toxicrr3)) + larged))
+                    ElseIf releasetype3 = "Instantaneous" Then
+                        ca3 = C8us * (10 ^ ((largec * Math.Log(C4bus * toxicrm3)) + larged))
+                    End If
+
+                    If releasetype4 = "Continuous" Then
+                        ca4 = C8us * (10 ^ ((rupturec * Math.Log(C4bus * toxicrr4)) + ruptured))
+                    ElseIf releasetype4 = "Instantaneous" Then
+                        ca4 = C8us * (10 ^ ((rupturec * Math.Log(C4bus * toxicrm4)) + ruptured))
+                    End If
+                End If
+
+            ElseIf ComboBox4.Text = "Ammonia" Or ComboBox4.Text = "Chlorine" Then
+
+                If releasetype1 = "Continuous" Then
+                    ca1 = smallc * (toxicrr1 ^ smalld)
+                ElseIf releasetype1 = "Instantaneous" Then
+                    ca1 = smallc * (toxicrm1 ^ smalld)
+                End If
+
+                If releasetype2 = "Continuous" Then
+                    ca2 = mediumc * (toxicrr2 ^ mediumd)
+                ElseIf releasetype2 = "Instantaneous" Then
+                    ca2 = mediumc * (toxicrm2 ^ mediumd)
+                End If
+
+                If releasetype3 = "Continuous" Then
+                    ca3 = largec * (toxicrr3 ^ larged)
+                ElseIf releasetype3 = "Instantaneous" Then
+                    ca3 = largec * (toxicrm3 ^ larged)
+                End If
+
+                If releasetype4 = "Continuous" Then
+                    ca4 = rupturec * (toxicrr4 ^ ruptured)
+                ElseIf releasetype4 = "Instantaneous" Then
+                    ca4 = rupturec * (toxicrm4 ^ ruptured)
+                End If
+
+            ElseIf ComboBox4.Text = "AlCl3" Or ComboBox4.Text = "CO" Or ComboBox4.Text = "HCL" Or ComboBox4.Text = "Nitric Acid" Or ComboBox4.Text = "NO2" Or ComboBox4.Text = "Phosgene" Or ComboBox4.Text = "TDI" Or ComboBox4.Text = "EE" Or ComboBox4.Text = "EO" Or ComboBox4.Text = "PO" Or ComboBox4.Text = "CO2" Or ComboBox4.Text = "MDEA" Then
+                ca1 = smallc * (toxicrm1 ^ smalld)
+                ca2 = mediumc * (toxicrm2 ^ mediumd)
+                ca3 = largec * (toxicrm3 ^ larged)
+                ca4 = rupturec * (toxicrm4 ^ ruptured)
+            End If
+
+            finalcd = 0
+            finalpi = ((gff1 * ca1) + (gff2 * ca2) + (gff3 * ca3) + (gff4 * ca4)) / gfftotal
+        End If
+
+        'CA Non-Toxic, Non-Flammable
+
+        If ComboBox75.Text = "Non Flammable. Non Toxic" Then
+
+            Dim factic1 As Double
+            Dim factic2 As Double
+            Dim factic3 As Double
+            Dim factic4 As Double
+
+            Dim consteam1 As Double
+            Dim consteam2 As Double
+            Dim consteam3 As Double
+            Dim consteam4 As Double
+
+            Dim insteam1 As Double
+            Dim insteam2 As Double
+            Dim insteam3 As Double
+            Dim insteam4 As Double
+
+            Dim capi1 As Double
+            Dim capi2 As Double
+            Dim capi3 As Double
+            Dim capi4 As Double
+
+            If ComboBox4.Text = "Steam" Or ComboBox4.Text = "Air" Or ComboBox4.Text = "N2" Then
+                'blending factor
+
+                Dim ratebagic1 As Double
+                Dim ratebagic2 As Double
+                Dim ratebagic3 As Double
+                Dim ratebagic4 As Double
+
+                If Units.ComboBox1.Text = "SI" Then
+                    ratebagic1 = rr1 / 25.2
+                    ratebagic2 = rr1 / 25.2
+                    ratebagic3 = rr1 / 25.2
+                    ratebagic4 = rr1 / 25.2
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    ratebagic1 = rr1 / 55.6
+                    ratebagic2 = rr1 / 55.6
+                    ratebagic3 = rr1 / 55.6
+                    ratebagic4 = rr1 / 55.6
+                End If
+
+                factic1 = Math.Min(ratebagic1, 1.0)
+                factic2 = Math.Min(ratebagic2, 1.0)
+                factic3 = Math.Min(ratebagic3, 1.0)
+                factic4 = Math.Min(ratebagic4, 1.0)
+
+                'continuous
+
+                Dim C9si As Double = 0.123
+                Dim C9us As Double = 0.6
+
+                If Units.ComboBox1.Text = "SI" Then
+                    consteam1 = C9si * rr1
+                    consteam2 = C9si * rr2
+                    consteam3 = C9si * rr3
+                    consteam4 = C9si * rr4
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    consteam1 = C9us * rr1
+                    consteam2 = C9us * rr2
+                    consteam3 = C9us * rr3
+                    consteam4 = C9us * rr4
+                End If
+
+                'instantaneous
+
+                Dim C10si As Double = 9.744
+                Dim C10us As Double = 63.32
+
+                If Units.ComboBox1.Text = "SI" Then
+                    insteam1 = C10si * (rm1 ^ 0.6384)
+                    insteam2 = C10si * (rm2 ^ 0.6384)
+                    insteam3 = C10si * (rm3 ^ 0.6384)
+                    insteam4 = C10si * (rm4 ^ 0.6384)
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    insteam1 = C10us * (rm1 ^ 0.6384)
+                    insteam2 = C10us * (rm2 ^ 0.6384)
+                    insteam3 = C10us * (rm3 ^ 0.6384)
+                    insteam4 = C10us * (rm4 ^ 0.6384)
+                End If
+
+            End If
+
+            If ComboBox4.Text = "Acid or Caustic" Then
+
+                Dim acidg As Double
+                Dim acidh As Double
+
+                If Units.ComboBox1.Text = "SI" Then
+                    acidg = 2696.0 - (21.9 * 0.145 * (operatingpressure - atm)) + (1.474 * ((0.145 * (operatingpressure - atm)) ^ 2))
+                    acidh = 0.31 - (0.00032 * (((0.145 * (operatingpressure - atm)) - 40) ^ 2))
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    acidg = 2696.0 - (21.9 * 1 * (operatingpressure - atm)) + (1.474 * ((1 * (operatingpressure - atm)) ^ 2))
+                    acidh = 0.31 - (0.00032 * (((1 * (operatingpressure - atm)) - 40) ^ 2))
+                End If
+
+                factic1 = 0
+                factic2 = 0
+                factic3 = 0
+                factic4 = 0
+
+                'continuous
+                Dim c8si As Double = 0.0929
+                Dim c8us As Double = 1
+                Dim c4si As Double = 2.205
+                Dim c4us As Double = 1
+
+                If Units.ComboBox1.Text = "SI" Then
+                    consteam1 = 0.2 * c8si * acidg * ((c4si * rr1) ^ acidh)
+                    consteam2 = 0.2 * c8si * acidg * ((c4si * rr2) ^ acidh)
+                    consteam3 = 0.2 * c8si * acidg * ((c4si * rr3) ^ acidh)
+                    consteam4 = 0.2 * c8si * acidg * ((c4si * rr4) ^ acidh)
+                ElseIf Units.ComboBox1.Text = "US Customary" Then
+                    consteam1 = 0.2 * c8us * acidg * ((c4us * rr1) ^ acidh)
+                    consteam2 = 0.2 * c8us * acidg * ((c4us * rr2) ^ acidh)
+                    consteam3 = 0.2 * c8us * acidg * ((c4us * rr3) ^ acidh)
+                    consteam4 = 0.2 * c8us * acidg * ((c4us * rr4) ^ acidh)
+                End If
+
+                'instantaneous
+                insteam1 = 0
+                insteam2 = 0
+                insteam3 = 0
+                insteam4 = 0
+            End If
+
+            capi1 = (insteam1 * factic1) + (consteam1 * (1 - factic1))
+            capi2 = (insteam1 * factic2) + (consteam2 * (1 - factic2))
+            capi3 = (insteam1 * factic3) + (consteam3 * (1 - factic3))
+            capi4 = (insteam1 * factic4) + (consteam4 * (1 - factic4))
+
+            finalcd = 0
+            finalpi = ((gff1 * capi1) + (gff2 * capi2) + (gff3 * capi3) + (gff4 * capi4)) / gfftotal
+        End If
+
+        'Financial CD Cost
+        Dim cf As Double = Val(TextBox19.Text)
+
+        Dim equiprepaircost1 As Double
+        Dim equiprepaircost2 As Double
+        Dim equiprepaircost3 As Double
+        Dim equiprepaircost4 As Double
+
+        If ComboBox62.Text = "COMPC" Then
+            equiprepaircost1 = 10000
+            equiprepaircost2 = 20000
+            equiprepaircost3 = 100000
+            equiprepaircost4 = 300000
+        ElseIf ComboBox62.Text = "COMPR" Then
+            equiprepaircost1 = 5000
+            equiprepaircost2 = 10000
+            equiprepaircost3 = 50000
+            equiprepaircost4 = 100000
+        ElseIf ComboBox62.Text = "HEXSS" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 60000
+        ElseIf ComboBox62.Text = "HEXTS" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 60000
+        ElseIf ComboBox62.Text = "HEXTUBE" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 60000
+        ElseIf ComboBox62.Text = "PIPE-1" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 0
+            equiprepaircost3 = 0
+            equiprepaircost4 = 20
+        ElseIf ComboBox62.Text = "PIPE-2" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 0
+            equiprepaircost3 = 0
+            equiprepaircost4 = 40
+        ElseIf ComboBox62.Text = "PIPE-4" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 10
+            equiprepaircost3 = 0
+            equiprepaircost4 = 60
+        ElseIf ComboBox62.Text = "PIPE-6" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 20
+            equiprepaircost3 = 0
+            equiprepaircost4 = 120
+        ElseIf ComboBox62.Text = "PIPE-8" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 30
+            equiprepaircost3 = 60
+            equiprepaircost4 = 180
+        ElseIf ComboBox62.Text = "PIPE-10" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 40
+            equiprepaircost3 = 80
+            equiprepaircost4 = 240
+        ElseIf ComboBox62.Text = "PIPE-12" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 60
+            equiprepaircost3 = 120
+            equiprepaircost4 = 360
+        ElseIf ComboBox62.Text = "PIPE-16" Then
+            equiprepaircost1 = 5
+            equiprepaircost2 = 80
+            equiprepaircost3 = 160
+            equiprepaircost4 = 500
+        ElseIf ComboBox62.Text = "PIPEGT16" Then
+            equiprepaircost1 = 10
+            equiprepaircost2 = 120
+            equiprepaircost3 = 240
+            equiprepaircost4 = 700
+        ElseIf ComboBox62.Text = "PUMP2S" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2500
+            equiprepaircost3 = 5000
+            equiprepaircost4 = 5000
+        ElseIf ComboBox62.Text = "PUMP1S" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2500
+            equiprepaircost3 = 5000
+            equiprepaircost4 = 5000
+        ElseIf ComboBox62.Text = "PUMPR" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2500
+            equiprepaircost3 = 5000
+            equiprepaircost4 = 10000
+        ElseIf ComboBox62.Text = "TANKBOTTOM" Then
+            equiprepaircost1 = 5000
+            equiprepaircost2 = 0
+            equiprepaircost3 = 0
+            equiprepaircost4 = 120000
+        ElseIf ComboBox62.Text = "COURSES-1-10" Then
+            equiprepaircost1 = 5000
+            equiprepaircost2 = 12000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 40000
+        ElseIf ComboBox62.Text = "KODRUM" Then
+            equiprepaircost1 = 5000
+            equiprepaircost2 = 12000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 40000
+        ElseIf ComboBox62.Text = "DRUM" Then
+            equiprepaircost1 = 5000
+            equiprepaircost2 = 12000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 40000
+        ElseIf ComboBox62.Text = "FINFAN" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2000
+            equiprepaircost3 = 20000
+            equiprepaircost4 = 60000
+        ElseIf ComboBox62.Text = "FILTER" Then
+            equiprepaircost1 = 1000
+            equiprepaircost2 = 2000
+            equiprepaircost3 = 4000
+            equiprepaircost4 = 10000
+        ElseIf ComboBox62.Text = "REACTOR" Then
+            equiprepaircost1 = 10000
+            equiprepaircost2 = 24000
+            equiprepaircost3 = 40000
+            equiprepaircost4 = 80000
+        ElseIf ComboBox62.Text = "COLTOP" Then
+            equiprepaircost1 = 10000
+            equiprepaircost2 = 25000
+            equiprepaircost3 = 50000
+            equiprepaircost4 = 100000
+        ElseIf ComboBox62.Text = "COLMID" Then
+            equiprepaircost1 = 10000
+            equiprepaircost2 = 25000
+            equiprepaircost3 = 50000
+            equiprepaircost4 = 100000
+        ElseIf ComboBox62.Text = "COLBTM" Then
+            equiprepaircost1 = 10000
+            equiprepaircost2 = 25000
+            equiprepaircost3 = 50000
+            equiprepaircost4 = 100000
+        End If
+
+        Dim financialcd As Double
+
+        financialcd = (((gff1 * equiprepaircost1) + (gff2 * equiprepaircost2) + (gff3 * equiprepaircost3) + (gff4 * equiprepaircost4)) / gfftotal) * cf
+
+        'Financial equipment cost
+        Dim financialequipcost As Double
+        Dim eq As Double = Val(TextBox107.Text)
+
+        financialequipcost = financialcd * eq
+
+        'Financial production cost
+        Dim downtime1 As Double
+        Dim downtime2 As Double
+        Dim downtime3 As Double
+        Dim downtime4 As Double
+
+        If ComboBox62.Text = "COMPC" Then
+            downtime1 = ""
+            downtime2 = 3
+            downtime3 = 7
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "COMPR" Then
+            downtime1 = ""
+            downtime2 = 3
+            downtime3 = 7
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "HEXSS" Then
+            downtime1 = 2
+            downtime2 = 3
+            downtime3 = 3
+            downtime4 = 10
+        ElseIf ComboBox62.Text = "HEXTS" Then
+            downtime1 = 2
+            downtime2 = 3
+            downtime3 = 3
+            downtime4 = 10
+        ElseIf ComboBox62.Text = "HEXTUBE" Then
+            downtime1 = ""
+            downtime2 = ""
+            downtime3 = ""
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "PIPE-1" Then
+            downtime1 = 0
+            downtime2 = ""
+            downtime3 = ""
+            downtime4 = 1
+        ElseIf ComboBox62.Text = "PIPE-2" Then
+            downtime1 = 0
+            downtime2 = ""
+            downtime3 = ""
+            downtime4 = 1
+        ElseIf ComboBox62.Text = "PIPE-4" Then
+            downtime1 = 0
+            downtime2 = 1
+            downtime3 = ""
+            downtime4 = 2
+        ElseIf ComboBox62.Text = "PIPE-6" Then
+            downtime1 = 0
+            downtime2 = 1
+            downtime3 = 2
+            downtime4 = 3
+        ElseIf ComboBox62.Text = "PIPE-8" Then
+            downtime1 = 0
+            downtime2 = 2
+            downtime3 = 2
+            downtime4 = 3
+        ElseIf ComboBox62.Text = "PIPE-10" Then
+            downtime1 = 0
+            downtime2 = 2
+            downtime3 = 2
+            downtime4 = 4
+        ElseIf ComboBox62.Text = "PIPE-12" Then
+            downtime1 = 1
+            downtime2 = 3
+            downtime3 = 4
+            downtime4 = 4
+        ElseIf ComboBox62.Text = "PIPE-16" Then
+            downtime1 = 1
+            downtime2 = 3
+            downtime3 = 4
+            downtime4 = 5
+        ElseIf ComboBox62.Text = "PIPEGT16" Then
+            downtime1 = 1
+            downtime2 = 4
+            downtime3 = 5
+            downtime4 = 7
+        ElseIf ComboBox62.Text = "PUMP2S" Then
+            downtime1 = 0
+            downtime2 = 0
+            downtime3 = 0
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "PUMP1S" Then
+            downtime1 = 0
+            downtime2 = 0
+            downtime3 = 0
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "PUMPR" Then
+            downtime1 = 0
+            downtime2 = 0
+            downtime3 = 0
+            downtime4 = ""
+        ElseIf ComboBox62.Text = "TANKBOTTOM" Then
+            downtime1 = 5
+            downtime2 = ""
+            downtime3 = ""
+            downtime4 = 50
+        ElseIf ComboBox62.Text = "COURSES-1-10" Then
+            downtime1 = 2
+            downtime2 = 3
+            downtime3 = 3
+            downtime4 = 14
+        ElseIf ComboBox62.Text = "KODRUM" Then
+            downtime1 = 2
+            downtime2 = 3
+            downtime3 = 3
+            downtime4 = 10
+        ElseIf ComboBox62.Text = "DRUM" Then
+            downtime1 = 2
+            downtime2 = 3
+            downtime3 = 3
+            downtime4 = 10
+        ElseIf ComboBox62.Text = "FINFAN" Then
+            downtime1 = 0
+            downtime2 = 0
+            downtime3 = 2
+            downtime4 = 3
+        ElseIf ComboBox62.Text = "FILTER" Then
+            downtime1 = 0
+            downtime2 = 1
+            downtime3 = 2
+            downtime4 = 3
+        ElseIf ComboBox62.Text = "REACTOR" Then
+            downtime1 = 4
+            downtime2 = 6
+            downtime3 = 6
+            downtime4 = 21
+        ElseIf ComboBox62.Text = "COLTOP" Then
+            downtime1 = 3
+            downtime2 = 4
+            downtime3 = 5
+            downtime4 = 21
+        ElseIf ComboBox62.Text = "COLMID" Then
+            downtime1 = 3
+            downtime2 = 4
+            downtime3 = 5
+            downtime4 = 21
+        ElseIf ComboBox62.Text = "COLBTM" Then
+            downtime1 = 3
+            downtime2 = 4
+            downtime3 = 5
+            downtime4 = 21
+        End If
+
+        Dim omul As Double
+        Dim oaffa As Double
+        Dim ocmd As Double
+        Dim prodcost As Double = Val(TextBox108.Text)
+
+        omul = downtime1
+
+        ocmd = (((gff1 * downtime1) + (gff2 * downtime2) + (gff3 * downtime3) + (gff4 * downtime4)) / gfftotal) * omul
+
+        oaffa = 10 ^ (1.242 + (0.585 * Math.Log10(financialequipcost * (10 ^ (-6)))))
+
+        TextBox101.Text = (ocmd + oaffa) * prodcost
+
+        'Financial Injury cost
+        Dim pop As Double = Val(TextBox110.Text)
+        Dim injcost As Double = Val(TextBox109.Text)
+
+        Dim financialinjury As Double
+
+        financialinjury = pop * injcost * finalpi
+
+        'Financial Enviromental cost
+
+        Dim c12si As Double = 1.8
+        Dim c12us As Double = 1
+        Dim c13si As Double = 6.29
+        Dim c13us As Double = 0.178
+        Dim c41si As Double = 32
+        Dim c41us As Double = 0
+        Dim spill1 As Double
+        Dim spill2 As Double
+        Dim spill3 As Double
+        Dim spill4 As Double
+        Dim fracevap As Double
+        Dim envcost As Double = Val(TextBox106.Text)
+
+        If Units.ComboBox1.Text = "SI" Then
+            fracevap = (-7.1408 + (8.5827 * (10 ^ (-3)) * c12si * (nbp + c41si)) - (3.5594 * (10 ^ (-6)) * ((c12si * (nbp + c41si)) ^ 2)) + (2331.1 / (c12si * (nbp + c41si))) - (203545 / ((c12si * (nbp + c41si)) ^ 2)))
+
+            spill1 = (c13si * rm1 * (1 - fracevap)) / density
+            spill2 = (c13si * rm2 * (1 - fracevap)) / density
+            spill3 = (c13si * rm3 * (1 - fracevap)) / density
+            spill4 = (c13si * rm4 * (1 - fracevap)) / density
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            fracevap = (-7.1408 + (8.5827 * (10 ^ (-3)) * c12us * (nbp + c41us)) - (3.5594 * (10 ^ (-6)) * ((c12us * (nbp + c41us)) ^ 2)) + (2331.1 / (c12us * (nbp + c41us))) - (203545 / ((c12us * (nbp + c41us)) ^ 2)))
+
+            spill1 = (c13us * rm1 * (1 - fracevap)) / density
+            spill2 = (c13us * rm2 * (1 - fracevap)) / density
+            spill3 = (c13us * rm3 * (1 - fracevap)) / density
+            spill4 = (c13us * rm4 * (1 - fracevap)) / density
+        End If
+
+        Dim financialenv As Double
+
+        financialenv = (((gff1 * spill1) + (gff2 * spill2) + (gff3 * spill3) + (gff4 * spill4)) / gfftotal) * envcost
     End Sub
 End Class

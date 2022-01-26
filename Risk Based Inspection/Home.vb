@@ -907,24 +907,24 @@ Public Class Home
         'Call thinningdf()
         'Call liningdf()
         'Call scccausticdf()
-        ' Call sccaminedf()
+        'Call sccaminedf()
         'Call sccsulfidedf()
-        ' Call scchicsohich2s()
-        ' Call sccalkalinecarbonatedf()
-        ' Call sccpolythionicaciddf()
-        ' Call sccclsccdf()
-        ' Call scchydrogenschfdf()
-        ' Call scchicsohichfdf()
-        ' Call externalcorrosionferriticdf()
-        ' Call cuiferriticdf()
-        ' Call externalsccausteniticdf()
-        ' Call externalscccuiausteniticdf()
-        ' Call brittledf()
-        ' Call lowalloydf()
-        '  Call delapandelapanlimafembrittlementdf()
+        'Call scchicsohich2s()
+        'Call sccalkalinecarbonatedf()
+        'Call sccpolythionicaciddf()
+        'Call sccclsccdf()
+        'Call scchydrogenschfdf()
+        'Call scchicsohichfdf()
+        'Call externalcorrosionferriticdf()
+        'Call cuiferriticdf()
+        'Call externalsccausteniticdf()
+        'Call externalscccuiausteniticdf()
+        'Call brittledf()
+        'Call lowalloydf()
+        'Call delapandelapanlimafembrittlementdf()
         'Call sigmaphasedf()
-        ' Call hthadf()
-        ' Call mechanicalfatiguedf()
+        'Call hthadf()
+        'Call mechanicalfatiguedf()
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
@@ -4234,11 +4234,17 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Panel92.Visible = False
             Panel104.Visible = True
             Panel103.Visible = False
+            Panel111.Visible = False
+            Panel114.Visible = True
+            Panel115.Visible = False
         ElseIf Label391.Text = "Atmospheric Storage Tank - Shell Courses" Then
             Panel89.Visible = True
             Panel92.Visible = False
             Panel103.Visible = True
             Panel104.Visible = False
+            Panel111.Visible = True
+            Panel114.Visible = False
+            Panel115.Visible = True
         ElseIf Label391.Text = "Pipes and Tubes" Then
             Panel89.Visible = True
             Panel92.Visible = True
@@ -26006,7 +26012,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
     End Sub
 
     '======================================================================================================================
-    '                                          BUTTON COF LEVEL 1
+    '                                          BUTTON COF LEVEL 1 & AST
 
     Private Sub ComboBox75_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox75.SelectedIndexChanged
         If ComboBox75.Text = "Toxic" Then
@@ -26015,6 +26021,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label39.Visible = True
             ComboBox184.Visible = False
             TextBox105.Visible = True
+            LinkLabel11.Visible = True
             ComboBox184.Text = ""
         ElseIf ComboBox75.Text = "Flammable" Then
             Panel83.Visible = True
@@ -26022,6 +26029,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label39.Visible = False
             ComboBox184.Visible = True
             TextBox105.Visible = False
+            LinkLabel11.Visible = False
             TextBox105.Text = ""
         ElseIf ComboBox75.Text = "Non Flammable. Non Toxic" Then
             Panel83.Visible = False
@@ -26029,9 +26037,47 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label39.Visible = False
             ComboBox184.Visible = False
             TextBox105.Visible = False
+            LinkLabel11.Visible = False
             TextBox105.Text = ""
             ComboBox184.Text = ""
         End If
+    End Sub
+
+    Private Sub ComboBox194_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox194.SelectedIndexChanged
+        If ComboBox194.Text = "Toxic" Then
+            Panel110.Visible = True
+            Label469.Visible = False
+            Label470.Visible = True
+            ComboBox186.Visible = False
+            TextBox127.Visible = True
+            LinkLabel10.Visible = True
+            ComboBox186.Text = ""
+        ElseIf ComboBox194.Text = "Flammable" Then
+            Panel110.Visible = True
+            Label469.Visible = True
+            Label470.Visible = False
+            ComboBox186.Visible = True
+            TextBox127.Visible = False
+            LinkLabel10.Visible = False
+            TextBox127.Text = ""
+        Else
+            Panel110.Visible = False
+            Label469.Visible = False
+            Label470.Visible = False
+            ComboBox184.Visible = False
+            TextBox127.Visible = False
+            LinkLabel10.Visible = False
+            TextBox127.Text = ""
+            ComboBox186.Text = ""
+        End If
+    End Sub
+
+    Private Sub LinkLabel10_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
+        TextBox127.Text = 1.0
+    End Sub
+
+    Private Sub LinkLabel11_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel11.LinkClicked
+        TextBox105.Text = 1.0
     End Sub
 
     '======================================================================================================================
@@ -26163,13 +26209,6 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             khprod = khwater * (density / rwus) * (uwus / dynamicv)
         End If
 
-        If khprod > 0 Then
-            Button4.Enabled = True
-            TextBox10.Enabled = True
-        ElseIf khprod < 0 Then
-            Button4.Enabled = False
-            TextBox10.Enabled = False
-        End If
 
         'release hole
         Dim d1 As Double
@@ -26932,7 +26971,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         'financial rupture
         Dim fcrup As Double
-        fcrup = (bblindikerup * indike) + (bblonsiterup * onsite) + (bbloffsite * offsite) + (bblwaterrup * water)
+        fcrup = (bblindikerup * indike) + (bblonsiterup * onsite) + (bbloffsiterup * offsite) + (bblwaterrup * water)
 
         'total environment
         Dim financialenv As Double
@@ -27043,4 +27082,1166 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         Label438.Text = finalfinancial
         Label439.Text = financialcategory
     End Sub
+
+    Public Sub cofastbottom()
+
+        Dim gff1 As Double = Val(small.Text)
+        Dim gff2 As Double = Val(medium.Text)
+        Dim gff3 As Double = Val(large.Text)
+        Dim gff4 As Double = Val(rupture.Text)
+        Dim gfftotal As Double = Val(totalfms.Text)
+        Dim density As Double = Val(TextBox20.Text)
+        Dim nbp As Double = Val(TextBox21.Text)
+        Dim mw As Double = Val(TextBox22.Text)
+        Dim ait As Double = Val(TextBox23.Text)
+        Dim lfv As Double = Val(TextBox24.Text)
+        Dim viscosity As Double = Val(TextBox25.Text)
+        Dim dynamicv As Double = Val(TextBox28.Text)
+        Dim atm As Double = 101.325
+        Dim operatingpressure As Double = Val(TextBox4.Text)
+        Dim astD As Double = Val(TextBox9.Text)
+        Dim maxfilltank As Double = Val(TextBox116.Text)
+        Dim numshell As Double = Val(NumericUpDown16.Value)
+        Dim height As Double = Val(TextBox117.Text)
+        Dim operatingtemp As Double
+
+        Dim hclb As Double
+        Dim hcub As Double
+        Dim soilporosity As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            operatingtemp = Val(TextBox5.Text) + 273.15
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            operatingtemp = Val(TextBox5.Text) + 459.67
+        End If
+
+        If Units.ComboBox1.Text = "SI" Then
+            If ComboBox74.Text = "Coarse Sand" Then
+                hclb = "1E-01"
+                hcub = "1E-02"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Fine Sand" Then
+                hclb = "1E-02"
+                hcub = "1E-03"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Very Fine Sand" Then
+                hclb = "1E-03"
+                hcub = "1E-05"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Silt" Then
+                hclb = "1E-05"
+                hcub = "1E-06"
+                soilporosity = "0.41"
+            ElseIf ComboBox74.Text = "Sandy Clay" Then
+                hclb = "1E-06"
+                hcub = "1E-07"
+                soilporosity = "0.45"
+            ElseIf ComboBox74.Text = "Clay" Then
+                hclb = "1E-07"
+                hcub = "1E-08"
+                soilporosity = "0.50"
+            ElseIf ComboBox74.Text = "Concrete-Asphalt" Then
+                hclb = "1E-10"
+                hcub = "1E-11"
+                soilporosity = "0.3"
+            ElseIf ComboBox74.Text = "Gravel" Then
+                hclb = "1E00"
+                hcub = "1E01"
+                soilporosity = "0.40"
+            End If
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            If ComboBox74.Text = "Coarse Sand" Then
+                hclb = "3.94E-02"
+                hcub = "3.94E-03"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Fine Sand" Then
+                hclb = "3.94E-03"
+                hcub = "3.94E-04"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Very Fine Sand" Then
+                hclb = "3.94E-04"
+                hcub = "3.94E-06"
+                soilporosity = "0.33"
+            ElseIf ComboBox74.Text = "Silt" Then
+                hclb = "3.94E-06"
+                hcub = "3.94E-07"
+                soilporosity = "0.41"
+            ElseIf ComboBox74.Text = "Sandy Clay" Then
+                hclb = "3.94E-07"
+                hcub = "3.94E-08"
+                soilporosity = "0.45"
+            ElseIf ComboBox74.Text = "Clay" Then
+                hclb = "3.94E-08"
+                hcub = "3.94E-09"
+                soilporosity = "0.50"
+            ElseIf ComboBox74.Text = "Concrete-Asphalt" Then
+                hclb = "3.94E-11"
+                hcub = "3.94E-12"
+                soilporosity = "0.3"
+            ElseIf ComboBox74.Text = "Gravel" Then
+                hclb = "3.94E-01"
+                hcub = "3.94"
+                soilporosity = "0.40"
+            End If
+        End If
+
+        Dim khwater As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            khwater = 864 * ((hclb + hcub) / 2)
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            khwater = 7200 * ((hclb + hcub) / 2)
+        End If
+
+        Dim khprod As Double
+
+        Dim rwsi As Double = 997
+        Dim uwsi As Double = 0.00089
+        Dim rwus As Double = 62.24047
+        Dim uwus As Double = 0.000018588
+
+        If Units.ComboBox1.Text = "SI" Then
+            khprod = khwater * (density / rwsi) * (uwsi / dynamicv)
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            khprod = khwater * (density / rwus) * (uwus / dynamicv)
+        End If
+
+        Dim velprod As Double
+
+        velprod = khprod / soilporosity
+
+        'release hole
+        Dim d1 As Double
+        Dim d2 As Double
+        Dim d3 As Double
+        Dim d4 As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            'preventive barier
+            If ComboBox175.Text = "Yes" Then
+                d1 = 3.175
+            ElseIf ComboBox175.Text = "No" Then
+                d1 = 12.7
+            End If
+            d2 = 0
+            d3 = 0
+            d4 = 1000 * (astD / 4)
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            'preventive barier
+            If ComboBox175.Text = "Yes" Then
+                d1 = 0.125
+            ElseIf ComboBox175.Text = "No" Then
+                d1 = 0.5
+            End If
+            d2 = 0.25
+            d3 = 2
+            d4 = 12 * (astD / 4)
+        End If
+
+        Dim Nrh As Double
+        Dim number As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            number = (astD / 30.5) ^ 2
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            number = (astD / 100) ^ 2
+        End If
+
+        Nrh = Math.Max((Math.Round(number)), 1)
+
+        Dim a1 As Double
+        Dim a2 As Double
+        Dim a3 As Double
+        Dim a4 As Double
+
+        a1 = Nrh
+        a2 = 0
+        a3 = 0
+        a4 = 0
+
+        Dim heightliquid As Double
+
+        heightliquid = (maxfilltank - ((numshell - 1) * height))
+
+        'release rate
+        Dim wn1 As Double
+        Dim wn2 As Double
+        Dim wn3 As Double
+        Dim wn4 As Double
+
+        Dim i1 As Double
+        Dim i2 As Double
+        Dim i3 As Double
+        Dim i4 As Double
+        Dim j1 As Double
+        Dim j2 As Double
+        Dim j3 As Double
+        Dim j4 As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            i1 = 86.4 * (d1 ^ 2)
+            i2 = 86.4 * (d2 ^ 2)
+            i3 = 86.4 * (d3 ^ 2)
+            i4 = 86.4 * (d4 ^ 2)
+
+            If ComboBox175.Text = "Yes" Then
+                j1 = 0.00000001408 * (((d1 ^ 1.8) / (0.21 * (0.0762 ^ 0.4))) ^ (1 / 0.74))
+                j2 = 0.00000001408 * (((d2 ^ 1.8) / (0.21 * (0.0762 ^ 0.4))) ^ (1 / 0.74))
+                j3 = 0.00000001408 * (((d3 ^ 1.8) / (0.21 * (0.0762 ^ 0.4))) ^ (1 / 0.74))
+                j4 = 0.00000001408 * (((d4 ^ 1.8) / (0.21 * (0.0762 ^ 0.4))) ^ (1 / 0.74))
+
+                If khprod > i1 Then
+                    wn1 = 16.03 * Math.PI * (d1 ^ 2) * ((2 * 9.81 * 0.25 * a1) ^ 0.5)
+                ElseIf khprod > i2 Then
+                    wn2 = 16.03 * Math.PI * (d2 ^ 2) * ((2 * 9.81 * 0.25 * a2) ^ 0.5)
+                ElseIf khprod > i3 Then
+                    wn3 = 16.03 * Math.PI * (d3 ^ 2) * ((2 * 9.81 * 0.25 * a3) ^ 0.5)
+                ElseIf khprod > i4 Then
+                    wn4 = 16.03 * Math.PI * (d4 ^ 2) * ((2 * 9.81 * 0.25 * a4) ^ 0.5)
+
+                ElseIf khprod <= j1 Then
+                    wn1 = 8.0592 * 0.21 * (d1 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a1
+                ElseIf khprod <= j2 Then
+                    wn2 = 8.0592 * 0.21 * (d2 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a2
+                ElseIf khprod <= j3 Then
+                    wn3 = 8.0592 * 0.21 * (d3 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a3
+                ElseIf khprod <= j4 Then
+                    wn4 = 8.0592 * 0.21 * (d4 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a4
+
+                Else
+                    wn1 = 1.1341 * (10 ^ ((2 * Math.Log10(d1)) + (0.5 * Math.Log10(0.0762)) - (0.74 * (((3.9365 + 2 * Math.Log10(d1) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(0.0762)))) ^ (5.9352 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(0.0762)))))))
+                    wn2 = 1.1341 * (10 ^ ((2 * Math.Log10(d2)) + (0.5 * Math.Log10(0.0762)) - (0.74 * (((3.9365 + 2 * Math.Log10(d2) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(0.0762)))) ^ (5.9352 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(0.0762)))))))
+                    wn3 = 1.1341 * (10 ^ ((2 * Math.Log10(d3)) + (0.5 * Math.Log10(0.0762)) - (0.74 * (((3.9365 + 2 * Math.Log10(d3) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(0.0762)))) ^ (5.9352 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(0.0762)))))))
+                    wn4 = 1.1341 * (10 ^ ((2 * Math.Log10(d4)) + (0.5 * Math.Log10(0.0762)) - (0.74 * (((3.9365 + 2 * Math.Log10(d4) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(0.0762)))) ^ (5.9352 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(0.0762)))))))
+
+                End If
+
+            ElseIf ComboBox175.Text = "No" Then
+                j1 = 0.00000001408 * (((d1 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j2 = 0.00000001408 * (((d2 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j3 = 0.00000001408 * (((d3 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j4 = 0.00000001408 * (((d4 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+
+                If khprod > i1 Then
+                    wn1 = 0.0815 * Math.PI * (d1 ^ 2) * ((2 * 9.81 * maxfilltank * a1) ^ 0.5)
+                ElseIf khprod > i2 Then
+                    wn2 = 0.0815 * Math.PI * (d2 ^ 2) * ((2 * 9.81 * maxfilltank * a2) ^ 0.5)
+                ElseIf khprod > i3 Then
+                    wn3 = 0.0815 * Math.PI * (d3 ^ 2) * ((2 * 9.81 * maxfilltank * a3) ^ 0.5)
+                ElseIf khprod > i4 Then
+                    wn4 = 0.0815 * Math.PI * (d4 ^ 2) * ((2 * 9.81 * maxfilltank * a4) ^ 0.5)
+
+                ElseIf khprod <= j1 Then
+                    wn1 = 26.6195 * 0.21 * (d1 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a1
+                ElseIf khprod <= j2 Then
+                    wn2 = 26.6195 * 0.21 * (d2 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a2
+                ElseIf khprod <= j3 Then
+                    wn3 = 26.6195 * 0.21 * (d3 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a3
+                ElseIf khprod <= j4 Then
+                    wn4 = 26.6195 * 0.21 * (d4 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a4
+
+                Else
+                    wn1 = 1.1341 * (10 ^ ((2 * Math.Log10(d1)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((3.9365 + 2 * Math.Log10(d1) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.9352 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn2 = 1.1341 * (10 ^ ((2 * Math.Log10(d2)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((3.9365 + 2 * Math.Log10(d2) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.9352 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn3 = 1.1341 * (10 ^ ((2 * Math.Log10(d3)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((3.9365 + 2 * Math.Log10(d3) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.9352 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn4 = 1.1341 * (10 ^ ((2 * Math.Log10(d4)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((3.9365 + 2 * Math.Log10(d4) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.9352 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                End If
+            End If
+
+
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            i1 = 182900.0 * (d1 ^ 2)
+            i2 = 182900.0 * (d2 ^ 2)
+            i3 = 182900.0 * (d3 ^ 2)
+            i4 = 182900.0 * (d4 ^ 2)
+
+            If ComboBox175.Text = "Yes" Then
+                j1 = 0.00006995 * (((d1 ^ 1.8) / (0.21 * (0.25 ^ 0.4))) ^ (1 / 0.74))
+                j2 = 0.00006995 * (((d2 ^ 1.8) / (0.21 * (0.25 ^ 0.4))) ^ (1 / 0.74))
+                j3 = 0.00006995 * (((d3 ^ 1.8) / (0.21 * (0.25 ^ 0.4))) ^ (1 / 0.74))
+                j4 = 0.00006995 * (((d4 ^ 1.8) / (0.21 * (0.25 ^ 0.4))) ^ (1 / 0.74))
+
+                If khprod > i1 Then
+                    wn1 = 16.03 * Math.PI * (d1 ^ 2) * ((2 * 9.81 * 0.25 * a1) ^ 0.5)
+                ElseIf khprod > i2 Then
+                    wn2 = 16.03 * Math.PI * (d2 ^ 2) * ((2 * 9.81 * 0.25 * a2) ^ 0.5)
+                ElseIf khprod > i3 Then
+                    wn3 = 16.03 * Math.PI * (d3 ^ 2) * ((2 * 9.81 * 0.25 * a3) ^ 0.5)
+                ElseIf khprod > i4 Then
+                    wn4 = 16.03 * Math.PI * (d4 ^ 2) * ((2 * 9.81 * 0.25 * a4) ^ 0.5)
+
+                ElseIf khprod <= j1 Then
+                    wn1 = 8.0592 * 0.21 * (d1 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a1
+                ElseIf khprod <= j2 Then
+                    wn2 = 8.0592 * 0.21 * (d2 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a2
+                ElseIf khprod <= j3 Then
+                    wn3 = 8.0592 * 0.21 * (d3 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a3
+                ElseIf khprod <= j4 Then
+                    wn4 = 8.0592 * 0.21 * (d4 ^ 0.2) * (0.25 ^ 0.9) * (khprod ^ 0.74) * a4
+
+                Else
+                    wn1 = 1.1341 * (10 ^ ((2 * Math.Log10(d1)) + (0.5 * Math.Log10(0.25)) - (0.74 * (((3.9365 + 2 * Math.Log10(d1) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(0.25)))) ^ (5.9352 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(0.25)))))))
+                    wn2 = 1.1341 * (10 ^ ((2 * Math.Log10(d2)) + (0.5 * Math.Log10(0.25)) - (0.74 * (((3.9365 + 2 * Math.Log10(d2) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(0.25)))) ^ (5.9352 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(0.25)))))))
+                    wn3 = 1.1341 * (10 ^ ((2 * Math.Log10(d3)) + (0.5 * Math.Log10(0.25)) - (0.74 * (((3.9365 + 2 * Math.Log10(d3) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(0.25)))) ^ (5.9352 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(0.25)))))))
+                    wn4 = 1.1341 * (10 ^ ((2 * Math.Log10(d4)) + (0.5 * Math.Log10(0.25)) - (0.74 * (((3.9365 + 2 * Math.Log10(d4) - Math.Log10(khprod)) / (5.9352 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(0.25)))) ^ (5.9352 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(0.25)))))))
+                End If
+
+            ElseIf ComboBox175.Text = "No" Then
+                j1 = 0.00006995 * (((d1 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j2 = 0.00006995 * (((d2 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j3 = 0.00006995 * (((d3 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+                j4 = 0.00006995 * (((d4 ^ 1.8) / (0.21 * (maxfilltank ^ 0.4))) ^ (1 / 0.74))
+
+                If khprod > i1 Then
+                    wn1 = 16.03 * Math.PI * (d1 ^ 2) * ((2 * 9.81 * maxfilltank * a1) ^ 0.5)
+                ElseIf khprod > i2 Then
+                    wn2 = 16.03 * Math.PI * (d2 ^ 2) * ((2 * 9.81 * maxfilltank * a2) ^ 0.5)
+                ElseIf khprod > i3 Then
+                    wn3 = 16.03 * Math.PI * (d3 ^ 2) * ((2 * 9.81 * maxfilltank * a3) ^ 0.5)
+                ElseIf khprod > i4 Then
+                    wn4 = 16.03 * Math.PI * (d4 ^ 2) * ((2 * 9.81 * maxfilltank * a4) ^ 0.5)
+
+                ElseIf khprod <= j1 Then
+                    wn1 = 8.0592 * 0.21 * (d1 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a1
+                ElseIf khprod <= j2 Then
+                    wn2 = 8.0592 * 0.21 * (d2 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a2
+                ElseIf khprod <= j3 Then
+                    wn3 = 8.0592 * 0.21 * (d3 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a3
+                ElseIf khprod <= j4 Then
+                    wn4 = 8.0592 * 0.21 * (d4 ^ 0.2) * (maxfilltank ^ 0.9) * (khprod ^ 0.74) * a4
+
+                Else
+                    wn1 = 403.95 * (10 ^ ((2 * Math.Log10(d1)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((7.2622 + 2 * Math.Log10(d1) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.0489 - (0.4324 * Math.Log10(d1)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn2 = 403.95 * (10 ^ ((2 * Math.Log10(d2)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((7.2622 + 2 * Math.Log10(d2) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.0489 - (0.4324 * Math.Log10(d2)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn3 = 403.95 * (10 ^ ((2 * Math.Log10(d3)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((7.2622 + 2 * Math.Log10(d3) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.0489 - (0.4324 * Math.Log10(d3)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                    wn4 = 403.95 * (10 ^ ((2 * Math.Log10(d4)) + (0.5 * Math.Log10(maxfilltank)) - (0.74 * (((7.2622 + 2 * Math.Log10(d4) - Math.Log10(khprod)) / (5.0489 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(maxfilltank)))) ^ (5.0489 - (0.4324 * Math.Log10(d4)) + (0.5405 * Math.Log10(maxfilltank)))))))
+                End If
+            End If
+
+        End If
+
+        'volume
+        Dim vol As Double
+        Dim lvol As Double
+
+        vol = (Math.PI * (astD ^ 2)) / 4
+        lvol = vol * heightliquid
+
+        Dim volbarel As Double
+
+        If Units.ComboBox1.Text = "SI" Then
+            volbarel = lvol * 6.29
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            volbarel = lvol * 0.178
+        End If
+
+        Dim astmass As Double
+
+        astmass = density * lvol
+
+        'leat time duration
+        Dim leaktime As Double
+
+        If ComboBox74.Text = "Concrete-Asphalt" Then
+            leaktime = 7
+        Else
+            If ComboBox175.Text = "Yes" Then
+                leaktime = 30
+            ElseIf ComboBox175.Text = "No" Then
+                leaktime = 360
+            End If
+        End If
+
+        'leak duration
+        Dim ld1 As Double
+        Dim ld2 As Double
+        Dim ld3 As Double
+        Dim ld4 As Double
+
+        ld1 = Math.Min((volbarel / wn1), leaktime)
+        ld2 = Math.Min((volbarel / wn2), leaktime)
+        ld3 = Math.Min((volbarel / wn3), leaktime)
+        ld4 = Math.Min((volbarel / wn4), leaktime)
+
+        'release volume from leakage
+        Dim bbleak1 As Double
+        Dim bbleak2 As Double
+        Dim bbleak3 As Double
+        Dim bbleak4 As Double
+
+        bbleak1 = Math.Min((wn1 * ld1), volbarel)
+        bbleak2 = Math.Min((wn2 * ld2), volbarel)
+        bbleak3 = Math.Min((wn3 * ld3), volbarel)
+        bbleak4 = Math.Min((wn4 * ld4), volbarel)
+
+        Dim massleak1 As Double = bbleak1
+        Dim massleak2 As Double = bbleak2
+        Dim massleak3 As Double = bbleak3
+        Dim massleak4 As Double = bbleak4
+
+        Dim bblrupture1 As Double = massleak1
+        Dim bblrupture2 As Double = massleak2
+        Dim bblrupture3 As Double = massleak3
+        Dim bblrupture4 As Double = massleak4
+
+        Dim massrupture1 As Double = bblrupture1
+        Dim massrupture2 As Double = bblrupture2
+        Dim massrupture3 As Double = bblrupture3
+        Dim massrupture4 As Double = bblrupture4
+
+        'reduction factor
+        Dim reductionfactor As Double
+
+        'detection system
+        Dim detection As String
+
+        If ComboBox185.Text = "Instrumentation designed specifically to detect material losses by changes in operating conditions (i.e., loss of pressure or flow) in the system" Then
+            detection = "A"
+        ElseIf ComboBox185.Text = "Suitably located detectors to determine when the material is present outside the pressure-containing envelope" Then
+            detection = "B"
+        ElseIf ComboBox185.Text = "Visual detection, cameras, or detectors with marginal coverage" Then
+            detection = "C"
+        End If
+
+        'isolation system
+        Dim isolation As String
+
+        If ComboBox193.Text = "Isolation or shutdown systems activated directly from process instrumentation or detectors, with no operator intervention" Then
+            isolation = "A"
+        ElseIf ComboBox193.Text = "Isolation or shutdown systems activated by operators in the control room or other suitable locations remote from the leak" Then
+            isolation = "B"
+        ElseIf ComboBox193.Text = "Isolation dependent on manually-operated valves" Then
+            isolation = "C"
+        End If
+
+        If detection = "A" And isolation = "A" Then
+            reductionfactor = 0.25
+        ElseIf detection = "A" And isolation = "B" Then
+            reductionfactor = 0.2
+        ElseIf detection = "A" And isolation = "C" Then
+            reductionfactor = 0.1
+        ElseIf detection = "B" And isolation = "A" Then
+            reductionfactor = 0.15
+        ElseIf detection = "B" And isolation = "B" Then
+            reductionfactor = 0.15
+        ElseIf detection = "B" And isolation = "C" Then
+            reductionfactor = 0.1
+        ElseIf detection = "C" And isolation = "A" Then
+            reductionfactor = 0
+        ElseIf detection = "C" And isolation = "B" Then
+            reductionfactor = 0
+        ElseIf detection = "C" And isolation = "C" Then
+            reductionfactor = 0
+        End If
+
+        Dim finalcdflam As Double
+        Dim finalpiflam As Double
+        Dim finalcdtoxic As Double
+        Dim finalpitoxic As Double
+        Dim finalcdnon As Double
+        Dim finalpinon As Double
+
+        If ComboBox175.Text = "Flammable" Then
+            Dim mitigation As Double
+
+            If ComboBox194.Text = "Inventory blowdown, coupled with isolation system classification B or higher" Then
+                mitigation = 0.25
+            ElseIf ComboBox194.Text = "Fire water deluge system and monitors" Then
+                mitigation = 0.2
+            ElseIf ComboBox194.Text = "Fire water monitors only" Then
+                mitigation = 0.05
+            ElseIf ComboBox194.Text = "Foam spray system" Then
+                mitigation = 0.15
+            End If
+
+            Dim eefc1 As Double
+            Dim eefc2 As Double
+            Dim eefc3 As Double
+            Dim eefc4 As Double
+            Dim C4si As Double = 2205
+            Dim C4us As Double = 1
+
+            If Units.ComboBox1.Text = "SI" Then
+                eefc1 = (4 * Math.Log10(C4si * massrupture1)) - 15
+                eefc2 = (4 * Math.Log10(C4si * massrupture2)) - 15
+                eefc3 = (4 * Math.Log10(C4si * massrupture3)) - 15
+                eefc4 = (4 * Math.Log10(C4si * massrupture4)) - 15
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                eefc1 = (4 * Math.Log10(C4us * massrupture1)) - 15
+                eefc2 = (4 * Math.Log10(C4us * massrupture2)) - 15
+                eefc3 = (4 * Math.Log10(C4us * massrupture3)) - 15
+                eefc4 = (4 * Math.Log10(C4us * massrupture4)) - 15
+            End If
+
+            'component damage
+            Dim conainla As Double
+            Dim conainlb As Double
+            Dim conaila As Double
+            Dim conailb As Double
+            Dim instainla As Double
+            Dim instainlb As Double
+            Dim instaila As Double
+            Dim instailb As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                If ComboBox4.Text = "C6 – C8" Then
+                    conainla = 34.17
+                    conainlb = 0.89
+                    conaila = 103.4
+                    conailb = 0.95
+                    instainla = 0.749
+                    instainlb = 0.78
+                    instaila = 8.18
+                    instailb = 0.55
+                ElseIf ComboBox4.Text = "C9 – C12" Then
+                    conainla = 24.6
+                    conainlb = 0.9
+                    conaila = 110.3
+                    conailb = 0.95
+                    instainla = 0.559
+                    instainlb = 0.76
+                    instaila = 0.848
+                    instailb = 0.53
+                ElseIf ComboBox4.Text = "C13 – C16" Then
+                    conainla = 12.11
+                    conainlb = 0.9
+                    conaila = 196.7
+                    conailb = 0.92
+                    instainla = 0.086
+                    instainlb = 0.88
+                    instaila = 1.714
+                    instailb = 0.88
+                ElseIf ComboBox4.Text = "C17 – C25" Then
+                    conainla = 3.785
+                    conainlb = 0.9
+                    conaila = 165.5
+                    conailb = 0.92
+                    instainla = 0.021
+                    instainlb = 0.91
+                    instaila = 1.068
+                    instailb = 0.91
+                ElseIf ComboBox4.Text = "C25+" Then
+                    conainla = 2.098
+                    conainlb = 0.91
+                    conaila = 103.0
+                    conailb = 0.9
+                    instainla = 0.006
+                    instainlb = 0.99
+                    instaila = 0.284
+                    instailb = 0.99
+                End If
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                If ComboBox4.Text = "C6 – C8" Then
+                    conainla = 182.0
+                    conainlb = 0.89
+                    conaila = 525.0
+                    conailb = 0.95
+                    instainla = 4.35
+                    instainlb = 0.78
+                    instaila = 57.0
+                    instailb = 0.55
+                ElseIf ComboBox4.Text = "C9 – C12" Then
+                    conainla = 130.0
+                    conainlb = 0.9
+                    conaila = 560.0
+                    conailb = 0.95
+                    instainla = 3.3
+                    instainlb = 0.76
+                    instaila = 6.0
+                    instailb = 0.53
+                ElseIf ComboBox4.Text = "C13 – C16" Then
+                    conainla = 64.0
+                    conainlb = 0.9
+                    conaila = 1023
+                    conailb = 0.92
+                    instainla = 0.46
+                    instainlb = 0.88
+                    instaila = 9.2
+                    instailb = 0.88
+                ElseIf ComboBox4.Text = "C17 – C25" Then
+                    conainla = 20.0
+                    conainlb = 0.9
+                    conaila = 861.9
+                    conailb = 0.92
+                    instainla = 0.11
+                    instainlb = 0.91
+                    instaila = 5.6
+                    instailb = 0.91
+                ElseIf ComboBox4.Text = "C25+" Then
+                    conainla = 11.0
+                    conainlb = 0.91
+                    conaila = 544.0
+                    conailb = 0.9
+                    instainla = 0.03
+                    instainlb = 0.99
+                    instaila = 1.4
+                    instailb = 0.99
+                End If
+            End If
+
+            Dim cdconainl1 As Double
+            Dim cdconainl2 As Double
+            Dim cdconainl3 As Double
+            Dim cdconainl4 As Double
+
+            cdconainl1 = (conainla * (wn1 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl2 = (conainla * (wn2 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl3 = (conainla * (wn3 ^ conainlb)) * (1 - reductionfactor)
+            cdconainl4 = (conainla * (wn4 ^ conainlb)) * (1 - reductionfactor)
+
+            Dim cdconail1 As Double
+            Dim cdconail2 As Double
+            Dim cdconail3 As Double
+            Dim cdconail4 As Double
+
+            cdconail1 = (conaila * (wn1 ^ conailb)) * (1 - reductionfactor)
+            cdconail2 = (conaila * (wn2 ^ conailb)) * (1 - reductionfactor)
+            cdconail3 = (conaila * (wn3 ^ conailb)) * (1 - reductionfactor)
+            cdconail4 = (conaila * (wn4 ^ conailb)) * (1 - reductionfactor)
+
+            Dim cdinstainl1 As Double
+            Dim cdinstainl2 As Double
+            Dim cdinstainl3 As Double
+            Dim cdinstainl4 As Double
+
+            cdinstainl1 = (instainla * (massrupture1 ^ instainlb)) * ((1 - reductionfactor) / eefc1)
+            cdinstainl2 = (instainla * (massrupture2 ^ instainlb)) * ((1 - reductionfactor) / eefc2)
+            cdinstainl3 = (instainla * (massrupture3 ^ instainlb)) * ((1 - reductionfactor) / eefc3)
+            cdinstainl4 = (instainla * (massrupture4 ^ instainlb)) * ((1 - reductionfactor) / eefc4)
+
+            Dim cdinstail1 As Double
+            Dim cdinstail2 As Double
+            Dim cdinstail3 As Double
+            Dim cdinstail4 As Double
+
+            cdinstail1 = (instaila * (massrupture1 ^ instailb)) * ((1 - reductionfactor) / eefc1)
+            cdinstail2 = (instaila * (massrupture2 ^ instailb)) * ((1 - reductionfactor) / eefc2)
+            cdinstail3 = (instaila * (massrupture3 ^ instailb)) * ((1 - reductionfactor) / eefc3)
+            cdinstail4 = (instaila * (massrupture4 ^ instailb)) * ((1 - reductionfactor) / eefc4)
+
+
+            'personnel injury
+            Dim piconainla As Double
+            Dim piconainlb As Double
+            Dim piconaila As Double
+            Dim piconailb As Double
+            Dim piinstainla As Double
+            Dim piinstainlb As Double
+            Dim piinstaila As Double
+            Dim piinstailb As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                If ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 96.88
+                    piconainlb = 0.89
+                    piconaila = 252.8
+                    piconailb = 0.92
+                    piinstainla = 2.186
+                    piinstainlb = 0.78
+                    piinstaila = 31.89
+                    piinstailb = 0.54
+                ElseIf ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 70.03
+                    piconainlb = 0.89
+                    piconaila = 269.4
+                    piconailb = 0.92
+                    piinstainla = 1.609
+                    piinstainlb = 0.76
+                    piinstaila = 2.847
+                    piinstailb = 0.54
+                ElseIf ComboBox4.Text = "C13 – C16" Then
+                    piconainla = 34.36
+                    piconainlb = 0.89
+                    piconaila = 539.4
+                    piconailb = 0.9
+                    piinstainla = 0.242
+                    piinstainlb = 0.88
+                    piinstaila = 4.843
+                    piinstailb = 0.88
+                ElseIf ComboBox4.Text = "C17 – C25" Then
+                    piconainla = 10.7
+                    piconainlb = 0.89
+                    piconaila = 458.0
+                    piconailb = 0.9
+                    piinstainla = 0.061
+                    piinstainlb = 0.91
+                    piinstaila = 3.052
+                    piinstailb = 0.91
+                ElseIf ComboBox4.Text = "C25+" Then
+                    piconainla = 6.196
+                    piconainlb = 0.89
+                    piconaila = 303.6
+                    piconailb = 0.9
+                    piinstainla = 0.016
+                    piinstainlb = 0.99
+                    piinstaila = 0.833
+                    piinstailb = 0.99
+                End If
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                If ComboBox4.Text = "C6 – C8" Then
+                    piconainla = 516.0
+                    piconainlb = 0.89
+                    piconaila = 1315
+                    piconailb = 0.92
+                    piinstainla = 12.7
+                    piinstainlb = 0.78
+                    piinstaila = 224.0
+                    piinstailb = 0.54
+                ElseIf ComboBox4.Text = "C9 – C12" Then
+                    piconainla = 373.0
+                    piconainlb = 0.89
+                    piconaila = 1401
+                    piconailb = 0.92
+                    piinstainla = 9.5
+                    piinstainlb = 0.76
+                    piinstaila = 20.0
+                    piinstailb = 0.54
+                ElseIf ComboBox4.Text = "C13 – C16" Then
+                    piconainla = 183.0
+                    piconainlb = 0.89
+                    piconaila = 2850
+                    piconailb = 0.9
+                    piinstainla = 1.3
+                    piinstainlb = 0.88
+                    piinstaila = 26.0
+                    piinstailb = 0.88
+                ElseIf ComboBox4.Text = "C17 – C25" Then
+                    piconainla = 57.0
+                    piconainlb = 0.89
+                    piconaila = 2420
+                    piconailb = 0.9
+                    piinstainla = 0.32
+                    piinstainlb = 0.91
+                    piinstaila = 16.0
+                    piinstailb = 0.91
+                ElseIf ComboBox4.Text = "C25+" Then
+                    piconainla = 33.0
+                    piconainlb = 0.89
+                    piconaila = 1604
+                    piconailb = 0.9
+                    piinstainla = 0.081
+                    piinstainlb = 0.99
+                    piinstaila = 4.1
+                    piinstailb = 0.99
+                End If
+            End If
+
+            Dim piconainl1 As Double
+            Dim piconainl2 As Double
+            Dim piconainl3 As Double
+            Dim piconainl4 As Double
+
+            piconainl1 = (piconainla * (wn1 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl2 = (piconainla * (wn2 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl3 = (piconainla * (wn3 ^ piconainlb)) * (1 - reductionfactor)
+            piconainl4 = (piconainla * (wn4 ^ piconainlb)) * (1 - reductionfactor)
+
+            Dim piconail1 As Double
+            Dim piconail2 As Double
+            Dim piconail3 As Double
+            Dim piconail4 As Double
+
+            piconail1 = (piconaila * (wn1 ^ piconailb)) * (1 - reductionfactor)
+            piconail2 = (piconaila * (wn2 ^ piconailb)) * (1 - reductionfactor)
+            piconail3 = (piconaila * (wn3 ^ piconailb)) * (1 - reductionfactor)
+            piconail4 = (piconaila * (wn4 ^ piconailb)) * (1 - reductionfactor)
+
+            Dim piinstainl1 As Double
+            Dim piinstainl2 As Double
+            Dim piinstainl3 As Double
+            Dim piinstainl4 As Double
+
+            piinstainl1 = (piinstainla * (massrupture1 ^ piinstainlb)) * ((1 - reductionfactor) / eefc1)
+            piinstainl2 = (piinstainla * (massrupture2 ^ piinstainlb)) * ((1 - reductionfactor) / eefc2)
+            piinstainl3 = (piinstainla * (massrupture3 ^ piinstainlb)) * ((1 - reductionfactor) / eefc3)
+            piinstainl4 = (piinstainla * (massrupture4 ^ piinstainlb)) * ((1 - reductionfactor) / eefc4)
+
+            Dim piinstail1 As Double
+            Dim piinstail2 As Double
+            Dim piinstail3 As Double
+            Dim piinstail4 As Double
+
+            piinstail1 = (piinstaila * (massrupture1 ^ piinstailb)) * ((1 - reductionfactor) / eefc1)
+            piinstail2 = (piinstaila * (massrupture2 ^ piinstailb)) * ((1 - reductionfactor) / eefc2)
+            piinstail3 = (piinstaila * (massrupture3 ^ piinstailb)) * ((1 - reductionfactor) / eefc3)
+            piinstail4 = (piinstaila * (massrupture4 ^ piinstailb)) * ((1 - reductionfactor) / eefc4)
+
+            'blending factor
+            Dim C5si As Double = 25.2
+            Dim C5us As Double = 55.6
+            Dim blendfact1 As Double
+            Dim blendfact2 As Double
+            Dim blendfact3 As Double
+            Dim blendfact4 As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                blendfact1 = Math.Min((wn1 / C5si), 1.0)
+                blendfact2 = Math.Min((wn2 / C5si), 1.0)
+                blendfact3 = Math.Min((wn3 / C5si), 1.0)
+                blendfact4 = Math.Min((wn4 / C5si), 1.0)
+
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                blendfact1 = Math.Min((wn1 / C5us), 1.0)
+                blendfact2 = Math.Min((wn2 / C5us), 1.0)
+                blendfact3 = Math.Min((wn3 / C5us), 1.0)
+                blendfact4 = Math.Min((wn4 / C5us), 1.0)
+
+            End If
+
+            'AIT blend Factor
+            Dim aitfact As Double
+            Dim c6si As Double = 55.6
+            Dim c6us As Double = 100
+            Dim asi As Double
+            Dim bsi As Double
+            Dim aus As Double
+            Dim bus As Double
+            Dim csi As Double
+            Dim cus As Double
+
+            If Units.ComboBox1.Text = "SI" Then
+                asi = Val(TextBox38.Text) + c6si
+                bsi = Val(TextBox38.Text) - c6si
+                csi = (operatingtemp - ait + c6si) / (2 * c6si)
+
+                If asi <= ait Then
+                    aitfact = 0
+                ElseIf ait < asi And ait > bsi Then
+                    aitfact = csi
+                ElseIf bsi >= ait Then
+                    aitfact = 1
+                End If
+
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                aus = Val(TextBox38.Text) + c6us
+                bus = Val(TextBox38.Text) - c6us
+                cus = (operatingtemp - ait + c6us) / (2 * c6us)
+
+                If aus <= ait Then
+                    aitfact = 0
+                ElseIf ait < aus And ait > bus Then
+                    aitfact = cus
+                ElseIf bus >= ait Then
+                    aitfact = 1
+                End If
+            End If
+
+            'blended CA
+            Dim cdblendainl1 As Double
+            Dim cdblendainl2 As Double
+            Dim cdblendainl3 As Double
+            Dim cdblendainl4 As Double
+
+            Dim cdblendail1 As Double
+            Dim cdblendail2 As Double
+            Dim cdblendail3 As Double
+            Dim cdblendail4 As Double
+
+            cdblendainl1 = (cdinstainl1 * blendfact1) + (cdconainl1 * (1 - blendfact1))
+            cdblendainl2 = (cdinstainl2 * blendfact2) + (cdconainl2 * (1 - blendfact2))
+            cdblendainl3 = (cdinstainl3 * blendfact3) + (cdconainl3 * (1 - blendfact3))
+            cdblendainl4 = (cdinstainl4 * blendfact4) + (cdconainl4 * (1 - blendfact4))
+
+            cdblendail1 = (cdinstail1 * blendfact1) + (cdconail1 * (1 - blendfact1))
+            cdblendail2 = (cdinstail2 * blendfact2) + (cdconail2 * (1 - blendfact2))
+            cdblendail3 = (cdinstail3 * blendfact3) + (cdconail3 * (1 - blendfact3))
+            cdblendail4 = (cdinstail4 * blendfact4) + (cdconail4 * (1 - blendfact4))
+
+
+            Dim piblendainl1 As Double
+            Dim piblendainl2 As Double
+            Dim piblendainl3 As Double
+            Dim piblendainl4 As Double
+
+            Dim piblendail1 As Double
+            Dim piblendail2 As Double
+            Dim piblendail3 As Double
+            Dim piblendail4 As Double
+
+            piblendainl1 = (piinstainl1 * blendfact1) + (piconainl1 * (1 - blendfact1))
+            piblendainl2 = (piinstainl2 * blendfact2) + (piconainl2 * (1 - blendfact2))
+            piblendainl3 = (piinstainl3 * blendfact3) + (piconainl3 * (1 - blendfact3))
+            piblendainl4 = (piinstainl4 * blendfact4) + (piconainl4 * (1 - blendfact4))
+
+            piblendail1 = (piinstail1 * blendfact1) + (piconail1 * (1 - blendfact1))
+            piblendail2 = (piinstail2 * blendfact2) + (piconail2 * (1 - blendfact2))
+            piblendail3 = (piinstail3 * blendfact3) + (piconail3 * (1 - blendfact3))
+            piblendail4 = (piinstail4 * blendfact4) + (piconail4 * (1 - blendfact4))
+
+            'ait blended CA
+            Dim cdaitblend1 As Double
+            Dim cdaitblend2 As Double
+            Dim cdaitblend3 As Double
+            Dim cdaitblend4 As Double
+
+            Dim piaitblend1 As Double
+            Dim piaitblend2 As Double
+            Dim piaitblend3 As Double
+            Dim piaitblend4 As Double
+
+            cdaitblend1 = (cdblendail1 * aitfact) + (cdblendainl1 * (1 - aitfact))
+            cdaitblend2 = (cdblendail2 * aitfact) + (cdblendainl2 * (1 - aitfact))
+            cdaitblend3 = (cdblendail3 * aitfact) + (cdblendainl3 * (1 - aitfact))
+            cdaitblend4 = (cdblendail4 * aitfact) + (cdblendainl4 * (1 - aitfact))
+
+            piaitblend1 = (piblendail1 * aitfact) + (piblendainl1 * (1 - aitfact))
+            piaitblend2 = (piblendail2 * aitfact) + (piblendainl2 * (1 - aitfact))
+            piaitblend3 = (piblendail3 * aitfact) + (piblendainl3 * (1 - aitfact))
+            piaitblend4 = (piblendail4 * aitfact) + (piblendainl4 * (1 - aitfact))
+
+            'CD Flammable
+            finalcdflam = ((gff1 * cdaitblend1) + (gff2 * cdaitblend2) + (gff3 * cdaitblend3) + (gff4 * cdaitblend4)) / gfftotal
+
+            'PI Flammable
+            finalpiflam = ((gff1 * piaitblend1) + (gff2 * piaitblend2) + (gff3 * piaitblend3) + (gff4 * piaitblend4)) / gfftotal
+
+            finalcdtoxic = 0
+            finalpitoxic = 0
+            finalcdnon = 0
+            finalpinon = 0
+
+            Label432.Text = finalcdflam
+            Label433.Text = finalpiflam
+            Label434.Text = finalpitoxic
+            Label435.Text = finalpinon
+        End If
+
+        'Financial Environmental
+        Dim pindike As Double = Val(TextBox118.Text)
+        Dim ponsite As Double = Val(TextBox119.Text)
+        Dim poffsite As Double = Val(TextBox120.Text)
+
+        Dim indike As Double
+        Dim onsite As Double
+        Dim offsite As Double
+        Dim water As Double
+        Dim subsoil As Double
+        Dim groundwater As Double
+
+        If ComboBox187.Text = "Low" Then
+            indike = 10
+        ElseIf ComboBox187.Text = "Medium" Then
+            indike = 10
+        ElseIf ComboBox187.Text = "High" Then
+            indike = 10
+        End If
+
+        If ComboBox188.Text = "Low" Then
+            onsite = 50
+        ElseIf ComboBox188.Text = "Medium" Then
+            onsite = 50
+        ElseIf ComboBox188.Text = "High" Then
+            onsite = 50
+        End If
+
+        If ComboBox189.Text = "Low" Then
+            offsite = 100
+        ElseIf ComboBox189.Text = "Medium" Then
+            offsite = 250
+        ElseIf ComboBox189.Text = "High" Then
+            offsite = 500
+        End If
+
+        If ComboBox190.Text = "Low" Then
+            water = 500
+        ElseIf ComboBox190.Text = "Medium" Then
+            water = 1500
+        ElseIf ComboBox190.Text = "High" Then
+            water = 5000
+        End If
+
+        If ComboBox191.Text = "Low" Then
+            subsoil = 500
+        ElseIf ComboBox191.Text = "Medium" Then
+            subsoil = 1500
+        ElseIf ComboBox191.Text = "High" Then
+            subsoil = 3000
+        End If
+
+        If ComboBox192.Text = "Low" Then
+            groundwater = 1000
+        ElseIf ComboBox192.Text = "Medium" Then
+            groundwater = 5000
+        ElseIf ComboBox192.Text = "High" Then
+            groundwater = 10000
+        End If
+
+        Dim tgl As Double
+        tgl = Val(TextBox121.Text) / velprod
+
+        Dim bblgr1 As Double
+        Dim bblgr2 As Double
+        Dim bblgr3 As Double
+        Dim bblgr4 As Double
+
+        If tgl < leaktime Then
+            bblgr1 = bbleak1 * ((leaktime - tgl) / leaktime)
+            bblgr2 = bbleak2 * ((leaktime - tgl) / leaktime)
+            bblgr3 = bbleak3 * ((leaktime - tgl) / leaktime)
+            bblgr4 = bbleak4 * ((leaktime - tgl) / leaktime)
+        ElseIf tgl >= leaktime Then
+            bblgr1 = 0
+            bblgr2 = 0
+            bblgr3 = 0
+            bblgr4 = 0
+        End If
+
+        Dim bblsub1 As Double
+        Dim bblsub2 As Double
+        Dim bblsub3 As Double
+        Dim bblsub4 As Double
+
+        bblsub1 = bbleak1 - bblgr1
+        bblsub2 = bbleak2 - bblgr2
+        bblsub3 = bbleak3 - bblgr3
+        bblsub4 = bbleak4 - bblgr4
+
+        'financial leakage
+        Dim fcleak1 As Double
+        Dim fcleak2 As Double
+        Dim fcleak3 As Double
+        Dim fcleak As Double
+
+        fcleak1 = ((bblgr1 * groundwater) + (bblsub1 * subsoil)) * gff1
+        fcleak2 = ((bblgr2 * groundwater) + (bblsub2 * subsoil)) * gff2
+        fcleak3 = ((bblgr3 * groundwater) + (bblsub3 * subsoil)) * gff3
+
+        fcleak = (fcleak1 + fcleak2 + fcleak3) / gfftotal
+
+        'total barrels rupture
+        Dim bblrup As Double
+        bblrup = (volbarel * gff4) / gfftotal
+
+        'total barrels rupture
+        Dim bblindikerup As Double
+        bblindikerup = bblrup * (1 - (pindike / 100))
+
+        Dim bblonsiterup As Double
+        bblonsiterup = (ponsite / 100) * (bblrup - bblindikerup)
+
+        Dim bbloffsiterup As Double
+        bbloffsiterup = (poffsite / 100) * (bblrup - bblindikerup - bblonsiterup)
+
+        Dim bblwaterrup As Double
+        bblwaterrup = bblrup - (bblindikerup + bblonsiterup + bbloffsiterup)
+
+        'financial rupture
+        Dim fcrup As Double
+        fcrup = (bblindikerup * indike) + (bblonsiterup * onsite) + (bbloffsiterup * offsite) + (bblwaterrup * water)
+
+        'total environment
+        Dim financialenv As Double
+        financialenv = fcleak + fcrup
+
+        'Financial Component Damage
+        Dim financialcd As Double
+        Dim cf As Double = Val(TextBox19.Text)
+
+        If Units.ComboBox1.Text = "SI" Then
+            financialcd = ((((gff1 * 5000) + (gff2 * 0) + (gff3 * 0) + (gff4 * 120000)) * ((astD / 30.5) ^ 2)) / gfftotal) * cf
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            financialcd = ((((gff1 * 5000) + (gff2 * 0) + (gff3 * 0) + (gff4 * 120000)) * ((astD / 100) ^ 2)) / gfftotal) * cf
+        End If
+
+        'Financial equipment cost
+        'Dim financialequipcost As Double
+        'Dim eq As Double = Val(TextBox122.Text)
+
+        'financialequipcost = financialcd * eq
+
+        'Financial production cost
+        Dim downtime1 As Double = 2
+        Dim downtime2 As Double = 3
+        Dim downtime3 As Double = 3
+        Dim downtime4 As Double = 10
+
+        Dim omul As Double
+        Dim oaffa As Double
+        Dim ocmd As Double
+        Dim prodcost As Double = Val(TextBox124.Text)
+        Dim financialproduction As Double
+
+        omul = Val(TextBox125.Text)
+
+        ocmd = (((gff1 * downtime1) + (gff2 * downtime2) + (gff3 * downtime3) + (gff4 * downtime4)) / gfftotal) * omul
+
+        oaffa = 10 ^ (1.242 + (0.585 * Math.Log10(0 * (10 ^ (-6)))))
+
+        financialproduction = (ocmd + oaffa) * prodcost
+
+        'Financial Injury cost
+        'Dim pop As Double = Val(TextBox126.Text)
+        'Dim injcost As Double = Val(TextBox123.Text)
+
+        'Dim financialinjury As Double
+
+        'If ComboBox75.Text = "Flammable" Then
+        'financialinjury = pop * injcost * finalpiflam
+        'ElseIf ComboBox75.Text = "Toxic" Then
+        'financialinjury = pop * injcost * finalpitoxic
+        'ElseIf ComboBox75.Text = "Non Flammable. Non Toxic" Then
+        'financialinjury = pop * injcost * finalpinon
+        'End If
+
+        Dim finalarea As Double
+        Dim areacategory As String
+
+        If ComboBox75.Text = "Flammable" Then
+            finalarea = Math.Max(finalcdflam, finalpiflam)
+        ElseIf ComboBox75.Text = "Toxic" Then
+            finalarea = Math.Max(finalcdtoxic, finalpitoxic)
+        ElseIf ComboBox75.Text = "Non Flammable. Non Toxic" Then
+            finalarea = Math.Max(finalcdnon, finalpinon)
+        End If
+
+        If Units.ComboBox1.Text = "SI" Then
+            If finalarea <= 9.29 Then
+                areacategory = "A"
+            ElseIf finalarea > 9.29 AndAlso finalarea <= 92.9 Then
+                areacategory = "B"
+            ElseIf finalarea > 92.9 AndAlso finalarea <= 929 Then
+                areacategory = "C"
+            ElseIf finalarea > 929 AndAlso finalarea <= 9290 Then
+                areacategory = "D"
+            Else
+                areacategory = "E"
+            End If
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            If finalarea <= 100 Then
+                areacategory = "A"
+            ElseIf finalarea > 100 AndAlso finalarea <= 1000 Then
+                areacategory = "B"
+            ElseIf finalarea > 1000 AndAlso finalarea <= 10000 Then
+                areacategory = "C"
+            ElseIf finalarea > 10000 AndAlso finalarea <= 100000 Then
+                areacategory = "D"
+            Else
+                areacategory = "E"
+            End If
+        End If
+
+        Dim finalfinancial As Double
+        Dim financialcategory As String
+
+        finalfinancial = financialcd + financialenv + financialproduction
+
+        If finalfinancial <= 10000 Then
+            financialcategory = "A"
+        ElseIf finalfinancial > 10000 AndAlso finalfinancial <= 100000 Then
+            financialcategory = "B"
+        ElseIf finalfinancial > 100000 AndAlso finalfinancial <= 1000000 Then
+            financialcategory = "C"
+        ElseIf finalfinancial > 1000000 AndAlso finalfinancial <= 10000000 Then
+            financialcategory = "D"
+        Else
+            financialcategory = "E"
+        End If
+
+        Label436.Text = finalarea
+        Label437.Text = areacategory
+        Label438.Text = finalfinancial
+        Label439.Text = financialcategory
+    End Sub
+
+
 End Class

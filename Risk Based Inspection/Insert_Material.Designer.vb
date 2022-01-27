@@ -97,7 +97,7 @@ Partial Class Insert_Material
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(457, 433)
+        Me.Panel1.Size = New System.Drawing.Size(457, 466)
         Me.Panel1.TabIndex = 0
         '
         'Label18
@@ -170,7 +170,7 @@ Partial Class Insert_Material
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(316, 380)
+        Me.Button3.Location = New System.Drawing.Point(316, 414)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(114, 30)
         Me.Button3.TabIndex = 28
@@ -385,7 +385,7 @@ Partial Class Insert_Material
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(188, 380)
+        Me.Button2.Location = New System.Drawing.Point(188, 414)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(114, 30)
         Me.Button2.TabIndex = 25
@@ -400,7 +400,7 @@ Partial Class Insert_Material
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(188, 380)
+        Me.Button1.Location = New System.Drawing.Point(188, 414)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 30)
         Me.Button1.TabIndex = 24
@@ -412,7 +412,7 @@ Partial Class Insert_Material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 433)
+        Me.ClientSize = New System.Drawing.Size(457, 466)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

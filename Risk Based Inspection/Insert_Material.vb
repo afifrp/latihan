@@ -31,17 +31,18 @@ Public Class Insert_Material
 
     Private Sub simpandatamaterial()
         Call koneksi()
-        Dim simpan_command As New MySqlCommand("INSERT INTO `tbl_material`(`units`, `kode_material`, `nama_material`, `yield_strength`, `tensile_strength`, `design_pressure`, `max_operating_pressure`, `design_temperature`, `max_design_temperature`, `cost_factor`) VALUES (@unit,@kode,@nama,@ys,@ts,@designpressure,@maxoperpressure,@designtemp,@maxdesigntemp,@cost)", constring)
+        Dim simpan_command As New MySqlCommand("INSERT INTO `tbl_material`(`units`, `kode_material`, `nama_material`, `yield_strength`, `tensile_strength`, `allowable_stress`, `design_pressure`, `max_operating_pressure`, `design_temperature`, `max_design_temperature`, `cost_factor`) VALUES (@unit,@kode,@nama,@ys,@ts,@s,@designpressure,@maxoperpressure,@designtemp,@maxdesigntemp,@cost)", constring)
         simpan_command.Parameters.Add("@unit", MySqlDbType.VarChar).Value = Units.ComboBox1.Text
         simpan_command.Parameters.Add("@kode", MySqlDbType.VarChar).Value = TextBox1.Text
         simpan_command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = TextBox2.Text
-        simpan_command.Parameters.Add("@ys", MySqlDbType.Double).Value = TextBox3.Text
-        simpan_command.Parameters.Add("@ts", MySqlDbType.Double).Value = TextBox4.Text
-        simpan_command.Parameters.Add("@designpressure", MySqlDbType.Double).Value = TextBox5.Text
-        simpan_command.Parameters.Add("@maxoperpressure", MySqlDbType.Double).Value = TextBox6.Text
-        simpan_command.Parameters.Add("@designtemp", MySqlDbType.Double).Value = TextBox7.Text
-        simpan_command.Parameters.Add("@maxdesigntemp", MySqlDbType.Double).Value = TextBox8.Text
-        simpan_command.Parameters.Add("@cost", MySqlDbType.Double).Value = TextBox9.Text
+        simpan_command.Parameters.Add("@ys", MySqlDbType.Double).Value = TextBox7.Text
+        simpan_command.Parameters.Add("@ts", MySqlDbType.Double).Value = TextBox8.Text
+        simpan_command.Parameters.Add("@s", MySqlDbType.Double).Value = TextBox9.Text
+        simpan_command.Parameters.Add("@designpressure", MySqlDbType.Double).Value = TextBox3.Text
+        simpan_command.Parameters.Add("@maxoperpressure", MySqlDbType.Double).Value = TextBox4.Text
+        simpan_command.Parameters.Add("@designtemp", MySqlDbType.Double).Value = TextBox5.Text
+        simpan_command.Parameters.Add("@maxdesigntemp", MySqlDbType.Double).Value = TextBox6.Text
+        simpan_command.Parameters.Add("@cost", MySqlDbType.Double).Value = TextBox10.Text
 
         If execCommand(simpan_command) Then
             MessageBox.Show("Data Saved")
@@ -57,17 +58,18 @@ Public Class Insert_Material
     Public Sub updatedatamaterial()
         Call koneksi()
 
-        Dim update_command As New MySqlCommand("UPDATE `tbl_material` SET `nama_material`=@nama,`yield_strength`=@ys,`tensile_strength`=@ts,`design_pressure`=@designpressure,`max_operating_pressure`=@maxoperatingpressure,`design_temperature`=@designtemp,`max_design_temperature`=@maxdesigntemp,`cost_factor`=@cost WHERE `kode_material`=@kode AND `units`=@unit", constring)
+        Dim update_command As New MySqlCommand("UPDATE `tbl_material` SET `nama_material`=@nama,`yield_strength`=@ys,`tensile_strength`=@ts,`allowable_stress`=@s,`design_pressure`=@designpressure,`max_operating_pressure`=@maxoperatingpressure,`design_temperature`=@designtemp,`max_design_temperature`=@maxdesigntemp,`cost_factor`=@cost WHERE `kode_material`=@kode AND `units`=@unit", constring)
         update_command.Parameters.Add("@unit", MySqlDbType.VarChar).Value = Units.ComboBox1.Text
         update_command.Parameters.Add("@kode", MySqlDbType.VarChar).Value = TextBox1.Text
         update_command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = TextBox2.Text
-        update_command.Parameters.Add("@ys", MySqlDbType.Double).Value = TextBox3.Text
-        update_command.Parameters.Add("@ts", MySqlDbType.Double).Value = TextBox4.Text
-        update_command.Parameters.Add("@designpressure", MySqlDbType.Double).Value = TextBox5.Text
-        update_command.Parameters.Add("@maxoperatingpressure", MySqlDbType.Double).Value = TextBox6.Text
-        update_command.Parameters.Add("@designtemp", MySqlDbType.Double).Value = TextBox7.Text
-        update_command.Parameters.Add("@maxdesigntemp", MySqlDbType.Double).Value = TextBox8.Text
-        update_command.Parameters.Add("@cost", MySqlDbType.Double).Value = TextBox9.Text
+        update_command.Parameters.Add("@ys", MySqlDbType.Double).Value = TextBox7.Text
+        update_command.Parameters.Add("@ts", MySqlDbType.Double).Value = TextBox8.Text
+        update_command.Parameters.Add("@s", MySqlDbType.Double).Value = TextBox9.Text
+        update_command.Parameters.Add("@designpressure", MySqlDbType.Double).Value = TextBox3.Text
+        update_command.Parameters.Add("@maxoperatingpressure", MySqlDbType.Double).Value = TextBox4.Text
+        update_command.Parameters.Add("@designtemp", MySqlDbType.Double).Value = TextBox5.Text
+        update_command.Parameters.Add("@maxdesigntemp", MySqlDbType.Double).Value = TextBox6.Text
+        update_command.Parameters.Add("@cost", MySqlDbType.Double).Value = TextBox10.Text
 
         If execCommand(update_command) Then
             MessageBox.Show("Data Updated")
@@ -82,6 +84,39 @@ Public Class Insert_Material
 
     'Load ------------------------------------------------------------------------------------------------
 
+    Private Sub Insert_Material_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Units.ComboBox1.Text = "SI" Then
+            Label11.Text = "(MPa)"
+            Label12.Text = "(MPa)"
+            Label20.Text = "(Mpa)"
+            Label14.Text = "(Mpa)"
+            Label15.Text = "(Mpa)"
+            Label16.Text = "(°C)"
+            Label17.Text = "(°C)"
+            Label18.Text = "($)"
+            Label20.Text = "(Mpa)"
+        ElseIf Units.ComboBox1.Text = "US Customary" Then
+            Label11.Text = "(ksi)"
+            Label12.Text = "(ksi)"
+            Label20.Text = "(ksi)"
+            Label14.Text = "(ksi)"
+            Label15.Text = "(ksi)"
+            Label16.Text = "(°F)"
+            Label17.Text = "(°F)"
+            Label18.Text = "($)"
+            Label20.Text = "(ksi)"
+        Else
+            Label11.Text = ""
+            Label12.Text = ""
+            Label20.Text = ""
+            Label14.Text = ""
+            Label15.Text = ""
+            Label16.Text = ""
+            Label17.Text = ""
+            Label18.Text = ""
+            Label20.Text = ""
+        End If
+    End Sub
 
     'Button Coding ---------------------------------------------------------------------------------------
 
@@ -130,31 +165,5 @@ Public Class Insert_Material
         Me.Close()
     End Sub
 
-    Private Sub Insert_Material_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If Units.ComboBox1.Text = "SI" Then
-            Label11.Text = "(MPa)"
-            Label12.Text = "(MPa)"
-            Label13.Text = "(Mpa)"
-            Label14.Text = "(Mpa)"
-            Label15.Text = "(°C)"
-            Label16.Text = "(°C)"
-            Label17.Text = "($)"
-        ElseIf Units.ComboBox1.Text = "US Customary" Then
-            Label11.Text = "(ksi)"
-            Label12.Text = "(ksi)"
-            Label13.Text = "(ksi)"
-            Label14.Text = "(ksi)"
-            Label15.Text = "(°F)"
-            Label16.Text = "(°F)"
-            Label17.Text = "($)"
-        Else
-            Label11.Text = ""
-            Label12.Text = ""
-            Label13.Text = ""
-            Label14.Text = ""
-            Label15.Text = ""
-            Label16.Text = ""
-            Label17.Text = ""
-        End If
-    End Sub
+
 End Class

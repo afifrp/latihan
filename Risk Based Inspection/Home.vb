@@ -3984,6 +3984,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
         While rd.Read()
             TextBox13.Text = rd.GetDouble("yield_strength")
             TextBox14.Text = rd.GetDouble("tensile_strength")
+            TextBox6.Text = rd.GetDouble("allowable_stress")
             TextBox15.Text = rd.GetDouble("design_pressure")
             TextBox16.Text = rd.GetDouble("max_operating_pressure")
             TextBox17.Text = rd.GetDouble("design_temperature")
@@ -4285,8 +4286,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label444.Text = "(mm)"
             Label445.Text = "(Mpa)"
             Label446.Text = "(°C)"
-            Label447.Text = "(mm)"
-            Label448.Text = "(MPa)"
+
+            Label448.Text = "(mm)"
             Label449.Text = "(mm)"
             Label450.Text = "(mm)"
         ElseIf Units.ComboBox1.Text = "US Customary" Then
@@ -4295,8 +4296,8 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label444.Text = "(inch)"
             Label445.Text = "(Mpa)"
             Label446.Text = "(°C)"
-            Label447.Text = "(inch)"
-            Label448.Text = "(psi)"
+
+            Label448.Text = "(inch)"
             Label449.Text = "(inch)"
             Label450.Text = "(inch)"
         Else
@@ -4305,7 +4306,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
             Label444.Text = ""
             Label445.Text = ""
             Label446.Text = ""
-            Label447.Text = ""
+
             Label448.Text = ""
             Label449.Text = ""
             Label450.Text = ""
@@ -4377,11 +4378,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text) * 0.0980665
-        R1 = Val(TextBox10.Text)
-        s = Val(TextBox8.Text)
+        p = Val(TextBox15.Text)
+        R1 = Val(TextBox9.Text) / 2
+        s = Val(TextBox6.Text)
         ejo = Val(TextBox7.Text)
-        ca = Val(TextBox6.Text)
+        ca = Val(TextBox8.Text)
         d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 
@@ -10676,11 +10677,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text) * 0.0980665
-        R1 = Val(TextBox10.Text)
-        s = Val(TextBox8.Text)
+        p = Val(TextBox15.Text)
+        R1 = Val(TextBox9.Text) / 2
+        s = Val(TextBox6.Text)
         ejo = Val(TextBox7.Text)
-        ca = Val(TextBox6.Text)
+        ca = Val(TextBox8.Text)
         d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 
@@ -11953,11 +11954,11 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         gsi = Val(TextBox82.Text)
 
-        p = Val(TextBox15.Text) * 0.0980665
-        R1 = Val(TextBox10.Text)
-        s = Val(TextBox8.Text)
+        p = Val(TextBox15.Text)
+        R1 = Val(TextBox9.Text) / 2
+        s = Val(TextBox6.Text)
         ejo = Val(TextBox7.Text)
-        ca = Val(TextBox6.Text)
+        ca = Val(TextBox8.Text)
         d = Val(TextBox9.Text)
         h = Val(TextBox81.Text)
 

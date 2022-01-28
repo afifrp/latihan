@@ -30,7 +30,7 @@ Public Class Materials
         Call koneksi()
         Dim dt As New DataTable()
 
-        Dim CMD As New MySqlCommand("SELECT `kode_material`, `nama_material`, `yield_strength`, `tensile_strength`, `design_pressure`, `max_operating_pressure`, `design_temperature`, `max_design_temperature`, `cost_factor` FROM `tbl_material` WHERE `units`=@unit", constring)
+        Dim CMD As New MySqlCommand("SELECT `kode_material`, `nama_material`, `yield_strength`, `tensile_strength`, `allowable_stress`, `design_pressure`, `max_operating_pressure`, `design_temperature`, `max_design_temperature`, `cost_factor` FROM `tbl_material` WHERE `units`=@unit", constring)
         CMD.Parameters.Add("@unit", MySqlDbType.VarChar).Value = Units.ComboBox1.Text
 
         Dim adapter As New MySqlDataAdapter(CMD)
@@ -53,20 +53,36 @@ Public Class Materials
             DataGridView1.Columns(2).Width = 100
             DataGridView1.Columns(3).Width = 110
             DataGridView1.Columns(4).Width = 110
-            DataGridView1.Columns(5).Width = 150
-            DataGridView1.Columns(6).Width = 120
-            DataGridView1.Columns(7).Width = 160
-            DataGridView1.Columns(8).Width = 100
+            DataGridView1.Columns(5).Width = 110
+            DataGridView1.Columns(6).Width = 150
+            DataGridView1.Columns(7).Width = 120
+            DataGridView1.Columns(8).Width = 160
+            DataGridView1.Columns(9).Width = 100
 
-            DataGridView1.Columns(0).HeaderText = "Material Code"
-            DataGridView1.Columns(1).HeaderText = "Material Name"
-            DataGridView1.Columns(2).HeaderText = "Yield Strength (MPa)"
-            DataGridView1.Columns(3).HeaderText = "Tensile Strength (MPa)"
-            DataGridView1.Columns(4).HeaderText = "Design Pressure (MPa)"
-            DataGridView1.Columns(5).HeaderText = "Max. Operating Pressure (kpa)"
-            DataGridView1.Columns(6).HeaderText = "Design Temperature (⁰C)"
-            DataGridView1.Columns(7).HeaderText = "Max. Operating Temperature (⁰C)"
-            DataGridView1.Columns(8).HeaderText = "Cost Factor ($)"
+            If Units.ComboBox1.Text = "SI" Then
+                DataGridView1.Columns(0).HeaderText = "Material Code"
+                DataGridView1.Columns(1).HeaderText = "Material Name"
+                DataGridView1.Columns(2).HeaderText = "Yield Strength (MPa)"
+                DataGridView1.Columns(3).HeaderText = "Tensile Strength (MPa)"
+                DataGridView1.Columns(4).HeaderText = "Allowable Stress (MPa)"
+                DataGridView1.Columns(5).HeaderText = "Design Pressure (MPa)"
+                DataGridView1.Columns(6).HeaderText = "Max. Operating Pressure (Mpa)"
+                DataGridView1.Columns(7).HeaderText = "Design Temperature (⁰C)"
+                DataGridView1.Columns(8).HeaderText = "Max. Operating Temperature (⁰C)"
+                DataGridView1.Columns(9).HeaderText = "Cost Factor ($)"
+            ElseIf Units.ComboBox1.Text = "US Customary" Then
+                DataGridView1.Columns(0).HeaderText = "Material Code"
+                DataGridView1.Columns(1).HeaderText = "Material Name"
+                DataGridView1.Columns(2).HeaderText = "Yield Strength (ksi)"
+                DataGridView1.Columns(3).HeaderText = "Tensile Strength (ksi)"
+                DataGridView1.Columns(4).HeaderText = "Allowable Stress (ksi)"
+                DataGridView1.Columns(5).HeaderText = "Design Pressure (ksi)"
+                DataGridView1.Columns(6).HeaderText = "Max. Operating Pressure (ksi)"
+                DataGridView1.Columns(7).HeaderText = "Design Temperature (⁰F)"
+                DataGridView1.Columns(8).HeaderText = "Max. Operating Temperature (⁰F)"
+                DataGridView1.Columns(9).HeaderText = "Cost Factor ($)"
+            End If
+
 
             DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -75,6 +91,7 @@ Public Class Materials
             DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView1.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             DataGridView1.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -85,6 +102,7 @@ Public Class Materials
             DataGridView1.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
             DataGridView1.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            DataGridView1.Columns(9).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             DataGridView1.Columns(2).SortMode = DataGridViewColumnSortMode.NotSortable
             DataGridView1.Columns(3).SortMode = DataGridViewColumnSortMode.NotSortable
@@ -93,6 +111,7 @@ Public Class Materials
             DataGridView1.Columns(6).SortMode = DataGridViewColumnSortMode.NotSortable
             DataGridView1.Columns(7).SortMode = DataGridViewColumnSortMode.NotSortable
             DataGridView1.Columns(8).SortMode = DataGridViewColumnSortMode.NotSortable
+            DataGridView1.Columns(9).SortMode = DataGridViewColumnSortMode.NotSortable
 
             DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
 
@@ -153,13 +172,14 @@ Public Class Materials
         TextBox1.Text = selectedRow.Cells(0).Value.ToString()
         Insert_Material.TextBox1.Text = selectedRow.Cells(0).Value.ToString()
         Insert_Material.TextBox2.Text = selectedRow.Cells(1).Value.ToString()
-        Insert_Material.TextBox3.Text = selectedRow.Cells(2).Value.ToString()
-        Insert_Material.TextBox4.Text = selectedRow.Cells(3).Value.ToString()
-        Insert_Material.TextBox5.Text = selectedRow.Cells(4).Value.ToString()
-        Insert_Material.TextBox6.Text = selectedRow.Cells(5).Value.ToString()
-        Insert_Material.TextBox7.Text = selectedRow.Cells(6).Value.ToString()
-        Insert_Material.TextBox8.Text = selectedRow.Cells(7).Value.ToString()
-        Insert_Material.TextBox9.Text = selectedRow.Cells(8).Value.ToString()
+        Insert_Material.TextBox7.Text = selectedRow.Cells(2).Value.ToString()
+        Insert_Material.TextBox8.Text = selectedRow.Cells(3).Value.ToString()
+        Insert_Material.TextBox9.Text = selectedRow.Cells(4).Value.ToString()
+        Insert_Material.TextBox3.Text = selectedRow.Cells(5).Value.ToString()
+        Insert_Material.TextBox4.Text = selectedRow.Cells(6).Value.ToString()
+        Insert_Material.TextBox5.Text = selectedRow.Cells(7).Value.ToString()
+        Insert_Material.TextBox6.Text = selectedRow.Cells(8).Value.ToString()
+        Insert_Material.TextBox10.Text = selectedRow.Cells(9).Value.ToString()
     End Sub
 
 

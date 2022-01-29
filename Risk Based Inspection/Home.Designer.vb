@@ -24,22 +24,21 @@ Partial Class Home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK I", New System.Windows.Forms.TreeNode() {TreeNode11, TreeNode12, TreeNode13, TreeNode14, TreeNode15})
-        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
-        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
-        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
-        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK II", New System.Windows.Forms.TreeNode() {TreeNode17, TreeNode18, TreeNode19})
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-1002")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-PG200")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-OL20")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-LOS00")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F5A-DY728")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK I", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5})
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-100D")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-899L")
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("F1N-200D")
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PABRIK II", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9})
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.PanelgeneraldataPRD = New System.Windows.Forms.Panel()
         Me.PanelgeneraldataHE = New System.Windows.Forms.Panel()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.ComboBox61 = New System.Windows.Forms.ComboBox()
@@ -232,6 +231,7 @@ Partial Class Home
         Me.Label217 = New System.Windows.Forms.Label()
         Me.TextBox51 = New System.Windows.Forms.TextBox()
         Me.Label216 = New System.Windows.Forms.Label()
+        Me.PanelgeneraldataPRD = New System.Windows.Forms.Panel()
         Me.Panelgeneraldata = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -1457,14 +1457,6 @@ Partial Class Home
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General Data"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'PanelgeneraldataPRD
-        '
-        Me.PanelgeneraldataPRD.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelgeneraldataPRD.Location = New System.Drawing.Point(3, 1781)
-        Me.PanelgeneraldataPRD.Name = "PanelgeneraldataPRD"
-        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(751, 655)
-        Me.PanelgeneraldataPRD.TabIndex = 6
         '
         'PanelgeneraldataHE
         '
@@ -3465,6 +3457,14 @@ Partial Class Home
         Me.Label216.Size = New System.Drawing.Size(191, 15)
         Me.Label216.TabIndex = 332
         Me.Label216.Text = "Estimated Remaining Bundle Life"
+        '
+        'PanelgeneraldataPRD
+        '
+        Me.PanelgeneraldataPRD.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelgeneraldataPRD.Location = New System.Drawing.Point(3, 1781)
+        Me.PanelgeneraldataPRD.Name = "PanelgeneraldataPRD"
+        Me.PanelgeneraldataPRD.Size = New System.Drawing.Size(751, 655)
+        Me.PanelgeneraldataPRD.TabIndex = 6
         '
         'Panelgeneraldata
         '
@@ -13541,27 +13541,27 @@ Partial Class Home
         Me.TreeView1.BackColor = System.Drawing.SystemColors.Control
         Me.TreeView1.Location = New System.Drawing.Point(0, -3)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode11.Name = "Node1"
-        TreeNode11.Text = "F5A-1002"
-        TreeNode12.Name = "Node2"
-        TreeNode12.Text = "F5A-PG200"
-        TreeNode13.Name = "Node3"
-        TreeNode13.Text = "F5A-OL20"
-        TreeNode14.Name = "Node4"
-        TreeNode14.Text = "F5A-LOS00"
-        TreeNode15.Name = "Node5"
-        TreeNode15.Text = "F5A-DY728"
-        TreeNode16.Name = "Node0"
-        TreeNode16.Text = "PABRIK I"
-        TreeNode17.Name = "Node7"
-        TreeNode17.Text = "F1N-100D"
-        TreeNode18.Name = "Node8"
-        TreeNode18.Text = "F1N-899L"
-        TreeNode19.Name = "Node0"
-        TreeNode19.Text = "F1N-200D"
-        TreeNode20.Name = "Node6"
-        TreeNode20.Text = "PABRIK II"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16, TreeNode20})
+        TreeNode1.Name = "Node1"
+        TreeNode1.Text = "F5A-1002"
+        TreeNode2.Name = "Node2"
+        TreeNode2.Text = "F5A-PG200"
+        TreeNode3.Name = "Node3"
+        TreeNode3.Text = "F5A-OL20"
+        TreeNode4.Name = "Node4"
+        TreeNode4.Text = "F5A-LOS00"
+        TreeNode5.Name = "Node5"
+        TreeNode5.Text = "F5A-DY728"
+        TreeNode6.Name = "Node0"
+        TreeNode6.Text = "PABRIK I"
+        TreeNode7.Name = "Node7"
+        TreeNode7.Text = "F1N-100D"
+        TreeNode8.Name = "Node8"
+        TreeNode8.Text = "F1N-899L"
+        TreeNode9.Name = "Node0"
+        TreeNode9.Text = "F1N-200D"
+        TreeNode10.Name = "Node6"
+        TreeNode10.Text = "PABRIK II"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode6, TreeNode10})
         Me.TreeView1.Size = New System.Drawing.Size(215, 803)
         Me.TreeView1.TabIndex = 1
         '

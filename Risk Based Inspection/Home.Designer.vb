@@ -13707,7 +13707,7 @@ Partial Class Home
         Me.UnitsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.UnitsToolStripMenuItem.Image = CType(resources.GetObject("UnitsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UnitsToolStripMenuItem.Name = "UnitsToolStripMenuItem"
-        Me.UnitsToolStripMenuItem.Size = New System.Drawing.Size(262, 24)
+        Me.UnitsToolStripMenuItem.Size = New System.Drawing.Size(261, 24)
         Me.UnitsToolStripMenuItem.Text = "Units"
         '
         'FluidsToolStripMenuItem
@@ -13716,7 +13716,7 @@ Partial Class Home
         Me.FluidsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FluidsToolStripMenuItem.Image = CType(resources.GetObject("FluidsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FluidsToolStripMenuItem.Name = "FluidsToolStripMenuItem"
-        Me.FluidsToolStripMenuItem.Size = New System.Drawing.Size(262, 24)
+        Me.FluidsToolStripMenuItem.Size = New System.Drawing.Size(261, 24)
         Me.FluidsToolStripMenuItem.Text = "Risk Matrix"
         '
         'FactorManagementSystemToolStripMenuItem
@@ -13725,7 +13725,7 @@ Partial Class Home
         Me.FactorManagementSystemToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FactorManagementSystemToolStripMenuItem.Image = CType(resources.GetObject("FactorManagementSystemToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FactorManagementSystemToolStripMenuItem.Name = "FactorManagementSystemToolStripMenuItem"
-        Me.FactorManagementSystemToolStripMenuItem.Size = New System.Drawing.Size(262, 24)
+        Me.FactorManagementSystemToolStripMenuItem.Size = New System.Drawing.Size(261, 24)
         Me.FactorManagementSystemToolStripMenuItem.Text = "Factor Management System"
         '
         'ToolStripMenuItem3

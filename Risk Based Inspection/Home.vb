@@ -5516,8 +5516,7 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
         If df > std Then
             df = df
-        End If
-        If std > df Then
+        Else
             df = std
         End If
 
@@ -26098,6 +26097,10 @@ m) Inspection ports or plugs which are removed to permit thickness measurements 
 
     Private Sub LinkLabel11_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel11.LinkClicked
         TextBox105.Text = 1.0
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 
 
